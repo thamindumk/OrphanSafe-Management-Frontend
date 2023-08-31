@@ -16,7 +16,7 @@ const Header = () => {
 
   useEffect(() => {
     if (!userInfo) {
-      navigate("/auth/login")
+      navigate("/auth/login");
     }
   }, [navigate, userInfo]);
 
@@ -35,7 +35,7 @@ const Header = () => {
   return (
     <Nav className="navbar navbar-expand-sm navbar-dark bg-dark">
       <a className="navbar-brand d-flex align-items-center" href="#">
-        <img src="/white-logo.png" alt="" />
+        <img src="/app-icon.png" alt="" />
         <div className="brand-title">OrphanSafe</div>
       </a>
       <button

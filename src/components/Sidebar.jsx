@@ -44,17 +44,23 @@ const Sidebar = () => {
               <div>Monitoring</div>
             </div>
             <div className="sidebar-submenu">
-              <LinkContainer to="/dashboard">
+
+              <LinkContainer to="/monitoring/viewStaff">
+
                 <a className="sidebar-submenu-item">Orphanage staff</a>
               </LinkContainer>
             </div>
             <div className="sidebar-submenu">
-              <LinkContainer to="/dashboard">
+
+              <LinkContainer to="/monitoring/viewSocialWorker">
+
                 <a className="sidebar-submenu-item">Social Workers</a>
               </LinkContainer>
             </div>
             <div className="sidebar-submenu">
-              <LinkContainer to="/dashboard">
+
+              <LinkContainer to="/monitoring/viewParent">
+
                 <a className="sidebar-submenu-item">Parent</a>
               </LinkContainer>
             </div>
@@ -66,12 +72,16 @@ const Sidebar = () => {
               <div>Child Profile</div>
             </div>
             <div className="sidebar-submenu">
-              <LinkContainer to="/dashboard">
+
+              <LinkContainer to="/profile/createProfile">
+
                 <a className="sidebar-submenu-item">Create profile</a>
               </LinkContainer>
             </div>
             <div className="sidebar-submenu">
-              <LinkContainer to="/dashboard">
+
+              <LinkContainer to="/profile/viewProfile">
+
                 <a className="sidebar-submenu-item">View Profiles</a>
               </LinkContainer>
             </div>
@@ -81,24 +91,32 @@ const Sidebar = () => {
                 <div>Legal</div>
               </div>
               <div className="sidebar-submenu">
-                <LinkContainer to="/dashboard">
+
+                <LinkContainer to="/legal/viewChildDocument">
+
                   <a className="sidebar-submenu-item">Child documents</a>
                 </LinkContainer>
               </div>
               <div className="sidebar-submenu">
-                <LinkContainer to="/dashboard">
+
+                <LinkContainer to="/legal/viewStaffDocument">
+
                   <a className="sidebar-submenu-item">Staff documents </a>
                 </LinkContainer>
               </div>
               <div className="sidebar-submenu">
-                <LinkContainer to="/dashboard">
+
+                <LinkContainer to="/legal/viewSocialWorkerDocument">
+
                   <a className="sidebar-submenu-item">
                     Social workers documents{" "}
                   </a>
                 </LinkContainer>
               </div>
               <div className="sidebar-submenu">
-                <LinkContainer to="/dashboard">
+
+                <LinkContainer to="/legal/viewParentDocument">
+
                   <a className="sidebar-submenu-item">Parent documents </a>
                 </LinkContainer>
               </div>
@@ -109,12 +127,16 @@ const Sidebar = () => {
                 <div>cases</div>
               </div>
               <div className="sidebar-submenu">
-                <LinkContainer to="/dashboard">
+
+                <LinkContainer to="/cases/viewOngoingCases">
+
                   <a className="sidebar-submenu-item">Ongoin cases</a>
                 </LinkContainer>
               </div>
               <div className="sidebar-submenu">
-                <LinkContainer to="/dashboard">
+
+                <LinkContainer to="/cases/viewPendingCases">
+
                   <a className="sidebar-submenu-item">Pending cases</a>
                 </LinkContainer>
               </div>
@@ -125,22 +147,30 @@ const Sidebar = () => {
                 <div>Reports</div>
               </div>
               <div className="sidebar-submenu">
-                <LinkContainer to="/dashboard">
+
+                <LinkContainer to="/report/viewChildReport">
+
                   <a className="sidebar-submenu-item">Child reports</a>
                 </LinkContainer>
               </div>
               <div className="sidebar-submenu">
-                <LinkContainer to="/dashboard">
+
+                <LinkContainer to="/report/viewFinancialReport">
+
                   <a className="sidebar-submenu-item">Financial reports</a>
                 </LinkContainer>
               </div>
               <div className="sidebar-submenu">
-                <LinkContainer to="/dashboard">
+
+                <LinkContainer to="/report/viewStaffReport">
+
                   <a className="sidebar-submenu-item">Staff reports</a>
                 </LinkContainer>
               </div>
               <div className="sidebar-submenu">
-                <LinkContainer to="/dashboard">
+
+                <LinkContainer to="/report/viewExternalPartyReport">
+
                   <a className="sidebar-submenu-item">External party reports</a>
                 </LinkContainer>
               </div>
@@ -151,22 +181,29 @@ const Sidebar = () => {
                 <div>User roles</div>
               </div>
               <div className="sidebar-submenu">
-                <LinkContainer to="/dashboard">
+
+                <LinkContainer to="/userRole/createStaff">
+
                   <a className="sidebar-submenu-item">Create Staff</a>
                 </LinkContainer>
               </div>
               <div className="sidebar-submenu">
-                <LinkContainer to="/dashboard">
+
+                <LinkContainer to="/userRole/createParent">
+
                   <a className="sidebar-submenu-item">Create parent</a>
                 </LinkContainer>
               </div>
               <div className="sidebar-submenu">
-                <LinkContainer to="/dashboard">
+
+                <LinkContainer to="/userRole/createSocialWorker">
+
                   <a className="sidebar-submenu-item">Create social worker</a>
                 </LinkContainer>
               </div>
               <div className="sidebar-submenu">
-                <LinkContainer to="/dashboard">
+                <LinkContainer to="/userRole/viewUserRole">
+
                   <a className="sidebar-submenu-item">Edid and delete roles</a>
                 </LinkContainer>
               </div>
