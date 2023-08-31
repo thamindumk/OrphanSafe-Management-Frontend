@@ -1,7 +1,8 @@
 import React from "react";
+import CreateStaffForm from "../../components/staff/CreateStaffForm";
 
 const CreateStaffScreen = () => {
-  return <div>CreateStaffScreen</div>;
+  return (<CreateStaffForm/>);
 };
 
 export default CreateStaffScreen;
