@@ -1,4 +1,5 @@
 import React from "react";
+import { LinkContainer } from "react-router-bootstrap";
 
 const Sidebar = () => {
   return (
@@ -9,10 +10,14 @@ const Sidebar = () => {
             <ion-icon name="menu" style={{ fontSize: "20px" }}></ion-icon>
             <div className="d-flex flex-column pl-2">
               <div style={{ fontWeight: 900, fontSize: "15px" }}>
-                Evision Web Services
+                OrphanaSafe
               </div>
               <div
-                style={{ fontSize: "10px", color: "#3273a5", fontWeight: "600" }}
+                style={{
+                  fontSize: "10px",
+                  color: "#3273a5",
+                  fontWeight: "600",
+                }}
               >
                 Tell us what you think
               </div>
@@ -24,57 +29,12 @@ const Sidebar = () => {
           <div className="sidebar-menu-item">
             <div className="sidebar-menu-item-heading">
               <ion-icon name="caret-down"></ion-icon>
-              <div>Agents</div>
+              <div>Dashboard</div>
             </div>
             <div className="sidebar-submenu">
-              <a
-                className="sidebar-submenu-item"
-                asp-action="ViewAgents"
-                asp-controller="Agents"
-              >
-                View Agents
-              </a>
-              <a
-                className="sidebar-submenu-item"
-                asp-action="ConfigureAgent"
-                asp-controller="Agents"
-              >
-                Configure Slave Node
-              </a>
-              <a
-                className="sidebar-submenu-item"
-                asp-action="EditSlaveNodes"
-                asp-controller="Agents"
-              >
-                Edit Nodes
-              </a>
-            </div>
-          </div>
-
-          <div className="sidebar-menu-item">
-            <div className="sidebar-menu-item-heading">
-              <ion-icon name="caret-down"></ion-icon>
-              <div>Deployment Artifacts</div>
-            </div>
-            <div className="sidebar-submenu">
-              <a
-                className="sidebar-submenu-item"
-                asp-action="ListArtifacts"
-                asp-controller="Artifacts"
-              >
-                List Artifacts
-              </a>
-            </div>
-          </div>
-
-          <div className="sidebar-menu-item">
-            <div className="sidebar-menu-item-heading">
-              <ion-icon name="caret-down"></ion-icon>
-              <div>Manage DNS Records</div>
-            </div>
-            <div className="sidebar-submenu">
-              <a className="sidebar-submenu-item">Add new DNS Record</a>
-              <a className="sidebar-submenu-item">List DNS Records</a>
+              <LinkContainer to="/dashboard">
+                <a className="sidebar-submenu-item">View Dashboard</a>
+              </LinkContainer>
             </div>
           </div>
 
@@ -84,74 +44,132 @@ const Sidebar = () => {
               <div>Monitoring</div>
             </div>
             <div className="sidebar-submenu">
-              <a
-                className="sidebar-submenu-item"
-                asp-action="NodesMonitoring"
-                asp-controller="Monitoring"
-              >
-                Nodes Health Monitoring
-              </a>
+              <LinkContainer to="/dashboard">
+                <a className="sidebar-submenu-item">Orphanage staff</a>
+              </LinkContainer>
+            </div>
+            <div className="sidebar-submenu">
+              <LinkContainer to="/dashboard">
+                <a className="sidebar-submenu-item">Social Workers</a>
+              </LinkContainer>
+            </div>
+            <div className="sidebar-submenu">
+              <LinkContainer to="/dashboard">
+                <a className="sidebar-submenu-item">Parent</a>
+              </LinkContainer>
             </div>
           </div>
 
           <div className="sidebar-menu-item">
             <div className="sidebar-menu-item-heading">
               <ion-icon name="caret-down"></ion-icon>
-              <div>Deployment</div>
+              <div>Child Profile</div>
             </div>
             <div className="sidebar-submenu">
-              <a
-                className="sidebar-submenu-item"
-                asp-action="DeploymentPipeline"
-                asp-controller="Deployment"
-              >
-                Deploy a system
-              </a>
-              <a className="sidebar-submenu-item">Manage Deployments</a>
-            </div>
-          </div>
-
-          <div className="sidebar-menu-item">
-            <div className="sidebar-menu-item-heading">
-              <ion-icon name="caret-down"></ion-icon>
-              <div>Backups</div>
+              <LinkContainer to="/dashboard">
+                <a className="sidebar-submenu-item">Create profile</a>
+              </LinkContainer>
             </div>
             <div className="sidebar-submenu">
-              <a className="sidebar-submenu-item">DB Backups</a>
-              <a className="sidebar-submenu-item">Restore Backups</a>
+              <LinkContainer to="/dashboard">
+                <a className="sidebar-submenu-item">View Profiles</a>
+              </LinkContainer>
             </div>
-          </div>
-
-          <div className="sidebar-menu-item">
-            <div className="sidebar-menu-item-heading">
-              <ion-icon name="caret-down"></ion-icon>
-              <div>IAM</div>
+            <div className="sidebar-menu-item">
+              <div className="sidebar-menu-item-heading">
+                <ion-icon name="caret-down"></ion-icon>
+                <div>Legal</div>
+              </div>
+              <div className="sidebar-submenu">
+                <LinkContainer to="/dashboard">
+                  <a className="sidebar-submenu-item">Child documents</a>
+                </LinkContainer>
+              </div>
+              <div className="sidebar-submenu">
+                <LinkContainer to="/dashboard">
+                  <a className="sidebar-submenu-item">Staff documents </a>
+                </LinkContainer>
+              </div>
+              <div className="sidebar-submenu">
+                <LinkContainer to="/dashboard">
+                  <a className="sidebar-submenu-item">
+                    Social workers documents{" "}
+                  </a>
+                </LinkContainer>
+              </div>
+              <div className="sidebar-submenu">
+                <LinkContainer to="/dashboard">
+                  <a className="sidebar-submenu-item">Parent documents </a>
+                </LinkContainer>
+              </div>
             </div>
-            <div className="sidebar-submenu">
-              <a
-                className="sidebar-submenu-item"
-                asp-action="ListUsers"
-                asp-controller="Administration"
-              >
-                IAM Users
-              </a>
-              <a
-                className="sidebar-submenu-item"
-                asp-action="ListRoles"
-                asp-controller="Administration"
-              >
-                IAM Roles
-              </a>
+            <div className="sidebar-menu-item">
+              <div className="sidebar-menu-item-heading">
+                <ion-icon name="caret-down"></ion-icon>
+                <div>cases</div>
+              </div>
+              <div className="sidebar-submenu">
+                <LinkContainer to="/dashboard">
+                  <a className="sidebar-submenu-item">Ongoin cases</a>
+                </LinkContainer>
+              </div>
+              <div className="sidebar-submenu">
+                <LinkContainer to="/dashboard">
+                  <a className="sidebar-submenu-item">Pending cases</a>
+                </LinkContainer>
+              </div>
             </div>
-          </div>
-
-          <div className="sidebar-menu-item">
-            <div className="sidebar-menu-item-heading">
-              <ion-icon name="caret-down"></ion-icon>
-              <div>Setup and Install</div>
+            <div className="sidebar-menu-item">
+              <div className="sidebar-menu-item-heading">
+                <ion-icon name="caret-down"></ion-icon>
+                <div>Reports</div>
+              </div>
+              <div className="sidebar-submenu">
+                <LinkContainer to="/dashboard">
+                  <a className="sidebar-submenu-item">Child reports</a>
+                </LinkContainer>
+              </div>
+              <div className="sidebar-submenu">
+                <LinkContainer to="/dashboard">
+                  <a className="sidebar-submenu-item">Financial reports</a>
+                </LinkContainer>
+              </div>
+              <div className="sidebar-submenu">
+                <LinkContainer to="/dashboard">
+                  <a className="sidebar-submenu-item">Staff reports</a>
+                </LinkContainer>
+              </div>
+              <div className="sidebar-submenu">
+                <LinkContainer to="/dashboard">
+                  <a className="sidebar-submenu-item">External party reports</a>
+                </LinkContainer>
+              </div>
             </div>
-            <div className="sidebar-submenu">
-              <a className="sidebar-submenu-item">Installation Guide</a>
+            <div className="sidebar-menu-item">
+              <div className="sidebar-menu-item-heading">
+                <ion-icon name="caret-down"></ion-icon>
+                <div>User roles</div>
+              </div>
+              <div className="sidebar-submenu">
+                <LinkContainer to="/dashboard">
+                  <a className="sidebar-submenu-item">Create Staff</a>
+                </LinkContainer>
+              </div>
+              <div className="sidebar-submenu">
+                <LinkContainer to="/dashboard">
+                  <a className="sidebar-submenu-item">Create parent</a>
+                </LinkContainer>
+              </div>
+              <div className="sidebar-submenu">
+                <LinkContainer to="/dashboard">
+                  <a className="sidebar-submenu-item">Create social worker</a>
+                </LinkContainer>
+              </div>
+              <div className="sidebar-submenu">
+                <LinkContainer to="/dashboard">
+                  <a className="sidebar-submenu-item">Edid and delete roles</a>
+                </LinkContainer>
+              </div>
             </div>
           </div>
         </div>
