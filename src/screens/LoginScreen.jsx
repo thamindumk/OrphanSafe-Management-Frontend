@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setCredentials } from "../slices/authSlice";
@@ -7,10 +7,13 @@ import { useLoginMutation } from "../slices/userApiSlice";
 import "../assets/css/login/login.css";
 import "../assets/css/login/login.responsive.css";
 
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { toast } from "react-toastify";
 
 const LoginScreen = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -27,20 +30,10 @@ const LoginScreen = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      const res = await login({}).unwrap();
-      dispatch(
-        setCredentials({
-          role: "admin",
-          token: "<<jwt>>",
-        })
-      );
+      const res = await login({ email: email, password: password }).unwrap();
+      dispatch(setCredentials(res.userInfo));
+      toast.success("Welcome!");
     } catch (error) {
-      dispatch(
-        setCredentials({
-          role: "admin",
-          token: "<<jwt>>",
-        })
-      );
       toast.error("login error. Please try again!");
     }
   };
@@ -51,13 +44,11 @@ const LoginScreen = () => {
         <div className="login-main-container">
           <img
             className="login-main-logo"
-            src="/black-logo.png"
-            alt="ecp logo"
+            src="/app-icon.png"
+            alt="orphansafe logo"
           />
 
-          <p className="login-header mb-4 mt-3">
-            Login to Evison Cloud Platform
-          </p>
+          <p className="login-header mb-4 mt-3">Login to OrphanSafe Platform</p>
 
           <div className="col">
             <div asp-validation-summary="All" className="text-danger"></div>
@@ -69,8 +60,8 @@ const LoginScreen = () => {
             <input
               className="form-control"
               type="email"
-              asp-for="Email"
               placeholder="e.g. example@evision.com"
+              onChange={(e) => setEmail(e.target.value)}
             />
             <div className="mt-4"></div>
             <div className="my-input-label mb-1">IAM User password</div>
@@ -79,9 +70,9 @@ const LoginScreen = () => {
             </div>
             <input
               className="form-control"
-              asp-for="Password"
               type="password"
               placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div className="col text-center">
@@ -102,7 +93,9 @@ const LoginScreen = () => {
             </div>
           </div>
 
-          <button className="mt-3 my-btn-lg">Create a new ECP account</button>
+          <button className="mt-3 my-btn-lg">
+            Create a new OrphanSafe account
+          </button>
         </div>
       </Form>
     </div>

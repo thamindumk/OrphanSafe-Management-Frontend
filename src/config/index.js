@@ -1,4 +1,4 @@
-const LOGIN_URL = "/auth/login";
-const LOGOUT_URL = "/auth/logout";
+const LOGIN_URL = "/api/users/auth";
+const LOGOUT_URL = "/api/users/logout";
 
 export { LOGIN_URL, LOGOUT_URL };
