@@ -8,7 +8,6 @@ services:
     #   - /usr/app/node_modules
     ports:
       - "13000:13000"
-    network_mode: host
   #   depends_on:
   #     - postgres
   
