@@ -1,0 +1,18 @@
+version: '3.1'
+services:
+  management-frontend:
+    image: management-fronend-testbranch-image:latest
+    # command: npm run dev
+    # volumes:
+    #   - .:/usr/app/
+    #   - /usr/app/node_modules
+    ports:
+      - "80:80"
+  #   depends_on:
+  #     - postgres
+  
+  # postgres-central-db:
+  #   image: postgres:9.6.2-alpine
+  #   environment:
+  #     POSTGRES_USER: todoapp
+  #     POSTGRES_DB: todos
