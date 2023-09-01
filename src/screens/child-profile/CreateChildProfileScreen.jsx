@@ -1,7 +1,8 @@
 import React from "react";
+import CreateChildForm from "../../components/child/CreateChildForm";
 
 const CreateChildProfileScreen = () => {
-  return <div>CreateChildProfileScreen</div>;
+  return (<CreateChildForm/>);
 };
 
 export default CreateChildProfileScreen;

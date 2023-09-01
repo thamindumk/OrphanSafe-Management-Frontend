@@ -27,6 +27,19 @@ const CreateStaffForm = () => {
         <Form.Control type="text" placeholder="e.g. 1980/04/14" />
       </Form.Group>
 
+      <Form.Group className="mb-3" controlId="formBasicGender">
+        <Form.Label>Gender</Form.Label>
+        <Form.Text className="text-muted">
+        *gender
+        </Form.Text>
+        <Form.Select size="sm" >
+        <option ></option>
+        <option value="1" >Male</option>
+        <option value="2">Female</option>
+        <option value="3">Other</option>
+        </Form.Select>
+      </Form.Group>
+
       <Form.Group className="mb-3" controlId="formBasicAddress">
         <Form.Label>Address</Form.Label>
         <Form.Text className="text-muted">
@@ -44,8 +57,8 @@ const CreateStaffForm = () => {
         <Form.Select >
         <option placeholder="e.g. Normal Form"></option>
         <option value="1">Normal staff</option>
-        <option value="2">Orphanage Manager</option>
-        <option value="3">Orphange assistant Manger</option>
+        <option value="2">Orphanege Manager</option>
+        <option value="3">Orphanege assistant Manger</option>
         </Form.Select>
 
       </Form.Group>
