@@ -1,7 +1,8 @@
 import React from "react";
+import CreateSocialWorkerForm from "../../components/external-party/CreateSocialWorkerForm"
 
 const CreateSocialWorkerScreen = () => {
-  return <div>CreateSocialWorkerScreen</div>;
+  return (<CreateSocialWorkerForm/>);
 };
 
 export default CreateSocialWorkerScreen;

@@ -4,6 +4,7 @@ import { Outlet, useNavigate } from "react-router-dom";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import { Col } from "react-bootstrap";
+import { useLocation } from "react-router-dom"; // Import useLocation
 
 const App = () => {
   const { userInfo } = useSelector((state) => state.auth);
@@ -17,6 +18,31 @@ const App = () => {
     }
   }, [navigate, userInfo]);
 
+  const location = useLocation(); // Get the current location
+  const path = location.pathname; // Extract the pathname
+
+  let pageTitle = "Default Title"; // Default title
+
+  // Define a mapping of paths to titles
+  const pathToTitleMap = {
+    "/": "Home",
+    "/home": "Home Page",
+    "/dashboard":"Dashboard",
+    "/monitoring/viewStaff":"View staff profiles",
+    "/monitoring/viewSocialWorker":"View social worker profiles",
+    "/monitoring/viewParent": "View parent profiles",
+    "/profile/createProfile": "Create child profile Form",
+    "/userRole/createStaff":"Create staff Form",
+    "/userRole/createParent": "Create parent Form",
+    "/userRole/createSocialWorker":"Create social worker Form"
+
+    // Add more path-title mappings as needed
+  };
+// Check if the path exists in the mapping, and if so, set the pageTitle accordingly
+  if (path in pathToTitleMap) {
+    pageTitle = pathToTitleMap[path];
+  }
+
   return userInfo ? (
     <>
       <Header />
@@ -24,7 +50,7 @@ const App = () => {
       <section className="main-container-section">
         <div className="container">
           <section>
-            <div className="page-main-header">Title</div>
+            <div className="page-main-header">{pageTitle}</div>
             <div className="page-sub-header">
               Select the features provided by the Evision Cloud Platform.
             </div>
