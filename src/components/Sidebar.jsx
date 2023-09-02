@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { LinkContainer } from "react-router-bootstrap";
 
+
 const Sidebar = () => {
+  const [isSidebarOpen, setSidebarOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen);
+  };
+
   return (
-    <section className="sidebar-section">
-      <div className="my-sidebar">
+    <section className={`sidebar-section ${isSidebarOpen ? "open" : "closed"} `}>
+      <div className={`my-sidebar ${isSidebarOpen ? "open" : "closed"}`}>
         <div className="sidebar-header-block">
           <div className="d-flex align-items-center">
-            <ion-icon name="menu" style={{ fontSize: "20px" }}></ion-icon>
+            <ion-icon name="menu" style={{ fontSize: "20px" }} onClick={toggleSidebar} ></ion-icon>
             <div className="d-flex flex-column pl-2">
               <div style={{ fontWeight: 900, fontSize: "15px" }}>
                 OrphanaSafe
@@ -23,9 +30,15 @@ const Sidebar = () => {
               </div>
             </div>
           </div>
-          <ion-icon name="close" style={{ fontSize: "20px" }}></ion-icon>
+
+          
+            <ion-icon 
+              name="close"
+              style={{ fontSize: "20px",padding:"10px" }}
+              onClick={toggleSidebar}
+            ></ion-icon>
         </div>
-        <div className="sidebar-menu-block">
+        <div className={`sidebar-menu-block `}>
           <div className="sidebar-menu-item">
             <div className="sidebar-menu-item-heading">
               <ion-icon name="caret-down"></ion-icon>
