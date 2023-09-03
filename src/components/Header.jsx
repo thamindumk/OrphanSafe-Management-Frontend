@@ -26,7 +26,7 @@ const Header = () => {
       // change local state
       dispatch(logout());
       // navigate
-      // navigate("/auth/login");
+      navigate("/auth/login");
     } catch (error) {
       toast.error("Error occured! Couldn't logout");
     }
