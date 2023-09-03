@@ -39,6 +39,7 @@ import ViewUserRolesScreen from "./screens/others/ViewUserRolesScreen";
 import CreateParentScreen from "./screens/external-party/CreateParentScreen";
 import RegistrationScreen from "./screens/RegistrationScreen";
 
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<DefaultLayout />}>
