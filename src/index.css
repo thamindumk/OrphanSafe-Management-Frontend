@@ -77,7 +77,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   flex: 1;
-  
+
   bottom: 0;
   top: 48px;
   background-color: white;
@@ -89,32 +89,33 @@ ion-icon {
   cursor: pointer;
 }
 
-
 .my-sidebar.open {
-  width: 250px; 
+  width: 250px;
 }
-
 
 .my-sidebar.closed {
   width: 30px;
-  overflow: hidden; 
-  transition: width 0.3s ease; 
+  overflow: hidden;
+  transition: width 0.3s ease;
 }
 
 @media (max-width: 768px) {
   .my-sidebar {
     width: 30px !important; /* Set the width to 0 to hide the sidebar */
     overflow: hidden; /* Hide any overflowing content */
-    transition: width 0.3s ease; 
+    transition: width 0.3s ease;
     position: inherit; /*avoid overlapping with the nav bar */
   }
-  .my-sidebar.closed {  /* side bar is open therefore close it to expand the side bar*/
+  .my-sidebar.closed {
+    /* side bar is open therefore close it to expand the side bar*/
     width: 100% !important;
     z-index: 1; /*to overlay the side bar*/
     position: absolute;
     overflow-y: scroll;
   }
-  
+  .main-container-section {
+    left: 30px!important;
+  }
 }
 
 .sidebar-header-block {
@@ -293,8 +294,7 @@ ion-icon {
   height: 32px !important;
   font-size: 13px;
 }
-.form-subtitle{
-  
+.form-subtitle {
   font-size: 15px;
   font-weight: 900;
 }

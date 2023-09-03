@@ -47,7 +47,7 @@ const App = () => {
     <>
       <Header />
       <Sidebar />
-      <section className="main-container-section">
+      <section className="main-container-section" id="main-section">
         <div className="container">
           <section>
             <div className="page-main-header">{pageTitle}</div>
