@@ -1,8 +1,9 @@
 import React from 'react'
+import ViewSocialWorkers from "../../components/external-party/ViewSocialWorkers"
 
 const ViewSocialWorkerScreen = () => {
   return (
-    <div>ViewSocialWorkerScreen</div>
+    <ViewSocialWorkers/>
   )
 }
 

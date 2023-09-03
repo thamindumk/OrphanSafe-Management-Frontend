@@ -1,8 +1,9 @@
 import React from 'react'
+import ViewChild from "../../components/child/ViewChild"
 
 const ViewChildProfileScreen = () => {
   return (
-    <div>ViewChildProfileScreen</div>
+    <ViewChild/>
   )
 }
 
