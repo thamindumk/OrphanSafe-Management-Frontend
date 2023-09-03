@@ -2,7 +2,7 @@
   "name": "frontend",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://SandevDewthilina.github.io/OrphanSafe-Management-Frontend",
+  "homepage": "https://sandevdewthilina.github.io/OrphanSafe-Management-Frontend",
   "type": "module",
   "scripts": {
     "dev": "vite",
