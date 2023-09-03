@@ -41,6 +41,11 @@ a:hover {
     height: 48px !important;
   }
 }
+
+.navbar {
+  z-index: 1000;
+}
+
 .navbar-brand img {
   width: 25px !important;
   height: 25px !important;
