@@ -1,0 +1,22 @@
+.role-container {
+    display: flex;
+    justify-content: space-between;
+    min-width: 400px;
+    border: 3px solid #2716e9;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px;
+}
+
+.role-container:hover {
+    border: 3px solid #186eb9;
+}
+
+
+
+  @media (min-width: 1200px) {
+    .col-md-6 {
+      flex:0 0 50% !important;
+      max-width: 50% !important;
+    }
+  }
