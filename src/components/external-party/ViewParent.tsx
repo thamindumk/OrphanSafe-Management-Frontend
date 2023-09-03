@@ -1,6 +1,6 @@
 import "../../index.css"
 import "../../assets/css/staff/dataTable.css"
-import { Button, Col, Form, Row } from "react-bootstrap";
+import { Button, Col, Form, Row, Table } from "react-bootstrap";
 import { MyCard, MyCardBody, MyCardHeader } from "../MyCard";
 import React, { useEffect, useRef } from "react";
 import $ from "jquery"; // Import jQuery
@@ -22,7 +22,7 @@ const ViewParent = () => {
         <MyCardBody>
         
             <div>
-            <table
+            <Table responsive
                   ref={tableRef}
                   id="example"
                   className="row-border"
@@ -85,7 +85,7 @@ const ViewParent = () => {
                       </td>
                     </tr>
                   </tbody>
-            </table>
+            </Table>
             </div>
     </MyCardBody>
     </MyCard>
