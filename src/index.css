@@ -411,3 +411,24 @@ ion-icon {
 }
 
 /* vertical ruler end */
+
+/* Define the button style */
+.blue-button {
+  display: inline-block;
+  padding: 10px 10px;
+  color: #007bff; /* Text color */
+  cursor: pointer;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 18px;
+}
+
+/* table data*/
+td {
+  white-space: pre-line;
+}
+td.wrapped {
+  word-wrap: break-word;
+}
+
+

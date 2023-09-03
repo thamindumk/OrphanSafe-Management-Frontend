@@ -34,7 +34,8 @@ const App = () => {
     "/profile/createProfile": "Create child profile Form",
     "/userRole/createStaff":"Create staff Form",
     "/userRole/createParent": "Create parent Form",
-    "/userRole/createSocialWorker":"Create social worker Form"
+    "/userRole/createSocialWorker":"Create social worker Form",
+    "/cases/viewPendingCases": "Child Profiles"
 
     // Add more path-title mappings as needed
   };
