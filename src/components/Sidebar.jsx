@@ -133,7 +133,7 @@ const Sidebar = () => {
               </div>
               <div className="sidebar-submenu">
                 <LinkContainer to="/cases/viewOngoingCases">
-                  <a className="sidebar-submenu-item">Ongoin cases</a>
+                  <a className="sidebar-submenu-item">Ongoing cases</a>
                 </LinkContainer>
               </div>
               <div className="sidebar-submenu">
@@ -190,7 +190,7 @@ const Sidebar = () => {
               </div>
               <div className="sidebar-submenu">
                 <LinkContainer to="/userRole/viewUserRole">
-                  <a className="sidebar-submenu-item">Edid and delete roles</a>
+                  <a className="sidebar-submenu-item">Edit and delete roles</a>
                 </LinkContainer>
               </div>
             </div>
