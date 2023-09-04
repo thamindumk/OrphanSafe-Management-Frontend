@@ -20,3 +20,21 @@
       max-width: 50% !important;
     }
   }
+
+  .my-btn-blue{
+    border: 3px solid #4032e3 !important;
+  background-color: transparent;
+  color: #3553db !important;
+  font-weight: 900;
+  outline: none !important;
+  padding: 1px 10px !important;
+  border-radius: 3px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+margin-right: 0.5rem!important;
+  }
+
+  .my-btn-blue:hover {
+    background-color: #2781bc20;
+  }

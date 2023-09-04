@@ -1,7 +1,8 @@
 import React from "react";
+import UserRoles from "../../components/others/UserRole"
 
 const ViewUserRolesScreen = () => {
-  return <div>ViewUserRolesScreen</div>;
+  return (<UserRoles/>);
 };
 
 export default ViewUserRolesScreen;
