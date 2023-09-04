@@ -40,6 +40,7 @@ import CreateParentScreen from "./screens/external-party/CreateParentScreen";
 import RegistrationScreen from "./screens/RegistrationScreen";
 import ViewOverallSystemScreen from "./screens/others/ViewOverallSystemScreen";
 import AssignSocialWorkersScreen from "./screens/cases/AssignSocialWorkersScreen";
+import ReceiveFundScreen from "./screens/others/ReceiveFundScreen";
 
 
 const router = createBrowserRouter(
@@ -114,6 +115,7 @@ const router = createBrowserRouter(
         />
 
         <Route path="/cases/AssignSocialWorkers" element={<AssignSocialWorkersScreen />} />
+        <Route path="/funds/ReceiveFunds" element={<ReceiveFundScreen />} />
 
 
       </Route>
