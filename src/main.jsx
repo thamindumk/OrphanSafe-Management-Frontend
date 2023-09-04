@@ -38,7 +38,7 @@ import CreateSocialWorkerScreen from "./screens/external-party/CreateSocialWorke
 import ViewUserRolesScreen from "./screens/others/ViewUserRolesScreen";
 import CreateParentScreen from "./screens/external-party/CreateParentScreen";
 import RegistrationScreen from "./screens/RegistrationScreen";
-
+import ChildOverviewScreen from "./screens/child-profile/ChildOverviewScreen";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -109,6 +109,7 @@ const router = createBrowserRouter(
       <Route element={<AuthApp />}>
         <Route path="/auth/login" element={<LoginScreen />} />
         <Route path="/auth/register" element={<RegistrationScreen />} />
+        <Route path="/auth/profile" element={<ChildOverviewScreen />} />
       </Route>
     </Route>
   )
