@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import ParentDocumentList from "../../components/external-party/ParentDocumentList";
 
 const ViewParentDocumentScreen = () => {
-  return (
-    <div>ViewParentDocumentScreen</div>
-  )
-}
+  return <ParentDocumentList />;
+};
 
-export default ViewParentDocumentScreen
+export default ViewParentDocumentScreen;

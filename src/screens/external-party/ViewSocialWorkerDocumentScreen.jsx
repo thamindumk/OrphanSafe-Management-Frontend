@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import SocialWorkerDocumentList from "../../components/external-party/SocialWorkerDocumentList";
 
 const ViewSocialWorkerDocumentScreen = () => {
-  return (
-    <div>ViewSocialWorkerDocumentScreen</div>
-  )
-}
+  return <SocialWorkerDocumentList />;
+};
 
-export default ViewSocialWorkerDocumentScreen
+export default ViewSocialWorkerDocumentScreen;
