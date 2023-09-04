@@ -354,6 +354,19 @@ ion-icon {
   align-items: center;
 }
 
+.my-btn-primary {
+  border: 3px solid #2e6aca !important;
+  background-color: transparent;
+  color: #2768e0 !important;
+  font-weight: 900;
+  outline: none !important;
+  padding: 1px 10px !important;
+  border-radius: 3px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+}
+
 .my-btn-danger:hover {
   background-color: #ca2e2e20;
 }
@@ -430,5 +443,6 @@ td {
 td.wrapped {
   word-wrap: break-word;
 }
+
 
 
