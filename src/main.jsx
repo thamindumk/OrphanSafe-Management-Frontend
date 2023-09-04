@@ -38,6 +38,8 @@ import CreateSocialWorkerScreen from "./screens/external-party/CreateSocialWorke
 import ViewUserRolesScreen from "./screens/others/ViewUserRolesScreen";
 import CreateParentScreen from "./screens/external-party/CreateParentScreen";
 import RegistrationScreen from "./screens/RegistrationScreen";
+import ViewOverallSystemScreen from "./screens/others/ViewOverallSystemScreen";
+import AssignSocialWorkersScreen from "./screens/cases/AssignSocialWorkersScreen";
 
 
 const router = createBrowserRouter(
@@ -79,6 +81,7 @@ const router = createBrowserRouter(
         />
         <Route path="/cases/viewOngoingCases" element={<ViewOngingCases />} />
         <Route path="/cases/viewPendingCases" element={<ViewPendingCases />} />
+        
         <Route
           path="/report/viewChildReport"
           element={<ViewChildReportScreen />}
@@ -95,6 +98,10 @@ const router = createBrowserRouter(
           path="/report/viewExternalPartyReport"
           element={<ViewExternalPartyReportScreen />}
         />
+        <Route
+          path="/report/viewOverallSystemReport"
+          element={<ViewOverallSystemScreen />}
+        />
         <Route path="/userRole/createStaff" element={<CreateStaffScreen />} />
         <Route path="/userRole/createParent" element={<CreateParentScreen />} />
         <Route
@@ -105,6 +112,10 @@ const router = createBrowserRouter(
           path="/userRole/viewUserRole"
           element={<ViewUserRolesScreen />}
         />
+
+        <Route path="/cases/AssignSocialWorkers" element={<AssignSocialWorkersScreen />} />
+
+
       </Route>
       <Route element={<AuthApp />}>
         <Route path="/auth/login" element={<LoginScreen />} />
