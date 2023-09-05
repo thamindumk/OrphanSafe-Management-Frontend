@@ -26,7 +26,7 @@ jobs:
     runs-on: self-hosted
     steps:
     - name: Get the compose file
-    - uses: actions/checkout@v3
+      uses: actions/checkout@v3
     - name: stop current system
       run: echo "sandevdsic123" | sudo -S sudo docker compose down
     - name: Execute dokcer compose file
