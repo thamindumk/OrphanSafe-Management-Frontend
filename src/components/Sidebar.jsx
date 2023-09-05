@@ -141,6 +141,11 @@ const Sidebar = () => {
                   <a className="sidebar-submenu-item">Pending cases</a>
                 </LinkContainer>
               </div>
+              <div className="sidebar-submenu">
+                <LinkContainer to="/cases/AssignSocialWorkers">
+                  <a className="sidebar-submenu-item">Assign social workers</a>
+                </LinkContainer>
+              </div>
             </div>
             <div className="sidebar-menu-item">
               <div className="sidebar-menu-item-heading">
@@ -165,6 +170,11 @@ const Sidebar = () => {
               <div className="sidebar-submenu">
                 <LinkContainer to="/report/viewExternalPartyReport">
                   <a className="sidebar-submenu-item">External party reports</a>
+                </LinkContainer>
+              </div>
+              <div className="sidebar-submenu">
+                <LinkContainer to="/report/viewOverallSystemReport">
+                  <a className="sidebar-submenu-item">Overall system reports</a>
                 </LinkContainer>
               </div>
             </div>
