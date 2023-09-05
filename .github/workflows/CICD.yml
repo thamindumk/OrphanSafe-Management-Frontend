@@ -9,16 +9,28 @@ on:
 jobs:
 
   build:
-    runs-on: self-hosted
-    
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: echo "sandevdsic123" | sudo -S sudo docker build . --file Dockerfile --tag management-fronend-testbranch-image:latest
-    - name: stop current system
-      run: echo "sandevdsic123" | sudo -S sudo docker compose down
-    - name: Execute dokcer compose file
-      run: echo "sandevdsic123" | sudo -S sudo docker compose up -d
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Build Docker Image
+      run: docker build . -t ${{secrets.DOCKER_USERNAME}}/orphange-management-frontend:latest
+
+    - name: Log in to Docker Hub
+      run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_TOKEN }}
+
+    - name: Push Docker Image to Docker Hub
+      run: docker push ${{secrets.DOCKER_USERNAME}}/orphange-management-frontend:latest
+    
+    #steps:
+    #- uses: actions/checkout@v3
+    #- name: Build the Docker image
+    #  run: echo "sandevdsic123" | sudo -S sudo docker build . --file Dockerfile --tag management-fronend-testbranch-image:latest
+    #- name: stop current system
+    #  run: echo "sandevdsic123" | sudo -S sudo docker compose down
+    #- name: Execute dokcer compose file
+    #  run: echo "sandevdsic123" | sudo -S sudo docker compose up -d
     #- run: npm ci
     #- run: npm run build --if-present
     #- name: Deploy with gh-pages
