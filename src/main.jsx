@@ -82,7 +82,7 @@ const router = createBrowserRouter(
         />
         <Route path="/cases/viewOngoingCases" element={<ViewOngingCases />} />
         <Route path="/cases/viewPendingCases" element={<ViewPendingCases />} />
-        
+
         <Route
           path="/report/viewChildReport"
           element={<ViewChildReportScreen />}
@@ -114,10 +114,11 @@ const router = createBrowserRouter(
           element={<ViewUserRolesScreen />}
         />
 
-        <Route path="/cases/AssignSocialWorkers" element={<AssignSocialWorkersScreen />} />
+        <Route
+          path="/cases/AssignSocialWorkers"
+          element={<AssignSocialWorkersScreen />}
+        />
         <Route path="/funds/ReceiveFunds" element={<ReceiveFundScreen />} />
-
-
       </Route>
       <Route element={<AuthApp />}>
         <Route path="/auth/login" element={<LoginScreen />} />
@@ -136,6 +137,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   </Provider>
 );
 
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./serviceWorker.js')
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("./serviceWorker.js")
+    .then((resp) => console.warn(resp))
+    .catch((e) => console.log(e));
 }
