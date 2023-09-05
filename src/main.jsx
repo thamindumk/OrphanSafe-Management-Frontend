@@ -143,5 +143,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 //     .then((resp) => console.warn(resp))
 //     .catch((e) => console.log(e));
 // }
-
-const worker = new Worker(new URL('./serviceWorker.js', import.meta.url))
