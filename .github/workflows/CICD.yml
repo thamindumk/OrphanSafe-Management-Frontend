@@ -24,6 +24,7 @@ jobs:
       
   deploy:
     runs-on: self-hosted
+    needs: build
     steps:
     - name: Get the compose file
       uses: actions/checkout@v3
