@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import PendingCases from "../../components/cases/PendingCases";
 
 const ViewPendingCases = () => {
   return (
-    <div>ViewPendingCases</div>
+    <PendingCases/>
   )
 }
 

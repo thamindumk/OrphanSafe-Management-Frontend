@@ -354,6 +354,19 @@ ion-icon {
   align-items: center;
 }
 
+.my-btn-primary {
+  border: 3px solid #2e6aca !important;
+  background-color: transparent;
+  color: #2768e0 !important;
+  font-weight: 900;
+  outline: none !important;
+  padding: 1px 10px !important;
+  border-radius: 3px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+}
+
 .my-btn-danger:hover {
   background-color: #ca2e2e20;
 }
@@ -411,3 +424,25 @@ ion-icon {
 }
 
 /* vertical ruler end */
+
+/* Define the button style */
+.blue-button {
+  display: inline-block;
+  padding: 10px 10px;
+  color: #007bff; /* Text color */
+  cursor: pointer;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 18px;
+}
+
+/* table data*/
+td {
+  white-space: pre-line;
+}
+td.wrapped {
+  word-wrap: break-word;
+}
+
+
+

@@ -1,0 +1,108 @@
+.role-container {
+    display: flex;
+    justify-content: space-between;
+    min-width: 400px;
+    border: 3px solid #2716e9;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px;
+}
+
+.role-container:hover {
+    border: 3px solid #186eb9;
+}
+
+
+/* correct the overlapping*/
+  @media (max-width: 1100px) {
+    .col-md-6 {
+      flex:0 0 100% !important;
+      max-width: 100% !important;
+    }
+  }
+
+  .my-btn-blue{
+    border: 3px solid #4032e3 !important;
+  background-color: transparent;
+  color: #3553db !important;
+  font-weight: 900;
+  outline: none !important;
+  padding: 1px 10px !important;
+  border-radius: 3px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+margin-right: 0.5rem!important;
+  }
+
+  .my-btn-blue:hover {
+    background-color: #2781bc20;
+  }
+
+.shadow{
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  height: 200px !important;
+  justify-content:center;
+  align-items: center;
+}
+
+
+.CardItalic{
+  font-size: 12px;
+  color: "#232F3E";
+  font-style: italic;
+}
+.CardNumber{
+  font-size: 45px;
+  color: #293cc7;
+  font-weight: bold;
+}
+.colDec{
+  max-width: fit-content!important;
+}
+.CardRow{
+  padding: 5px;
+}
+.name-headers {
+  font-weight: 700;
+  font-size: 30px;
+  padding-top: 30px;
+  margin-bottom: 5px;
+  margin-left: 30px;
+  color: #ffffff;
+}
+
+.cards {
+  background-color: #f2f4f3;
+  height: 400px;
+  border-color: transparent;
+}
+
+@media (min-width: 1000px) {
+  .col-md-3 {
+    flex:0 0 25% !important;
+    max-width: 25% !important;
+  }
+}
+@media (max-width: 1000px) and (min-width:768px){
+  .col-md-3 {
+    flex:0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+/*Make the cards responsive*/
+@media (max-width: 1000px) and (min-width:567px){
+  .cards {
+    height: 550px !important;
+   
+  }
+}
+
+@media (max-width: 567px) {
+  .cards {
+    height: 950px !important;
+   
+  }
+}
