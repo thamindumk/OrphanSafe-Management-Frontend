@@ -32,3 +32,5 @@ jobs:
       run: echo "sandevdsic123" | sudo -S sudo docker compose down
     - name: Execute docker compose file
       run: echo "sandevdsic123" | sudo -S sudo docker compose up -d
+    - name: Get status
+      run: echo "sandevdsic123" | sudo -S sudo docker compose logs
