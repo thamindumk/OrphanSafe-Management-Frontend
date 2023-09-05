@@ -1,7 +1,7 @@
 {
     "name": "OrphanSafe",
     "short_name": "orphansafe",
-    "start_url": "/",
+    "start_url": ".",
     "icons": [
         {
           "src": "icons/manifest-icon-192.maskable.png",
