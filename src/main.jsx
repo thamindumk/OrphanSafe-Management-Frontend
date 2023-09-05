@@ -10,6 +10,7 @@ import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.js";
 import store from "./store";
+import MyWorker from './serviceWorker?url'
 import { Provider } from "react-redux";
 
 import HomeScreen from "./screens/HomeScreen";
@@ -139,7 +140,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
-    .register("./serviceWorker.js")
+    .register(MyWorker)
     .then((resp) => console.warn(resp))
     .catch((e) => console.log(e));
 }
