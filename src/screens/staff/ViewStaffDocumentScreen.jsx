@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import StaffDocumentList from "../../components/staff/StaffDocumentList";
 
 const ViewStaffDocumentScreen = () => {
-  return (
-    <div>ViewStaffDocumentScreen</div>
-  )
-}
+  return <StaffDocumentList />;
+};
 
-export default ViewStaffDocumentScreen
+export default ViewStaffDocumentScreen;
