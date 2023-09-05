@@ -137,5 +137,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 );
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/serviceWorker.js')
+  navigator.serviceWorker.register('./serviceWorker.js')
 }

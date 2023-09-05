@@ -1,7 +1,7 @@
 {
     "name": "OrphanSafe",
     "short_name": "orphansafe",
-    "start_url": ".",
+    "src_url": ".",
     "icons": [
         {
           "src": "icons/manifest-icon-192.maskable.png",
@@ -30,6 +30,6 @@
       ],
     "theme_color": "#005ed4",
     "background_color": "#FFFFFF",
-    "display": "fullscreen",
+    "display": "standalone",
     "orientation": "portrait"
 }
