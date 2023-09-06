@@ -31,7 +31,7 @@ jobs:
     - name: remove current container
       run: echo "sandevdsic123" | sudo -S sudo docker rm orphansafe-management-frontend-management-frontend-1
     - name: pull new image
-      run: echo "sandevdsic123" | sudo -S sudo docker pull sandevdewthilina/orphange-management-frontend:latest
+      run: echo "sandevdsic123" | sudo -S sudo docker pull sandevdewthilina/orphange-management-frontend
     - name: run new container
       run: echo "sandevdsic123" | sudo -S sudo docker run -p 13000:13000 -d --name orphansafe-management-frontend-management-frontend-1  sandevdewthilina/orphange-management-frontend:latest
     #- name: Get the compose file
