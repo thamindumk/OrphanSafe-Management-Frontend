@@ -53,7 +53,7 @@ export default defineConfig({
             urlPattern: ({ url }) => {
               return true;
             },
-            handler: "NetworkFirst",
+            handler: "NetworkOnly",
           },
         ],
       },
