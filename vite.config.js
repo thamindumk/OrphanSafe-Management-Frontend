@@ -10,7 +10,7 @@ export default defineConfig({
       manifest: {
         name: "OrphanSafe",
         short_name: "orphansafe",
-        description: 'orphansafe child protection authority',
+        description: "orphansafe child protection authority",
         src_url: ".",
         icons: [
           {
@@ -45,8 +45,18 @@ export default defineConfig({
       },
       registerType: "autoUpdate",
       devOptions: {
-        enabled: true
-      }
+        enabled: true,
+      },
+      workbox: {
+        runtimeCaching: [
+          {
+            urlPattern: ({ url }) => {
+              return true;
+            },
+            handler: "NetworkFirst",
+          },
+        ],
+      },
     }),
   ],
   server: {
