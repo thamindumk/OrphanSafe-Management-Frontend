@@ -40,7 +40,7 @@ export default defineConfig({
         ],
         theme_color: "#005ed4",
         background_color: "#FFFFFF",
-        display: "standalone",
+        display: "fullscreen",
         orientation: "portrait",
       },
       registerType: "autoUpdate",
