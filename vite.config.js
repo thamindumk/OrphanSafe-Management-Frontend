@@ -44,7 +44,6 @@ export default defineConfig({
         orientation: "portrait",
       },
       registerType: "autoUpdate",
-      immediate: true,
       devOptions: {
         enabled: true
       }
