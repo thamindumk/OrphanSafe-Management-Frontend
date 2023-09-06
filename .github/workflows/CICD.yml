@@ -26,9 +26,11 @@ jobs:
     runs-on: self-hosted
     needs: build
     steps:
-    - name: stop current system
-      run: echo "sandevdsic123" | sudo -S sudo docker stop $(docker ps -q -f "name=orphansafe-management-frontend-management-frontend-1")
-    - name: stop current system
+    - name: stop current container
+      run: echo "sandevdsic123" | sudo -S sudo docker stop orphansafe-management-frontend-management-frontend-1
+    - name: remove current container
+      run: echo "sandevdsic123" | sudo -S sudo docker rm orphansafe-management-frontend-management-frontend-1
+    - name: run current system
       run: echo "sandevdsic123" | sudo -S sudo docker run -p 13000:13000 -d --name orphansafe-management-frontend-management-frontend-1  sandevdewthilina/orphange-management-frontend:latest
     #- name: Get the compose file
     #  uses: actions/checkout@v3
