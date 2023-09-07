@@ -7,6 +7,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import "./index.css";
+import worker from "./sw.js?worker";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.js";
 import store from "./store";
@@ -143,3 +144,4 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 //     .then((resp) => console.warn(resp))
 //     .catch((e) => console.log(e));
 // }
+const w = new worker();
