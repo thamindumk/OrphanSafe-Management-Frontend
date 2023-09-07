@@ -144,4 +144,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 //     .then((resp) => console.warn(resp))
 //     .catch((e) => console.log(e));
 // }
-const w = new worker();

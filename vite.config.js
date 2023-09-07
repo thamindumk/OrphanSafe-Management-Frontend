@@ -46,8 +46,6 @@ export default defineConfig({
       },
       injectRegister: null,
       strategies: "injectManifest",
-      srcDir: "src",
-      filename: "sw.js",
       devOptions: {
         enabled: true,
         type: "module",
