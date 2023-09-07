@@ -4,7 +4,7 @@ const LOGIN_URL = "/api/users/auth";
 const LOGOUT_URL = "/api/users/logout";
 const determineAppServerKey = () => {
   const vapidPublicKey =
-    "BMaiWL3xba8XUu3789bP_uRPOqLd8qUFHuYTt2mFJgfaJiJ9ItRGQlaPAzJFRg79M2vTcOBTJF-COukmbDQbivE";
+    "BPVHx98dqzkSRetD4yNhIokXd_4tbBjEYcxKS3-3WZhgYWW9h5oVCd9JhI-oHM7Wj2xq4EmvYmpbOxzPeO0vKOo";
   return urlBase64ToUint8Array(vapidPublicKey);
 };
 
