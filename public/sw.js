@@ -4,4 +4,6 @@ self.addEventListener("install", function (event) {
     body: "I Am installed"
   });
 });
+
+
 console.warn("RUN FROM:service worker.js");
