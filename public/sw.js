@@ -1,5 +1,28 @@
+import {
+  cleanupOutdatedCaches,
+  precacheAndRoute,
+} from "workbox-precaching";
+import { clientsClaim } from "workbox-core";
+import { NavigationRoute, registerRoute } from "workbox-routing";
+
 import { initializeApp } from "firebase/app";
 import { getMessaging } from "firebase/messaging/sw";
+
+// self.__WB_MANIFEST is default injection point
+precacheAndRoute(self.__WB_MANIFEST);
+
+// clean old assets
+cleanupOutdatedCaches();
+
+// let allowlist;
+// if (import.meta.env.DEV) {
+//   allowlist = [/^\/$/];
+// }
+
+// // to allow work offline
+// registerRoute(
+//   new NavigationRoute(createHandlerBoundToURL("index.html"), { allowlist })
+// );
 
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyBCEagjVhEeyrLn-gAL4UlQdzcuXlU2xHw",
@@ -13,8 +36,5 @@ const firebaseApp = initializeApp({
 
 const messaging = getMessaging(firebaseApp);
 
-self.addEventListener("install", function (event) {
-  self.skipWaiting();
-});
-
-console.warn("RUN FROM:service worker.js");
+self.skipWaiting();
+clientsClaim();

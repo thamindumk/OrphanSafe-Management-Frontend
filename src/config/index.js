@@ -2,6 +2,7 @@
 // const LOGOUT_URL = "https://auth-service.ecodeit.com/api/users/logout";
 const LOGIN_URL = "/api/users/auth";
 const LOGOUT_URL = "/api/users/logout";
+
 const determineAppServerKey = () => {
   const vapidPublicKey =
     "BPVHx98dqzkSRetD4yNhIokXd_4tbBjEYcxKS3-3WZhgYWW9h5oVCd9JhI-oHM7Wj2xq4EmvYmpbOxzPeO0vKOo";
@@ -22,4 +23,5 @@ const urlBase64ToUint8Array = (base64String) => {
   }
   return outputArray;
 };
+
 export { LOGIN_URL, LOGOUT_URL, determineAppServerKey };
