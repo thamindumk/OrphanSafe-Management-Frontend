@@ -42,6 +42,9 @@ import ChildOverviewScreen from "./screens/child-profile/ChildOverviewScreen";
 import ViewOverallSystemScreen from "./screens/others/ViewOverallSystemScreen";
 import AssignSocialWorkersScreen from "./screens/cases/AssignSocialWorkersScreen";
 import ReceiveFundScreen from "./screens/others/ReceiveFundScreen";
+import StaffOverviewScreen from "./screens/staff/StaffOverviewScreen";
+import ParentOverviewScreen from "./screens/external-party/ParentOverviewScreen";
+import SocialWorkerOverviewScreen from "./screens/external-party/SocialWorkerOverviewScreen";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -52,10 +55,22 @@ const router = createBrowserRouter(
         <Route path="/dashboard" element={<ViewDashboardScreen />} />
         <Route path="/monitoring/viewStaff" element={<ViewStaffScreen />} />
         <Route
+          path="/monitoring/viewStaff/overview"
+          element={<StaffOverviewScreen />}
+        />
+        <Route
           path="/monitoring/viewSocialWorker"
           element={<ViewSocialWorkerScreen />}
         />
+        <Route
+          path="/monitoring/viewSocialWorker/overview"
+          element={<SocialWorkerOverviewScreen />}
+        />
         <Route path="/monitoring/viewParent" element={<ViewParentScreen />} />
+        <Route
+          path="/monitoring/viewParent/overview"
+          element={<ParentOverviewScreen />}
+        />
         <Route
           path="/profile/createProfile"
           element={<CreateChildProfileScreen />}
@@ -63,6 +78,10 @@ const router = createBrowserRouter(
         <Route
           path="/profile/viewProfile"
           element={<ViewChildProfileScreen />}
+        />
+        <Route
+          path="/profile/viewProfile/overview"
+          element={<ChildOverviewScreen />}
         />
         <Route
           path="/legal/viewChildDocument"
@@ -123,7 +142,6 @@ const router = createBrowserRouter(
       <Route element={<AuthApp />}>
         <Route path="/auth/login" element={<LoginScreen />} />
         <Route path="/auth/register" element={<RegistrationScreen />} />
-        <Route path="/auth/profile" element={<ChildOverviewScreen />} />
       </Route>
     </Route>
   )

@@ -1,7 +1,6 @@
 import React from "react";
 import { Form, Table, Row, Col } from "react-bootstrap";
 import { MyCard, MyCardBody, MyCardHeader } from "../../components/MyCard";
-import "../../assets/css/child/child.css";
 
 const ChildProfileContent = () => {
   return (
