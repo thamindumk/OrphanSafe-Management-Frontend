@@ -96,6 +96,8 @@ const LoginScreen = () => {
           <button className="mt-3 my-btn-lg">
             Create a new OrphanSafe account
           </button>
+
+          <small className="mt-3">version 1.0.0</small>
         </div>
       </Form>
     </div>

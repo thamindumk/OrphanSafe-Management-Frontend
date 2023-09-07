@@ -1,7 +1,7 @@
 version: '3.1'
 services:
   management-frontend:
-    image: management-fronend-testbranch-image:latest
+    image: sandevdewthilina/orphange-management-frontend:latest
     # command: npm run dev
     # volumes:
     #   - .:/usr/app/

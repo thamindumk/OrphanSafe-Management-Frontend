@@ -7,15 +7,40 @@ on:
   workflow_dispatch:
 
 jobs:
-
   build:
-    runs-on: self-hosted
-    
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: echo "sandevdsic123" | sudo -S sudo docker build . --file Dockerfile --tag management-fronend-testbranch-image:latest
-    - name: stop current system
-      run: echo "sandevdsic123" | sudo -S sudo docker compose down
-    - name: Execute dokcer compose file
-      run: echo "sandevdsic123" | sudo -S sudo docker compose up -d
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Build Docker Image
+      run: docker build . -t ${{secrets.DOCKER_USERNAME}}/orphange-management-frontend:latest
+
+    - name: Log in to Docker Hub
+      run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_TOKEN }}
+
+    - name: Push Docker Image to Docker Hub
+      run: docker push ${{secrets.DOCKER_USERNAME}}/orphange-management-frontend:latest
+      
+  deploy:
+    runs-on: self-hosted
+    needs: build
+    steps:
+    - name: stop current container
+      run: echo "sandevdsic123" | sudo -S sudo docker stop orphansafe-management-frontend-management-frontend-1
+    - name: remove current container
+      run: echo "sandevdsic123" | sudo -S sudo docker rm orphansafe-management-frontend-management-frontend-1
+    - name: remove current image
+      run: echo "sandevdsic123" | sudo -S sudo docker rmi sandevdewthilina/orphange-management-frontend:latest -f
+    - name: pull new image
+      run: echo "sandevdsic123" | sudo -S sudo docker pull sandevdewthilina/orphange-management-frontend:latest
+    - name: run new container
+      run: echo "sandevdsic123" | sudo -S sudo docker run -p 13000:13000 -d --name orphansafe-management-frontend-management-frontend-1  sandevdewthilina/orphange-management-frontend:latest
+    #- name: Get the compose file
+    #  uses: actions/checkout@v3
+    #- name: stop current system
+    #  run: echo "sandevdsic123" | sudo -S sudo docker compose down
+    #- name: Execute docker compose file
+    #  run: echo "sandevdsic123" | sudo -S sudo docker compose up -d
+    #- name: Get status
+    #  run: echo "sandevdsic123" | sudo -S sudo docker compose logs

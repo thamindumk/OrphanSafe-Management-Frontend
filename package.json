@@ -2,7 +2,7 @@
   "name": "frontend",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://SandevDewthilina.github.io/OrphanSafe-Management-Frontend",
+  "homepage": "https://sandevdewthilina.github.io/OrphanSafe-Management-Frontend",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
@@ -35,6 +35,7 @@
     "eslint-plugin-react-refresh": "^0.3.4",
     "gh-pages": "^6.0.0",
     "vite": "^4.3.2",
-    "vite-plugin-pwa": "^0.16.4"
+    "vite-plugin-pwa": "^0.16.4",
+    "workbox-precaching": "^7.0.0"
   }
 }

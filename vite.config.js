@@ -10,7 +10,8 @@ export default defineConfig({
       manifest: {
         name: "OrphanSafe",
         short_name: "orphansafe",
-        description: 'orphansafe child protection authority',
+        description: "orphansafe child protection authority",
+        start_url: "/",
         src_url: ".",
         icons: [
           {
@@ -43,11 +44,70 @@ export default defineConfig({
         display: "standalone",
         orientation: "portrait",
       },
-      registerType: "autoUpdate",
+      strategies: "injectManifest",
       devOptions: {
-        enabled: true
-      }
+        enabled: true,
+        type: "module",
+        /* other options */
+      },
+      skipWaiting: true,
+      injectManifest: {
+        injectionPoint: undefined,
+      },
     }),
+    // VitePWA({
+    //   manifest: {
+    //     name: "OrphanSafe",
+    //     short_name: "orphansafe",
+    //     description: "orphansafe child protection authority",
+    //     src_url: ".",
+    //     icons: [
+    //       {
+    //         src: "/icons/manifest-icon-192.maskable.png",
+    //         sizes: "192x192",
+    //         type: "image/png",
+    //         purpose: "any",
+    //       },
+    //       {
+    //         src: "/icons/manifest-icon-192.maskable.png",
+    //         sizes: "192x192",
+    //         type: "image/png",
+    //         purpose: "maskable",
+    //       },
+    //       {
+    //         src: "/icons/manifest-icon-512.maskable.png",
+    //         sizes: "512x512",
+    //         type: "image/png",
+    //         purpose: "any",
+    //       },
+    //       {
+    //         src: "/icons/manifest-icon-512.maskable.png",
+    //         sizes: "512x512",
+    //         type: "image/png",
+    //         purpose: "maskable",
+    //       },
+    //     ],
+    //     theme_color: "#005ed4",
+    //     background_color: "#FFFFFF",
+    //     display: "standalone",
+    //     orientation: "portrait",
+    //   },
+    //   registerType: "autoUpdate",
+    //   skipWaiting: true,
+    //   devOptions: {
+    //     enabled: true,
+    //   },
+    //   workbox: {
+    //     runtimeCaching: [
+    //       {
+    //         urlPattern: ({ url }) => {
+    //           return true;
+    //         },
+    //         handler: "NetworkFirst",
+    //       },
+    //     ],
+    //   },
+    // }),
   ],
   server: {
     port: 3000,
