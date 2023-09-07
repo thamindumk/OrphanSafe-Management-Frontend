@@ -43,13 +43,19 @@ export default defineConfig({
         display: "standalone",
         orientation: "portrait",
       },
+      injectRegister: null,
       strategies: "injectManifest",
+      srcDir: 'src',
+      filename: 'sw.js',
       devOptions: {
         enabled: true,
         type: "module",
         /* other options */
       },
       skipWaiting: true,
+      injectManifest: {
+        injectionPoint: undefined
+      }
     }),
     // VitePWA({
     //   manifest: {
