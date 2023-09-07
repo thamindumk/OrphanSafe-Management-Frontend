@@ -7,7 +7,6 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import "./index.css";
-import worker from "./sw.js?worker";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.js";
 import store from "./store";
