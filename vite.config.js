@@ -11,6 +11,7 @@ export default defineConfig({
         name: "OrphanSafe",
         short_name: "orphansafe",
         description: "orphansafe child protection authority",
+        start_url: "/",
         src_url: ".",
         icons: [
           {
@@ -45,8 +46,8 @@ export default defineConfig({
       },
       injectRegister: null,
       strategies: "injectManifest",
-      srcDir: 'src',
-      filename: 'sw.js',
+      srcDir: "src",
+      filename: "sw.js",
       devOptions: {
         enabled: true,
         type: "module",
@@ -54,8 +55,8 @@ export default defineConfig({
       },
       skipWaiting: true,
       injectManifest: {
-        injectionPoint: undefined
-      }
+        injectionPoint: undefined,
+      },
     }),
     // VitePWA({
     //   manifest: {
