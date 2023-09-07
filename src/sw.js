@@ -3,5 +3,5 @@ self.addEventListener("install", function (event) {
 });
 console.warn("RUN:service worker.js");
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/my-sw.js')
+  navigator.serviceWorker.register('./my-sw.js')
 }
