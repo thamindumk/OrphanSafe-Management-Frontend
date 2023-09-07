@@ -139,7 +139,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
 // if ("serviceWorker" in navigator) {
 //   navigator.serviceWorker
-//     .register(MyWorker)
+//     .register('./sw.js')
 //     .then((resp) => console.warn(resp))
 //     .catch((e) => console.log(e));
 // }
