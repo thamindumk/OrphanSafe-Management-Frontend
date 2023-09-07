@@ -45,6 +45,7 @@ export default defineConfig({
         orientation: "portrait",
       },
       strategies: "injectManifest",
+      registerType: "autoUpdate",
       devOptions: {
         enabled: true,
         type: "module",
