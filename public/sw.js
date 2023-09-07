@@ -1,6 +1,4 @@
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function () {
-    console.warn("after load");
-    navigator.serviceWorker.register("./my-sw.js");
-  });
-}
+self.addEventListener("install", function (event) {
+  self.skipWaiting();
+});
+console.warn("RUN FROM:service worker.js");

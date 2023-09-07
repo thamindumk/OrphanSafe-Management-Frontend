@@ -44,7 +44,6 @@ export default defineConfig({
         display: "standalone",
         orientation: "portrait",
       },
-      injectRegister: null,
       strategies: "injectManifest",
       devOptions: {
         enabled: true,
