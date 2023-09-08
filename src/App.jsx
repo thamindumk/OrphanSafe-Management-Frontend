@@ -44,7 +44,10 @@ const App = () => {
     "/monitoring/viewSocialWorker/overview": "Profile Overview",
     "/monitoring/viewParent/overview": "Profile Overview",
     "/cases/AcceptOrRejectCases": "Accept Or Reject Assigned Cases",
-    "/inquiry/CreateInquiry": "Create Inquiry Form"
+    "/inquiry/CreateInquiry": "Create Inquiry Form",
+    "/parent/RequestChildProfile": "Request profiles of children for parents",
+    "/parent/RequestCaseInfo" : "Request case information of children for parents",
+    "/parent/ParentsViewCases": "Parents View Case Information"
 
     // Add more path-title mappings as needed
   };
