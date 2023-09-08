@@ -17,7 +17,7 @@ const ParentDocumentList = () => {
                     <tr>
                       <td className="td">Birth Certificate of Mother</td>
                       <td className="td">
-                        <a href="#" class="blue-button">
+                        <a href="#" className="blue-button">
                           <ViewButton />
                         </a>
                       </td>
@@ -25,7 +25,7 @@ const ParentDocumentList = () => {
                     <tr>
                       <td className="td">Birth Certificate of Father</td>
                       <td className="td">
-                        <a href="#" class="blue-button">
+                        <a href="#" className="blue-button">
                           <ViewButton />
                         </a>
                       </td>
@@ -33,7 +33,7 @@ const ParentDocumentList = () => {
                     <tr>
                       <td className="td">Soft copy of NIC of Mother</td>
                       <td className="td">
-                        <a href="#" class="blue-button">
+                        <a href="#" className="blue-button">
                           <ViewButton />
                         </a>
                       </td>
@@ -41,7 +41,7 @@ const ParentDocumentList = () => {
                     <tr>
                       <td className="td">Soft copy of NIC of Father</td>
                       <td className="td">
-                        <a href="#" class="blue-button">
+                        <a href="#" className="blue-button">
                           <ViewButton />
                         </a>
                       </td>
@@ -49,7 +49,7 @@ const ParentDocumentList = () => {
                     <tr>
                       <td className="td">Marriage Certificate</td>
                       <td className="td">
-                        <a href="#" class="blue-button">
+                        <a href="#" className="blue-button">
                           <ViewButton />
                         </a>
                       </td>
@@ -57,7 +57,7 @@ const ParentDocumentList = () => {
                     <tr>
                       <td className="td">Residence Certificate</td>
                       <td className="td">
-                        <a href="#" class="blue-button">
+                        <a href="#" className="blue-button">
                           <ViewButton />
                         </a>
                       </td>
@@ -65,7 +65,7 @@ const ParentDocumentList = () => {
                     <tr>
                       <td className="td">Salary Paysheet</td>
                       <td className="td">
-                        <a href="#" class="blue-button">
+                        <a href="#" className="blue-button">
                           <ViewButton />
                         </a>
                       </td>

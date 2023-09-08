@@ -17,7 +17,7 @@ const SocialWorkerDocumentList = () => {
                     <tr>
                       <td className="td">Birth Certificate</td>
                       <td className="td">
-                        <a href="#" class="blue-button">
+                        <a href="#" className="blue-button">
                           <ViewButton />
                         </a>
                       </td>
@@ -25,7 +25,7 @@ const SocialWorkerDocumentList = () => {
                     <tr>
                       <td className="td">Soft copy of NIC</td>
                       <td className="td">
-                        <a href="#" class="blue-button">
+                        <a href="#" className="blue-button">
                           <ViewButton />
                         </a>
                       </td>
@@ -33,7 +33,7 @@ const SocialWorkerDocumentList = () => {
                     <tr>
                       <td className="td">Occupation Certificate</td>
                       <td className="td">
-                        <a href="#" class="blue-button">
+                        <a href="#" className="blue-button">
                           <ViewButton />
                         </a>
                       </td>

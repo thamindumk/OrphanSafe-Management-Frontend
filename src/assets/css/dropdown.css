@@ -1,10 +1,16 @@
 .app {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-  }
-  .dropdown-container {
-    width: 250px;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.dropdown-container {
+  width: 250px;
+}
+
+.document-header {
+  margin: 10px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: 400;
+}

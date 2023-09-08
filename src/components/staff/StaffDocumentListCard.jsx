@@ -3,13 +3,13 @@ import { Form, Table, Row, Col } from "react-bootstrap";
 import { MyCard, MyCardBody, MyCardHeader } from "../../components/MyCard";
 import ViewButton from "../Button";
 
-const ChildDocumentList = () => {
+const StaffDocumentListCard = () => {
   return (
     <div>
       <Row>
         <Col sm={12} md={10} lg={10}>
           <MyCard>
-            <MyCardHeader>child Documents</MyCardHeader>
+            <MyCardHeader>Employee Documents</MyCardHeader>
             <MyCardBody>
               <Form>
                 <Table hover style={{ width: "100%" }}>
@@ -23,7 +23,7 @@ const ChildDocumentList = () => {
                       </td>
                     </tr>
                     <tr>
-                      <td className="td">Medical Report</td>
+                      <td className="td">Soft copy of NIC</td>
                       <td className="td">
                         <a href="#" className="blue-button">
                           <ViewButton />
@@ -31,7 +31,7 @@ const ChildDocumentList = () => {
                       </td>
                     </tr>
                     <tr>
-                      <td className="td">Mother's Birth Certificate</td>
+                      <td className="td">Residence Certificate</td>
                       <td className="td">
                         <a href="#" className="blue-button">
                           <ViewButton />
@@ -39,17 +39,7 @@ const ChildDocumentList = () => {
                       </td>
                     </tr>
                     <tr>
-                      <td className="td">Father's Birth Certificate</td>
-                      <td className="td">
-                        <a href="#" className="blue-button">
-                          <ViewButton />
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="td">
-                        Child Protection Authority Certififcate
-                      </td>
+                      <td className="td">Character Certificate</td>
                       <td className="td">
                         <a href="#" className="blue-button">
                           <ViewButton />
@@ -67,4 +57,4 @@ const ChildDocumentList = () => {
   );
 };
 
-export default ChildDocumentList;
+export default StaffDocumentListCard;
