@@ -44,7 +44,11 @@ const App = () => {
     "/monitoring/viewSocialWorker/overview": "Profile Overview",
     "/monitoring/viewParent/overview": "Profile Overview",
     "/cases/AcceptOrRejectCases": "Accept Or Reject Assigned Cases",
-    "/inquiry/CreateInquiry": "Create Inquiry Form"
+    "/inquiry/CreateInquiry": "Create Inquiry Form",
+    "/legal/viewChildDocument": "Child Document",
+    "/legal/viewStaffDocument": "Staff Document",
+    "/legal/viewParentDocument": "Parent Document",
+    "/legal/viewSocialWorkerDocument": "Social Worker Document",
 
     // Add more path-title mappings as needed
   };
@@ -62,7 +66,7 @@ const App = () => {
           <section>
             <div className="page-main-header">{pageTitle}</div>
             <div className="page-sub-header">
-              Select the features provided by the Evision Cloud Platform.
+              Select the features provided by the OrphanSafe Platform.
             </div>
           </section>
           <section className="mt-3 main-page-content">

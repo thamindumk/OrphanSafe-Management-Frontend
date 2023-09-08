@@ -31,7 +31,7 @@ const StaffDocumentList = () => {
       {selectedOption ? (
         <div className="document-header">staff ID : {selectedOption.value}</div>
       ) : (
-        <div className="document-header"></div>
+        <div></div>
       )}
       {selectedOption ? (
         <StaffDocumentListCard />

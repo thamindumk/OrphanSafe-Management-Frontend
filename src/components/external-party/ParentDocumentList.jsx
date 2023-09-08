@@ -1,82 +1,46 @@
-import React from "react";
-import { Form, Table, Row, Col } from "react-bootstrap";
-import { MyCard, MyCardBody, MyCardHeader } from "../../components/MyCard";
-import ViewButton from "../Button";
+import React, { useState } from "react";
+import ParentDocumentListCard from "../../components/external-party/parentDocumentListCard";
+import Select from "react-select";
 
 const ParentDocumentList = () => {
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  const optionList = [
+    { value: "20012", label: "K.D.Lalith" },
+    { value: "19013", label: "R.S.Kumara" },
+    { value: "18014", label: "P.H.Jayasiri" },
+    { value: "20015", label: "Saman" },
+    { value: "20016", label: "Kavindu" },
+  ];
+
+  function handleSelect(data) {
+    setSelectedOption(data);
+  }
   return (
     <div>
-      <Row>
-        <Col sm={12} md={10} lg={10}>
-          <MyCard>
-            <MyCardHeader>Parents Documents</MyCardHeader>
-            <MyCardBody>
-              <Form>
-                <Table hover style={{ width: "100%" }}>
-                  <tbody>
-                    <tr>
-                      <td className="td">Birth Certificate of Mother</td>
-                      <td className="td">
-                        <a href="#" className="blue-button">
-                          <ViewButton />
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="td">Birth Certificate of Father</td>
-                      <td className="td">
-                        <a href="#" className="blue-button">
-                          <ViewButton />
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="td">Soft copy of NIC of Mother</td>
-                      <td className="td">
-                        <a href="#" className="blue-button">
-                          <ViewButton />
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="td">Soft copy of NIC of Father</td>
-                      <td className="td">
-                        <a href="#" className="blue-button">
-                          <ViewButton />
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="td">Marriage Certificate</td>
-                      <td className="td">
-                        <a href="#" className="blue-button">
-                          <ViewButton />
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="td">Residence Certificate</td>
-                      <td className="td">
-                        <a href="#" className="blue-button">
-                          <ViewButton />
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="td">Salary Paysheet</td>
-                      <td className="td">
-                        <a href="#" className="blue-button">
-                          <ViewButton />
-                        </a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </Table>
-              </Form>
-            </MyCardBody>
-          </MyCard>
-        </Col>
-      </Row>
+      <div className="dropdown-container">
+        <Select
+          options={optionList}
+          placeholder="Select the Parent"
+          value={selectedOption}
+          onChange={handleSelect}
+        />
+      </div>
+
+      {selectedOption ? (
+        <div className="document-header">
+          Social Worker ID : {selectedOption.value}
+        </div>
+      ) : (
+        <div></div>
+      )}
+      {selectedOption ? (
+        <ParentDocumentListCard />
+      ) : (
+        <div className="document-header">
+          You didn't select a Parent. Please select one
+        </div>
+      )}
     </div>
   );
 };
