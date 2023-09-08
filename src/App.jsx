@@ -38,7 +38,9 @@ const App = () => {
     "/cases/viewPendingCases": "Child Profiles",
     "/userRole/viewUserRole" : "Delete and edit user roles",
     "/cases/AssignSocialWorkers": "Assign social workers for cases",
-    "/report/viewOverallSystemReport": "Overall system Report"
+    "/report/viewOverallSystemReport": "Overall system Report",
+    "/cases/AcceptOrRejectCases": "Accept Or Reject Assigned Cases",
+    "/inquiry/CreateInquiry": "Create Inquiry Form"
 
     // Add more path-title mappings as needed
   };

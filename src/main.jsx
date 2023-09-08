@@ -42,6 +42,8 @@ import ChildOverviewScreen from "./screens/child-profile/ChildOverviewScreen";
 import ViewOverallSystemScreen from "./screens/others/ViewOverallSystemScreen";
 import AssignSocialWorkersScreen from "./screens/cases/AssignSocialWorkersScreen";
 import ReceiveFundScreen from "./screens/others/ReceiveFundScreen";
+import AcceptRejectCasesScreen from "./screens/cases/AcceptRejectCasesScreen";
+import CreateInquiryScreen from "./screens/others/CreateInquiryScreen";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -118,7 +120,15 @@ const router = createBrowserRouter(
           path="/cases/AssignSocialWorkers"
           element={<AssignSocialWorkersScreen />}
         />
+
+        
+        <Route
+          path="/cases/AcceptOrRejectCases"
+          element={<AcceptRejectCasesScreen />}
+        />
         <Route path="/funds/ReceiveFunds" element={<ReceiveFundScreen />} />
+        <Route path="/inquiry/CreateInquiry" element={<CreateInquiryScreen />} />
+        
       </Route>
       <Route element={<AuthApp />}>
         <Route path="/auth/login" element={<LoginScreen />} />
