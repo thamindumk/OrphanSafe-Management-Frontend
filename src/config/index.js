@@ -1,9 +1,10 @@
 // const LOGIN_URL = "https://auth-service.ecodeit.com/api/users/auth";
 // const LOGOUT_URL = "https://auth-service.ecodeit.com/api/users/logout";
-const LOGIN_URL = "/api/users/auth";
-const LOGOUT_URL = "/api/users/logout";
+export const LOGIN_URL = "/api/users/auth";
+export const LOGOUT_URL = "/api/users/logout";
+export const PATCH_FCM_TOKEN_URL = '/api/notifications/patchToken'
 
-const determineAppServerKey = () => {
+export const determineAppServerKey = () => {
   const vapidPublicKey =
     "BBRtHqulpPja3_U6GUSDwiVjBqVCgHUQiEl0WpiBpIdTtQ7rlLbRnmKoQnrA2Anh-eV5rLHp11_rb8bGgQQNM3U";
   return urlBase64ToUint8Array(vapidPublicKey);
@@ -23,5 +24,3 @@ const urlBase64ToUint8Array = (base64String) => {
   }
   return outputArray;
 };
-
-export { LOGIN_URL, LOGOUT_URL, determineAppServerKey };

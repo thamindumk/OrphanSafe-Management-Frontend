@@ -163,8 +163,12 @@ export default defineConfig({
   server: {
     port: 3000,
     proxy: {
-      "/api": {
+      "/api/users": {
         target: "http://localhost:5000",
+        changeOrigin: true,
+      },
+      "/api/notifications": {
+        target: "http://localhost:5010",
         changeOrigin: true,
       },
     },
