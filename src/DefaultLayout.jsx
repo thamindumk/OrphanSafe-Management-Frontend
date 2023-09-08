@@ -4,12 +4,20 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loader from "./components/Loader";
 import { configureSWWithFCM } from "./lib/firebase";
+import { patchLocalToken } from "./slices/authSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { usePatchTokenMutation } from "./slices/userApiSlice";
 
 const DefaultLayout = () => {
-  const [isLoading, setLoading] = useState(true);
+  const [isPageLoading, setLoading] = useState(true);
+  const [tokenPatch, {isLoading}] = usePatchTokenMutation();
+  const authState = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
 
-  // configure push notifications
-  configureSWWithFCM();
+  if (!isPageLoading) {
+    // configure push notifications
+    configureSWWithFCM(dispatch, authState, {tokenPatch, isLoading}, patchLocalToken)
+  }
 
   useEffect(() => {
     window.onload = () => {
@@ -23,7 +31,11 @@ const DefaultLayout = () => {
     };
   }, []);
 
-  return isLoading ? (
+  useEffect(() => {
+
+  }, [isLoading])
+
+  return isPageLoading ? (
     <Loader />
   ) : (
     <>

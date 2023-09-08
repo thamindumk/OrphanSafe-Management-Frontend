@@ -43,6 +43,8 @@ const App = () => {
     "/monitoring/viewStaff/overview": "Profile Overview",
     "/monitoring/viewSocialWorker/overview": "Profile Overview",
     "/monitoring/viewParent/overview": "Profile Overview",
+    "/cases/AcceptOrRejectCases": "Accept Or Reject Assigned Cases",
+    "/inquiry/CreateInquiry": "Create Inquiry Form"
 
     // Add more path-title mappings as needed
   };
