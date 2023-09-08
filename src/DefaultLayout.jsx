@@ -10,14 +10,9 @@ import { usePatchTokenMutation } from "./slices/userApiSlice";
 
 const DefaultLayout = () => {
   const [isPageLoading, setLoading] = useState(true);
-  const [tokenPatch, {isLoading}] = usePatchTokenMutation();
+  const [tokenPatch, {isLoading, isError}] = usePatchTokenMutation();
   const authState = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-
-  if (!isPageLoading) {
-    // configure push notifications
-    configureSWWithFCM(dispatch, authState, {tokenPatch, isLoading}, patchLocalToken)
-  }
 
   useEffect(() => {
     window.onload = () => {
@@ -33,7 +28,12 @@ const DefaultLayout = () => {
 
   useEffect(() => {
 
-  }, [isLoading])
+    if (!isPageLoading) {
+      // configure push notifications
+      configureSWWithFCM(dispatch, authState, {tokenPatch, isLoading, isError}, patchLocalToken)
+    }
+  
+  }, [isLoading, isPageLoading, dispatch, authState, tokenPatch, patchLocalToken])
 
   return isPageLoading ? (
     <Loader />
