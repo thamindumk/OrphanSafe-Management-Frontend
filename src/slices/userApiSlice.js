@@ -1,5 +1,5 @@
 import { apiSlice } from "./apiSlice";
-import { LOGIN_URL, LOGOUT_URL } from "../config";
+import { LOGIN_URL, LOGOUT_URL, PATCH_FCM_TOKEN_URL } from "../config";
 
 export const userApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
@@ -16,7 +16,14 @@ export const userApiSlice = apiSlice.injectEndpoints({
         method: "POST",
       }),
     }),
+    patchToken: builder.mutation({
+      query: (data) => ({
+        url: PATCH_FCM_TOKEN_URL,
+        method: "PATCH",
+        body: data
+      }),
+    }),
   }),
 });
 
-export const { useLoginMutation, useLogoutMutation } = userApiSlice;
+export const { useLoginMutation, useLogoutMutation, usePatchTokenMutation } = userApiSlice;

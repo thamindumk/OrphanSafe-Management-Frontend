@@ -27,22 +27,31 @@ const App = () => {
   const pathToTitleMap = {
     "/": "Home",
     "/home": "Home Page",
-    "/dashboard":"Dashboard",
-    "/monitoring/viewStaff":"View staff profiles",
-    "/monitoring/viewSocialWorker":"View social worker profiles",
+    "/dashboard": "Dashboard",
+    "/monitoring/viewStaff": "View staff profiles",
+    "/monitoring/viewSocialWorker": "View social worker profiles",
     "/monitoring/viewParent": "View parent profiles",
     "/profile/createProfile": "Create child profile Form",
-    "/userRole/createStaff":"Create staff Form",
+    "/userRole/createStaff": "Create staff Form",
     "/userRole/createParent": "Create parent Form",
-    "/userRole/createSocialWorker":"Create social worker Form",
+    "/userRole/createSocialWorker": "Create social worker Form",
     "/cases/viewPendingCases": "Child Profiles",
-    "/userRole/viewUserRole" : "Delete and edit user roles",
+    "/userRole/viewUserRole": "Delete and edit user roles",
     "/cases/AssignSocialWorkers": "Assign social workers for cases",
-    "/report/viewOverallSystemReport": "Overall system Report"
+    "/report/viewOverallSystemReport": "Overall system Report",
+    "/profile/viewProfile/overview": "Profile Overview",
+    "/monitoring/viewStaff/overview": "Profile Overview",
+    "/monitoring/viewSocialWorker/overview": "Profile Overview",
+    "/monitoring/viewParent/overview": "Profile Overview",
+    "/cases/AcceptOrRejectCases": "Accept Or Reject Assigned Cases",
+    "/inquiry/CreateInquiry": "Create Inquiry Form",
+    "/parent/RequestChildProfile": "Request profiles of children for parents",
+    "/parent/RequestCaseInfo" : "Request case information of children for parents",
+    "/parent/ParentsViewCases": "Parents View Case Information"
 
     // Add more path-title mappings as needed
   };
-// Check if the path exists in the mapping, and if so, set the pageTitle accordingly
+  // Check if the path exists in the mapping, and if so, set the pageTitle accordingly
   if (path in pathToTitleMap) {
     pageTitle = pathToTitleMap[path];
   }

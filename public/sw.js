@@ -36,5 +36,8 @@ const firebaseApp = initializeApp({
 
 const messaging = getMessaging(firebaseApp);
 
+// TODO there is onMessage, onBackgroundMessage callbacks to 
+// instantiate
+
 self.skipWaiting();
 clientsClaim();

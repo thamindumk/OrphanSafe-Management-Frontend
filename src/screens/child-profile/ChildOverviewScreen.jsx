@@ -1,14 +1,14 @@
 import React from "react";
-import ChildProfileIntro from "../../components/child/ChildProfileIntro";
+import ProfileIntro from "../../components/ProfileIntro";
 import ChildProfileContent from "../../components/child/ChildProfileContent";
 
-const childOverviewScreen = () => {
+const ChildOverviewScreen = () => {
   return (
     <div>
-      <ChildProfileIntro />
+      <ProfileIntro />
       <ChildProfileContent />
     </div>
   );
 };
 
-export default childOverviewScreen;
+export default ChildOverviewScreen;
