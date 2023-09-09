@@ -51,6 +51,8 @@ import ExternalPartyApp from "./ExternalPartyApp";
 import RequestChildProfileScreen from "./screens/external-party/RequestChildProfileScreen";
 import RequestCaseInfo from "./screens/external-party/RequestCaseInfoScreen";
 import ParentsViewCasesScreen from "./screens/external-party/ParentsViewCasesScreen";
+import InquiriesBulkResponseScreen from "./screens/others/InquiriesBulkResponseScreen";
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -148,14 +150,11 @@ const router = createBrowserRouter(
           element={<AcceptRejectCasesScreen />}
         />
         <Route path="/funds/ReceiveFunds" element={<ReceiveFundScreen />} />
-        <Route
-          path="/inquiry/CreateInquiry"
-          element={<CreateInquiryScreen />}
-        />
         <Route path="/inquiry/CreateInquiry" element={<CreateInquiryScreen />} />
         <Route path="/parent/RequestChildProfile" element={<RequestChildProfileScreen />} />
         <Route path="/parent/RequestCaseInfo" element={<RequestCaseInfo />} />
         <Route path="/parent/ParentsViewCases" element={<ParentsViewCasesScreen />} />
+        <Route path="/inquiry/InquiriesBulkResponse" element={<InquiriesBulkResponseScreen />} />
        
       </Route>
       <Route element={<AuthApp />}>
