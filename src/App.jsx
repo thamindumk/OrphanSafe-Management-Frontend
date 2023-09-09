@@ -49,7 +49,9 @@ const App = () => {
     "/legal/viewStaffDocument": "Staff Document",
     "/legal/viewParentDocument": "Parent Document",
     "/legal/viewSocialWorkerDocument": "Social Worker Document",
-
+    "/parent/RequestChildProfile": "Request profiles of children for parents",
+    "/parent/RequestCaseInfo" : "Request case information of children for parents",
+    "/parent/ParentsViewCases": "Parents View Case Information"
     // Add more path-title mappings as needed
   };
   // Check if the path exists in the mapping, and if so, set the pageTitle accordingly

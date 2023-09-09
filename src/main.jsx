@@ -48,6 +48,9 @@ import SocialWorkerOverviewScreen from "./screens/external-party/SocialWorkerOve
 import AcceptRejectCasesScreen from "./screens/cases/AcceptRejectCasesScreen";
 import CreateInquiryScreen from "./screens/others/CreateInquiryScreen";
 import ExternalPartyApp from "./ExternalPartyApp";
+import RequestChildProfileScreen from "./screens/external-party/RequestChildProfileScreen";
+import RequestCaseInfo from "./screens/external-party/RequestCaseInfoScreen";
+import ParentsViewCasesScreen from "./screens/external-party/ParentsViewCasesScreen";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -140,7 +143,6 @@ const router = createBrowserRouter(
           path="/cases/AssignSocialWorkers"
           element={<AssignSocialWorkersScreen />}
         />
-
         <Route
           path="/cases/AcceptOrRejectCases"
           element={<AcceptRejectCasesScreen />}
@@ -150,6 +152,11 @@ const router = createBrowserRouter(
           path="/inquiry/CreateInquiry"
           element={<CreateInquiryScreen />}
         />
+        <Route path="/inquiry/CreateInquiry" element={<CreateInquiryScreen />} />
+        <Route path="/parent/RequestChildProfile" element={<RequestChildProfileScreen />} />
+        <Route path="/parent/RequestCaseInfo" element={<RequestCaseInfo />} />
+        <Route path="/parent/ParentsViewCases" element={<ParentsViewCasesScreen />} />
+       
       </Route>
       <Route element={<AuthApp />}>
         <Route path="/auth/login" element={<LoginScreen />} />

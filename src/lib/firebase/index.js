@@ -16,7 +16,7 @@ const firebaseConfig = {
 export const configureSWWithFCM = async (
   dispatch,
   { userInfo, fcmToken },
-  { tokenPatch, isLoading },
+  { tokenPatch, isLoading, isError },
   patchLocalToken
 ) => {
   const firebaseApp = initializeApp(firebaseConfig);
@@ -31,9 +31,8 @@ export const configureSWWithFCM = async (
     if (Notification.permission === "denied") {
       return;
     } else if (Notification.permission === "granted") {
-
-      if (!userInfo || fcmToken) {
-        return
+      if (!userInfo || fcmToken || isError) {
+        return;
       }
       // sync token with server
       if (!isLoading) {
@@ -42,7 +41,7 @@ export const configureSWWithFCM = async (
             "BBRtHqulpPja3_U6GUSDwiVjBqVCgHUQiEl0WpiBpIdTtQ7rlLbRnmKoQnrA2Anh-eV5rLHp11_rb8bGgQQNM3U",
           serviceWorkerRegistration: registration,
         });
-        console.log(currentToken)
+        console.log(currentToken);
         await patchToken(
           dispatch,
           userInfo,
@@ -61,7 +60,7 @@ export const configureSWWithFCM = async (
             applicationServerKey: determineAppServerKey(),
           });
         } catch (error) {
-          toast.error(error.message)
+          toast.error(error.message);
         }
       } else {
         toast.error("PushManager is not supported in this browser.");
