@@ -68,11 +68,11 @@ const ExternalSidebar = () => {
             </div>
             <div className="sidebar-submenu">
               <LinkContainer to="/monitoring/viewStaff">
-                <a className="sidebar-submenu-item">Ongion Cases</a>
+                <a className="sidebar-submenu-item">Ongoing Cases</a>
               </LinkContainer>
             </div>
             <div className="sidebar-submenu">
-              <LinkContainer to="/monitoring/viewSocialWorker">
+              <LinkContainer to="/external/CaseRequest">
                 <a className="sidebar-submenu-item">New case requests</a>
               </LinkContainer>
             </div>
@@ -82,7 +82,7 @@ const ExternalSidebar = () => {
               </LinkContainer>
             </div>
             <div className="sidebar-submenu">
-              <LinkContainer to="/monitoring/viewParent">
+              <LinkContainer to="/external/CreateCaseLog">
                 <a className="sidebar-submenu-item">Create case log</a>
               </LinkContainer>
             </div>

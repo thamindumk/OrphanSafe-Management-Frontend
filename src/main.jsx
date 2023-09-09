@@ -52,7 +52,8 @@ import RequestChildProfileScreen from "./screens/external-party/RequestChildProf
 import RequestCaseInfo from "./screens/external-party/RequestCaseInfoScreen";
 import ParentsViewCasesScreen from "./screens/external-party/ParentsViewCasesScreen";
 import InquiriesBulkResponseScreen from "./screens/others/InquiriesBulkResponseScreen";
-
+import CreateCaseLogsScreen from "./screens/cases/CreateCaseLogsScreen";
+import CaseRequestScreen from "./screens/cases/CaseRequestScreen";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -163,6 +164,8 @@ const router = createBrowserRouter(
       </Route>
       <Route element={<ExternalPartyApp />}>
         <Route path="/external/view" element={<RegistrationScreen />} />
+        <Route path="/external/CreateCaseLog" element={<CreateCaseLogsScreen />} />
+        <Route path="/external/CaseRequest" element={<CaseRequestScreen />} />
       </Route>
     </Route>
   )

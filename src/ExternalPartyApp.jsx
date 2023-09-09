@@ -49,6 +49,9 @@ const ExternalPartyApp = () => {
     "/legal/viewParentDocument": "Parent Document",
     "/legal/viewSocialWorkerDocument": "Social Worker Document",
 
+    "/external/CreateCaseLog":"Create Case Log",
+    "/external/CaseRequest" : "New Case Request",
+
     // Add more path-title mappings as needed
   };
   // Check if the path exists in the mapping, and if so, set the pageTitle accordingly
