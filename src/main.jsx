@@ -47,6 +47,7 @@ import ParentOverviewScreen from "./screens/external-party/ParentOverviewScreen"
 import SocialWorkerOverviewScreen from "./screens/external-party/SocialWorkerOverviewScreen";
 import AcceptRejectCasesScreen from "./screens/cases/AcceptRejectCasesScreen";
 import CreateInquiryScreen from "./screens/others/CreateInquiryScreen";
+import ExternalPartyApp from "./ExternalPartyApp";
 import RequestChildProfileScreen from "./screens/external-party/RequestChildProfileScreen";
 import RequestCaseInfo from "./screens/external-party/RequestCaseInfoScreen";
 import ParentsViewCasesScreen from "./screens/external-party/ParentsViewCasesScreen";
@@ -142,22 +143,27 @@ const router = createBrowserRouter(
           path="/cases/AssignSocialWorkers"
           element={<AssignSocialWorkersScreen />}
         />
-
-
         <Route
           path="/cases/AcceptOrRejectCases"
           element={<AcceptRejectCasesScreen />}
         />
         <Route path="/funds/ReceiveFunds" element={<ReceiveFundScreen />} />
+        <Route
+          path="/inquiry/CreateInquiry"
+          element={<CreateInquiryScreen />}
+        />
         <Route path="/inquiry/CreateInquiry" element={<CreateInquiryScreen />} />
         <Route path="/parent/RequestChildProfile" element={<RequestChildProfileScreen />} />
         <Route path="/parent/RequestCaseInfo" element={<RequestCaseInfo />} />
         <Route path="/parent/ParentsViewCases" element={<ParentsViewCasesScreen />} />
-        
+       
       </Route>
       <Route element={<AuthApp />}>
         <Route path="/auth/login" element={<LoginScreen />} />
         <Route path="/auth/register" element={<RegistrationScreen />} />
+      </Route>
+      <Route element={<ExternalPartyApp />}>
+        <Route path="/external/view" element={<RegistrationScreen />} />
       </Route>
     </Route>
   )
