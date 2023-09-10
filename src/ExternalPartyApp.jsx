@@ -51,6 +51,7 @@ const ExternalPartyApp = () => {
 
     "/external/CreateCaseLog":"Create Case Log",
     "/external/CaseRequest" : "New Case Request",
+    "/external/EditDeleteCaseLog" : "View Edit And Delete Case Logs"
 
     // Add more path-title mappings as needed
   };

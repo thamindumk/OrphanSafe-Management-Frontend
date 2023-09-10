@@ -54,6 +54,7 @@ import ParentsViewCasesScreen from "./screens/external-party/ParentsViewCasesScr
 import InquiriesBulkResponseScreen from "./screens/others/InquiriesBulkResponseScreen";
 import CreateCaseLogsScreen from "./screens/cases/CreateCaseLogsScreen";
 import CaseRequestScreen from "./screens/cases/CaseRequestScreen";
+import EditDeleteCaseLogScreen from "./screens/cases/EditDeleteCaseLogScreen";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -166,6 +167,7 @@ const router = createBrowserRouter(
         <Route path="/external/view" element={<RegistrationScreen />} />
         <Route path="/external/CreateCaseLog" element={<CreateCaseLogsScreen />} />
         <Route path="/external/CaseRequest" element={<CaseRequestScreen />} />
+        <Route path="/external/EditDeleteCaseLog" element={<EditDeleteCaseLogScreen />} />
       </Route>
     </Route>
   )

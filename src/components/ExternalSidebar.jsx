@@ -80,7 +80,7 @@ const ExternalSidebar = () => {
               </LinkContainer>
             </div>
             <div className="sidebar-submenu">
-              <LinkContainer to="/monitoring/viewParent">
+              <LinkContainer to="/external/EditDeleteCaseLog">
                 <a className="sidebar-submenu-item" onClick={closeSidebar}>View case logs</a>
               </LinkContainer>
             </div>
