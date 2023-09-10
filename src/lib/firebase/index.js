@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getMessaging, getToken } from "firebase/messaging";
+import { getMessaging, getToken, onMessage } from "firebase/messaging";
 import { determineAppServerKey } from "../../config";
 import { toast } from "react-toastify";
 
@@ -34,6 +34,13 @@ export const configureSWWithFCM = async (
       if (!userInfo || fcmToken || isError) {
         return;
       }
+
+
+      // foreground message handling
+      onMessage(messaging, ({notification}) => {
+        console.log('foreground Message received. ', notification);
+      });
+
       // sync token with server
       if (!isLoading) {
         const currentToken = await getToken(messaging, {
@@ -81,6 +88,7 @@ const patchToken = async (
   try {
     const res = await tokenPatch({
       userId: userInfo.userId,
+      deviceId: 'web',
       token: token,
     }).unwrap();
     dispatch(patchLocalToken(res.latestToken));

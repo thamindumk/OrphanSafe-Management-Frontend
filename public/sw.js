@@ -6,7 +6,7 @@ import { clientsClaim } from "workbox-core";
 import { NavigationRoute, registerRoute } from "workbox-routing";
 
 import { initializeApp } from "firebase/app";
-import { getMessaging } from "firebase/messaging/sw";
+import { getMessaging, onBackgroundMessage } from "firebase/messaging/sw";
 
 // self.__WB_MANIFEST is default injection point
 precacheAndRoute(self.__WB_MANIFEST);
@@ -38,6 +38,18 @@ const messaging = getMessaging(firebaseApp);
 
 // TODO there is onMessage, onBackgroundMessage callbacks to 
 // instantiate
+// onBackgroundMessage(messaging, function(payload) {
+//   console.log('[firebase-messaging-sw.js] Received background message ', payload);
+//   // Customize notification here
+//   const notificationTitle = 'Background Message Title';
+//   const notificationOptions = {
+//     body: 'Background Message body.',
+//     icon: '/firebase-logo.png'
+//   };
+
+//   self.registration.showNotification(notificationTitle,
+//     notificationOptions);
+// });
 
 self.skipWaiting();
 clientsClaim();
