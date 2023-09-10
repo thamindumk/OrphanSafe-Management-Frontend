@@ -14,6 +14,10 @@ const Sidebar = () => {
     }
   };
 
+  const closeSidebar = () => {
+    setSidebarOpen(true);
+  };
+
   return (
     <section
       className={`sidebar-section ${isSidebarOpen ? "open" : "closed"} `}
@@ -28,7 +32,7 @@ const Sidebar = () => {
             ></ion-icon>
             <div className="d-flex flex-column pl-2">
               <div style={{ fontWeight: 900, fontSize: "15px" }}>
-                OrphanaSafe
+                OrphanSafe
               </div>
               <div
                 style={{
@@ -56,7 +60,7 @@ const Sidebar = () => {
             </div>
             <div className="sidebar-submenu">
               <LinkContainer to="/dashboard">
-                <a className="sidebar-submenu-item">View Dashboard</a>
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>View Dashboard</a>
               </LinkContainer>
             </div>
           </div>
@@ -68,17 +72,17 @@ const Sidebar = () => {
             </div>
             <div className="sidebar-submenu">
               <LinkContainer to="/monitoring/viewStaff">
-                <a className="sidebar-submenu-item">Orphanage staff</a>
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>Orphanage staff</a>
               </LinkContainer>
             </div>
             <div className="sidebar-submenu">
               <LinkContainer to="/monitoring/viewSocialWorker">
-                <a className="sidebar-submenu-item">Social Workers</a>
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>Social Workers</a>
               </LinkContainer>
             </div>
             <div className="sidebar-submenu">
               <LinkContainer to="/monitoring/viewParent">
-                <a className="sidebar-submenu-item">Parent</a>
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>Parent</a>
               </LinkContainer>
             </div>
           </div>
@@ -90,12 +94,12 @@ const Sidebar = () => {
             </div>
             <div className="sidebar-submenu">
               <LinkContainer to="/profile/createProfile">
-                <a className="sidebar-submenu-item">Create profile</a>
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>Create profile</a>
               </LinkContainer>
             </div>
             <div className="sidebar-submenu">
               <LinkContainer to="/profile/viewProfile">
-                <a className="sidebar-submenu-item">View Profiles</a>
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>View Profiles</a>
               </LinkContainer>
             </div>
             <div className="sidebar-menu-item">
@@ -105,24 +109,24 @@ const Sidebar = () => {
               </div>
               <div className="sidebar-submenu">
                 <LinkContainer to="/legal/viewChildDocument">
-                  <a className="sidebar-submenu-item">Child documents</a>
+                  <a className="sidebar-submenu-item" onClick={closeSidebar}>Child documents</a>
                 </LinkContainer>
               </div>
               <div className="sidebar-submenu">
                 <LinkContainer to="/legal/viewStaffDocument">
-                  <a className="sidebar-submenu-item">Staff documents </a>
+                  <a className="sidebar-submenu-item" onClick={closeSidebar}>Staff documents </a>
                 </LinkContainer>
               </div>
               <div className="sidebar-submenu">
                 <LinkContainer to="/legal/viewSocialWorkerDocument">
-                  <a className="sidebar-submenu-item">
+                  <a className="sidebar-submenu-item" onClick={closeSidebar}>
                     Social workers documents{" "}
                   </a>
                 </LinkContainer>
               </div>
               <div className="sidebar-submenu">
                 <LinkContainer to="/legal/viewParentDocument">
-                  <a className="sidebar-submenu-item">Parent documents </a>
+                  <a className="sidebar-submenu-item" onClick={closeSidebar}>Parent documents </a>
                 </LinkContainer>
               </div>
             </div>
@@ -133,17 +137,17 @@ const Sidebar = () => {
               </div>
               <div className="sidebar-submenu">
                 <LinkContainer to="/cases/viewOngoingCases">
-                  <a className="sidebar-submenu-item">Ongoing cases</a>
+                  <a className="sidebar-submenu-item" onClick={closeSidebar}>Ongoing cases</a>
                 </LinkContainer>
               </div>
               <div className="sidebar-submenu">
                 <LinkContainer to="/cases/viewPendingCases">
-                  <a className="sidebar-submenu-item">Pending cases</a>
+                  <a className="sidebar-submenu-item" onClick={closeSidebar}>Pending cases</a>
                 </LinkContainer>
               </div>
               <div className="sidebar-submenu">
                 <LinkContainer to="/cases/AssignSocialWorkers">
-                  <a className="sidebar-submenu-item">Assign social workers</a>
+                  <a className="sidebar-submenu-item" onClick={closeSidebar}>Assign social workers</a>
                 </LinkContainer>
               </div>
             </div>
@@ -154,27 +158,27 @@ const Sidebar = () => {
               </div>
               <div className="sidebar-submenu">
                 <LinkContainer to="/report/viewChildReport">
-                  <a className="sidebar-submenu-item">Child reports</a>
+                  <a className="sidebar-submenu-item" onClick={closeSidebar}>Child reports</a>
                 </LinkContainer>
               </div>
               <div className="sidebar-submenu">
                 <LinkContainer to="/report/viewFinancialReport">
-                  <a className="sidebar-submenu-item">Financial reports</a>
+                  <a className="sidebar-submenu-item" onClick={closeSidebar}>Financial reports</a>
                 </LinkContainer>
               </div>
               <div className="sidebar-submenu">
                 <LinkContainer to="/report/viewStaffReport">
-                  <a className="sidebar-submenu-item">Staff reports</a>
+                  <a className="sidebar-submenu-item" onClick={closeSidebar}>Staff reports</a>
                 </LinkContainer>
               </div>
               <div className="sidebar-submenu">
                 <LinkContainer to="/report/viewExternalPartyReport">
-                  <a className="sidebar-submenu-item">External party reports</a>
+                  <a className="sidebar-submenu-item" onClick={closeSidebar}>External party reports</a>
                 </LinkContainer>
               </div>
               <div className="sidebar-submenu">
                 <LinkContainer to="/report/viewOverallSystemReport">
-                  <a className="sidebar-submenu-item">Overall system reports</a>
+                  <a className="sidebar-submenu-item" onClick={closeSidebar}>Overall system reports</a>
                 </LinkContainer>
               </div>
             </div>
@@ -185,22 +189,22 @@ const Sidebar = () => {
               </div>
               <div className="sidebar-submenu">
                 <LinkContainer to="/userRole/createStaff">
-                  <a className="sidebar-submenu-item">Create Staff</a>
+                  <a className="sidebar-submenu-item" onClick={closeSidebar}>Create Staff</a>
                 </LinkContainer>
               </div>
               <div className="sidebar-submenu">
                 <LinkContainer to="/userRole/createParent">
-                  <a className="sidebar-submenu-item">Create parent</a>
+                  <a className="sidebar-submenu-item" onClick={closeSidebar}>Create parent</a>
                 </LinkContainer>
               </div>
               <div className="sidebar-submenu">
                 <LinkContainer to="/userRole/createSocialWorker">
-                  <a className="sidebar-submenu-item">Create social worker</a>
+                  <a className="sidebar-submenu-item" onClick={closeSidebar}>Create social worker</a>
                 </LinkContainer>
               </div>
               <div className="sidebar-submenu">
                 <LinkContainer to="/userRole/viewUserRole">
-                  <a className="sidebar-submenu-item">Edit and delete roles</a>
+                  <a className="sidebar-submenu-item" onClick={closeSidebar}>Edit and delete roles</a>
                 </LinkContainer>
               </div>
             </div>

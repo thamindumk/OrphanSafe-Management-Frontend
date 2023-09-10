@@ -60,7 +60,7 @@ const ViewStaff = () => {
                   <tr>
                     <td>2</td>
                     <td>
-                      <a href="#">Piyal Gamage</a>
+                      <a href="#">Kasun Gamage</a>
                     </td>
                     <td>Manager</td>
                     <td>piyal@gamil.com</td>

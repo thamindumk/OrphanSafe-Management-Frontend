@@ -47,9 +47,13 @@ import ParentOverviewScreen from "./screens/external-party/ParentOverviewScreen"
 import SocialWorkerOverviewScreen from "./screens/external-party/SocialWorkerOverviewScreen";
 import AcceptRejectCasesScreen from "./screens/cases/AcceptRejectCasesScreen";
 import CreateInquiryScreen from "./screens/others/CreateInquiryScreen";
+import ExternalPartyApp from "./ExternalPartyApp";
 import RequestChildProfileScreen from "./screens/external-party/RequestChildProfileScreen";
 import RequestCaseInfo from "./screens/external-party/RequestCaseInfoScreen";
 import ParentsViewCasesScreen from "./screens/external-party/ParentsViewCasesScreen";
+import InquiriesBulkResponseScreen from "./screens/others/InquiriesBulkResponseScreen";
+import CreateCaseLogsScreen from "./screens/cases/CreateCaseLogsScreen";
+import CaseRequestScreen from "./screens/cases/CaseRequestScreen";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -142,8 +146,6 @@ const router = createBrowserRouter(
           path="/cases/AssignSocialWorkers"
           element={<AssignSocialWorkersScreen />}
         />
-
-
         <Route
           path="/cases/AcceptOrRejectCases"
           element={<AcceptRejectCasesScreen />}
@@ -153,11 +155,17 @@ const router = createBrowserRouter(
         <Route path="/parent/RequestChildProfile" element={<RequestChildProfileScreen />} />
         <Route path="/parent/RequestCaseInfo" element={<RequestCaseInfo />} />
         <Route path="/parent/ParentsViewCases" element={<ParentsViewCasesScreen />} />
-        
+        <Route path="/inquiry/InquiriesBulkResponse" element={<InquiriesBulkResponseScreen />} />
+       
       </Route>
       <Route element={<AuthApp />}>
         <Route path="/auth/login" element={<LoginScreen />} />
         <Route path="/auth/register" element={<RegistrationScreen />} />
+      </Route>
+      <Route element={<ExternalPartyApp />}>
+        <Route path="/external/view" element={<RegistrationScreen />} />
+        <Route path="/external/CreateCaseLog" element={<CreateCaseLogsScreen />} />
+        <Route path="/external/CaseRequest" element={<CaseRequestScreen />} />
       </Route>
     </Route>
   )

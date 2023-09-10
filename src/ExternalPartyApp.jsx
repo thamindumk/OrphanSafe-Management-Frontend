@@ -2,11 +2,10 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Outlet, useNavigate } from "react-router-dom";
 import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
-import { Col } from "react-bootstrap";
+import ExternalSidebar from "./components/ExternalSidebar";
 import { useLocation } from "react-router-dom"; // Import useLocation
 
-const App = () => {
+const ExternalPartyApp = () => {
   const { userInfo } = useSelector((state) => state.auth);
   const navigate = useNavigate();
 
@@ -49,11 +48,10 @@ const App = () => {
     "/legal/viewStaffDocument": "Staff Document",
     "/legal/viewParentDocument": "Parent Document",
     "/legal/viewSocialWorkerDocument": "Social Worker Document",
-    "/parent/RequestChildProfile": "Request profiles of children for parents",
-    "/parent/RequestCaseInfo" : "Request case information of children for parents",
-    "/parent/ParentsViewCases": "Parents View Case Information",
-    "/inquiry/InquiriesBulkResponse": "Bulk response for inquiries",
-    "/socialWorker/EditDeleteCaseLog": "Edit and delete case logs for social workers"
+
+    "/external/CreateCaseLog":"Create Case Log",
+    "/external/CaseRequest" : "New Case Request",
+
     // Add more path-title mappings as needed
   };
   // Check if the path exists in the mapping, and if so, set the pageTitle accordingly
@@ -64,7 +62,7 @@ const App = () => {
   return userInfo ? (
     <>
       <Header />
-      <Sidebar />
+      <ExternalSidebar />
       <section className="main-container-section" id="main-section">
         <div className="container">
           <section>
@@ -91,4 +89,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default ExternalPartyApp;
