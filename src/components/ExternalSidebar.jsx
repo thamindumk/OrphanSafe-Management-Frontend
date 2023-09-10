@@ -13,6 +13,9 @@ const ExternalSidebar = () => {
       main_section.style.left = "250px";
     }
   };
+  const closeSidebar = () => {
+    setSidebarOpen(true);
+  };
 
   return (
     <section
@@ -28,7 +31,7 @@ const ExternalSidebar = () => {
             ></ion-icon>
             <div className="d-flex flex-column pl-2">
               <div style={{ fontWeight: 900, fontSize: "15px" }}>
-                OrphanaSafe
+                OrphanSafe
               </div>
               <div
                 style={{
@@ -56,7 +59,7 @@ const ExternalSidebar = () => {
             </div>
             <div className="sidebar-submenu">
               <LinkContainer to="/dashboard">
-                <a className="sidebar-submenu-item">View Dashboard</a>
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>View Dashboard</a>
               </LinkContainer>
             </div>
           </div>
@@ -68,22 +71,22 @@ const ExternalSidebar = () => {
             </div>
             <div className="sidebar-submenu">
               <LinkContainer to="/monitoring/viewStaff">
-                <a className="sidebar-submenu-item">Ongion Cases</a>
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>Ongoing Cases</a>
               </LinkContainer>
             </div>
             <div className="sidebar-submenu">
-              <LinkContainer to="/monitoring/viewSocialWorker">
-                <a className="sidebar-submenu-item">New case requests</a>
-              </LinkContainer>
-            </div>
-            <div className="sidebar-submenu">
-              <LinkContainer to="/monitoring/viewParent">
-                <a className="sidebar-submenu-item">View case logs</a>
+              <LinkContainer to="/external/CaseRequest">
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>New case requests</a>
               </LinkContainer>
             </div>
             <div className="sidebar-submenu">
               <LinkContainer to="/monitoring/viewParent">
-                <a className="sidebar-submenu-item">Create case log</a>
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>View case logs</a>
+              </LinkContainer>
+            </div>
+            <div className="sidebar-submenu">
+              <LinkContainer to="/external/CreateCaseLog">
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>Create case log</a>
               </LinkContainer>
             </div>
           </div>
@@ -94,7 +97,7 @@ const ExternalSidebar = () => {
             </div>
             <div className="sidebar-submenu">
               <LinkContainer to="/monitoring/viewStaff">
-                <a className="sidebar-submenu-item">Staff chats</a>
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>Staff chats</a>
               </LinkContainer>
             </div>
           </div>
