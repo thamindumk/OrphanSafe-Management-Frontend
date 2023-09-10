@@ -32,7 +32,6 @@ const LoginScreen = () => {
     try {
       const res = await login({ email: email, password: password }).unwrap();
       dispatch(setCredentials(res.userInfo));
-      toast.success("Welcome!");
     } catch (error) {
       toast.error("login error. Please try again!");
     }
