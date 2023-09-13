@@ -159,6 +159,7 @@ const router = createBrowserRouter(
         <Route path="/auth/register" element={<RegistrationScreen />} />
       </Route>
       <Route element={<ExternalPartyApp />}>
+      <Route path="/dashboard/External" element={<ViewDashboardScreen />} />
         <Route path="/external/view" element={<RegistrationScreen />} />
         <Route path="/external/CreateCaseLog" element={<CreateCaseLogsScreen />} />
         <Route path="/external/CaseRequest" element={<CaseRequestScreen />} />
