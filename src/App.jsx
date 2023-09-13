@@ -25,8 +25,8 @@ const App = () => {
 
   // Define a mapping of paths to titles
   const pathToTitleMap = {
-    "/": "Home",
-    "/home": "Home Page",
+    "/": "Dashboard",
+    "/home": "Dashboard",
     "/dashboard": "Dashboard",
     "/monitoring/viewStaff": "View staff profiles",
     "/monitoring/viewSocialWorker": "View social worker profiles",
@@ -53,8 +53,9 @@ const App = () => {
     "/parent/RequestCaseInfo" : "Request case information of children for parents",
     "/parent/ParentsViewCases": "Parents View Case Information",
     "/inquiry/InquiriesBulkResponse": "Bulk response for inquiries",
-    "/socialWorker/EditDeleteCaseLog": "Edit and delete case logs for social workers"
-    // Add more path-title mappings as needed
+    "/socialWorker/EditDeleteCaseLog": "Edit and delete case logs for social workers",
+    "/funds/ReceiveFunds": "Receive Funds"
+    
   };
   // Check if the path exists in the mapping, and if so, set the pageTitle accordingly
   if (path in pathToTitleMap) {
@@ -69,9 +70,11 @@ const App = () => {
         <div className="container">
           <section>
             <div className="page-main-header">{pageTitle}</div>
-            <div className="page-sub-header">
-              Select the features provided by the OrphanSafe Platform.
-            </div>
+            {/* 
+              <div className="page-sub-header">
+                Select the features provided by the OrphanSafe Platform.
+              </div>
+              */}
           </section>
           <section className="mt-3 main-page-content">
             <Outlet />

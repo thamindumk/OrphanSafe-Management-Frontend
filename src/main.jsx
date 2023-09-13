@@ -60,8 +60,8 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<DefaultLayout />}>
       <Route path="/" element={<App />}>
-        <Route index={true} path="/" element={<HomeScreen />} />
-        <Route index={true} path="/home" element={<HomeScreen />} />
+        <Route index={true} path="/" element={<ViewDashboardScreen />} />
+        <Route index={true} path="/home" element={<ViewDashboardScreen />} />
         <Route path="/dashboard" element={<ViewDashboardScreen />} />
         <Route path="/monitoring/viewStaff" element={<ViewStaffScreen />} />
         <Route
@@ -111,6 +111,8 @@ const router = createBrowserRouter(
         />
         <Route path="/cases/viewOngoingCases" element={<ViewOngingCases />} />
         <Route path="/cases/viewPendingCases" element={<ViewPendingCases />} />
+        <Route path="/cases/AssignSocialWorkers"element={<AssignSocialWorkersScreen/>}/>
+        <Route path="/cases/AcceptOrRejectCases" element={<AcceptRejectCasesScreen />}/>
 
         <Route
           path="/report/viewChildReport"
@@ -143,20 +145,13 @@ const router = createBrowserRouter(
           element={<ViewUserRolesScreen />}
         />
 
-        <Route
-          path="/cases/AssignSocialWorkers"
-          element={<AssignSocialWorkersScreen />}
-        />
-        <Route
-          path="/cases/AcceptOrRejectCases"
-          element={<AcceptRejectCasesScreen />}
-        />
+        
+        <Route path="/cases/AcceptOrRejectCases" element={<AcceptRejectCasesScreen />}/>
         <Route path="/funds/ReceiveFunds" element={<ReceiveFundScreen />} />
         <Route path="/inquiry/CreateInquiry" element={<CreateInquiryScreen />} />
-        <Route path="/parent/RequestChildProfile" element={<RequestChildProfileScreen />} />
-        <Route path="/parent/RequestCaseInfo" element={<RequestCaseInfo />} />
-        <Route path="/parent/ParentsViewCases" element={<ParentsViewCasesScreen />} />
         <Route path="/inquiry/InquiriesBulkResponse" element={<InquiriesBulkResponseScreen />} />
+        
+        
        
       </Route>
       <Route element={<AuthApp />}>
@@ -168,6 +163,9 @@ const router = createBrowserRouter(
         <Route path="/external/CreateCaseLog" element={<CreateCaseLogsScreen />} />
         <Route path="/external/CaseRequest" element={<CaseRequestScreen />} />
         <Route path="/external/EditDeleteCaseLog" element={<EditDeleteCaseLogScreen />} />
+        <Route path="/parent/RequestChildProfile" element={<RequestChildProfileScreen />} />
+        <Route path="/parent/RequestCaseInfo" element={<RequestCaseInfo />} />
+        <Route path="/parent/ParentsViewCases" element={<ParentsViewCasesScreen />} />
       </Route>
     </Route>
   )

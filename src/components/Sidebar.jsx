@@ -141,13 +141,13 @@ const Sidebar = () => {
                 </LinkContainer>
               </div>
               <div className="sidebar-submenu">
-                <LinkContainer to="/cases/viewPendingCases">
-                  <a className="sidebar-submenu-item" onClick={closeSidebar}>Pending cases</a>
+                <LinkContainer to="/cases/AcceptOrRejectCases">
+                  <a className="sidebar-submenu-item" onClick={closeSidebar}>Case invitations</a>
                 </LinkContainer>
               </div>
               <div className="sidebar-submenu">
                 <LinkContainer to="/cases/AssignSocialWorkers">
-                  <a className="sidebar-submenu-item" onClick={closeSidebar}>Assign social workers</a>
+                  <a className="sidebar-submenu-item" onClick={closeSidebar}>Create Cases</a>
                 </LinkContainer>
               </div>
             </div>
@@ -208,6 +208,55 @@ const Sidebar = () => {
                 </LinkContainer>
               </div>
             </div>
+            <div className="sidebar-menu-item">
+            <div className="sidebar-menu-item-heading">
+              <ion-icon name="caret-down"></ion-icon>
+              <div>Inquiries</div>
+            </div>
+            <div className="sidebar-submenu">
+              <LinkContainer to="/inquiry/CreateInquiry">
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>Create Inquiry</a>
+              </LinkContainer>
+            </div>
+            <div className="sidebar-submenu">
+              <LinkContainer to="/inquiry/InquiriesBulkResponse">
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>Bulk response</a>
+              </LinkContainer>
+            </div>
+          </div>
+          <div className="sidebar-menu-item">
+            <div className="sidebar-menu-item-heading">
+              <ion-icon name="caret-down"></ion-icon>
+              <div>Funds</div>
+            </div>
+            <div className="sidebar-submenu">
+              <LinkContainer to="/funds/ReceiveFunds">
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>Receive Funds</a>
+              </LinkContainer>
+            </div>
+          </div>
+          <div className="sidebar-menu-item">
+            <div className="sidebar-menu-item-heading">
+              <ion-icon name="caret-down"></ion-icon>
+              <div>Communication</div>
+            </div>
+            <div className="sidebar-submenu">
+              <LinkContainer to="/monitoring/viewStaff">
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>Staff chats</a>
+              </LinkContainer>
+            </div>
+          </div>
+          <div className="sidebar-menu-item">
+            <div className="sidebar-menu-item-heading">
+              <ion-icon name="caret-down"></ion-icon>
+              <div>Approvals</div>
+            </div>
+            <div className="sidebar-submenu">
+              <LinkContainer to="/monitoring/viewStaff">
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>Overall approvals</a>
+              </LinkContainer>
+            </div>
+          </div>
           </div>
         </div>
       </div>
