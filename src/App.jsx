@@ -58,6 +58,7 @@ const App = () => {
       "Edit and delete case logs for social workers",
     "/cases/viewOngoingCases": "Ongoing cases",
     "/cases/viewOngoingCases/overview": "Case Overview",
+    "/editProfile": "your profile",
 
     // Add more path-title mappings as needed
   };

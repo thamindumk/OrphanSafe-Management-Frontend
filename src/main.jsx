@@ -56,6 +56,7 @@ import CreateCaseLogsScreen from "./screens/cases/CreateCaseLogsScreen";
 import CaseRequestScreen from "./screens/cases/CaseRequestScreen";
 import EditDeleteCaseLogScreen from "./screens/cases/EditDeleteCaseLogScreen";
 import CaseOverViewScreen from "./screens/cases/CaseOverViewScreen";
+import EditProfile from "./screens/others/EditProfile";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -174,6 +175,7 @@ const router = createBrowserRouter(
           path="/inquiry/InquiriesBulkResponse"
           element={<InquiriesBulkResponseScreen />}
         />
+        <Route path="/editProfile" element={<EditProfile />} />
       </Route>
       <Route element={<AuthApp />}>
         <Route path="/auth/login" element={<LoginScreen />} />
