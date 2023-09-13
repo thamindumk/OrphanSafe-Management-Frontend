@@ -55,6 +55,7 @@ import InquiriesBulkResponseScreen from "./screens/others/InquiriesBulkResponseS
 import CreateCaseLogsScreen from "./screens/cases/CreateCaseLogsScreen";
 import CaseRequestScreen from "./screens/cases/CaseRequestScreen";
 import EditDeleteCaseLogScreen from "./screens/cases/EditDeleteCaseLogScreen";
+import CaseOverViewScreen from "./screens/cases/CaseOverViewScreen";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -111,6 +112,10 @@ const router = createBrowserRouter(
         />
         <Route path="/cases/viewOngoingCases" element={<ViewOngingCases />} />
         <Route path="/cases/viewPendingCases" element={<ViewPendingCases />} />
+        <Route
+          path="/cases/viewOngoingCases/overview"
+          element={<CaseOverViewScreen />}
+        />
 
         <Route
           path="/report/viewChildReport"
@@ -152,12 +157,23 @@ const router = createBrowserRouter(
           element={<AcceptRejectCasesScreen />}
         />
         <Route path="/funds/ReceiveFunds" element={<ReceiveFundScreen />} />
-        <Route path="/inquiry/CreateInquiry" element={<CreateInquiryScreen />} />
-        <Route path="/parent/RequestChildProfile" element={<RequestChildProfileScreen />} />
+        <Route
+          path="/inquiry/CreateInquiry"
+          element={<CreateInquiryScreen />}
+        />
+        <Route
+          path="/parent/RequestChildProfile"
+          element={<RequestChildProfileScreen />}
+        />
         <Route path="/parent/RequestCaseInfo" element={<RequestCaseInfo />} />
-        <Route path="/parent/ParentsViewCases" element={<ParentsViewCasesScreen />} />
-        <Route path="/inquiry/InquiriesBulkResponse" element={<InquiriesBulkResponseScreen />} />
-       
+        <Route
+          path="/parent/ParentsViewCases"
+          element={<ParentsViewCasesScreen />}
+        />
+        <Route
+          path="/inquiry/InquiriesBulkResponse"
+          element={<InquiriesBulkResponseScreen />}
+        />
       </Route>
       <Route element={<AuthApp />}>
         <Route path="/auth/login" element={<LoginScreen />} />
@@ -165,9 +181,15 @@ const router = createBrowserRouter(
       </Route>
       <Route element={<ExternalPartyApp />}>
         <Route path="/external/view" element={<RegistrationScreen />} />
-        <Route path="/external/CreateCaseLog" element={<CreateCaseLogsScreen />} />
+        <Route
+          path="/external/CreateCaseLog"
+          element={<CreateCaseLogsScreen />}
+        />
         <Route path="/external/CaseRequest" element={<CaseRequestScreen />} />
-        <Route path="/external/EditDeleteCaseLog" element={<EditDeleteCaseLogScreen />} />
+        <Route
+          path="/external/EditDeleteCaseLog"
+          element={<EditDeleteCaseLogScreen />}
+        />
       </Route>
     </Route>
   )

@@ -114,7 +114,7 @@ ion-icon {
     overflow-y: scroll;
   }
   .main-container-section {
-    left: 30px!important;
+    left: 30px !important;
   }
 }
 
@@ -443,6 +443,3 @@ td {
 td.wrapped {
   word-wrap: break-word;
 }
-
-
-
