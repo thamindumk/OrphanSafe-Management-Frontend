@@ -252,7 +252,7 @@ const Sidebar = () => {
               <div>Approvals</div>
             </div>
             <div className="sidebar-submenu">
-              <LinkContainer to="/monitoring/viewStaff">
+              <LinkContainer to="/approval/OverallApproval">
                 <a className="sidebar-submenu-item" onClick={closeSidebar}>Overall approvals</a>
               </LinkContainer>
             </div>
