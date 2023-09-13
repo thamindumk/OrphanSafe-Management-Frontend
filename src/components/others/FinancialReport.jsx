@@ -5,13 +5,13 @@ import "../../assets/css/dashbord/dashboard.css"
 
 
 
-const ViewOverallSystem = () => {
+const FinancialReport = () => {
     return (
     <div className="responsive">
       <Row style={{marginBottom: "10px"}}>
       <Col sm={6} >
         <MyCard>
-        <MyCardHeader>Overall System  Reports </MyCardHeader>
+        <MyCardHeader>Financial Reports </MyCardHeader>
         <MyCardBody>
          
         <div className="d-flex flex-wrap">
@@ -20,8 +20,8 @@ const ViewOverallSystem = () => {
                       className="role-container-left d-flex flex-column justify-content-between mr-3"
                     >
                       <div>
-                        <div style={{fontsize: "15px",fontWeight: "900" }}>Annual Data Report</div>
-                        <div style={{ fontSize: "12px", fontWeight: "500", color: "#232F3E" }}>An orphanage may produce an annual report that combines financial, operational, and impact data to provide a comprehensive overview of its activities</div>
+                        <div style={{fontsize: "15px",fontWeight: "900" }}>Cash Flow Report</div>
+                        <div style={{ fontSize: "12px", fontWeight: "500", color: "#232F3E" }}>This report tracks the inflow and outflow of cash and cash equivalents during a given period.</div>
                       </div>
                       
                     </div>
@@ -39,8 +39,8 @@ const ViewOverallSystem = () => {
                       className="role-container-left d-flex flex-column justify-content-between mr-3"
                     >
                       <div>
-                        <div style={{fontsize: "15px",fontWeight: "900" }}>Case Management Report</div>
-                        <div style={{ fontSize: "12px", fontWeight: "500", color: "#232F3E" }}>Case management reports are used for children under the care of child protection agencies or social services.</div>
+                        <div style={{fontsize: "15px",fontWeight: "900" }}>Reserve Fund Report</div>
+                        <div style={{ fontSize: "12px", fontWeight: "500", color: "#232F3E" }}>his report tracks the balance and utilization of reserve funds or contingency funds set aside for emergencies or future needs.</div>
                       </div>
                       
                     </div>
@@ -58,10 +58,8 @@ const ViewOverallSystem = () => {
                       className="role-container-left d-flex flex-column justify-content-between mr-3"
                     >
                       <div>
-                        <div style={{fontsize: "15px",fontWeight: "900" }}>Staffing and Human Resources Report</div>
-                        <div style={{ fontSize: "12px", fontWeight: "500", color: "#232F3E" }}>Summarizes staffing levels, turnover rates, training, and performance appraisals of staff members, ensuring effective workforce management.
-
-Facility and Infrastructure Report: Details the condition, maintenance, and safety of the </div>
+                        <div style={{fontsize: "15px",fontWeight: "900" }}>Annual Financial Report</div>
+                        <div style={{ fontSize: "12px", fontWeight: "500", color: "#232F3E" }}>An annual report provides a comprehensive overview of the orphanage's financial activities, achievements, and challenges, often including narrative sections and visual elements for stakeholders.</div>
                       </div>
                       
                     </div>
@@ -79,10 +77,8 @@ Facility and Infrastructure Report: Details the condition, maintenance, and safe
                       className="role-container-left d-flex flex-column justify-content-between mr-3"
                     >
                       <div>
-                        <div style={{fontsize: "15px",fontWeight: "900" }}>Staffing and Human Resources Report</div>
-                        <div style={{ fontSize: "12px", fontWeight: "500", color: "#232F3E" }}>Summarizes staffing levels, turnover rates, training, and performance appraisals of staff members, ensuring effective workforce management.
-
-Facility and Infrastructure Report: Details the condition, maintenance, and safety of the </div>
+                        <div style={{fontsize: "15px",fontWeight: "900" }}>Impact Report</div>
+                        <div style={{ fontSize: "12px", fontWeight: "500", color: "#232F3E" }}>This reports highlight the positive impact of the orphanage's programs and services on the children's lives. </div>
                       </div>
                       
                     </div>
@@ -109,4 +105,4 @@ Facility and Infrastructure Report: Details the condition, maintenance, and safe
       
     );
   };
-  export default ViewOverallSystem;
+  export default FinancialReport;

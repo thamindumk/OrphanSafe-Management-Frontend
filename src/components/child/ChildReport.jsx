@@ -5,13 +5,13 @@ import "../../assets/css/dashbord/dashboard.css"
 
 
 
-const ViewOverallSystem = () => {
+const ChildReport = () => {
     return (
     <div className="responsive">
       <Row style={{marginBottom: "10px"}}>
       <Col sm={6} >
         <MyCard>
-        <MyCardHeader>Overall System  Reports </MyCardHeader>
+        <MyCardHeader>Child Reports </MyCardHeader>
         <MyCardBody>
          
         <div className="d-flex flex-wrap">
@@ -20,8 +20,8 @@ const ViewOverallSystem = () => {
                       className="role-container-left d-flex flex-column justify-content-between mr-3"
                     >
                       <div>
-                        <div style={{fontsize: "15px",fontWeight: "900" }}>Annual Data Report</div>
-                        <div style={{ fontSize: "12px", fontWeight: "500", color: "#232F3E" }}>An orphanage may produce an annual report that combines financial, operational, and impact data to provide a comprehensive overview of its activities</div>
+                        <div style={{fontsize: "15px",fontWeight: "900" }}>Child Profile Report</div>
+                        <div style={{ fontSize: "12px", fontWeight: "500", color: "#232F3E" }}>This report contains detailed information about each child, including their name, date of birth, gender, medical history, and any special needs or requirements.</div>
                       </div>
                       
                     </div>
@@ -39,8 +39,8 @@ const ViewOverallSystem = () => {
                       className="role-container-left d-flex flex-column justify-content-between mr-3"
                     >
                       <div>
-                        <div style={{fontsize: "15px",fontWeight: "900" }}>Case Management Report</div>
-                        <div style={{ fontSize: "12px", fontWeight: "500", color: "#232F3E" }}>Case management reports are used for children under the care of child protection agencies or social services.</div>
+                        <div style={{fontsize: "15px",fontWeight: "900" }}>Admission and Discharge Report</div>
+                        <div style={{ fontSize: "12px", fontWeight: "500", color: "#232F3E" }}> It tracks the admission and discharge of children from the orphanage, including the reasons for admission and discharge and any legal or administrative details.</div>
                       </div>
                       
                     </div>
@@ -58,10 +58,8 @@ const ViewOverallSystem = () => {
                       className="role-container-left d-flex flex-column justify-content-between mr-3"
                     >
                       <div>
-                        <div style={{fontsize: "15px",fontWeight: "900" }}>Staffing and Human Resources Report</div>
-                        <div style={{ fontSize: "12px", fontWeight: "500", color: "#232F3E" }}>Summarizes staffing levels, turnover rates, training, and performance appraisals of staff members, ensuring effective workforce management.
-
-Facility and Infrastructure Report: Details the condition, maintenance, and safety of the </div>
+                        <div style={{fontsize: "15px",fontWeight: "900" }}>Educational Progress Report</div>
+                        <div style={{ fontSize: "12px", fontWeight: "500", color: "#232F3E" }}>For orphanages that provide education services, this report tracks the academic progress of each child, including attendance, grades, and any additional educational support provided.</div>
                       </div>
                       
                     </div>
@@ -79,10 +77,8 @@ Facility and Infrastructure Report: Details the condition, maintenance, and safe
                       className="role-container-left d-flex flex-column justify-content-between mr-3"
                     >
                       <div>
-                        <div style={{fontsize: "15px",fontWeight: "900" }}>Staffing and Human Resources Report</div>
-                        <div style={{ fontSize: "12px", fontWeight: "500", color: "#232F3E" }}>Summarizes staffing levels, turnover rates, training, and performance appraisals of staff members, ensuring effective workforce management.
-
-Facility and Infrastructure Report: Details the condition, maintenance, and safety of the </div>
+                        <div style={{fontsize: "15px",fontWeight: "900" }}>Child Development Assessment Report</div>
+                        <div style={{ fontSize: "12px", fontWeight: "500", color: "#232F3E" }}>This report assesses the developmental milestones and progress of each child in areas such as physical, emotional, cognitive, and social development.</div>
                       </div>
                       
                     </div>
@@ -109,4 +105,4 @@ Facility and Infrastructure Report: Details the condition, maintenance, and safe
       
     );
   };
-  export default ViewOverallSystem;
+  export default ChildReport;
