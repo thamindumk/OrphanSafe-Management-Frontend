@@ -69,13 +69,9 @@ const ExternalSidebar = () => {
               <ion-icon name="caret-down"></ion-icon>
               <div>Social Workers</div>
             </div>
+            
             <div className="sidebar-submenu">
-              <LinkContainer to="/monitoring/viewStaff">
-                <a className="sidebar-submenu-item" onClick={closeSidebar}>Ongoing Cases</a>
-              </LinkContainer>
-            </div>
-            <div className="sidebar-submenu">
-              <LinkContainer to="/external/EditDeleteCaseLog">
+              <LinkContainer to="/external/OngoingCases">
                 <a className="sidebar-submenu-item" onClick={closeSidebar}>View case logs</a>
               </LinkContainer>
             </div>

@@ -53,7 +53,9 @@ const OverallApproval = () => {
                   <td><LinkContainer to="/monitoring/viewSocialWorker/overview">
                       <a href="#">Kalum Gamage</a>
                     </LinkContainer></td>
-                  <td>Get an idea about the cases related to the child</td>
+                  <td><LinkContainer to="/cases/viewPendingCases">
+                      <a href="#">Get an idea about the cases related to the child</a>
+                    </LinkContainer></td>
                   <td><button className="my-btn mr-2">Approve</button></td>
                   <td>
                   <button className="my-btn-danger">Reject</button>
@@ -70,7 +72,9 @@ const OverallApproval = () => {
                   <td><LinkContainer to="/monitoring/viewSocialWorker/overview">
                       <a href="#">Kalum Gamage</a>
                     </LinkContainer></td>
-                  <td>Get an idea about the cases related to the child</td>
+                  <td><LinkContainer to="/cases/viewPendingCases">
+                      <a href="#">Get an idea about the cases related to the child</a>
+                    </LinkContainer></td>
                   <td><button className="my-btn mr-2">Approve</button></td>
                   <td>
                   <button className="my-btn-danger">Reject</button>
@@ -87,7 +91,9 @@ const OverallApproval = () => {
                   <td><LinkContainer to="/monitoring/viewSocialWorker/overview">
                       <a href="#">Kalum Gamage</a>
                     </LinkContainer></td>
-                  <td>Get an idea about the cases related to the child</td>
+                  <td><LinkContainer to="/cases/viewPendingCases">
+                      <a href="#">Get an idea about the cases related to the child</a>
+                    </LinkContainer></td>
                   <td><button className="my-btn mr-2">Approve</button></td>
                   <td>
                   <button className="my-btn-danger">Reject</button>
@@ -104,7 +110,9 @@ const OverallApproval = () => {
                   <td><LinkContainer to="/monitoring/viewSocialWorker/overview">
                       <a href="#">Kalum Gamage</a>
                     </LinkContainer></td>
-                  <td>Get an idea about the cases related to the child</td>
+                  <td><LinkContainer to="/cases/viewPendingCases">
+                      <a href="#">Get an idea about the cases related to the child</a>
+                    </LinkContainer></td>
                   <td><button className="my-btn mr-2">Approve</button></td>
                   <td>
                   <button className="my-btn-danger">Reject</button>
@@ -153,7 +161,9 @@ const OverallApproval = () => {
                   <td><LinkContainer to="/monitoring/viewSocialWorker/overview">
                       <a href="#">Piyal Gamage</a>
                     </LinkContainer></td>
-                  <td>request to check child details for adoption</td>
+                  <td><LinkContainer to="/cases/viewPendingCases">
+                      <a href="#">request to check child details for adoption</a>
+                    </LinkContainer></td>
                   <td><button className="my-btn mr-2">Approve</button></td>
                   <td>
                   <button className="my-btn-danger">Reject</button>
@@ -170,7 +180,11 @@ const OverallApproval = () => {
                   <td><LinkContainer to="/monitoring/viewSocialWorker/overview">
                       <a href="#">Piyal Gamage</a>
                     </LinkContainer></td>
-                  <td>request to check child details for adoption</td>
+                  <td>
+                  <LinkContainer to="/cases/viewPendingCases">
+                      <a href="#">request to check child details for adoption</a>
+                    </LinkContainer>
+                  </td>
                   <td><button className="my-btn mr-2">Approve</button></td>
                   <td>
                   <button className="my-btn-danger">Reject</button>
@@ -187,7 +201,9 @@ const OverallApproval = () => {
                   <td><LinkContainer to="/monitoring/viewSocialWorker/overview">
                       <a href="#">Piyal Gamage</a>
                     </LinkContainer></td>
-                  <td>request to check child details for adoption</td>
+                  <td><LinkContainer to="/cases/viewPendingCases">
+                      <a href="#">request to check child details for adoption</a>
+                    </LinkContainer></td>
                   <td><button className="my-btn mr-2">Approve</button></td>
                   <td>
                   <button className="my-btn-danger">Reject</button>
@@ -204,7 +220,9 @@ const OverallApproval = () => {
                   <td><LinkContainer to="/monitoring/viewSocialWorker/overview">
                       <a href="#">Piyal Gamage</a>
                     </LinkContainer></td>
-                  <td>request to check child details for adoption</td>
+                  <td><LinkContainer to="/cases/viewPendingCases">
+                      <a href="#">request to check child details for adoption</a>
+                    </LinkContainer></td>
                   <td><button className="my-btn mr-2">Approve</button></td>
                   <td>
                   <button className="my-btn-danger">Reject</button>
@@ -242,16 +260,18 @@ const OverallApproval = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
+              <tr>
                   <td>1092</td>
                   <td>
-                    <LinkContainer to="/monitoring/viewSocialWorker/overview">
-                      <a href="#">Sunil Perera</a>
-                    </LinkContainer>
+                    Sunil Perera
                   </td>
                   <td>2023/12/02</td>
                   <td>Rs.30,000</td>
-                  <td>Donation for renovation of little dreams orphanage</td>
+                  <td>
+                  <LinkContainer to="/cases/viewPendingCases">
+                      <a href="#">Donation for renovation of little dreams orphanage</a>
+                    </LinkContainer>
+                  </td>
                   <td><button className="my-btn mr-2">Approve</button></td>
                   <td>
                   <button className="my-btn-danger">Reject</button>
@@ -260,13 +280,15 @@ const OverallApproval = () => {
                 <tr>
                   <td>1092</td>
                   <td>
-                    <LinkContainer to="/monitoring/viewSocialWorker/overview">
-                      <a href="#">Sunil Perera</a>
-                    </LinkContainer>
+                    Sunil Perera
                   </td>
                   <td>2023/12/02</td>
                   <td>Rs.30,000</td>
-                  <td>Donation for renovation of little dreams orphanage</td>
+                  <td>
+                  <LinkContainer to="/cases/viewPendingCases">
+                      <a href="#">Donation for renovation of little dreams orphanage</a>
+                    </LinkContainer>
+                  </td>
                   <td><button className="my-btn mr-2">Approve</button></td>
                   <td>
                   <button className="my-btn-danger">Reject</button>
@@ -275,13 +297,15 @@ const OverallApproval = () => {
                 <tr>
                   <td>1092</td>
                   <td>
-                    <LinkContainer to="/monitoring/viewSocialWorker/overview">
-                      <a href="#">Sunil Perera</a>
-                    </LinkContainer>
+                    Sunil Perera
                   </td>
                   <td>2023/12/02</td>
                   <td>Rs.30,000</td>
-                  <td>Donation for renovation of little dreams orphanage</td>
+                  <td>
+                  <LinkContainer to="/cases/viewPendingCases">
+                      <a href="#">Donation for renovation of little dreams orphanage</a>
+                    </LinkContainer>
+                  </td>
                   <td><button className="my-btn mr-2">Approve</button></td>
                   <td>
                   <button className="my-btn-danger">Reject</button>

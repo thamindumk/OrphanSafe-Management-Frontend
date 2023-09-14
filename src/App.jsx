@@ -35,7 +35,7 @@ const App = () => {
     "/userRole/createStaff": "Create staff Form",
     "/userRole/createParent": "Create parent Form",
     "/userRole/createSocialWorker": "Create social worker Form",
-    "/cases/viewPendingCases": "Child Profiles",
+    "/cases/viewPendingCases": "Approval Page",
     "/userRole/viewUserRole": "Delete and edit user roles",
     "/cases/AssignSocialWorkers": "Assign social workers for cases",
     "/report/viewOverallSystemReport": "Overall system Report",
@@ -54,14 +54,10 @@ const App = () => {
       "Request case information of children for parents",
     "/parent/ParentsViewCases": "Parents View Case Information",
     "/inquiry/InquiriesBulkResponse": "Bulk response for inquiries",
-    "/socialWorker/EditDeleteCaseLog":
-      "Edit and delete case logs for social workers",
+    "/socialWorker/EditDeleteCaseLog":"Edit and delete case logs for social workers",
     "/cases/viewOngoingCases": "Ongoing cases",
     "/cases/viewOngoingCases/overview": "Case Overview",
     "/editProfile": "your profile",
-
-    // Add more path-title mappings as needed
-    "/socialWorker/EditDeleteCaseLog": "Edit and delete case logs for social workers",
     "/funds/ReceiveFunds": "Receive Funds",
     "/profile/viewProfile": "View child profiles",
     "/report/viewExternalPartyReport": "External Party Reports",
@@ -69,7 +65,8 @@ const App = () => {
     "/report/viewFinancialReport": "View Financial Report",
     "/report/viewChildReport": "View Child Report",
     "/approval/OverallApproval": "Overall Approvals",
-    "/chat/StaffChat": "Forum"
+    "/chat/StaffChat": "Forum",
+    "/registration/OrphanageRegistration": "Orphanage Registration"
     
   };
   // Check if the path exists in the mapping, and if so, set the pageTitle accordingly

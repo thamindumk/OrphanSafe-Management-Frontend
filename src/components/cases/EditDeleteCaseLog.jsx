@@ -9,12 +9,12 @@ const EditDeleteCaseLog = () => {
           <Row style={{marginBottom: "10px"}}>
           <Col sm={5}>
             <div class="d-flex ">
-                  <button class="my-btn">Previous Case</button>
+                  <button class="my-btn">Previous Case Log</button>
                 </div>
             </Col>
             <Col sm={5}>
             <div class="d-flex justify-content-end">
-                  <button class="my-btn">Next Case</button>
+                  <button class="my-btn">Next Case Log</button>
                 </div>
             </Col>
           </Row>
