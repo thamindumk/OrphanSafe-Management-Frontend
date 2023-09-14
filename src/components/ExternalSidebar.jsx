@@ -108,6 +108,11 @@ const ExternalSidebar = () => {
               </LinkContainer>
             </div>
             <div className="sidebar-submenu">
+              <LinkContainer to="/parent/viewChildProfileList">
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>View child profile</a>
+              </LinkContainer>
+            </div>
+            <div className="sidebar-submenu">
               <LinkContainer to="/parent/RequestCaseInfo">
                 <a className="sidebar-submenu-item" onClick={closeSidebar}>Request case information</a>
               </LinkContainer>
