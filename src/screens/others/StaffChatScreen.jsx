@@ -1,10 +1,9 @@
-import React from 'react';
+import React from "react";
 import OverallApproval from "../../components/others/OverallApprovals";
+import ForumCard from "../../components/others/ForumCard";
 
 const StaffChatScreen = () => {
-  return (
-    <div>Staff chat</div>
-  )
-}
+  return <ForumCard />;
+};
 
-export default StaffChatScreen
+export default StaffChatScreen;

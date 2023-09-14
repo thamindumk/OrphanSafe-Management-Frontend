@@ -61,7 +61,8 @@ const App = () => {
     "/editProfile": "your profile",
 
     // Add more path-title mappings as needed
-    "/socialWorker/EditDeleteCaseLog": "Edit and delete case logs for social workers",
+    "/socialWorker/EditDeleteCaseLog":
+      "Edit and delete case logs for social workers",
     "/funds/ReceiveFunds": "Receive Funds",
     "/profile/viewProfile": "View child profiles",
     "/report/viewExternalPartyReport": "External Party Reports",
@@ -69,8 +70,7 @@ const App = () => {
     "/report/viewFinancialReport": "View Financial Report",
     "/report/viewChildReport": "View Child Report",
     "/approval/OverallApproval": "Overall Approvals",
-    "/chat/StaffChat": "Forum"
-    
+    "/chat/StaffChat": "Staff Chat",
   };
   // Check if the path exists in the mapping, and if so, set the pageTitle accordingly
   if (path in pathToTitleMap) {
