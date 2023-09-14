@@ -4,7 +4,6 @@ import { MyCard, MyCardBody, MyCardHeader } from "../components/MyCard";
 const RegistrationScreen = () => {
   return (
     <Row>
-      <Col sm={3}></Col>
       <Col sm={6}>
         <MyCard>
           <MyCardHeader>

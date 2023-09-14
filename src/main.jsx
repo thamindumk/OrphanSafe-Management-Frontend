@@ -59,6 +59,7 @@ import CaseOverViewScreen from "./screens/cases/CaseOverViewScreen";
 import EditProfile from "./screens/others/EditProfile";
 import OverallApprovalScreen from "./screens/others/OverallApprovalScreen";
 import StaffChatScreen from "./screens/others/StaffChatScreen";
+import OngoingCaseExternalScreen from "./screens/external-party/OngoingCasesExternalScreen";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -164,15 +165,7 @@ const router = createBrowserRouter(
           path="/inquiry/CreateInquiry"
           element={<CreateInquiryScreen />}
         />
-        <Route
-          path="/parent/RequestChildProfile"
-          element={<RequestChildProfileScreen />}
-        />
-        <Route path="/parent/RequestCaseInfo" element={<RequestCaseInfo />} />
-        <Route
-          path="/parent/ParentsViewCases"
-          element={<ParentsViewCasesScreen />}
-        />
+       
         <Route
           path="/inquiry/InquiriesBulkResponse"
           element={<InquiriesBulkResponseScreen />}
@@ -201,10 +194,7 @@ const router = createBrowserRouter(
         />
         <Route path="/external/CaseRequest" element={<CaseRequestScreen />} />
 
-        <Route
-          path="/external/EditDeleteCaseLog"
-          element={<EditDeleteCaseLogScreen />}
-        />
+        <Route path="/external/OngoingCases" element={<OngoingCaseExternalScreen />} />
         <Route path="/external/EditDeleteCaseLog" element={<EditDeleteCaseLogScreen />} />
         <Route path="/parent/RequestChildProfile" element={<RequestChildProfileScreen />} />
         <Route path="/parent/RequestCaseInfo" element={<RequestCaseInfo />} />
