@@ -241,7 +241,7 @@ const Sidebar = () => {
               <div>Communication</div>
             </div>
             <div className="sidebar-submenu">
-              <LinkContainer to="/monitoring/viewStaff">
+              <LinkContainer to="/chat/StaffChat">
                 <a className="sidebar-submenu-item" onClick={closeSidebar}>Staff chats</a>
               </LinkContainer>
             </div>

@@ -46,6 +46,14 @@ const FundForm = () => {
         <Form.Control type="text" placeholder="e.g. 2023/08/24" />
       </Form.Group>
 
+      <Form.Group className="mb-3" controlId="formBasicAmount">
+        <Form.Label>Amount</Form.Label>
+        <Form.Text className="text-muted">
+        *amount of the fund received
+        </Form.Text>
+        <Form.Control type="text" placeholder="e.g. Rs.30,000" />
+      </Form.Group>
+
       <Form.Group className="mb-3" controlId="caseDescription">
         <Form.Label>Fund description</Form.Label>
         <Form.Text className="text-muted">

@@ -56,6 +56,7 @@ import CreateCaseLogsScreen from "./screens/cases/CreateCaseLogsScreen";
 import CaseRequestScreen from "./screens/cases/CaseRequestScreen";
 import EditDeleteCaseLogScreen from "./screens/cases/EditDeleteCaseLogScreen";
 import OverallApprovalScreen from "./screens/others/OverallApprovalScreen";
+import StaffChatScreen from "./screens/others/StaffChatScreen";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -152,6 +153,7 @@ const router = createBrowserRouter(
         <Route path="/inquiry/CreateInquiry" element={<CreateInquiryScreen />} />
         <Route path="/inquiry/InquiriesBulkResponse" element={<InquiriesBulkResponseScreen />} />
         <Route path="/approval/OverallApproval" element={<OverallApprovalScreen />} />
+        <Route path="/chat/StaffChat" element={<StaffChatScreen />} />
         
         
        

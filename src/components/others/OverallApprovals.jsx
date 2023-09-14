@@ -22,7 +22,7 @@ const OverallApproval = () => {
       <MyCard>
         <MyCardHeader>Parents Request Case Information</MyCardHeader>
         <MyCardBody>
-          <div>
+          <div style={{ height: '300px', overflowY: 'auto' }}>
             <Table
               responsive
               //ref={tableRef}
@@ -117,12 +117,12 @@ const OverallApproval = () => {
       </MyCard>
     </Col>
   </Row>
-    <Row style={{ marginBottom: "20px" }}>
+  <Row style={{ marginBottom: "20px" }}>
     <Col sm={12}>
       <MyCard>
         <MyCardHeader>Parents Request child profile</MyCardHeader>
         <MyCardBody>
-          <div>
+          <div style={{ height: '300px', overflowY: 'auto' }}>
             <Table
               responsive
               //ref={tableRef}
@@ -210,6 +210,178 @@ const OverallApproval = () => {
                   <button className="my-btn-danger">Reject</button>
                   </td>
                 </tr>
+              </tbody>
+            </Table>
+          </div>
+        </MyCardBody>
+      </MyCard>
+    </Col>
+  </Row>
+  <Row style={{ marginBottom: "20px" }}>
+    <Col sm={12}>
+      <MyCard>
+        <MyCardHeader>Receive Funds approval</MyCardHeader>
+        <MyCardBody>
+          <div style={{ height: '300px', overflowY: 'auto' }}>
+            <Table
+              responsive
+              //ref={tableRef}
+              id="example"
+              className="row-border"
+              style={{ width: "100%" }}
+            >
+              <thead>
+                <tr>
+                  <th>Receipt number</th>
+                  <th>Donator's name</th>
+                  <th>Date</th>
+                  <th>Amount</th>
+                  <th>Description</th>
+                  <th>Approve</th>
+                  <th>reject</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1092</td>
+                  <td>
+                    <LinkContainer to="/monitoring/viewSocialWorker/overview">
+                      <a href="#">Sunil Perera</a>
+                    </LinkContainer>
+                  </td>
+                  <td>2023/12/02</td>
+                  <td>Rs.30,000</td>
+                  <td>Donation for renovation of little dreams orphanage</td>
+                  <td><button className="my-btn mr-2">Approve</button></td>
+                  <td>
+                  <button className="my-btn-danger">Reject</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>1092</td>
+                  <td>
+                    <LinkContainer to="/monitoring/viewSocialWorker/overview">
+                      <a href="#">Sunil Perera</a>
+                    </LinkContainer>
+                  </td>
+                  <td>2023/12/02</td>
+                  <td>Rs.30,000</td>
+                  <td>Donation for renovation of little dreams orphanage</td>
+                  <td><button className="my-btn mr-2">Approve</button></td>
+                  <td>
+                  <button className="my-btn-danger">Reject</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>1092</td>
+                  <td>
+                    <LinkContainer to="/monitoring/viewSocialWorker/overview">
+                      <a href="#">Sunil Perera</a>
+                    </LinkContainer>
+                  </td>
+                  <td>2023/12/02</td>
+                  <td>Rs.30,000</td>
+                  <td>Donation for renovation of little dreams orphanage</td>
+                  <td><button className="my-btn mr-2">Approve</button></td>
+                  <td>
+                  <button className="my-btn-danger">Reject</button>
+                  </td>
+                </tr>
+               
+              </tbody>
+            </Table>
+          </div>
+        </MyCardBody>
+      </MyCard>
+    </Col>
+  </Row>
+  <Row style={{ marginBottom: "20px" }}>
+    <Col sm={12}>
+      <MyCard>
+        <MyCardHeader>Staff registration approval</MyCardHeader>
+        <MyCardBody>
+          <div style={{ height: '300px', overflowY: 'auto' }}>
+            <Table
+              responsive
+              //ref={tableRef}
+              id="example"
+              className="row-border"
+              style={{ width: "100%" }}
+            >
+              <thead>
+                <tr>
+                  <th>Staff ID</th>
+                  <th>Name</th>
+                  <th>Role</th>
+                  <th>Email Address</th>
+                  <th>Contact Number</th>
+                  <th>Approve</th>
+                  <th>Reject</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>St-3567</td>
+                  <td>
+                    <LinkContainer to="/monitoring/viewSocialWorker/overview">
+                      <a href="#">Sunil Perera</a>
+                    </LinkContainer>
+                  </td>
+                  <td>Orphanage manager</td>
+                  <td>Sunil@gamil.com</td>
+                  <td>071334567</td>
+                  <td><button className="my-btn mr-2">Approve</button></td>
+                  <td>
+                  <button className="my-btn-danger">Reject</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>St-3567</td>
+                  <td>
+                    <LinkContainer to="/monitoring/viewSocialWorker/overview">
+                      <a href="#">Kamal Perera</a>
+                    </LinkContainer>
+                  </td>
+                  <td>Orphanage Staff</td>
+                  <td>Sunil@gamil.com</td>
+                  <td>071334567</td>
+                  <td><button className="my-btn mr-2">Approve</button></td>
+                  <td>
+                  <button className="my-btn-danger">Reject</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>St-3567</td>
+                  <td>
+                    <LinkContainer to="/monitoring/viewSocialWorker/overview">
+                      <a href="#">Sunil Perera</a>
+                    </LinkContainer>
+                  </td>
+                  <td>Orphanage manager</td>
+                  <td>Sunil@gamil.com</td>
+                  <td>071334567</td>
+                  <td><button className="my-btn mr-2">Approve</button></td>
+                  <td>
+                  <button className="my-btn-danger">Reject</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>St-3567</td>
+                  <td>
+                    <LinkContainer to="/monitoring/viewSocialWorker/overview">
+                      <a href="#">Sunil Perera</a>
+                    </LinkContainer>
+                  </td>
+                  <td>Orphanage manager</td>
+                  <td>Sunil@gamil.com</td>
+                  <td>071334567</td>
+                  <td><button className="my-btn mr-2">Approve</button></td>
+                  <td>
+                  <button className="my-btn-danger">Reject</button>
+                  </td>
+                </tr>
+              
+               
               </tbody>
             </Table>
           </div>

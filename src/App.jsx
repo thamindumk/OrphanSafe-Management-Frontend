@@ -60,7 +60,8 @@ const App = () => {
     "/report/viewStaffReport": " View Staff Reports",
     "/report/viewFinancialReport": "View Financial Report",
     "/report/viewChildReport": "View Child Report",
-    "/approval/OverallApproval": "Overall Approvals"
+    "/approval/OverallApproval": "Overall Approvals",
+    "/chat/StaffChat": "Forum"
     
   };
   // Check if the path exists in the mapping, and if so, set the pageTitle accordingly
