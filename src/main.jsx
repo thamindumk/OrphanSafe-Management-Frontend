@@ -63,7 +63,8 @@ import StaffChatScreen from "./screens/others/StaffChatScreen";
 import OngoingCaseExternalScreen from "./screens/external-party/OngoingCasesExternalScreen";
 import ParentViewChildProfileScreen from "./screens/external-party/ParentsViewChildProfileScreen";
 import ParentViewChildProfileListScreen from "./screens/external-party/ParentViewChildProfileListScreen";
-
+import AdminStaffProfileScreen from "./screens/staff/AdminStaffProfileScreen";
+import BulkResponseFormScreen from "./screens/others/BulkResponseFormScreen";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -193,7 +194,8 @@ const router = createBrowserRouter(
         <Route path="/inquiry/InquiriesBulkResponse" element={<InquiriesBulkResponseScreen />} />
         <Route path="/approval/OverallApproval" element={<OverallApprovalScreen />} />
         <Route path="/cases/viewPendingCases" element={<ViewPendingCases />} />
-       
+        <Route path="/admin/viewStaffProfile/overview" element={<AdminStaffProfileScreen />}/> 
+        <Route path="/admin/ResponseBulk" element={<BulkResponseFormScreen />}/> 
       </Route>
       <Route element={<ExternalPartyApp />}>
       <Route path="/dashboard/External" element={<ViewDashboardScreen />} />
