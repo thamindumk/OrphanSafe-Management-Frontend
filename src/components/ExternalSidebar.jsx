@@ -58,7 +58,7 @@ const ExternalSidebar = () => {
               <div>Dashboard</div>
             </div>
             <div className="sidebar-submenu">
-              <LinkContainer to="/dashboard">
+              <LinkContainer to="/dashboard/External">
                 <a className="sidebar-submenu-item" onClick={closeSidebar}>View Dashboard</a>
               </LinkContainer>
             </div>
@@ -67,16 +67,11 @@ const ExternalSidebar = () => {
           <div className="sidebar-menu-item">
             <div className="sidebar-menu-item-heading">
               <ion-icon name="caret-down"></ion-icon>
-              <div>Cases</div>
+              <div>Social Workers</div>
             </div>
             <div className="sidebar-submenu">
               <LinkContainer to="/monitoring/viewStaff">
                 <a className="sidebar-submenu-item" onClick={closeSidebar}>Ongoing Cases</a>
-              </LinkContainer>
-            </div>
-            <div className="sidebar-submenu">
-              <LinkContainer to="/external/CaseRequest">
-                <a className="sidebar-submenu-item" onClick={closeSidebar}>New case requests</a>
               </LinkContainer>
             </div>
             <div className="sidebar-submenu">
@@ -97,7 +92,28 @@ const ExternalSidebar = () => {
             </div>
             <div className="sidebar-submenu">
               <LinkContainer to="/monitoring/viewStaff">
-                <a className="sidebar-submenu-item" onClick={closeSidebar}>Staff chats</a>
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>Forum</a>
+              </LinkContainer>
+            </div>
+          </div>
+          <div className="sidebar-menu-item">
+            <div className="sidebar-menu-item-heading">
+              <ion-icon name="caret-down"></ion-icon>
+              <div>Parents</div>
+            </div>
+            <div className="sidebar-submenu">
+              <LinkContainer to="/parent/RequestChildProfile">
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>Request child profile</a>
+              </LinkContainer>
+            </div>
+            <div className="sidebar-submenu">
+              <LinkContainer to="/parent/RequestCaseInfo">
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>Request case information</a>
+              </LinkContainer>
+            </div>
+            <div className="sidebar-submenu">
+              <LinkContainer to="/parent/ParentsViewCases">
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>View cases</a>
               </LinkContainer>
             </div>
           </div>

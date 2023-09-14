@@ -26,32 +26,13 @@ const ExternalPartyApp = () => {
   const pathToTitleMap = {
     "/": "Home",
     "/home": "Home Page",
-    "/dashboard": "Dashboard",
-    "/monitoring/viewStaff": "View staff profiles",
-    "/monitoring/viewSocialWorker": "View social worker profiles",
-    "/monitoring/viewParent": "View parent profiles",
-    "/profile/createProfile": "Create child profile Form",
-    "/userRole/createStaff": "Create staff Form",
-    "/userRole/createParent": "Create parent Form",
-    "/userRole/createSocialWorker": "Create social worker Form",
-    "/cases/viewPendingCases": "Child Profiles",
-    "/userRole/viewUserRole": "Delete and edit user roles",
-    "/cases/AssignSocialWorkers": "Assign social workers for cases",
-    "/report/viewOverallSystemReport": "Overall system Report",
-    "/profile/viewProfile/overview": "Profile Overview",
-    "/monitoring/viewStaff/overview": "Profile Overview",
-    "/monitoring/viewSocialWorker/overview": "Profile Overview",
-    "/monitoring/viewParent/overview": "Profile Overview",
-    "/cases/AcceptOrRejectCases": "Accept Or Reject Assigned Cases",
-    "/inquiry/CreateInquiry": "Create Inquiry Form",
-    "/legal/viewChildDocument": "Child Document",
-    "/legal/viewStaffDocument": "Staff Document",
-    "/legal/viewParentDocument": "Parent Document",
-    "/legal/viewSocialWorkerDocument": "Social Worker Document",
-
+    "/dashboard/External": "Dashboard",
     "/external/CreateCaseLog":"Create Case Log",
     "/external/CaseRequest" : "New Case Request",
-    "/external/EditDeleteCaseLog" : "View Edit And Delete Case Logs"
+    "/external/EditDeleteCaseLog" : "View Edit And Delete Case Logs",
+    "/parent/RequestChildProfile" : "Request Child Profiles",
+    "/parent/RequestCaseInfo" : "Request Case Information",
+    "/parent/ParentsViewCases" : "View Cases"
 
     // Add more path-title mappings as needed
   };
@@ -68,9 +49,11 @@ const ExternalPartyApp = () => {
         <div className="container">
           <section>
             <div className="page-main-header">{pageTitle}</div>
-            <div className="page-sub-header">
-              Select the features provided by the OrphanSafe Platform.
-            </div>
+            {/* 
+              <div className="page-sub-header">
+                Select the features provided by the OrphanSafe Platform.
+              </div>
+              */}
           </section>
           <section className="mt-3 main-page-content">
             <Outlet />

@@ -1,6 +1,6 @@
 import "../../index.css";
 import "../../assets/css/staff/dataTable.css";
-import { Button, Col, Form, Row } from "react-bootstrap";
+import { Button, Col, Form, Row,Table } from "react-bootstrap";
 import { MyCard, MyCardBody, MyCardHeader } from "../MyCard";
 import React, { useEffect, useRef } from "react";
 import $ from "jquery"; // Import jQuery
@@ -19,10 +19,11 @@ const ViewChild = () => {
     <Row>
       <Col sm={12}>
         <MyCard>
-          <MyCardHeader>Staff Details</MyCardHeader>
+          <MyCardHeader>Child Details</MyCardHeader>
           <MyCardBody>
             <div>
-              <table
+              <Table
+                responsive
                 ref={tableRef}
                 id="example"
                 className="row-border"
@@ -30,14 +31,15 @@ const ViewChild = () => {
               >
                 <thead>
                   <tr>
-                    <th>Staff ID</th>
+                    <th>Child ID</th>
                     <th>Name</th>
-                    <th>Type</th>
+                    <th>Gender</th>
                     <th>Birthday</th>
-                    <th>Address</th>
-                    <th>ID Number</th>
+                    <th>Assigned Orphanage</th>
+                    <th>Guardian name</th>
                     <th>Actions</th>
                   </tr>
+                  
                 </thead>
                 <tbody>
                   <tr>
@@ -47,17 +49,49 @@ const ViewChild = () => {
                         <a href="#">Piyal Gamage</a>
                       </LinkContainer>
                     </td>
-                    <td>2023/07/15 15:06 PM</td>
-                    <td>version 2.0</td>
-                    <td>2023/07/15 15:06 PM</td>
-                    <td>version 2.0</td>
+                    <td>Male</td>
+                    <td>2012/10/11</td>
+                    <td>Little Dreams</td>
+                    <td>Nupun pilapitiya</td>
+                    <td>
+                      <i className="fas fa-edit mr-3 text-primary"></i>
+                      <i className="fas fa-trash text-danger"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>
+                      <LinkContainer to="/profile/viewProfile/overview">
+                        <a href="#">Piyal Gamage</a>
+                      </LinkContainer>
+                    </td>
+                    <td>Male</td>
+                    <td>2012/10/11</td>
+                    <td>Little Dreams</td>
+                    <td>Nupun pilapitiya</td>
+                    <td>
+                      <i className="fas fa-edit mr-3 text-primary"></i>
+                      <i className="fas fa-trash text-danger"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>
+                      <LinkContainer to="/profile/viewProfile/overview">
+                        <a href="#">Piyal Gamage</a>
+                      </LinkContainer>
+                    </td>
+                    <td>Male</td>
+                    <td>2012/10/11</td>
+                    <td>Little Dreams</td>
+                    <td>Nupun pilapitiya</td>
                     <td>
                       <i className="fas fa-edit mr-3 text-primary"></i>
                       <i className="fas fa-trash text-danger"></i>
                     </td>
                   </tr>
                 </tbody>
-              </table>
+              </Table>
             </div>
           </MyCardBody>
         </MyCard>

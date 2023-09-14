@@ -1,17 +1,17 @@
-import { Button, Col, Form, Row, Table } from "react-bootstrap";
+import { Col,Row } from "react-bootstrap";
 import { MyCard, MyCardBody, MyCardHeader } from "../MyCard";
 import "../../index.css";
 import "../../assets/css/dashbord/dashboard.css"
 
 
 
-const ViewOverallSystem = () => {
+const StaffReport = () => {
     return (
     <div className="responsive">
       <Row style={{marginBottom: "10px"}}>
       <Col sm={6} >
         <MyCard>
-        <MyCardHeader>Overall System  Reports </MyCardHeader>
+        <MyCardHeader>Staff Reports </MyCardHeader>
         <MyCardBody>
          
         <div className="d-flex flex-wrap">
@@ -20,8 +20,8 @@ const ViewOverallSystem = () => {
                       className="role-container-left d-flex flex-column justify-content-between mr-3"
                     >
                       <div>
-                        <div style={{fontsize: "15px",fontWeight: "900" }}>Annual Data Report</div>
-                        <div style={{ fontSize: "12px", fontWeight: "500", color: "#232F3E" }}>An orphanage may produce an annual report that combines financial, operational, and impact data to provide a comprehensive overview of its activities</div>
+                        <div style={{fontsize: "15px",fontWeight: "900" }}>Staff Leave and Absence Report</div>
+                        <div style={{ fontSize: "12px", fontWeight: "500", color: "#232F3E" }}>This report tracks staff leave requests, including vacation days, sick leave, and other types of absences.</div>
                       </div>
                       
                     </div>
@@ -39,8 +39,8 @@ const ViewOverallSystem = () => {
                       className="role-container-left d-flex flex-column justify-content-between mr-3"
                     >
                       <div>
-                        <div style={{fontsize: "15px",fontWeight: "900" }}>Case Management Report</div>
-                        <div style={{ fontSize: "12px", fontWeight: "500", color: "#232F3E" }}>Case management reports are used for children under the care of child protection agencies or social services.</div>
+                        <div style={{fontsize: "15px",fontWeight: "900" }}>Staff Salary and Compensation Report</div>
+                        <div style={{ fontSize: "12px", fontWeight: "500", color: "#232F3E" }}>This reports detail staff salaries, compensation packages, benefits, and any changes or adjustments made over time.</div>
                       </div>
                       
                     </div>
@@ -58,10 +58,8 @@ const ViewOverallSystem = () => {
                       className="role-container-left d-flex flex-column justify-content-between mr-3"
                     >
                       <div>
-                        <div style={{fontsize: "15px",fontWeight: "900" }}>Staffing and Human Resources Report</div>
-                        <div style={{ fontSize: "12px", fontWeight: "500", color: "#232F3E" }}>Summarizes staffing levels, turnover rates, training, and performance appraisals of staff members, ensuring effective workforce management.
-
-Facility and Infrastructure Report: Details the condition, maintenance, and safety of the </div>
+                        <div style={{fontsize: "15px",fontWeight: "900" }}>Staff Time and Attendance Analysis Report</div>
+                        <div style={{ fontSize: "12px", fontWeight: "500", color: "#232F3E" }}>Analyzing staff attendance patterns can help optimize staffing levels and improve operational efficiency.</div>
                       </div>
                       
                     </div>
@@ -79,10 +77,8 @@ Facility and Infrastructure Report: Details the condition, maintenance, and safe
                       className="role-container-left d-flex flex-column justify-content-between mr-3"
                     >
                       <div>
-                        <div style={{fontsize: "15px",fontWeight: "900" }}>Staffing and Human Resources Report</div>
-                        <div style={{ fontSize: "12px", fontWeight: "500", color: "#232F3E" }}>Summarizes staffing levels, turnover rates, training, and performance appraisals of staff members, ensuring effective workforce management.
-
-Facility and Infrastructure Report: Details the condition, maintenance, and safety of the </div>
+                        <div style={{fontsize: "15px",fontWeight: "900" }}>Staff Training Report</div>
+                        <div style={{ fontSize: "12px", fontWeight: "500", color: "#232F3E" }}>Training reports detail the training courses completed by staff members. </div>
                       </div>
                       
                     </div>
@@ -109,4 +105,4 @@ Facility and Infrastructure Report: Details the condition, maintenance, and safe
       
     );
   };
-  export default ViewOverallSystem;
+  export default StaffReport;
