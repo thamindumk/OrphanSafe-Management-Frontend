@@ -34,6 +34,7 @@ const ExternalPartyApp = () => {
     "/parent/RequestCaseInfo" : "Request Case Information",
     "/parent/ParentsViewCases" : "View Cases",
     "/external/OngoingCases": "View Case Logs",
+    "/cases/AcceptOrRejectCases": "Accept Or Reject Assigned Cases",
 
     // Add more path-title mappings as needed
   };

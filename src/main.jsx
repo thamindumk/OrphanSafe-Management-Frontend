@@ -17,6 +17,7 @@ import LoginScreen from "./screens/LoginScreen.jsx";
 import App from "./App.jsx";
 import DefaultLayout from "./DefaultLayout.jsx";
 import AuthApp from "./AuthApp.jsx";
+import AdminApp from "./AdminApp";
 import CreateChildProfileScreen from "./screens/child-profile/CreateChildProfileScreen";
 import ViewChildProfileScreen from "./screens/child-profile/ViewChildProfileScreen";
 import ViewDashboardScreen from "./screens/others/ViewDashboardScreen";
@@ -115,7 +116,7 @@ const router = createBrowserRouter(
           element={<ViewParentDocumentScreen />}
         />
         <Route path="/cases/viewOngoingCases" element={<ViewOngingCases />} />
-        <Route path="/cases/viewPendingCases" element={<ViewPendingCases />} />
+        
 
         <Route
           path="/cases/viewOngoingCases/overview"
@@ -123,7 +124,7 @@ const router = createBrowserRouter(
         />
 
         <Route path="/cases/AssignSocialWorkers"element={<AssignSocialWorkersScreen/>}/>
-        <Route path="/cases/AcceptOrRejectCases" element={<AcceptRejectCasesScreen />}/>
+        
 
 
         <Route
@@ -158,7 +159,7 @@ const router = createBrowserRouter(
         />
 
         
-        <Route path="/cases/AcceptOrRejectCases" element={<AcceptRejectCasesScreen />}/>
+
         <Route path="/funds/ReceiveFunds" element={<ReceiveFundScreen />} />
 
         <Route
@@ -166,15 +167,12 @@ const router = createBrowserRouter(
           element={<CreateInquiryScreen />}
         />
        
-        <Route
-          path="/inquiry/InquiriesBulkResponse"
-          element={<InquiriesBulkResponseScreen />}
-        />
+       
         <Route path="/editProfile" element={<EditProfile />} />
 
         <Route path="/inquiry/CreateInquiry" element={<CreateInquiryScreen />} />
-        <Route path="/inquiry/InquiriesBulkResponse" element={<InquiriesBulkResponseScreen />} />
-        <Route path="/approval/OverallApproval" element={<OverallApprovalScreen />} />
+       
+        
         <Route path="/chat/StaffChat" element={<StaffChatScreen />} />
         <Route path="/registration/OrphanageRegistration" element={<RegistrationScreen />} />
         
@@ -186,8 +184,16 @@ const router = createBrowserRouter(
         <Route path="/auth/login" element={<LoginScreen />} />
         <Route path="/auth/register" element={<RegistrationScreen />} />
       </Route>
+      <Route element={<AdminApp />}>
+      <Route path="/dashboard/Admin" element={<ViewDashboardScreen />} />
+        <Route path="/admin/dashboardAdmin" element={<ViewDashboardScreen />} />
+        <Route path="/inquiry/InquiriesBulkResponse" element={<InquiriesBulkResponseScreen />} />
+        <Route path="/approval/OverallApproval" element={<OverallApprovalScreen />} />
+        <Route path="/cases/viewPendingCases" element={<ViewPendingCases />} />
+      </Route>
       <Route element={<ExternalPartyApp />}>
       <Route path="/dashboard/External" element={<ViewDashboardScreen />} />
+      <Route path="/cases/AcceptOrRejectCases" element={<AcceptRejectCasesScreen />}/>
         
         <Route
           path="/external/CreateCaseLog"
