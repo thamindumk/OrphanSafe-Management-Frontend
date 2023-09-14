@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import ChildReport from "../../components/child/ChildReport";
 
 const ViewChildReportScreen = () => {
   return (
-    <div>ViewChildReportScreen</div>
+    <ChildReport/>
   )
 }
 

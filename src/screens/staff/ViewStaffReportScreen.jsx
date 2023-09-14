@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import StaffReport from "../../components/staff/StaffReport";
 
 const ViewStaffReportScreen = () => {
   return (
-    <div>ViewStaffReportScreen</div>
+    <StaffReport/>
   )
 }
 

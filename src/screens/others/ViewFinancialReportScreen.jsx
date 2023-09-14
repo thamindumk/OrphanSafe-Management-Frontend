@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import FinancialReport from "../../components/others/FinancialReport"
 
 const ViewFinancialReportScreen = () => {
   return (
-    <div>ViewFinancialReportScreen</div>
+    <FinancialReport/>
   )
 }
 
