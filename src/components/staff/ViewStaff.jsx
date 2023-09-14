@@ -11,6 +11,41 @@ import { LinkContainer } from "react-router-bootstrap";
 const ViewStaff = () => {
   const tableRef = useRef(null);
 
+  const tableDetails = [
+    {
+      Staff_ID: 1,
+      Name: "Piyal Gamage",
+      Role: "Manager",
+      Email: "piyalgamage@gmail.com",
+      Contact_Number: "0764534789",
+      NIC: "20025102700",
+    },
+    {
+      Staff_ID: 2,
+      Name: "Piyal Gamage",
+      Role: "Manager",
+      Email: "piyalgamage@gmail.com",
+      Contact_Number: "0764534789",
+      NIC: "20025102700",
+    },
+    {
+      Staff_ID: 3,
+      Name: "Kasun Rajitha",
+      Role: "Manager",
+      Email: "kasunr@gmail.com",
+      Contact_Number: "0764534789",
+      NIC: "20025102700",
+    },
+    {
+      Staff_ID: 4,
+      Name: "Piyal Gamage",
+      Role: "Manager",
+      Email: "piyalgamage@gmail.com",
+      Contact_Number: "0764534789",
+      NIC: "20025102700",
+    },
+  ];
+
   useEffect(() => {
     // Initialize DataTable
     $(tableRef.current).DataTable();
@@ -41,64 +76,24 @@ const ViewStaff = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>
-                      <LinkContainer to="/monitoring/viewStaff/overview">
-                        <a href="#">Piyal Gamage</a>
-                      </LinkContainer>
-                    </td>
-                    <td>Manager</td>
-                    <td>piyal@gamil.com</td>
-                    <td>071345678</td>
-                    <td>2000065825</td>
-                    <td>
-                      <i className="fas fa-edit mr-3 text-primary"></i>
-                      <i className="fas fa-trash text-danger"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>
-                      <a href="#">Kasun Gamage</a>
-                    </td>
-                    <td>Manager</td>
-                    <td>piyal@gamil.com</td>
-                    <td>071345678</td>
-                    <td>2000065825</td>
-                    <td>
-                      <i className="fas fa-edit mr-3 text-primary"></i>
-                      <i className="fas fa-trash text-danger"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>
-                      <a href="#">Piyal Gamage</a>
-                    </td>
-                    <td>Manager</td>
-                    <td>piyal@gamil.com</td>
-                    <td>071345678</td>
-                    <td>2000065825</td>
-                    <td>
-                      <i className="fas fa-edit mr-3 text-primary"></i>
-                      <i className="fas fa-trash text-danger"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>
-                      <a href="#">Piyal Gamage</a>
-                    </td>
-                    <td>Manager</td>
-                    <td>piyal@gamil.com</td>
-                    <td>071345678</td>
-                    <td>2000065825</td>
-                    <td>
-                      <i className="fas fa-edit mr-3 text-primary"></i>
-                      <i className="fas fa-trash text-danger"></i>
-                    </td>
-                  </tr>
+                  {tableDetails.map((data) => (
+                    <tr>
+                      <td>{data.Staff_ID}</td>
+                      <td>
+                        <LinkContainer to="/monitoring/viewStaff/overview">
+                          <a href="#">{data.Name}</a>
+                        </LinkContainer>
+                      </td>
+                      <td>{data.Role}</td>
+                      <td>{data.Email}</td>
+                      <td>{data.Contact_Number}</td>
+                      <td>{data.NIC}</td>
+                      <td>
+                        <i className="fas fa-edit mr-3 text-primary"></i>
+                        <i className="fas fa-trash text-danger"></i>
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </Table>
             </div>

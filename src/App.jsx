@@ -25,8 +25,8 @@ const App = () => {
 
   // Define a mapping of paths to titles
   const pathToTitleMap = {
-    "/": "Home",
-    "/home": "Home Page",
+    "/": "Dashboard",
+    "/home": "Dashboard",
     "/dashboard": "Dashboard",
     "/monitoring/viewStaff": "View staff profiles",
     "/monitoring/viewSocialWorker": "View social worker profiles",
@@ -35,7 +35,7 @@ const App = () => {
     "/userRole/createStaff": "Create staff Form",
     "/userRole/createParent": "Create parent Form",
     "/userRole/createSocialWorker": "Create social worker Form",
-    "/cases/viewPendingCases": "Child Profiles",
+    "/cases/viewPendingCases": "Approval Page",
     "/userRole/viewUserRole": "Delete and edit user roles",
     "/cases/AssignSocialWorkers": "Assign social workers for cases",
     "/report/viewOverallSystemReport": "Overall system Report",
@@ -50,11 +50,24 @@ const App = () => {
     "/legal/viewParentDocument": "Parent Document",
     "/legal/viewSocialWorkerDocument": "Social Worker Document",
     "/parent/RequestChildProfile": "Request profiles of children for parents",
-    "/parent/RequestCaseInfo" : "Request case information of children for parents",
+    "/parent/RequestCaseInfo":
+      "Request case information of children for parents",
     "/parent/ParentsViewCases": "Parents View Case Information",
     "/inquiry/InquiriesBulkResponse": "Bulk response for inquiries",
-    "/socialWorker/EditDeleteCaseLog": "Edit and delete case logs for social workers"
-    // Add more path-title mappings as needed
+    "/socialWorker/EditDeleteCaseLog":"Edit and delete case logs for social workers",
+    "/cases/viewOngoingCases": "Ongoing cases",
+    "/cases/viewOngoingCases/overview": "Case Overview",
+    "/editProfile": "your profile",
+    "/funds/ReceiveFunds": "Receive Funds",
+    "/profile/viewProfile": "View child profiles",
+    "/report/viewExternalPartyReport": "External Party Reports",
+    "/report/viewStaffReport": " View Staff Reports",
+    "/report/viewFinancialReport": "View Financial Report",
+    "/report/viewChildReport": "View Child Report",
+    "/approval/OverallApproval": "Overall Approvals",
+    "/chat/StaffChat": "Forum",
+    "/registration/OrphanageRegistration": "Orphanage Registration"
+    
   };
   // Check if the path exists in the mapping, and if so, set the pageTitle accordingly
   if (path in pathToTitleMap) {
@@ -69,9 +82,11 @@ const App = () => {
         <div className="container">
           <section>
             <div className="page-main-header">{pageTitle}</div>
-            <div className="page-sub-header">
-              Select the features provided by the OrphanSafe Platform.
-            </div>
+            {/* 
+              <div className="page-sub-header">
+                Select the features provided by the OrphanSafe Platform.
+              </div>
+              */}
           </section>
           <section className="mt-3 main-page-content">
             <Outlet />

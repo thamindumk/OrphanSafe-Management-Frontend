@@ -65,9 +65,13 @@ const Header = () => {
           </li>
         </ul>
         <span className="navbar-text d-flex">
-          <a className="nav-link" href="#">
-            {userInfo ? userInfo.role : "Role: N/A"}
-          </a>
+          <LinkContainer to="/editProfile">
+            <a className="nav-link">
+              {userInfo
+                ? "K.D.Piyal Gamlath (" + userInfo.roleName + ")"
+                : "Role: N/A"}
+            </a>
+          </LinkContainer>
           <LinkContainer to="/auth/login" onClick={logoutHandler}>
             <a className="nav-link">Logout</a>
           </LinkContainer>
