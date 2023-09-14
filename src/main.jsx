@@ -176,6 +176,7 @@ const router = createBrowserRouter(
         <Route path="/inquiry/InquiriesBulkResponse" element={<InquiriesBulkResponseScreen />} />
         <Route path="/approval/OverallApproval" element={<OverallApprovalScreen />} />
         <Route path="/chat/StaffChat" element={<StaffChatScreen />} />
+        <Route path="/registration/OrphanageRegistration" element={<RegistrationScreen />} />
         
         
        
@@ -187,7 +188,7 @@ const router = createBrowserRouter(
       </Route>
       <Route element={<ExternalPartyApp />}>
       <Route path="/dashboard/External" element={<ViewDashboardScreen />} />
-        <Route path="/external/view" element={<RegistrationScreen />} />
+        
         <Route
           path="/external/CreateCaseLog"
           element={<CreateCaseLogsScreen />}
