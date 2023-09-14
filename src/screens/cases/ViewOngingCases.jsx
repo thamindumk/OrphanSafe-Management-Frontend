@@ -1,9 +1,7 @@
-import React from 'react'
-
+import React from "react";
+import OngoinCaseView from "../../components/cases/OngoinCaseView";
 const ViewOngingCases = () => {
-  return (
-    <div>ViewOngingCases</div>
-  )
-}
+  return <OngoinCaseView />;
+};
 
-export default ViewOngingCases
+export default ViewOngingCases;

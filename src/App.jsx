@@ -50,9 +50,17 @@ const App = () => {
     "/legal/viewParentDocument": "Parent Document",
     "/legal/viewSocialWorkerDocument": "Social Worker Document",
     "/parent/RequestChildProfile": "Request profiles of children for parents",
-    "/parent/RequestCaseInfo" : "Request case information of children for parents",
+    "/parent/RequestCaseInfo":
+      "Request case information of children for parents",
     "/parent/ParentsViewCases": "Parents View Case Information",
     "/inquiry/InquiriesBulkResponse": "Bulk response for inquiries",
+    "/socialWorker/EditDeleteCaseLog":
+      "Edit and delete case logs for social workers",
+    "/cases/viewOngoingCases": "Ongoing cases",
+    "/cases/viewOngoingCases/overview": "Case Overview",
+    "/editProfile": "your profile",
+
+    // Add more path-title mappings as needed
     "/socialWorker/EditDeleteCaseLog": "Edit and delete case logs for social workers",
     "/funds/ReceiveFunds": "Receive Funds",
     "/profile/viewProfile": "View child profiles",
