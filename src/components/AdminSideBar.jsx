@@ -93,7 +93,7 @@ const AdminSideBar = () => {
               <div>Communication</div>
             </div>
             <div className="sidebar-submenu">
-              <LinkContainer to="/monitoring/viewStaff">
+              <LinkContainer to="/admin/StaffChat">
                 <a className="sidebar-submenu-item" onClick={closeSidebar}>Forum</a>
               </LinkContainer>
             </div>
