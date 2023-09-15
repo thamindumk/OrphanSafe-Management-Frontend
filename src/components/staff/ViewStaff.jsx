@@ -44,6 +44,14 @@ const ViewStaff = () => {
       Contact_Number: "0764534789",
       NIC: "20025102700",
     },
+    {
+      Staff_ID: 5,
+      Name: "Piyal Gamage",
+      Role: "Manager",
+      Email: "piyalgamage@gmail.com",
+      Contact_Number: "0764534789",
+      NIC: "20025102700",
+    },
   ];
 
   useEffect(() => {
