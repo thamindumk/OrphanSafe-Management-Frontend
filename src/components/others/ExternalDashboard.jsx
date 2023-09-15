@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Col, Form, Row, Table, Card } from "react-bootstrap";
+import { Button, Col, Form, Row, Table, Card ,Image} from "react-bootstrap";
 import { MyCard, MyCardBody, MyCardHeader } from "../MyCard";
 import "../../index.css";
 import "../../assets/css/dashbord/dashboard.css";
@@ -7,10 +7,25 @@ import "../../assets/css/dashbord/dashboard.css";
 const ExternalDashboard = () => {
   return (
     <div className="responsive">
-      <div className="cards">
+      <div className="cardsIm">
         <div className="background">
-          <h1 className="name-headers">Home</h1>
+          <h1 className="name-headers">Welcome </h1>
           <Row
+            className="profile"
+            style={{ paddingTop: "30px", paddingLeft: "50px" }}
+          >
+
+            <Image
+                src="https://img.freepik.com/premium-photo/group-happy-children-street_1001749-3005.jpg" // Replace with the URL or path to your image
+                alt="Card Image Alt Text"
+                className="card-image"
+            />
+           
+          </Row>
+        </div>
+      </div>
+
+      <Row
             className="profile"
             style={{ paddingTop: "30px", paddingLeft: "50px" }}
           >
@@ -26,7 +41,7 @@ const ExternalDashboard = () => {
                   </Col>
                 </Row>
 
-                <div className="CardNumber">56</div>
+                <div className="CardNumber">2034</div>
                 <div className="CardItalic">Registered child profiles</div>
               </Card>
             </Col>
@@ -38,11 +53,11 @@ const ExternalDashboard = () => {
                       className="fas fa-globe"
                       style={{ fontSize: "30px", marginRight: "10px" }}
                     ></i>
-                    Working Staff
+                    Working staff
                   </Col>
                 </Row>
 
-                <div className="CardNumber">12</div>
+                <div className="CardNumber">450</div>
                 <div className="CardItalic">Registered staff profiles</div>
               </Card>
             </Col>
@@ -51,15 +66,15 @@ const ExternalDashboard = () => {
                 <Row className="CardRow">
                   <Col className="colDec text-end">
                     <i
-                      className="fa fa-heart"
+                      className="fab fa-xbox"
                       style={{ fontSize: "30px", marginRight: "10px" }}
                     ></i>
-                    Ongoing Adoptions
+                    Social Workers
                   </Col>
                 </Row>
 
-                <div className="CardNumber">56</div>
-                <div className="CardItalic">Registered child profiles</div>
+                <div className="CardNumber">106</div>
+                <div className="CardItalic">Registered social workers profiles</div>
               </Card>
             </Col>
             <Col md={3} sm={6} xs={12} style={{ marginBottom: "10px" }}>
@@ -70,184 +85,16 @@ const ExternalDashboard = () => {
                       className="fas fa-university"
                       style={{ fontSize: "30px", marginRight: "10px" }}
                     ></i>
-                    Case Management
+                    Registered Orphanages
                   </Col>
                 </Row>
 
-                <div className="CardNumber">22</div>
-                <div className="CardItalic">Registered child profiles</div>
+                <div className="CardNumber">246</div>
+                <div className="CardItalic">Registered orphanages</div>
               </Card>
             </Col>
           </Row>
-        </div>
-      </div>
 
-      <div className="responsive">
-        <Row style={{ marginBottom: "10px" }}>
-          <Col sm={12} md={6} style={{ marginBottom: "10px" }}>
-            <MyCard>
-              <MyCardHeader>Pending Approvals</MyCardHeader>
-              <Table responsive bordered style={{ width: "100%" }}>
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Approval Description</th>
-                    <th>Publish Date</th>
-                    <th>State</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>234</td>
-                    <td>Adoption case-3445- child Id 22332</td>
-                    <td>2023-12-12</td>
-                    <td>
-                      <i>Pending</i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>234</td>
-                    <td>Adoption case-3445- child Id 22332</td>
-                    <td>2023-12-12</td>
-                    <td>
-                      <i>Pending</i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>234</td>
-                    <td>Adoption case-3445- child Id 22332</td>
-                    <td>2023-12-12</td>
-                    <td>
-                      <i>Pending</i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>234</td>
-                    <td>Adoption case-3445- child Id 22332</td>
-                    <td>2023-12-12</td>
-                    <td>
-                      <i>Pending</i>
-                    </td>
-                  </tr>
-                </tbody>
-              </Table>
-            </MyCard>
-          </Col>
-
-          <Col sm={12} md={6}>
-            <MyCard>
-              <MyCardHeader>Ongoing Cases</MyCardHeader>
-              <Table responsive bordered style={{ width: "100%" }}>
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Case Description</th>
-                    <th>State Date</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>234</td>
-                    <td>Adoption case-3445- child Id 22332</td>
-                    <td>2023-12-12</td>
-                  </tr>
-                  <tr>
-                    <td>234</td>
-                    <td>Adoption case-3445- child Id 22332</td>
-                    <td>2023-12-12</td>
-                  </tr>
-                  <tr>
-                    <td>234</td>
-                    <td>Adoption case-3445- child Id 22332</td>
-                    <td>2023-12-12</td>
-                  </tr>
-                  <tr>
-                    <td>234</td>
-                    <td>Adoption case-3445- child Id 22332</td>
-                    <td>2023-12-12</td>
-                  </tr>
-                </tbody>
-              </Table>
-            </MyCard>
-          </Col>
-        </Row>
-
-        <Row style={{ marginBottom: "10px" }}>
-          <Col sm={12} md={6} style={{ marginBottom: "10px" }}>
-            <MyCard>
-              <MyCardHeader>Funds Received</MyCardHeader>
-              <Table responsive bordered style={{ width: "100%" }}>
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Case Description</th>
-                    <th>State Date</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>234</td>
-                    <td>Adoption case-3445- child Id 22332</td>
-                    <td>2023-12-12</td>
-                  </tr>
-                  <tr>
-                    <td>234</td>
-                    <td>Adoption case-3445- child Id 22332</td>
-                    <td>2023-12-12</td>
-                  </tr>
-                  <tr>
-                    <td>234</td>
-                    <td>Adoption case-3445- child Id 22332</td>
-                    <td>2023-12-12</td>
-                  </tr>
-                  <tr>
-                    <td>234</td>
-                    <td>Adoption case-3445- child Id 22332</td>
-                    <td>2023-12-12</td>
-                  </tr>
-                </tbody>
-              </Table>
-            </MyCard>
-          </Col>
-
-          <Col sm={12} md={6}>
-            <MyCard>
-              <MyCardHeader>Ongoing Cases</MyCardHeader>
-              <Table responsive bordered style={{ width: "100%" }}>
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Case Description</th>
-                    <th>State Date</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>234</td>
-                    <td>Adoption case-3445- child Id 22332</td>
-                    <td>2023-12-12</td>
-                  </tr>
-                  <tr>
-                    <td>234</td>
-                    <td>Adoption case-3445- child Id 22332</td>
-                    <td>2023-12-12</td>
-                  </tr>
-                  <tr>
-                    <td>234</td>
-                    <td>Adoption case-3445- child Id 22332</td>
-                    <td>2023-12-12</td>
-                  </tr>
-                  <tr>
-                    <td>234</td>
-                    <td>Adoption case-3445- child Id 22332</td>
-                    <td>2023-12-12</td>
-                  </tr>
-                </tbody>
-              </Table>
-            </MyCard>
-          </Col>
-        </Row>
-      </div>
     </div>
   );
 };

@@ -198,11 +198,12 @@ const router = createBrowserRouter(
         <Route path="/cases/viewPendingCases" element={<ViewPendingCases />} />
         <Route path="/admin/viewStaffProfile/overview" element={<AdminStaffProfileScreen />}/> 
         <Route path="/admin/ResponseBulk" element={<BulkResponseFormScreen />}/> 
+        <Route path="/admin/StaffChat" element={<StaffChatScreen />} />
       </Route>
       <Route element={<ExternalPartyApp />}>
       <Route path="/dashboard/External" element={<ExternalDashboardScreen />} />
       <Route path="/cases/AcceptOrRejectCases" element={<AcceptRejectCasesScreen />}/>
-      
+      <Route path="/external/StaffChat" element={<StaffChatScreen />} />
         <Route
           path="/external/CreateCaseLog"
           element={<CreateCaseLogsScreen />}
