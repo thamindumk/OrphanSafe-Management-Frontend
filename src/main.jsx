@@ -65,6 +65,8 @@ import ParentViewChildProfileScreen from "./screens/external-party/ParentsViewCh
 import ParentViewChildProfileListScreen from "./screens/external-party/ParentViewChildProfileListScreen";
 import AdminStaffProfileScreen from "./screens/staff/AdminStaffProfileScreen";
 import BulkResponseFormScreen from "./screens/others/BulkResponseFormScreen";
+import AdminDashboardScreen from "./screens/others/AdminDashboardScreen";
+import ExternalDashboardScreen from "./screens/others/ExternalDashboardScreen";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -189,8 +191,8 @@ const router = createBrowserRouter(
         <Route path="/auth/register" element={<RegistrationScreen />} />
       </Route>
       <Route element={<AdminApp />}>
-      <Route path="/dashboard/Admin" element={<ViewDashboardScreen />} />
-        <Route path="/admin/dashboardAdmin" element={<ViewDashboardScreen />} />
+      <Route path="/dashboard/Admin" element={<AdminDashboardScreen />} />
+        
         <Route path="/inquiry/InquiriesBulkResponse" element={<InquiriesBulkResponseScreen />} />
         <Route path="/approval/OverallApproval" element={<OverallApprovalScreen />} />
         <Route path="/cases/viewPendingCases" element={<ViewPendingCases />} />
@@ -198,7 +200,7 @@ const router = createBrowserRouter(
         <Route path="/admin/ResponseBulk" element={<BulkResponseFormScreen />}/> 
       </Route>
       <Route element={<ExternalPartyApp />}>
-      <Route path="/dashboard/External" element={<ViewDashboardScreen />} />
+      <Route path="/dashboard/External" element={<ExternalDashboardScreen />} />
       <Route path="/cases/AcceptOrRejectCases" element={<AcceptRejectCasesScreen />}/>
       
         <Route
