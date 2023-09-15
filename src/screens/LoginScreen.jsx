@@ -23,17 +23,27 @@ const LoginScreen = () => {
 
   useEffect(() => {
     if (userInfo) {
-      navigate("/");
+      if (userInfo.roleName === "orphanageManager") {
+        console.log("in");
+        navigate("/");
+      } else if (userInfo.roleName === "systemManager") {
+        console.log("in");
+        navigate("/dashboard/Admin");
+      } else if (userInfo.roleName === "externalParty") {
+        console.log("in");
+        navigate("/dashboard/External");
+      }
+      console.log(userInfo.roleName);
+      // navigate("/");
     }
   }, [navigate, userInfo]);
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    console.log(e.nativeEvent.submitter.id === 'reg_btn')
-    if (e.nativeEvent.submitter.id === 'reg_btn') {
-      navigate('/registration/OrphanageRegistration')
+    // console.log(e.nativeEvent.submitter.id === 'reg_btn')
+    if (e.nativeEvent.submitter.id === "reg_btn") {
+      navigate("/registration/OrphanageRegistration");
     } else {
-
       try {
         const res = await login({ email: email, password: password }).unwrap();
         dispatch(setCredentials(res.userInfo));
@@ -41,7 +51,6 @@ const LoginScreen = () => {
         toast.error("login error. Please try again!");
       }
     }
-
   };
 
   return (

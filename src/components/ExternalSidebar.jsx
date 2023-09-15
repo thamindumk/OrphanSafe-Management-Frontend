@@ -93,7 +93,7 @@ const ExternalSidebar = () => {
             </div>
             <div className="sidebar-submenu">
               <LinkContainer to="/external/StaffChat">
-                <a className="sidebar-submenu-item" onClick={closeSidebar}>Forum</a>
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>Staff chat</a>
               </LinkContainer>
             </div>
           </div>

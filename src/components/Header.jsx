@@ -68,7 +68,7 @@ const Header = () => {
           <LinkContainer to="/editProfile">
             <a className="nav-link">
               {userInfo
-                ? "K.D.Piyal Gamlath (" + userInfo.roleName + ")"
+                ? `${userInfo.email} (` + userInfo.roleName + ")"
                 : "Role: N/A"}
             </a>
           </LinkContainer>
