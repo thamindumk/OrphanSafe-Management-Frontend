@@ -27,11 +27,11 @@ jobs:
     needs: build
     steps:
     - name: stop current container
-      run: echo "sandevdsic123" | sudo -S sudo docker stop orphansafe-management-frontend-management-frontend-1
+      run: echo "sandevdsic123" | sudo -S sudo docker stop orphansafe-management-frontend-management-frontend-1 || true
     - name: remove current container
-      run: echo "sandevdsic123" | sudo -S sudo docker rm orphansafe-management-frontend-management-frontend-1
+      run: echo "sandevdsic123" | sudo -S sudo docker rm orphansafe-management-frontend-management-frontend-1 || true
     - name: remove current image
-      run: echo "sandevdsic123" | sudo -S sudo docker rmi sandevdewthilina/orphange-management-frontend:latest -f
+      run: echo "sandevdsic123" | sudo -S sudo docker rmi sandevdewthilina/orphange-management-frontend:latest -f || true
     - name: pull new image
       run: echo "sandevdsic123" | sudo -S sudo docker pull sandevdewthilina/orphange-management-frontend:latest
     - name: run new container
