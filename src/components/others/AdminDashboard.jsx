@@ -4,7 +4,7 @@ import { MyCard, MyCardBody, MyCardHeader } from "../MyCard";
 import "../../index.css";
 import "../../assets/css/dashbord/dashboard.css";
 
-const DashboardOverview = () => {
+const AdminDashboard = () => {
   return (
     <div className="responsive">
       <div className="cards">
@@ -26,7 +26,7 @@ const DashboardOverview = () => {
                   </Col>
                 </Row>
 
-                <div className="CardNumber">56</div>
+                <div className="CardNumber">2034</div>
                 <div className="CardItalic">Registered child profiles</div>
               </Card>
             </Col>
@@ -38,11 +38,11 @@ const DashboardOverview = () => {
                       className="fas fa-globe"
                       style={{ fontSize: "30px", marginRight: "10px" }}
                     ></i>
-                    Working Staff
+                    Working staff
                   </Col>
                 </Row>
 
-                <div className="CardNumber">12</div>
+                <div className="CardNumber">450</div>
                 <div className="CardItalic">Registered staff profiles</div>
               </Card>
             </Col>
@@ -51,15 +51,15 @@ const DashboardOverview = () => {
                 <Row className="CardRow">
                   <Col className="colDec text-end">
                     <i
-                      className="fa fa-heart"
+                      className="fab fa-xbox"
                       style={{ fontSize: "30px", marginRight: "10px" }}
                     ></i>
-                    Ongoing Adoptions
+                    Social Workers
                   </Col>
                 </Row>
 
-                <div className="CardNumber">56</div>
-                <div className="CardItalic">Registered child profiles</div>
+                <div className="CardNumber">106</div>
+                <div className="CardItalic">Registered social workers profiles</div>
               </Card>
             </Col>
             <Col md={3} sm={6} xs={12} style={{ marginBottom: "10px" }}>
@@ -70,12 +70,12 @@ const DashboardOverview = () => {
                       className="fas fa-university"
                       style={{ fontSize: "30px", marginRight: "10px" }}
                     ></i>
-                    Case Management
+                    Registered Orphanages
                   </Col>
                 </Row>
 
-                <div className="CardNumber">22</div>
-                <div className="CardItalic">Registered child profiles</div>
+                <div className="CardNumber">246</div>
+                <div className="CardItalic">Registered orphanages</div>
               </Card>
             </Col>
           </Row>
@@ -86,7 +86,7 @@ const DashboardOverview = () => {
         <Row style={{ marginBottom: "10px" }}>
           <Col sm={12} md={6} style={{ marginBottom: "10px" }}>
             <MyCard>
-              <MyCardHeader>Pending Approvals</MyCardHeader>
+              <MyCardHeader>Pending Staff Approvals</MyCardHeader>
               <Table responsive bordered style={{ width: "100%" }}>
                 <thead>
                   <tr>
@@ -136,7 +136,7 @@ const DashboardOverview = () => {
 
           <Col sm={12} md={6}>
             <MyCard>
-              <MyCardHeader>Ongoing Cases</MyCardHeader>
+              <MyCardHeader>Social Worker Approvals</MyCardHeader>
               <Table responsive bordered style={{ width: "100%" }}>
                 <thead>
                   <tr>
@@ -175,7 +175,7 @@ const DashboardOverview = () => {
         <Row style={{ marginBottom: "10px" }}>
           <Col sm={12} md={6} style={{ marginBottom: "10px" }}>
             <MyCard>
-              <MyCardHeader>Funds Received</MyCardHeader>
+              <MyCardHeader>Parents Requests</MyCardHeader>
               <Table responsive bordered style={{ width: "100%" }}>
                 <thead>
                   <tr>
@@ -212,7 +212,7 @@ const DashboardOverview = () => {
 
           <Col sm={12} md={6}>
             <MyCard>
-              <MyCardHeader>Adoption Requests</MyCardHeader>
+              <MyCardHeader>Inquiries</MyCardHeader>
               <Table responsive bordered style={{ width: "100%" }}>
                 <thead>
                   <tr>
@@ -251,4 +251,4 @@ const DashboardOverview = () => {
     </div>
   );
 };
-export default DashboardOverview;
+export default AdminDashboard;
