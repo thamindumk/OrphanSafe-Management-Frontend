@@ -1,3 +1,11 @@
+.backgrounds{
+  /* background-color: #00ffaa!important; */
+  background-image: url('https://www.panorama-destination.com/responsible-tourism/wp-content/uploads/2021/03/kids-banner.jpg');
+  height: 320px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .role-container {
     display: flex;
     justify-content: space-between;

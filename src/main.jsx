@@ -180,7 +180,7 @@ const router = createBrowserRouter(
        
         
         <Route path="/chat/StaffChat" element={<StaffChatScreen />} />
-        <Route path="/registration/OrphanageRegistration" element={<RegistrationScreen />} />
+       
         
         
        
@@ -189,6 +189,7 @@ const router = createBrowserRouter(
       <Route element={<AuthApp />}>
         <Route path="/auth/login" element={<LoginScreen />} />
         <Route path="/auth/register" element={<RegistrationScreen />} />
+        <Route path="/registration/OrphanageRegistration" element={<RegistrationScreen />} />
       </Route>
       <Route element={<AdminApp />}>
       <Route path="/dashboard/Admin" element={<AdminDashboardScreen />} />
