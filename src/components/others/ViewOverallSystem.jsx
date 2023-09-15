@@ -7,7 +7,7 @@ import "../../assets/css/dashbord/dashboard.css"
 
 const ViewOverallSystem = () => {
   const openNewTab = () => {
-    const url = "https://example.com"; // Replace with your desired URL
+    const url = "http://localhost/Reporter/ReturnReport?args=&hasparams=true&sql=&filename=UsersReport&reportname=UsersReport&IsDynamic=true"; // Replace with your desired URL
     window.open(url, "_blank"); // "_blank" opens the URL in a new tab
   };
     return (
