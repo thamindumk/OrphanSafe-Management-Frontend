@@ -122,16 +122,16 @@ const router = createBrowserRouter(
           element={<ViewParentDocumentScreen />}
         />
         <Route path="/cases/viewOngoingCases" element={<ViewOngingCases />} />
-        
 
         <Route
           path="/cases/viewOngoingCases/overview"
           element={<CaseOverViewScreen />}
         />
 
-        <Route path="/cases/AssignSocialWorkers"element={<AssignSocialWorkersScreen/>}/>
-        
-
+        <Route
+          path="/cases/AssignSocialWorkers"
+          element={<AssignSocialWorkersScreen />}
+        />
 
         <Route
           path="/report/viewChildReport"
@@ -164,61 +164,93 @@ const router = createBrowserRouter(
           element={<ViewUserRolesScreen />}
         />
 
-        
-
         <Route path="/funds/ReceiveFunds" element={<ReceiveFundScreen />} />
 
         <Route
           path="/inquiry/CreateInquiry"
           element={<CreateInquiryScreen />}
         />
-       
-       
+
         <Route path="/editProfile" element={<EditProfile />} />
 
-        <Route path="/inquiry/CreateInquiry" element={<CreateInquiryScreen />} />
-       
-        
-        <Route path="/chat/StaffChat" element={<StaffChatScreen />} />
-       
-        
-        
-       
+        <Route
+          path="/inquiry/CreateInquiry"
+          element={<CreateInquiryScreen />}
+        />
 
+        <Route path="/chat/StaffChat" element={<StaffChatScreen />} />
       </Route>
       <Route element={<AuthApp />}>
         <Route path="/auth/login" element={<LoginScreen />} />
         <Route path="/auth/register" element={<RegistrationScreen />} />
-        <Route path="/registration/OrphanageRegistration" element={<RegistrationScreen />} />
+        <Route
+          path="/registration/OrphanageRegistration"
+          element={<RegistrationScreen />}
+        />
       </Route>
       <Route element={<AdminApp />}>
-      <Route path="/dashboard/Admin" element={<AdminDashboardScreen />} />
-        
-        <Route path="/inquiry/InquiriesBulkResponse" element={<InquiriesBulkResponseScreen />} />
-        <Route path="/approval/OverallApproval" element={<OverallApprovalScreen />} />
+        <Route path="/dashboard/Admin" element={<AdminDashboardScreen />} />
+
+        <Route
+          path="/inquiry/InquiriesBulkResponse"
+          element={<InquiriesBulkResponseScreen />}
+        />
+        <Route
+          path="/approval/OverallApproval"
+          element={<OverallApprovalScreen />}
+        />
         <Route path="/cases/viewPendingCases" element={<ViewPendingCases />} />
-        <Route path="/admin/viewStaffProfile/overview" element={<AdminStaffProfileScreen />}/> 
-        <Route path="/admin/ResponseBulk" element={<BulkResponseFormScreen />}/> 
+        <Route
+          path="/admin/viewStaffProfile/overview"
+          element={<AdminStaffProfileScreen />}
+        />
+        <Route
+          path="/admin/ResponseBulk"
+          element={<BulkResponseFormScreen />}
+        />
         <Route path="/admin/StaffChat" element={<StaffChatScreen />} />
       </Route>
       <Route element={<ExternalPartyApp />}>
-      <Route path="/dashboard/External" element={<ExternalDashboardScreen />} />
-      <Route path="/cases/AcceptOrRejectCases" element={<AcceptRejectCasesScreen />}/>
-      <Route path="/external/StaffChat" element={<StaffChatScreen />} />
+        <Route
+          path="/dashboard/External"
+          element={<ExternalDashboardScreen />}
+        />
+        <Route
+          path="/cases/AcceptOrRejectCases"
+          element={<AcceptRejectCasesScreen />}
+        />
+        <Route path="/external/StaffChat" element={<StaffChatScreen />} />
         <Route
           path="/external/CreateCaseLog"
           element={<CreateCaseLogsScreen />}
         />
         <Route path="/external/CaseRequest" element={<CaseRequestScreen />} />
 
-        <Route path="/external/OngoingCases" element={<OngoingCaseExternalScreen />} />
-        <Route path="/external/EditDeleteCaseLog" element={<EditDeleteCaseLogScreen />} />
-        <Route path="/parent/RequestChildProfile" element={<RequestChildProfileScreen />} />
+        <Route
+          path="/external/OngoingCases"
+          element={<OngoingCaseExternalScreen />}
+        />
+        <Route
+          path="/external/EditDeleteCaseLog"
+          element={<EditDeleteCaseLogScreen />}
+        />
+        <Route
+          path="/parent/RequestChildProfile"
+          element={<RequestChildProfileScreen />}
+        />
         <Route path="/parent/RequestCaseInfo" element={<RequestCaseInfo />} />
-        <Route path="/parent/ParentsViewCases" element={<ParentsViewCasesScreen />} />
-        <Route path="/parent/viewProfile/overview" element={<ParentViewChildProfileScreen />}/> 
-        <Route path="/parent/viewChildProfileList" element={<ParentViewChildProfileListScreen />}/> 
-
+        <Route
+          path="/parent/ParentsViewCases"
+          element={<ParentsViewCasesScreen />}
+        />
+        <Route
+          path="/parent/viewProfile/overview"
+          element={<ParentViewChildProfileScreen />}
+        />
+        <Route
+          path="/parent/viewChildProfileList"
+          element={<ParentViewChildProfileListScreen />}
+        />
       </Route>
     </Route>
   )
