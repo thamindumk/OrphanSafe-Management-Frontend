@@ -32,7 +32,11 @@ const ExternalPartyApp = () => {
     "/external/EditDeleteCaseLog" : "View Edit And Delete Case Logs",
     "/parent/RequestChildProfile" : "Request Child Profiles",
     "/parent/RequestCaseInfo" : "Request Case Information",
-    "/parent/ParentsViewCases" : "View Cases"
+    "/parent/ParentsViewCases" : "View Cases",
+    "/external/OngoingCases": "View Case Logs",
+    "/cases/AcceptOrRejectCases": "Accept Or Reject Assigned Cases",
+    "/parent/viewChildProfileList": "Requested Child list",
+    "/parent/viewProfile/overview": "Child Profile"
 
     // Add more path-title mappings as needed
   };

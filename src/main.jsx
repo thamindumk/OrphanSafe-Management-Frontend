@@ -17,6 +17,7 @@ import LoginScreen from "./screens/LoginScreen.jsx";
 import App from "./App.jsx";
 import DefaultLayout from "./DefaultLayout.jsx";
 import AuthApp from "./AuthApp.jsx";
+import AdminApp from "./AdminApp";
 import CreateChildProfileScreen from "./screens/child-profile/CreateChildProfileScreen";
 import ViewChildProfileScreen from "./screens/child-profile/ViewChildProfileScreen";
 import ViewDashboardScreen from "./screens/others/ViewDashboardScreen";
@@ -59,6 +60,11 @@ import CaseOverViewScreen from "./screens/cases/CaseOverViewScreen";
 import EditProfile from "./screens/others/EditProfile";
 import OverallApprovalScreen from "./screens/others/OverallApprovalScreen";
 import StaffChatScreen from "./screens/others/StaffChatScreen";
+import OngoingCaseExternalScreen from "./screens/external-party/OngoingCasesExternalScreen";
+import ParentViewChildProfileScreen from "./screens/external-party/ParentsViewChildProfileScreen";
+import ParentViewChildProfileListScreen from "./screens/external-party/ParentViewChildProfileListScreen";
+import AdminStaffProfileScreen from "./screens/staff/AdminStaffProfileScreen";
+import BulkResponseFormScreen from "./screens/others/BulkResponseFormScreen";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -114,7 +120,7 @@ const router = createBrowserRouter(
           element={<ViewParentDocumentScreen />}
         />
         <Route path="/cases/viewOngoingCases" element={<ViewOngingCases />} />
-        <Route path="/cases/viewPendingCases" element={<ViewPendingCases />} />
+        
 
         <Route
           path="/cases/viewOngoingCases/overview"
@@ -122,7 +128,7 @@ const router = createBrowserRouter(
         />
 
         <Route path="/cases/AssignSocialWorkers"element={<AssignSocialWorkersScreen/>}/>
-        <Route path="/cases/AcceptOrRejectCases" element={<AcceptRejectCasesScreen />}/>
+        
 
 
         <Route
@@ -157,32 +163,22 @@ const router = createBrowserRouter(
         />
 
         
-        <Route path="/cases/AcceptOrRejectCases" element={<AcceptRejectCasesScreen />}/>
+
         <Route path="/funds/ReceiveFunds" element={<ReceiveFundScreen />} />
 
         <Route
           path="/inquiry/CreateInquiry"
           element={<CreateInquiryScreen />}
         />
-        <Route
-          path="/parent/RequestChildProfile"
-          element={<RequestChildProfileScreen />}
-        />
-        <Route path="/parent/RequestCaseInfo" element={<RequestCaseInfo />} />
-        <Route
-          path="/parent/ParentsViewCases"
-          element={<ParentsViewCasesScreen />}
-        />
-        <Route
-          path="/inquiry/InquiriesBulkResponse"
-          element={<InquiriesBulkResponseScreen />}
-        />
+       
+       
         <Route path="/editProfile" element={<EditProfile />} />
 
         <Route path="/inquiry/CreateInquiry" element={<CreateInquiryScreen />} />
-        <Route path="/inquiry/InquiriesBulkResponse" element={<InquiriesBulkResponseScreen />} />
-        <Route path="/approval/OverallApproval" element={<OverallApprovalScreen />} />
+       
+        
         <Route path="/chat/StaffChat" element={<StaffChatScreen />} />
+        <Route path="/registration/OrphanageRegistration" element={<RegistrationScreen />} />
         
         
        
@@ -192,23 +188,32 @@ const router = createBrowserRouter(
         <Route path="/auth/login" element={<LoginScreen />} />
         <Route path="/auth/register" element={<RegistrationScreen />} />
       </Route>
+      <Route element={<AdminApp />}>
+      <Route path="/dashboard/Admin" element={<ViewDashboardScreen />} />
+        <Route path="/admin/dashboardAdmin" element={<ViewDashboardScreen />} />
+        <Route path="/inquiry/InquiriesBulkResponse" element={<InquiriesBulkResponseScreen />} />
+        <Route path="/approval/OverallApproval" element={<OverallApprovalScreen />} />
+        <Route path="/cases/viewPendingCases" element={<ViewPendingCases />} />
+        <Route path="/admin/viewStaffProfile/overview" element={<AdminStaffProfileScreen />}/> 
+        <Route path="/admin/ResponseBulk" element={<BulkResponseFormScreen />}/> 
+      </Route>
       <Route element={<ExternalPartyApp />}>
       <Route path="/dashboard/External" element={<ViewDashboardScreen />} />
-        <Route path="/external/view" element={<RegistrationScreen />} />
+      <Route path="/cases/AcceptOrRejectCases" element={<AcceptRejectCasesScreen />}/>
+      
         <Route
           path="/external/CreateCaseLog"
           element={<CreateCaseLogsScreen />}
         />
         <Route path="/external/CaseRequest" element={<CaseRequestScreen />} />
 
-        <Route
-          path="/external/EditDeleteCaseLog"
-          element={<EditDeleteCaseLogScreen />}
-        />
+        <Route path="/external/OngoingCases" element={<OngoingCaseExternalScreen />} />
         <Route path="/external/EditDeleteCaseLog" element={<EditDeleteCaseLogScreen />} />
         <Route path="/parent/RequestChildProfile" element={<RequestChildProfileScreen />} />
         <Route path="/parent/RequestCaseInfo" element={<RequestCaseInfo />} />
         <Route path="/parent/ParentsViewCases" element={<ParentsViewCasesScreen />} />
+        <Route path="/parent/viewProfile/overview" element={<ParentViewChildProfileScreen />}/> 
+        <Route path="/parent/viewChildProfileList" element={<ParentViewChildProfileListScreen />}/> 
 
       </Route>
     </Route>

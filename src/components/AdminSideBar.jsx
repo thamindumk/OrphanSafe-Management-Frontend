@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { LinkContainer } from "react-router-bootstrap";
 
-const ExternalSidebar = () => {
+const AdminSideBar = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
 
   const toggleSidebar = () => {
@@ -58,7 +58,7 @@ const ExternalSidebar = () => {
               <div>Dashboard</div>
             </div>
             <div className="sidebar-submenu">
-              <LinkContainer to="/dashboard/External">
+              <LinkContainer to="/dashboard/Admin">
                 <a className="sidebar-submenu-item" onClick={closeSidebar}>View Dashboard</a>
               </LinkContainer>
             </div>
@@ -67,24 +67,25 @@ const ExternalSidebar = () => {
           <div className="sidebar-menu-item">
             <div className="sidebar-menu-item-heading">
               <ion-icon name="caret-down"></ion-icon>
-              <div>Social Workers</div>
+              <div>Approvals</div>
             </div>
-            
             <div className="sidebar-submenu">
-              <LinkContainer to="/external/OngoingCases">
-                <a className="sidebar-submenu-item" onClick={closeSidebar}>View case logs</a>
+              <LinkContainer to="/approval/OverallApproval">
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>Overall approvals</a>
               </LinkContainer>
             </div>
+          </div>
+          <div className="sidebar-menu-item">
+            <div className="sidebar-menu-item-heading">
+              <ion-icon name="caret-down"></ion-icon>
+              <div>Inquiries</div>
+            </div>
+           
             <div className="sidebar-submenu">
-              <LinkContainer to="/external/CreateCaseLog">
-                <a className="sidebar-submenu-item" onClick={closeSidebar}>Create case log</a>
+              <LinkContainer to="/inquiry/InquiriesBulkResponse">
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>Bulk response</a>
               </LinkContainer>
             </div>
-            <div className="sidebar-submenu">
-                <LinkContainer to="/cases/AcceptOrRejectCases">
-                  <a className="sidebar-submenu-item" onClick={closeSidebar}>Case invitations</a>
-                </LinkContainer>
-              </div>
           </div>
           <div className="sidebar-menu-item">
             <div className="sidebar-menu-item-heading">
@@ -97,36 +98,11 @@ const ExternalSidebar = () => {
               </LinkContainer>
             </div>
           </div>
-          <div className="sidebar-menu-item">
-            <div className="sidebar-menu-item-heading">
-              <ion-icon name="caret-down"></ion-icon>
-              <div>Parents</div>
-            </div>
-            <div className="sidebar-submenu">
-              <LinkContainer to="/parent/RequestChildProfile">
-                <a className="sidebar-submenu-item" onClick={closeSidebar}>Request child profile</a>
-              </LinkContainer>
-            </div>
-            <div className="sidebar-submenu">
-              <LinkContainer to="/parent/viewChildProfileList">
-                <a className="sidebar-submenu-item" onClick={closeSidebar}>View child profile</a>
-              </LinkContainer>
-            </div>
-            <div className="sidebar-submenu">
-              <LinkContainer to="/parent/RequestCaseInfo">
-                <a className="sidebar-submenu-item" onClick={closeSidebar}>Request case information</a>
-              </LinkContainer>
-            </div>
-            <div className="sidebar-submenu">
-              <LinkContainer to="/parent/ParentsViewCases">
-                <a className="sidebar-submenu-item" onClick={closeSidebar}>View cases</a>
-              </LinkContainer>
-            </div>
-          </div>
+          
         </div>
       </div>
     </section>
   );
 };
 
-export default ExternalSidebar;
+export default AdminSideBar;
