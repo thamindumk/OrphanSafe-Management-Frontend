@@ -98,6 +98,17 @@ const AdminSideBar = () => {
               </LinkContainer>
             </div>
           </div>
+          <div className="sidebar-menu-item">
+            <div className="sidebar-menu-item-heading">
+              <ion-icon name="caret-down"></ion-icon>
+              <div>Reports</div>
+            </div>
+            <div className="sidebar-submenu">
+                <LinkContainer to="/report/viewOverallSystemReport">
+                  <a className="sidebar-submenu-item" onClick={closeSidebar}>Overall system reports</a>
+                </LinkContainer>
+              </div>
+          </div>
           
         </div>
       </div>
