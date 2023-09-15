@@ -6,6 +6,10 @@ import "../../assets/css/dashbord/dashboard.css"
 
 
 const ChildReport = () => {
+  const openNewTab = () => {
+    const url = "http://localhost/Reporter/ReturnReport?args=&hasparams=true&sql=&filename=UsersReport&reportname=UsersReport&IsDynamic=true"; // Replace with your desired URL
+    window.open(url, "_blank"); // "_blank" opens the URL in a new tab
+  };
     return (
     <div className="responsive">
       <Row style={{marginBottom: "10px"}}>
@@ -20,7 +24,7 @@ const ChildReport = () => {
                       className="role-container-left d-flex flex-column justify-content-between mr-3"
                     >
                       <div>
-                        <div style={{fontsize: "15px",fontWeight: "900" }}>Child Profile Report</div>
+                        <div style={{fontsize: "15px",fontWeight: "900" }}>User Account Report</div>
                         <div style={{ fontSize: "12px", fontWeight: "500", color: "#232F3E" }}>This report contains detailed information about each child, including their name, date of birth, gender, medical history, and any special needs or requirements.</div>
                       </div>
                       
@@ -29,7 +33,9 @@ const ChildReport = () => {
                       className="role-container-right d-flex justify-content-end align-items-center"
                     >
                      
-                      <button className="my-btn-primary">View</button>
+                     <button className="my-btn-primary" onClick={openNewTab}>
+                      View
+                    </button>
                     </div>
 
 
@@ -48,7 +54,9 @@ const ChildReport = () => {
                       className="role-container-right d-flex justify-content-end align-items-center"
                     >
                      
-                      <button className="my-btn-primary">View</button>
+                     <button className="my-btn-primary" onClick={openNewTab}>
+                      View
+                    </button>
                     </div>
 
 
@@ -67,7 +75,9 @@ const ChildReport = () => {
                       className="role-container-right d-flex justify-content-end align-items-center"
                     >
                      
-                      <button className="my-btn-primary">View</button>
+                     <button className="my-btn-primary" onClick={openNewTab}>
+                      View
+                    </button>
                     </div>
 
 
