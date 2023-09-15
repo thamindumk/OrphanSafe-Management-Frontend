@@ -69,7 +69,7 @@ const AdminApp = () => {
     "/registration/OrphanageRegistration": "Orphanage Registration",
     "/admin/viewStaffProfile/overview": " Profile",
     "/admin/ResponseBulk": "Response to bulk inquiries",
-    "/dashboard/Admin": "Dashboard",
+    "/dashboard/Admin": "Admin Dashboard",
     
   };
   // Check if the path exists in the mapping, and if so, set the pageTitle accordingly

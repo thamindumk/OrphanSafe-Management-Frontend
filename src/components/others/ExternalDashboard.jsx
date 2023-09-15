@@ -4,12 +4,12 @@ import { MyCard, MyCardBody, MyCardHeader } from "../MyCard";
 import "../../index.css";
 import "../../assets/css/dashbord/dashboard.css";
 
-const DashboardOverview = () => {
+const ExternalDashboard = () => {
   return (
     <div className="responsive">
       <div className="cards">
         <div className="background">
-          <h1 className="name-headers">Overview</h1>
+          <h1 className="name-headers">Home</h1>
           <Row
             className="profile"
             style={{ paddingTop: "30px", paddingLeft: "50px" }}
@@ -212,7 +212,7 @@ const DashboardOverview = () => {
 
           <Col sm={12} md={6}>
             <MyCard>
-              <MyCardHeader>Adoption Requests</MyCardHeader>
+              <MyCardHeader>Ongoing Cases</MyCardHeader>
               <Table responsive bordered style={{ width: "100%" }}>
                 <thead>
                   <tr>
@@ -251,4 +251,4 @@ const DashboardOverview = () => {
     </div>
   );
 };
-export default DashboardOverview;
+export default ExternalDashboard;
