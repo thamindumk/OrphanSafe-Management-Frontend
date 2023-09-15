@@ -52,7 +52,7 @@ const InquiriesBulkResponse = () => {
                     <td>I'm having trouble with my account.</td>
                     <td><a href="#" className="blue-button"style={{ fontSize: "14px"}}>View</a></td>
                     <td style={{ textAlign: 'center', verticalAlign: 'middle' }}>
-                      <LinkContainer to="/monitoring/viewParent/overview">
+                      <LinkContainer to="/admin/viewStaffProfile/overview">
                         <a href="#">bob Niles</a>
                       </LinkContainer>
                     </td> 
@@ -67,7 +67,7 @@ const InquiriesBulkResponse = () => {
                     <td>I'm having trouble with my account.</td>
                     <td><a href="#" className="blue-button"style={{ fontSize: "14px"}}>View</a></td>
                     <td style={{ textAlign: 'center', verticalAlign: 'middle' }}>
-                      <LinkContainer to="/monitoring/viewParent/overview">
+                      <LinkContainer to="/admin/viewStaffProfile/overview">
                         <a href="#">bob Niles</a>
                       </LinkContainer>
                     </td> 
@@ -82,7 +82,7 @@ const InquiriesBulkResponse = () => {
                     <td>I'm having trouble with my account.</td>
                     <td><a href="#" className="blue-button"style={{ fontSize: "14px"}}>View</a></td>
                     <td style={{ textAlign: 'center', verticalAlign: 'middle' }}>
-                      <LinkContainer to="/monitoring/viewParent/overview">
+                      <LinkContainer to="/admin/viewStaffProfile/overview">
                         <a href="#">bob Niles</a>
                       </LinkContainer>
                     </td> 
@@ -97,7 +97,7 @@ const InquiriesBulkResponse = () => {
                     <td>I'm having trouble with my account.</td>
                     <td><a href="#" className="blue-button"style={{ fontSize: "14px"}}>View</a></td>
                     <td style={{ textAlign: 'center', verticalAlign: 'middle' }}>
-                      <LinkContainer to="/monitoring/viewParent/overview">
+                      <LinkContainer to="/admin/viewStaffProfile/overview">
                         <a href="#">bob Niles</a>
                       </LinkContainer>
                     </td> 
@@ -110,7 +110,10 @@ const InquiriesBulkResponse = () => {
             </div>
             <div className="mt-1"></div>
             <div className="d-flex justify-content-end mt-4">
-            <button className="my-btn-danger">Response</button>
+            <LinkContainer to="/admin/ResponseBulk">
+                        <button className="my-btn-danger">Response</button>
+                      </LinkContainer>
+            
             </div>
           </MyCardBody>
         </MyCard>

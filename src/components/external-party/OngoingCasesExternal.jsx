@@ -77,7 +77,11 @@ const OngoingCaseViewExternal = () => {
                         </LinkContainer>
                       </td>
                       <td>{data.Child_ID}</td>
-                      <td>{data.Child_Name}</td>
+                      <td>
+                      <LinkContainer to="/parent/viewProfile/overview">
+                          <a href="#">{data.Child_Name}</a>
+                        </LinkContainer>
+                      </td>
                       <td>{data.Last_Update}</td>
                     </tr>
                   ))}

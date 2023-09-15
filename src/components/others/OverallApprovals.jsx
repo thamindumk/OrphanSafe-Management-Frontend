@@ -45,12 +45,12 @@ const OverallApproval = () => {
                 <tr>
                   <td>1</td>
                   <td>
-                    <LinkContainer to="/monitoring/viewSocialWorker/overview">
+                    <LinkContainer to="/admin/viewStaffProfile/overview">
                       <a href="#">Bunula Silva</a>
                     </LinkContainer>
                   </td>
                   <td>CH-2345</td>
-                  <td><LinkContainer to="/monitoring/viewSocialWorker/overview">
+                  <td><LinkContainer to="/admin/viewStaffProfile/overview">
                       <a href="#">Kalum Gamage</a>
                     </LinkContainer></td>
                   <td><LinkContainer to="/cases/viewPendingCases">
@@ -64,12 +64,12 @@ const OverallApproval = () => {
                 <tr>
                   <td>1</td>
                   <td>
-                    <LinkContainer to="/monitoring/viewSocialWorker/overview">
+                    <LinkContainer to="/admin/viewStaffProfile/overview">
                       <a href="#">Bunula Silva</a>
                     </LinkContainer>
                   </td>
                   <td>CH-2345</td>
-                  <td><LinkContainer to="/monitoring/viewSocialWorker/overview">
+                  <td><LinkContainer to="/admin/viewStaffProfile/overview">
                       <a href="#">Kalum Gamage</a>
                     </LinkContainer></td>
                   <td><LinkContainer to="/cases/viewPendingCases">
@@ -83,12 +83,12 @@ const OverallApproval = () => {
                 <tr>
                   <td>1</td>
                   <td>
-                    <LinkContainer to="/monitoring/viewSocialWorker/overview">
+                    <LinkContainer to="/admin/viewStaffProfile/overview">
                       <a href="#">Bunula Silva</a>
                     </LinkContainer>
                   </td>
                   <td>CH-2345</td>
-                  <td><LinkContainer to="/monitoring/viewSocialWorker/overview">
+                  <td><LinkContainer to="/admin/viewStaffProfile/overview">
                       <a href="#">Kalum Gamage</a>
                     </LinkContainer></td>
                   <td><LinkContainer to="/cases/viewPendingCases">
@@ -102,12 +102,12 @@ const OverallApproval = () => {
                 <tr>
                   <td>1</td>
                   <td>
-                    <LinkContainer to="/monitoring/viewSocialWorker/overview">
+                    <LinkContainer to="/admin/viewStaffProfile/overview">
                       <a href="#">Bunula Silva</a>
                     </LinkContainer>
                   </td>
                   <td>CH-2345</td>
-                  <td><LinkContainer to="/monitoring/viewSocialWorker/overview">
+                  <td><LinkContainer to="/admin/viewStaffProfile/overview">
                       <a href="#">Kalum Gamage</a>
                     </LinkContainer></td>
                   <td><LinkContainer to="/cases/viewPendingCases">
@@ -153,12 +153,12 @@ const OverallApproval = () => {
                 <tr>
                   <td>1</td>
                   <td>
-                    <LinkContainer to="/monitoring/viewSocialWorker/overview">
+                    <LinkContainer to="/admin/viewStaffProfile/overview">
                       <a href="#">Sunil Perera</a>
                     </LinkContainer>
                   </td>
                   <td>CH-2345</td>
-                  <td><LinkContainer to="/monitoring/viewSocialWorker/overview">
+                  <td><LinkContainer to="/admin/viewStaffProfile/overview">
                       <a href="#">Piyal Gamage</a>
                     </LinkContainer></td>
                   <td><LinkContainer to="/cases/viewPendingCases">
@@ -172,33 +172,12 @@ const OverallApproval = () => {
                 <tr>
                   <td>1</td>
                   <td>
-                    <LinkContainer to="/monitoring/viewSocialWorker/overview">
+                    <LinkContainer to="/admin/viewStaffProfile/overview">
                       <a href="#">Sunil Perera</a>
                     </LinkContainer>
                   </td>
                   <td>CH-2345</td>
-                  <td><LinkContainer to="/monitoring/viewSocialWorker/overview">
-                      <a href="#">Piyal Gamage</a>
-                    </LinkContainer></td>
-                  <td>
-                  <LinkContainer to="/cases/viewPendingCases">
-                      <a href="#">request to check child details for adoption</a>
-                    </LinkContainer>
-                  </td>
-                  <td><button className="my-btn mr-2">Approve</button></td>
-                  <td>
-                  <button className="my-btn-danger">Reject</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>
-                    <LinkContainer to="/monitoring/viewSocialWorker/overview">
-                      <a href="#">Sunil Perera</a>
-                    </LinkContainer>
-                  </td>
-                  <td>CH-2345</td>
-                  <td><LinkContainer to="/monitoring/viewSocialWorker/overview">
+                  <td><LinkContainer to="/admin/viewStaffProfile/overview">
                       <a href="#">Piyal Gamage</a>
                     </LinkContainer></td>
                   <td><LinkContainer to="/cases/viewPendingCases">
@@ -212,12 +191,31 @@ const OverallApproval = () => {
                 <tr>
                   <td>1</td>
                   <td>
-                    <LinkContainer to="/monitoring/viewSocialWorker/overview">
+                    <LinkContainer to="/admin/viewStaffProfile/overview">
                       <a href="#">Sunil Perera</a>
                     </LinkContainer>
                   </td>
                   <td>CH-2345</td>
-                  <td><LinkContainer to="/monitoring/viewSocialWorker/overview">
+                  <td><LinkContainer to="/admin/viewStaffProfile/overview">
+                      <a href="#">Piyal Gamage</a>
+                    </LinkContainer></td>
+                  <td><LinkContainer to="/cases/viewPendingCases">
+                      <a href="#">request to check child details for adoption</a>
+                    </LinkContainer></td>
+                  <td><button className="my-btn mr-2">Approve</button></td>
+                  <td>
+                  <button className="my-btn-danger">Reject</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>
+                    <LinkContainer to="/admin/viewStaffProfile/overview">
+                      <a href="#">Sunil Perera</a>
+                    </LinkContainer>
+                  </td>
+                  <td>CH-2345</td>
+                  <td><LinkContainer to="/admin/viewStaffProfile/overview">
                       <a href="#">Piyal Gamage</a>
                     </LinkContainer></td>
                   <td><LinkContainer to="/cases/viewPendingCases">
@@ -347,7 +345,7 @@ const OverallApproval = () => {
                 <tr>
                   <td>St-3567</td>
                   <td>
-                    <LinkContainer to="/monitoring/viewSocialWorker/overview">
+                    <LinkContainer to="/admin/viewStaffProfile/overview">
                       <a href="#">Sunil Perera</a>
                     </LinkContainer>
                   </td>
@@ -362,7 +360,7 @@ const OverallApproval = () => {
                 <tr>
                   <td>St-3567</td>
                   <td>
-                    <LinkContainer to="/monitoring/viewSocialWorker/overview">
+                    <LinkContainer to="/admin/viewStaffProfile/overview">
                       <a href="#">Kamal Perera</a>
                     </LinkContainer>
                   </td>
@@ -377,7 +375,7 @@ const OverallApproval = () => {
                 <tr>
                   <td>St-3567</td>
                   <td>
-                    <LinkContainer to="/monitoring/viewSocialWorker/overview">
+                    <LinkContainer to="/admin/viewStaffProfile/overview">
                       <a href="#">Sunil Perera</a>
                     </LinkContainer>
                   </td>
@@ -392,7 +390,7 @@ const OverallApproval = () => {
                 <tr>
                   <td>St-3567</td>
                   <td>
-                    <LinkContainer to="/monitoring/viewSocialWorker/overview">
+                    <LinkContainer to="/admin/viewStaffProfile/overview">
                       <a href="#">Sunil Perera</a>
                     </LinkContainer>
                   </td>
