@@ -180,7 +180,7 @@ const router = createBrowserRouter(
        
         
         <Route path="/chat/StaffChat" element={<StaffChatScreen />} />
-        <Route path="/registration/OrphanageRegistration" element={<RegistrationScreen />} />
+       
         
         
        
@@ -189,6 +189,7 @@ const router = createBrowserRouter(
       <Route element={<AuthApp />}>
         <Route path="/auth/login" element={<LoginScreen />} />
         <Route path="/auth/register" element={<RegistrationScreen />} />
+        <Route path="/registration/OrphanageRegistration" element={<RegistrationScreen />} />
       </Route>
       <Route element={<AdminApp />}>
       <Route path="/dashboard/Admin" element={<AdminDashboardScreen />} />
@@ -198,11 +199,12 @@ const router = createBrowserRouter(
         <Route path="/cases/viewPendingCases" element={<ViewPendingCases />} />
         <Route path="/admin/viewStaffProfile/overview" element={<AdminStaffProfileScreen />}/> 
         <Route path="/admin/ResponseBulk" element={<BulkResponseFormScreen />}/> 
+        <Route path="/admin/StaffChat" element={<StaffChatScreen />} />
       </Route>
       <Route element={<ExternalPartyApp />}>
       <Route path="/dashboard/External" element={<ExternalDashboardScreen />} />
       <Route path="/cases/AcceptOrRejectCases" element={<AcceptRejectCasesScreen />}/>
-      
+      <Route path="/external/StaffChat" element={<StaffChatScreen />} />
         <Route
           path="/external/CreateCaseLog"
           element={<CreateCaseLogsScreen />}

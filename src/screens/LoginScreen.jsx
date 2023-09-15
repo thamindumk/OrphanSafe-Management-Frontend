@@ -29,12 +29,19 @@ const LoginScreen = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    try {
-      const res = await login({ email: email, password: password }).unwrap();
-      dispatch(setCredentials(res.userInfo));
-    } catch (error) {
-      toast.error("login error. Please try again!");
+    console.log(e.nativeEvent.submitter.id === 'reg_btn')
+    if (e.nativeEvent.submitter.id === 'reg_btn') {
+      navigate('/registration/OrphanageRegistration')
+    } else {
+
+      try {
+        const res = await login({ email: email, password: password }).unwrap();
+        dispatch(setCredentials(res.userInfo));
+      } catch (error) {
+        toast.error("login error. Please try again!");
+      }
     }
+
   };
 
   return (
@@ -92,7 +99,7 @@ const LoginScreen = () => {
             </div>
           </div>
 
-          <button className="mt-3 my-btn-lg">
+          <button className="mt-3 my-btn-lg" id="reg_btn">
             Create a new OrphanSafe account
           </button>
 

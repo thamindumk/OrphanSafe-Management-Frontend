@@ -58,9 +58,7 @@ const App = () => {
     "/cases/viewOngoingCases": "Ongoing cases",
     "/cases/viewOngoingCases/overview": "Case Overview",
     "/editProfile": "your profile",
-    // Add more path-title mappings as needed
-    "/socialWorker/EditDeleteCaseLog":
-      "Edit and delete case logs for social workers",
+    
     "/funds/ReceiveFunds": "Receive Funds",
     "/profile/viewProfile": "View child profiles",
     "/report/viewExternalPartyReport": "External Party Reports",
@@ -69,7 +67,7 @@ const App = () => {
     "/report/viewChildReport": "View Child Report",
     "/approval/OverallApproval": "Overall Approvals",
     "/chat/StaffChat": "Staff Chat",
-    "/chat/StaffChat": "Forum",
+    
     "/registration/OrphanageRegistration": "Orphanage Registration"
     
   };
