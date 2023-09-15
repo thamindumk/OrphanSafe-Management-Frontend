@@ -6,6 +6,10 @@ import "../../assets/css/dashbord/dashboard.css"
 
 
 const ViewOverallSystem = () => {
+  const openNewTab = () => {
+    const url = "http://localhost/Reporter/ReturnReport?args=&hasparams=true&sql=&filename=UsersReport&reportname=UsersReport&IsDynamic=true"; // Replace with your desired URL
+    window.open(url, "_blank"); // "_blank" opens the URL in a new tab
+  };
     return (
     <div className="responsive">
       <Row style={{marginBottom: "10px"}}>
@@ -20,7 +24,7 @@ const ViewOverallSystem = () => {
                       className="role-container-left d-flex flex-column justify-content-between mr-3"
                     >
                       <div>
-                        <div style={{fontsize: "15px",fontWeight: "900" }}>Annual Data Report</div>
+                        <div style={{fontsize: "15px",fontWeight: "900" }}>All User Report</div>
                         <div style={{ fontSize: "12px", fontWeight: "500", color: "#232F3E" }}>An orphanage may produce an annual report that combines financial, operational, and impact data to provide a comprehensive overview of its activities</div>
                       </div>
                       
@@ -29,7 +33,9 @@ const ViewOverallSystem = () => {
                       className="role-container-right d-flex justify-content-end align-items-center"
                     >
                      
-                      <button className="my-btn-primary">View</button>
+                     <button className="my-btn-primary" onClick={openNewTab}>
+                      View
+                    </button>
                     </div>
 
 
@@ -48,7 +54,9 @@ const ViewOverallSystem = () => {
                       className="role-container-right d-flex justify-content-end align-items-center"
                     >
                      
-                      <button className="my-btn-primary">View</button>
+                     <button className="my-btn-primary" onClick={openNewTab}>
+                        View
+                      </button>
                     </div>
 
 
@@ -69,7 +77,9 @@ Facility and Infrastructure Report: Details the condition, maintenance, and safe
                       className="role-container-right d-flex justify-content-end align-items-center"
                     >
                      
-                      <button className="my-btn-primary">View</button>
+                     <button className="my-btn-primary" onClick={openNewTab}>
+                      View
+                    </button>
                     </div>
 
 

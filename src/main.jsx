@@ -149,10 +149,7 @@ const router = createBrowserRouter(
           path="/report/viewExternalPartyReport"
           element={<ViewExternalPartyReportScreen />}
         />
-        <Route
-          path="/report/viewOverallSystemReport"
-          element={<ViewOverallSystemScreen />}
-        />
+        
         <Route path="/userRole/createStaff" element={<CreateStaffScreen />} />
         <Route path="/userRole/createParent" element={<CreateParentScreen />} />
         <Route
@@ -209,6 +206,10 @@ const router = createBrowserRouter(
           element={<BulkResponseFormScreen />}
         />
         <Route path="/admin/StaffChat" element={<StaffChatScreen />} />
+        <Route
+          path="/report/viewOverallSystemReport"
+          element={<ViewOverallSystemScreen />}
+        />
       </Route>
       <Route element={<ExternalPartyApp />}>
         <Route
