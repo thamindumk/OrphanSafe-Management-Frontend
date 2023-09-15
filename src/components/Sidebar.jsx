@@ -140,11 +140,7 @@ const Sidebar = () => {
                   <a className="sidebar-submenu-item" onClick={closeSidebar}>Ongoing cases</a>
                 </LinkContainer>
               </div>
-              <div className="sidebar-submenu">
-                <LinkContainer to="/cases/AcceptOrRejectCases">
-                  <a className="sidebar-submenu-item" onClick={closeSidebar}>Case invitations</a>
-                </LinkContainer>
-              </div>
+             
               <div className="sidebar-submenu">
                 <LinkContainer to="/cases/AssignSocialWorkers">
                   <a className="sidebar-submenu-item" onClick={closeSidebar}>Create Cases</a>
@@ -218,11 +214,7 @@ const Sidebar = () => {
                 <a className="sidebar-submenu-item" onClick={closeSidebar}>Create Inquiry</a>
               </LinkContainer>
             </div>
-            <div className="sidebar-submenu">
-              <LinkContainer to="/inquiry/InquiriesBulkResponse">
-                <a className="sidebar-submenu-item" onClick={closeSidebar}>Bulk response</a>
-              </LinkContainer>
-            </div>
+           
           </div>
           <div className="sidebar-menu-item">
             <div className="sidebar-menu-item-heading">
@@ -246,17 +238,7 @@ const Sidebar = () => {
               </LinkContainer>
             </div>
           </div>
-          <div className="sidebar-menu-item">
-            <div className="sidebar-menu-item-heading">
-              <ion-icon name="caret-down"></ion-icon>
-              <div>Approvals</div>
-            </div>
-            <div className="sidebar-submenu">
-              <LinkContainer to="/approval/OverallApproval">
-                <a className="sidebar-submenu-item" onClick={closeSidebar}>Overall approvals</a>
-              </LinkContainer>
-            </div>
-          </div>
+         
           </div>
         </div>
       </div>

@@ -6,7 +6,7 @@ import "../../assets/css/dropdown.css"
 
 
 
-const CreateCaseLogs = () => {
+const ResponseBulkForm = () => {
     // React state to manage selected options
   const [selectedOptions, setSelectedOptions] = useState();
 
@@ -26,49 +26,33 @@ const CreateCaseLogs = () => {
       <Row>
         <Col sm={7}>
         <MyCard>
-        <MyCardHeader>Create Case Log Form</MyCardHeader>
+        <MyCardHeader>Bulk Response Form</MyCardHeader>
         <MyCardBody>
           <Form>
 
-          <Form.Group className="mb-3" controlId="formBasicGender">
-          <Form.Label>Case Name</Form.Label>
-          <Form.Text className="text-muted">
-          *Select the Case Name
-          </Form.Text> 
-        <div className="dropdown-container">
-          <Select
-            options={optionList}
-            placeholder="Select child"
-            value={selectedOptions}
-            onChange={handleSelect}
-            isSearchable={true}
-           
-          />
-        </div>
-        </Form.Group>
 
 
       <Form.Group className="mb-3" controlId="formBasicCaseName">
-        <Form.Label>Case log name</Form.Label>
+        <Form.Label>Response subject</Form.Label>
         <Form.Text className="text-muted">
-        *name of the case log
+        *subject of the response
         </Form.Text>
-        <Form.Control type="text" placeholder="e.g. Adoption case" />
+        <Form.Control type="text" placeholder="e.g. support request" />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="caseDescription">
-        <Form.Label>Case log description</Form.Label>
+        <Form.Label>Response description</Form.Label>
         <Form.Text className="text-muted">
-        *brief description about the case 
+        *response 
         </Form.Text>
         <Form.Control size="sm" as="textarea" rows={8} />
       </Form.Group>
 
      
       <Form.Group controlId="formFileMultiple" className="mb-3">
-      <Form.Label>Case log Documents</Form.Label>
+      <Form.Label>Response Documents</Form.Label>
         <Form.Text className="text-muted">
-        *documents related to the Case log
+        *documents related response
         </Form.Text>
         <Form.Control type="file" multiple size="sm" style={{ padding: '0.05rem 0.3rem 0.2rem 0.3rem' }}/>
       </Form.Group>
@@ -88,4 +72,4 @@ const CreateCaseLogs = () => {
       </Row>
     );
   };
-  export default CreateCaseLogs;
+  export default ResponseBulkForm;

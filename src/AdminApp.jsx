@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Outlet, useNavigate } from "react-router-dom";
 import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
 import { Col } from "react-bootstrap";
 import { useLocation } from "react-router-dom"; // Import useLocation
+import AdminSideBar from "./components/AdminSideBar";
 
-const App = () => {
+const AdminApp = () => {
   const { userInfo } = useSelector((state) => state.auth);
   const navigate = useNavigate();
 
@@ -43,7 +43,7 @@ const App = () => {
     "/monitoring/viewStaff/overview": "Profile Overview",
     "/monitoring/viewSocialWorker/overview": "Profile Overview",
     "/monitoring/viewParent/overview": "Profile Overview",
-    "/cases/AcceptOrRejectCases": "Accept Or Reject Assigned Cases",
+    
     "/inquiry/CreateInquiry": "Create Inquiry Form",
     "/legal/viewChildDocument": "Child Document",
     "/legal/viewStaffDocument": "Staff Document",
@@ -58,9 +58,6 @@ const App = () => {
     "/cases/viewOngoingCases": "Ongoing cases",
     "/cases/viewOngoingCases/overview": "Case Overview",
     "/editProfile": "your profile",
-    // Add more path-title mappings as needed
-    "/socialWorker/EditDeleteCaseLog":
-      "Edit and delete case logs for social workers",
     "/funds/ReceiveFunds": "Receive Funds",
     "/profile/viewProfile": "View child profiles",
     "/report/viewExternalPartyReport": "External Party Reports",
@@ -68,9 +65,11 @@ const App = () => {
     "/report/viewFinancialReport": "View Financial Report",
     "/report/viewChildReport": "View Child Report",
     "/approval/OverallApproval": "Overall Approvals",
-    "/chat/StaffChat": "Staff Chat",
     "/chat/StaffChat": "Forum",
-    "/registration/OrphanageRegistration": "Orphanage Registration"
+    "/registration/OrphanageRegistration": "Orphanage Registration",
+    "/admin/viewStaffProfile/overview": " Profile",
+    "/admin/ResponseBulk": "Response to bulk inquiries",
+    "/dashboard/Admin": "Dashboard",
     
   };
   // Check if the path exists in the mapping, and if so, set the pageTitle accordingly
@@ -81,7 +80,7 @@ const App = () => {
   return userInfo ? (
     <>
       <Header />
-      <Sidebar />
+      <AdminSideBar />
       <section className="main-container-section" id="main-section">
         <div className="container">
           <section>
@@ -110,4 +109,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default AdminApp;
