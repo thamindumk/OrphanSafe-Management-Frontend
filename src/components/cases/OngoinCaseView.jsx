@@ -1,28 +1,20 @@
 import "../../index.css";
 import "../../assets/css/staff/dataTable.css";
-import { Button, Col, Form, Row, Table } from "react-bootstrap";
+import { Button, Col, Form, Row, Table, Toast } from "react-bootstrap";
 import { MyCard, MyCardBody, MyCardHeader } from "../MyCard";
 import React, { useEffect, useRef } from "react";
 import $ from "jquery"; // Import jQuery
 import "datatables.net-dt/css/jquery.dataTables.css"; // Import DataTables CSS
 import "datatables.net"; // Import DataTables JavaScript
 import { LinkContainer } from "react-router-bootstrap";
-import { useSelector, useDispatch } from "react-redux";
-import { setCaseList } from "../../slices/caseSlice";
-import { useGetCaseListMutation } from "../../slices/caseApiSlice";
-
-
+import { useGetCaseListQuery } from "../../slices/caseApiSlice";
+import { toast } from "react-toastify";
 
 const OngoinCaseView = () => {
   const tableRef = useRef(null);
 
-  const dispatch = useDispatch();
+  const { data, isError, isSuccess, isLoading } = useGetCaseListQuery();
 
-  const [getCaseList, { isLoading }] = useGetCaseListMutation();
-
-  const { tableDetails } = useSelector((state) => state.caseList);
-  const response = getCaseList().unwrap();
-  dispatch(setCaseList(response));
   // const tableDetails = [
   //   {
   //     Case_ID: 1,
@@ -61,13 +53,16 @@ const OngoinCaseView = () => {
   useEffect(() => {
     // Initialize DataTable
     $(tableRef.current).DataTable();
-  }, []);
+  }, [data]);
   return (
     <Row>
       <Col sm={12}>
         <MyCard>
           <MyCardHeader>Staff Details</MyCardHeader>
           <MyCardBody>
+            {isError && <Col className="text-center"><strong>Unexpected Error occured Sorry! :(</strong></Col>}
+            {isLoading && <Col className="text-center">Loading Data!</Col>}
+            {isSuccess && 
             <div>
               <Table
                 responsive
@@ -87,7 +82,7 @@ const OngoinCaseView = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {tableDetails.map((data) => (
+                  {data.caseList.map((data) => (
                     <tr>
                       <td>{data.Case_ID}</td>
                       <td>
@@ -103,7 +98,7 @@ const OngoinCaseView = () => {
                   ))}
                 </tbody>
               </Table>
-            </div>
+            </div>}
           </MyCardBody>
         </MyCard>
       </Col>
