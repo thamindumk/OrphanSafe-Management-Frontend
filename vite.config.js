@@ -171,6 +171,10 @@ export default defineConfig({
         target: "http://localhost:5010",
         changeOrigin: true,
       },
+      "/api/case": {
+        target: "http://localhost:5030",
+        changeOrigin: true,
+      }
     },
   },
 });

@@ -7,44 +7,56 @@ import $ from "jquery"; // Import jQuery
 import "datatables.net-dt/css/jquery.dataTables.css"; // Import DataTables CSS
 import "datatables.net"; // Import DataTables JavaScript
 import { LinkContainer } from "react-router-bootstrap";
+import { useSelector, useDispatch } from "react-redux";
+import { setCaseList } from "../../slices/caseSlice";
+import { useGetCaseListMutation } from "../../slices/caseApiSlice";
+
+
 
 const OngoinCaseView = () => {
   const tableRef = useRef(null);
 
-  const tableDetails = [
-    {
-      Case_ID: 1,
-      Discription: "medical check for eye condition",
-      Chil_ID: 5,
-      Child_Name: "Eranga Malshan",
-      Last_Update: "2021/03/08",
-      Asigned_Worker: "K.P.Lalith",
-    },
-    {
-      Case_ID: 2,
-      Discription: "property case in Kalutara court",
-      Chil_ID: 8,
-      Child_Name: "Lasindu Withanage",
-      Last_Update: "2023/01/15",
-      Asigned_Worker: "P.L.Wijesekara",
-    },
-    {
-      Case_ID: 3,
-      Discription: "Mental checkup",
-      Chil_ID: 13,
-      Child_Name: "Supun Kumara",
-      Last_Update: "2023/04/08",
-      Asigned_Worker: "K.S.D.Perera",
-    },
-    {
-      Case_ID: 4,
-      Discription: "Schoolarship program",
-      Chil_ID: 25,
-      Child_Name: "Rakindu Wijethunga",
-      Last_Update: "2021/12/18",
-      Asigned_Worker: "S.R.Sujeewa",
-    },
-  ];
+  const dispatch = useDispatch();
+
+  const [getCaseList, { isLoading }] = useGetCaseListMutation();
+
+  const { tableDetails } = useSelector((state) => state.caseList);
+  const response = getCaseList().unwrap();
+  dispatch(setCaseList(response));
+  // const tableDetails = [
+  //   {
+  //     Case_ID: 1,
+  //     Discription: "medical check for eye condition",
+  //     Chil_ID: 5,
+  //     Child_Name: "Eranga Malshan",
+  //     Last_Update: "2021/03/08",
+  //     Asigned_Worker: "K.P.Lalith",
+  //   },
+  //   {
+  //     Case_ID: 2,
+  //     Discription: "property case in Kalutara court",
+  //     Chil_ID: 8,
+  //     Child_Name: "Lasindu Withanage",
+  //     Last_Update: "2023/01/15",
+  //     Asigned_Worker: "P.L.Wijesekara",
+  //   },
+  //   {
+  //     Case_ID: 3,
+  //     Discription: "Mental checkup",
+  //     Chil_ID: 13,
+  //     Child_Name: "Supun Kumara",
+  //     Last_Update: "2023/04/08",
+  //     Asigned_Worker: "K.S.D.Perera",
+  //   },
+  //   {
+  //     Case_ID: 4,
+  //     Discription: "Schoolarship program",
+  //     Chil_ID: 25,
+  //     Child_Name: "Rakindu Wijethunga",
+  //     Last_Update: "2021/12/18",
+  //     Asigned_Worker: "S.R.Sujeewa",
+  //   },
+  // ];
 
   useEffect(() => {
     // Initialize DataTable
