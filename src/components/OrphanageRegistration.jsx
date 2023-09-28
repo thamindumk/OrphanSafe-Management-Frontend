@@ -37,7 +37,7 @@ const OrphanageRegistration = () => {
       formData.append("file", landReport);
       formData.append("file", regCert);
       formData.append("file", housePlan);
-      formData.append("otherInfo", {
+      formData.append("otherInfo", JSON.stringify({
         name: name,
         registeredDate: registeredDate,
         capacity: capacity,
@@ -56,7 +56,7 @@ const OrphanageRegistration = () => {
         user_nic: user_nic,
         user_gender: user_gender,
         user_dob: user_dob,
-      });
+      }));
       const res = await registerOrphanage(formData).unwrap();
 
       toast.success("Registration completed");
