@@ -4,7 +4,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
-  RouterProvider,
+  RouterProvider
 } from "react-router-dom";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -67,6 +67,7 @@ import AdminStaffProfileScreen from "./screens/staff/AdminStaffProfileScreen";
 import BulkResponseFormScreen from "./screens/others/BulkResponseFormScreen";
 import AdminDashboardScreen from "./screens/others/AdminDashboardScreen";
 import ExternalDashboardScreen from "./screens/others/ExternalDashboardScreen";
+import AccessDenied from "./screens/AccessDenied";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -149,18 +150,13 @@ const router = createBrowserRouter(
           path="/report/viewExternalPartyReport"
           element={<ViewExternalPartyReportScreen />}
         />
-        
+
         <Route path="/userRole/createStaff" element={<CreateStaffScreen />} />
         <Route path="/userRole/createParent" element={<CreateParentScreen />} />
         <Route
           path="/userRole/createSocialWorker"
           element={<CreateSocialWorkerScreen />}
         />
-        <Route
-          path="/userRole/viewUserRole"
-          element={<ViewUserRolesScreen />}
-        />
-
         <Route path="/funds/ReceiveFunds" element={<ReceiveFundScreen />} />
 
         <Route
@@ -184,6 +180,7 @@ const router = createBrowserRouter(
           path="/registration/OrphanageRegistration"
           element={<RegistrationScreen />}
         />
+        <Route path="/auth/denied" element={<AccessDenied />} />
       </Route>
       <Route element={<AdminApp />}>
         <Route path="/dashboard/Admin" element={<AdminDashboardScreen />} />
@@ -209,6 +206,10 @@ const router = createBrowserRouter(
         <Route
           path="/report/viewOverallSystemReport"
           element={<ViewOverallSystemScreen />}
+        />
+        <Route
+          path="/userRole/viewUserRole"
+          element={<ViewUserRolesScreen />}
         />
       </Route>
       <Route element={<ExternalPartyApp />}>
