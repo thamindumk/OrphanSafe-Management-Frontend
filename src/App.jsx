@@ -11,6 +11,10 @@ const App = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    if (userInfo && userInfo.roleName !== 'orphanageManager') {
+      navigate('/auth/denied')
+    }
+
     if (!userInfo) {
       setTimeout(() => {
         navigate("/auth/login");
@@ -36,7 +40,6 @@ const App = () => {
     "/userRole/createParent": "Create parent Form",
     "/userRole/createSocialWorker": "Create social worker Form",
     "/cases/viewPendingCases": "Approval Page",
-    "/userRole/viewUserRole": "Delete and edit user roles",
     "/cases/AssignSocialWorkers": "Assign social workers for cases",
     "/report/viewOverallSystemReport": "Overall system Report",
     "/profile/viewProfile/overview": "Profile Overview",
@@ -76,7 +79,7 @@ const App = () => {
     pageTitle = pathToTitleMap[path];
   }
 
-  return userInfo ? (
+  return userInfo && userInfo && userInfo.roleName === 'orphanageManager' ? (
     <>
       <Header />
       <Sidebar />

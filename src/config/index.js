@@ -2,9 +2,11 @@
 // const LOGOUT_URL = "https://auth-service.ecodeit.com/api/users/logout";
 export const LOGIN_URL = "/api/users/auth";
 export const LOGOUT_URL = "/api/users/logout";
-export const PATCH_FCM_TOKEN_URL = '/api/notifications/patchToken'
+export const PATCH_FCM_TOKEN_URL = "/api/notifications/patchToken";
 export const GET_CASE_LIST_URL = "/api/case/getCaseList";
 export const CREATE_CASE_URL = "/api/case/getCaseList";
+export const ORPHANAGE_REGISTER_URL = "/api/users/registerOrphanage";
+export const GET_ROLES_LIST_URL = "/api/users/roles";
 
 export const determineAppServerKey = () => {
   const vapidPublicKey =

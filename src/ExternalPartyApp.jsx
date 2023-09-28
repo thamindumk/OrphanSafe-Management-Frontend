@@ -10,6 +10,9 @@ const ExternalPartyApp = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    if (userInfo && (userInfo.roleName !== 'parent' && userInfo.roleName !== 'socialWorker')) {
+      navigate('/auth/denied')
+    }
     if (!userInfo) {
       setTimeout(() => {
         navigate("/auth/login");
@@ -46,7 +49,7 @@ const ExternalPartyApp = () => {
     pageTitle = pathToTitleMap[path];
   }
 
-  return userInfo ? (
+  return userInfo && userInfo && (userInfo.roleName === 'parent' || userInfo.roleName === 'socialWorker')? (
     <>
       <Header />
       <ExternalSidebar />
