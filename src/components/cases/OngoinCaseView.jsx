@@ -14,7 +14,6 @@ const OngoinCaseView = () => {
   const tableRef = useRef(null);
 
   const { data, isError, isSuccess, isLoading } = useGetCaseListQuery();
-
   // const tableDetails = [
   //   {
   //     Case_ID: 1,
@@ -60,45 +59,54 @@ const OngoinCaseView = () => {
         <MyCard>
           <MyCardHeader>Staff Details</MyCardHeader>
           <MyCardBody>
-            {isError && <Col className="text-center"><strong>Unexpected Error occured Sorry! :(</strong></Col>}
+            {isError && (
+              <Col className="text-center">
+                <strong>Unexpected Error occured Sorry! :(</strong>
+              </Col>
+            )}
             {isLoading && <Col className="text-center">Loading Data!</Col>}
-            {isSuccess && 
-            <div>
-              <Table
-                responsive
-                ref={tableRef}
-                id="example"
-                className="row-border"
-                style={{ width: "100%" }}
-              >
-                <thead>
-                  <tr>
-                    <th>Case ID</th>
-                    <th>Discription</th>
-                    <th>Child ID</th>
-                    <th>Child Name</th>
-                    <th>Last Update</th>
-                    <th>Asigned worker</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {data.caseList.map((data) => (
+            {isSuccess && (
+              <div>
+                <Table
+                  responsive
+                  ref={tableRef}
+                  id="example"
+                  className="row-border"
+                  style={{ width: "100%" }}
+                >
+                  <thead>
                     <tr>
-                      <td>{data.Case_ID}</td>
-                      <td>
-                        <LinkContainer to="/cases/viewOngoingCases/overview">
-                          <a href="#">{data.Discription}</a>
-                        </LinkContainer>
-                      </td>
-                      <td>{data.Chil_ID}</td>
-                      <td>{data.Child_Name}</td>
-                      <td>{data.Last_Update}</td>
-                      <td>{data.Asigned_Worker}</td>
+                      <th>Case ID</th>
+                      <th>Case Name</th>
+                      <th>Child Name</th>
+                      <th>State</th>
+                      <th>Last Update</th>
+                      <th>Assigned worker</th>
+                      <th>Assigned By</th>
                     </tr>
-                  ))}
-                </tbody>
-              </Table>
-            </div>}
+                  </thead>
+                  <tbody>
+                    {data.caseList.map((data) => (
+                      <tr>
+                        <td>{data.Id}</td>
+                        <td>
+                          <LinkContainer to="/cases/viewOngoingCases/overview">
+                            <a href="#">{data.CaseName}</a>
+                          </LinkContainer>
+                        </td>
+                        <td>{data.ChildName}</td>
+                        <td>{data.State}</td>
+                        <td>
+                          {data.LastUpdate ? data.LastUpdate : "not started"}
+                        </td>
+                        <td>{data.SocialWorkerName}</td>
+                        <td>{data.CreatedBy}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </Table>
+              </div>
+            )}
           </MyCardBody>
         </MyCard>
       </Col>

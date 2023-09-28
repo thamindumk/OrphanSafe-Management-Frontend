@@ -3,19 +3,31 @@ import { Col, Form, Row, Button } from "react-bootstrap";
 import { MyCard, MyCardBody, MyCardHeader } from "../MyCard";
 import Select from "react-select";
 import "../../assets/css/dropdown.css";
+import {
+  useGetChildProfileNameListQuery,
+  useGetSocialWorkerNameListQuery,
+} from "../../slices/profileSlice";
 
 const AssignSocialWorkers = () => {
   // React state to manage selected options
   const [selectedOptions, setSelectedOptions] = useState();
-
+  const { childData, isErrorChild, isSuccessChild, isLoadingChild } =
+    useGetChildProfileNameListQuery();
+  const {
+    socialWorkerData,
+    isErrorSocialWorker,
+    isSuccessSocialWorker,
+    isLoadingSocialWorker,
+  } = useGetSocialWorkerNameListQuery();
+  console.log(childData);
   // Array of all options
-  const optionList = [
-    { value: "child1", label: "child1" },
-    { value: "child2", label: "child2" },
-    { value: "child3", label: "child3" },
-    { value: "child4", label: "child4" },
-    { value: "child5", label: "child5" },
-  ];
+  // const optionList = [
+  //   { value: "child1", label: "child1" },
+  //   { value: "child2", label: "child2" },
+  //   { value: "child3", label: "child3" },
+  //   { value: "child4", label: "child4" },
+  //   { value: "child5", label: "child5" },
+  // ];
 
   // Function triggered on selection
   function handleSelect(data) {
@@ -48,7 +60,7 @@ const AssignSocialWorkers = () => {
 
                 <div className="dropdown-container">
                   <Select
-                    options={optionList}
+                    options={childData}
                     placeholder="Select child"
                     value={selectedOptions}
                     onChange={handleSelect}
@@ -57,7 +69,7 @@ const AssignSocialWorkers = () => {
                   />
                 </div>
               </Form.Group>
-              
+
               <Form.Group className="mb-3" controlId="formBasicGender">
                 <Form.Label>Social worker Name</Form.Label>
                 <Form.Text className="text-muted">
@@ -66,12 +78,11 @@ const AssignSocialWorkers = () => {
 
                 <div className="dropdown-container">
                   <Select
-                    options={optionList}
-                    placeholder="Select child"
+                    options={socialWorkerData}
+                    placeholder="Select the Social Worker"
                     value={selectedOptions}
                     onChange={handleSelect}
                     isSearchable={true}
-                    isMulti
                   />
                 </div>
               </Form.Group>
