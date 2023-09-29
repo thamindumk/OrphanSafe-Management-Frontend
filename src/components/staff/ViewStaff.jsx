@@ -7,6 +7,7 @@ import $ from "jquery"; // Import jQuery
 import "datatables.net-dt/css/jquery.dataTables.css"; // Import DataTables CSS
 import "datatables.net"; // Import DataTables JavaScript
 import { LinkContainer } from "react-router-bootstrap";
+import { Link } from "react-router-dom";
 
 const ViewStaff = () => {
   const tableRef = useRef(null);
@@ -88,9 +89,11 @@ const ViewStaff = () => {
                     <tr>
                       <td>{data.Staff_ID}</td>
                       <td>
-                        <LinkContainer to="/monitoring/viewStaff/overview">
+                        <Link
+                          to={'/monitoring/viewStaff/overview?id=1'}
+                        >
                           <a href="#">{data.Name}</a>
-                        </LinkContainer>
+                        </Link>
                       </td>
                       <td>{data.Role}</td>
                       <td>{data.Email}</td>

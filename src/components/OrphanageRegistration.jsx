@@ -34,9 +34,9 @@ const OrphanageRegistration = () => {
     e.preventDefault();
     try {
       const formData = new FormData();
-      formData.append("file", landReport);
-      formData.append("file", regCert);
-      formData.append("file", housePlan);
+      formData.append("regCert", regCert);
+      formData.append("housePlan", housePlan);
+      formData.append("landReport", landReport);
       formData.append("otherInfo", JSON.stringify({
         name: name,
         registeredDate: registeredDate,
