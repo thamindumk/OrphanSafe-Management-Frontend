@@ -1,5 +1,9 @@
 import { apiSlice } from "./apiSlice";
-import { GET_CASE_LIST_URL,CREATE_CASE_URL } from "../config";
+import {
+  GET_CASE_LIST_URL,
+  CREATE_CASE_URL,
+  GET_CASE_BY_CASEID_URL,
+} from "../config";
 
 export const caseApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
@@ -8,6 +12,12 @@ export const caseApiSlice = apiSlice.injectEndpoints({
         url: GET_CASE_LIST_URL,
         method: "GET",
         // body: data,
+      }),
+    }),
+    getCaseByCaseId: builder.query({
+      query: (data) => ({
+        url: GET_CASE_BY_CASEID_URL + `?caseId=${data}`,
+        method: "GET",
       }),
     }),
     createCase: builder.mutation({
@@ -20,4 +30,8 @@ export const caseApiSlice = apiSlice.injectEndpoints({
   }),
 });
 
-export const { useGetCaseListQuery, useCreateCaseMutation } = caseApiSlice;
+export const {
+  useGetCaseListQuery,
+  useCreateCaseMutation,
+  useGetCaseByCaseIdQuery,
+} = caseApiSlice;

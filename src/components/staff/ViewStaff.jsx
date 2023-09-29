@@ -89,9 +89,7 @@ const ViewStaff = () => {
                     <tr>
                       <td>{data.Staff_ID}</td>
                       <td>
-                        <Link
-                          to={'/monitoring/viewStaff/overview?id=1'}
-                        >
+                        <Link to={"/monitoring/viewStaff/overview?id=1"}>
                           <a href="#">{data.Name}</a>
                         </Link>
                       </td>
