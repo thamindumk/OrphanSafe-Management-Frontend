@@ -23,6 +23,9 @@ const OrphanageRegistration = () => {
   const [user_nic, setUserNIC] = useState("");
   const [user_gender, setUserGender] = useState("");
   const [user_dob, setUserDOB] = useState("");
+  const [landReport, setLandReport] = useState(null);
+  const [housePlan, setHousePlan] = useState(null);
+  const [regCert, setRegCert] = useState(null);
 
   const [registerOrphanage, { isLoading, isError, isSuccess }] =
     useRegisterOrphanageMutation();
@@ -30,7 +33,11 @@ const OrphanageRegistration = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      const res = await registerOrphanage({
+      const formData = new FormData();
+      formData.append("regCert", regCert);
+      formData.append("housePlan", housePlan);
+      formData.append("landReport", landReport);
+      formData.append("otherInfo", JSON.stringify({
         name: name,
         registeredDate: registeredDate,
         capacity: capacity,
@@ -49,11 +56,12 @@ const OrphanageRegistration = () => {
         user_nic: user_nic,
         user_gender: user_gender,
         user_dob: user_dob,
-      }).unwrap();
+      }));
+      const res = await registerOrphanage(formData).unwrap();
 
-      toast.success("Registration completed")
+      toast.success("Registration completed");
     } catch (error) {
-      toast.error(error.data.message)
+      toast.error(error.data.message);
     }
   };
 
@@ -205,7 +213,7 @@ const OrphanageRegistration = () => {
                 </Form.Text>
                 <Form.Control
                   type="file"
-                  multiple
+                  onChange={(e) => setRegCert(e.target.files[0])}
                   size="sm"
                   style={{ padding: "0.1rem 0.3rem 0.2rem 0.3rem" }}
                 />
@@ -218,7 +226,7 @@ const OrphanageRegistration = () => {
                 </Form.Text>
                 <Form.Control
                   type="file"
-                  multiple
+                  onChange={(e) => setHousePlan(e.target.files[0])}
                   size="sm"
                   style={{ padding: "0.05rem 0.3rem 0.2rem 0.3rem" }}
                 />
@@ -231,7 +239,7 @@ const OrphanageRegistration = () => {
                 </Form.Text>
                 <Form.Control
                   type="file"
-                  multiple
+                  onChange={(e) => setLandReport(e.target.files[0])}
                   size="sm"
                   style={{ padding: "0.05rem 0.3rem 0.2rem 0.3rem" }}
                 />
