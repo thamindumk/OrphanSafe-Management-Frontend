@@ -3,6 +3,7 @@ import {
   GET_CASE_LIST_URL,
   CREATE_CASE_URL,
   GET_CASE_BY_CASEID_URL,
+  GET_CASE_INVITATION_BY_USER_ID_URL,
 } from "../config";
 
 export const caseApiSlice = apiSlice.injectEndpoints({
@@ -27,6 +28,12 @@ export const caseApiSlice = apiSlice.injectEndpoints({
         body: data,
       }),
     }),
+    getCaseInvitationByUserId: builder.query({
+      query: (data) => ({
+        url: GET_CASE_INVITATION_BY_USER_ID_URL,
+        method: "GET",
+      }),
+    }),
   }),
 });
 
@@ -34,4 +41,5 @@ export const {
   useGetCaseListQuery,
   useCreateCaseMutation,
   useGetCaseByCaseIdQuery,
+  useGetCaseInvitationByUserIdQuery,
 } = caseApiSlice;
