@@ -7,6 +7,25 @@ export const GET_CASE_LIST_URL = "/api/case/getCaseList";
 export const ORPHANAGE_REGISTER_URL = "/api/users/registerOrphanage";
 export const GET_ROLES_LIST_URL = "/api/users/roles";
 
+
+
+
+
+
+
+
+
+
+
+export const GET_CHILD_LIST_URL = "/api/profile/getChildProfileList";
+export const GET_STAFF_LIST_URL = "/api/profile/getStaffProfileList";
+export const GET_SOCIAL_WORKER_LIST_URL = "/api/profile/getSocialWorkerProfileList";
+export const GET_PARENT_LIST_URL = "/api/profile/getParentProfileList";
+export const VIEW_CHILD_PROFILE_URL = "/api/profile/viewChildProfiles";
+export const CREATE_CHILD_PROFILE_URL = "/api/profile/createChildProfile";
+export const DELETE_CHILD_PROFILE_URL = "/api/profile/deleteChildProfile";
+
+
 export const determineAppServerKey = () => {
   const vapidPublicKey =
     "BBRtHqulpPja3_U6GUSDwiVjBqVCgHUQiEl0WpiBpIdTtQ7rlLbRnmKoQnrA2Anh-eV5rLHp11_rb8bGgQQNM3U";
