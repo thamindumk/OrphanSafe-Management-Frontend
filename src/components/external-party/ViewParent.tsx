@@ -6,21 +6,28 @@ import React, { useEffect, useRef } from "react";
 import $ from "jquery"; // Import jQuery
 import "datatables.net-dt/css/jquery.dataTables.css"; // Import DataTables CSS
 import "datatables.net"; // Import DataTables JavaScript
+import { useGetParentProfileListQuery } from "../../slices/profileApiSlice";
 import { LinkContainer } from "react-router-bootstrap";
+
 
 const ViewParent = () => {
   const tableRef = useRef(null);
 
+  const { data, isError, isSuccess, isLoading } = useGetParentProfileListQuery();
+
+
   useEffect(() => {
-    // Initialize DataTable
     $(tableRef.current).DataTable();
-  }, []);
+  }, [data]);
   return (
     <Row>
       <Col sm={12}>
         <MyCard>
           <MyCardHeader>Parent details</MyCardHeader>
           <MyCardBody>
+          {isError && <Col className="text-center"><strong>Unexpected Error occurred Sorry! :(</strong></Col>}
+            {isLoading && <Col className="text-center">Loading Data!</Col>}
+            {isSuccess && 
             <div>
               <Table
                 responsive
@@ -31,77 +38,35 @@ const ViewParent = () => {
               >
                 <thead>
                   <tr>
-                    <th>Parent ID</th>
-                    <th>Name</th>
-                    <th>MobileNumber</th>
+                    <th>Name Of Father</th>
+                    <th>Name Of Mother</th>
                     <th>Email</th>
+                    <th>Father's Mobile Number</th>
+                    <th>Mother's Mobile Number</th>
                     <th>Address</th>
-                    <th>ID Number</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
+
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>
-                      <LinkContainer to="/monitoring/viewParent/overview">
-                        <a href="#">bob Niles</a>
-                      </LinkContainer>
-                    </td>
-                    <td>07134567678</td>
-                    <td>bob@gmail.com</td>
-                    <td>Panadura,Kaluthara</td>
-                    <td>20000034567</td>
-                    <td>
+                {data.parentsProfiles.map((parent) => (
+                    <tr>
+                      <td>{parent.NameOfFather}</td>
+                      <td>{parent.NameOfMother}</td>
+                      <td>{parent.Email}</td>
+                      <td>{parent.MobileOfFather}</td>
+                      <td>{parent.MobileOfMother}</td>
+                      <td>{parent.Address}</td>
+                      <td>
                       <i className="fas fa-edit mr-3 text-primary"></i>
                       <i className="fas fa-trash text-danger"></i>
                     </td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>
-                      <a href="#">bob Niles</a>
-                    </td>
-                    <td>07134567678</td>
-                    <td>bob@gmail.com</td>
-                    <td>Panadura,Kaluthara</td>
-                    <td>20000034567</td>
-                    <td>
-                      <i className="fas fa-edit mr-3 text-primary"></i>
-                      <i className="fas fa-trash text-danger"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>
-                      <a href="#">bob Niles</a>
-                    </td>
-                    <td>07134567678</td>
-                    <td>bob@gmail.com</td>
-                    <td>Panadura,Kaluthara</td>
-                    <td>20000034567</td>
-                    <td>
-                      <i className="fas fa-edit mr-3 text-primary"></i>
-                      <i className="fas fa-trash text-danger"></i>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>
-                      <a href="#">bob Niles</a>
-                    </td>
-                    <td>07134567678</td>
-                    <td>bob@gmail.com</td>
-                    <td>Panadura,Kaluthara</td>
-                    <td>20000034567</td>
-                    <td>
-                      <i className="fas fa-edit mr-3 text-primary"></i>
-                      <i className="fas fa-trash text-danger"></i>
-                    </td>
-                  </tr>
+                    </tr>
+                  ))} 
                 </tbody>
+
               </Table>
-            </div>
+            </div>}
           </MyCardBody>
         </MyCard>
       </Col>

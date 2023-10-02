@@ -21,9 +21,28 @@ export const GET_CHILD_LIST_URL = "/api/profile/getChildProfileList";
 export const GET_STAFF_LIST_URL = "/api/profile/getStaffProfileList";
 export const GET_SOCIAL_WORKER_LIST_URL = "/api/profile/getSocialWorkerProfileList";
 export const GET_PARENT_LIST_URL = "/api/profile/getParentProfileList";
+
 export const VIEW_CHILD_PROFILE_URL = "/api/profile/viewChildProfiles";
+export const VIEW_STAFF_PROFILE_URL = "/api/profile/viewStaffProfile";
+export const VIEW_PARENT_PROFILE_URL = "/api/profile/viewParentProfile";
+export const VIEW_SOCIAL_WORKER_PROFILE_URL = "/api/profile/viewSocialWorkerProfile";
+export const VIEW_CHILD_PROFILE_EXTERNAL_URL = "/api/profile/viewChildInfoExternal";
+
 export const CREATE_CHILD_PROFILE_URL = "/api/profile/createChildProfile";
+export const CREATE_STAFF_PROFILE_URL = "/api/profile/createStaffProfile";
+export const CREATE_SOCIAL_WORKER_PROFILE_URL = "/api/profile/createSocialWorkerProfile";
+export const CREATE_PARENT_PROFILE_URL = "/api/profile/createParentProfile";
+export const CREATE_MANAGER_PROFILE_URL = "/api/profile/createManagerProfile";
+
 export const DELETE_CHILD_PROFILE_URL = "/api/profile/deleteChildProfile";
+export const DELETE_STAFF_PROFILE_URL = "/api/profile/deleteStaffProfile";
+export const DELETE_SOCIAL_WORKER_PROFILE_URL = "/api/profile/deleteSocialWorkerProfile";
+export const DELETE_PARENT_PROFILE_URL = "/api/profile/deleteParentProfile";
+
+export const EDIT_CHILD_PROFILE_URL = "/api/profile/editChildProfile";
+export const EDIT_STAFF_PROFILE_URL = "/api/profile/editStaffProfile";
+export const EDIT_SOCIAL_WORKER_PROFILE_URL = "/api/profile/editSocialWorkerProfile";
+export const EDIT_PARENT_PROFILE_URL = "/api/profile/editParentProfile";
 
 
 export const determineAppServerKey = () => {
