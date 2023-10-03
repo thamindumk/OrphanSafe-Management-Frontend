@@ -4,6 +4,8 @@ import {
   CREATE_CASE_URL,
   GET_CASE_BY_CASEID_URL,
   GET_CASE_INVITATION_BY_USER_ID_URL,
+  UPDATE_CASE_STATE_URL,
+  GET_CASE_LIST_BY_USERID_URL,
 } from "../config";
 
 export const caseApiSlice = apiSlice.injectEndpoints({
@@ -11,6 +13,13 @@ export const caseApiSlice = apiSlice.injectEndpoints({
     getCaseList: builder.query({
       query: (data) => ({
         url: GET_CASE_LIST_URL,
+        method: "GET",
+        // body: data,
+      }),
+    }),
+    getCaseListByUserId: builder.query({
+      query: (data) => ({
+        url: GET_CASE_LIST_BY_USERID_URL,
         method: "GET",
         // body: data,
       }),
@@ -34,6 +43,13 @@ export const caseApiSlice = apiSlice.injectEndpoints({
         method: "GET",
       }),
     }),
+    updateCaseState: builder.mutation({
+      query: (data) => ({
+        url: UPDATE_CASE_STATE_URL,
+        method: "PUT",
+        body: data,
+      }),
+    }),
   }),
 });
 
@@ -42,4 +58,6 @@ export const {
   useCreateCaseMutation,
   useGetCaseByCaseIdQuery,
   useGetCaseInvitationByUserIdQuery,
+  useUpdateCaseStateMutation,
+  useGetCaseListByUserIdQuery,
 } = caseApiSlice;

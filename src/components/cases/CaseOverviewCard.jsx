@@ -5,10 +5,13 @@ import "../../index.css";
 import { useGetCaseByCaseIdQuery } from "../../slices/caseApiSlice";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { LinkContainer } from "react-router-bootstrap";
+import { useSelector } from "react-redux";
 
 const CaseOverviewCard = () => {
   // Access the query parameters from the location object
   const location = useLocation();
+  const { userInfo } = useSelector((state) => state.auth);
   const queryParams = new URLSearchParams(location.search);
   const paramValue = queryParams.get("caseId");
 
@@ -78,9 +81,19 @@ const CaseOverviewCard = () => {
                       <tr>
                         <td>Case logs</td>
                         <td>
-                          <a href="#" className="blue-button">
-                            View
-                          </a>
+                          {userInfo.roleName == "socialWorker" ? (
+                            <LinkContainer to="/external/EditDeleteCaseLog">
+                              <a href="#" className="blue-button">
+                                View
+                              </a>
+                            </LinkContainer>
+                          ) : (
+                            <LinkContainer to="/cases/caseLogs">
+                              <a href="#" className="blue-button">
+                                View
+                              </a>
+                            </LinkContainer>
+                          )}
                         </td>
                       </tr>
                     </tbody>
