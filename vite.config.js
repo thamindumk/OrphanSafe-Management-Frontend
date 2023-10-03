@@ -174,7 +174,11 @@ export default defineConfig({
       "/api/case": {
         target: "http://localhost:5030",
         changeOrigin: true,
-      }
+      },
+      "/api/profile": {
+        target: "http://localhost:5020",
+        changeOrigin: true,
+      },
     },
   },
 });

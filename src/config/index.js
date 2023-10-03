@@ -4,8 +4,16 @@ export const LOGIN_URL = "/api/users/auth";
 export const LOGOUT_URL = "/api/users/logout";
 export const PATCH_FCM_TOKEN_URL = "/api/notifications/patchToken";
 export const GET_CASE_LIST_URL = "/api/case/getCaseList";
+export const GET_CASE_BY_CASEID_URL = "/api/case/getCaseInfoByCaseId";
+export const CREATE_CASE_URL = "/api/case/createCase";
+export const GET_CASE_INVITATION_BY_USER_ID_URL =
+  "/api/case/getCaseInvitationByUserId";
 export const ORPHANAGE_REGISTER_URL = "/api/users/registerOrphanage";
 export const GET_ROLES_LIST_URL = "/api/users/roles";
+export const GET_CHILD_PROFILE_NAME_LIST =
+  "/api/profile/getChildProfileNameListByOrphanageId";
+export const GET_SOCIAL_WORKER_NAME_LIST =
+  "/api/profile/getSocialWorkerNameListByOrphanageId";
 
 export const determineAppServerKey = () => {
   const vapidPublicKey =
