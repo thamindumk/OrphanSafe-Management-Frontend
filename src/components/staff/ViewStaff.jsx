@@ -11,7 +11,7 @@ import { useGetStaffProfileListQuery } from "../../slices/profileApiSlice";
 
 const ViewStaff = () => {
   const tableRef = useRef(null);
-  const { data, isError, isSuccess, isLoading } =useGetStaffProfileListQuery();
+  const { data, isError, isSuccess, isLoading } = useGetStaffProfileListQuery();
 
   // const tableDetails = [
   //   {
@@ -66,54 +66,56 @@ const ViewStaff = () => {
         <MyCard>
           <MyCardHeader>Staff Details</MyCardHeader>
           <MyCardBody>
-          {isError && <Col className="text-center"><strong>Unexpected Error occurred Sorry! :(</strong></Col>}
+            {isError && (
+              <Col className="text-center">
+                <strong>Unexpected Error occurred Sorry! :(</strong>
+              </Col>
+            )}
             {isLoading && <Col className="text-center">Loading Data!</Col>}
-            {isSuccess && 
-            <div>
-              <Table
-                responsive
-                ref={tableRef}
-                id="example"
-                className="row-border"
-                style={{ width: "100%" }}
-              >
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Contact Number</th>
-                    <th>Gender</th>
-                    <th>Role</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {data.staffProfiles.map((data) => (
+            {isSuccess && (
+              <div>
+                <Table
+                  responsive
+                  ref={tableRef}
+                  id="example"
+                  className="row-border"
+                  style={{ width: "100%" }}
+                >
+                  <thead>
                     <tr>
-                      <td>
-                        <Link
-                          to={'/monitoring/viewStaff/overview?id=1'}
-                        >
-                          <a href="#">{data.UserName}</a>
-                        <Link to={"/monitoring/viewStaff/overview?id=1"}>
-                          <a href="#">{data.Name}</a>
-
-                        </Link>
-                      </td>
-                      <td>{data.Email}</td>
-                      <td>{data.PhoneNumber}</td>
-                      <td>{data.Gender}</td>
-                      <td>{data.RoleName}</td>
-                      <td>
-                        <i className="fas fa-edit mr-3 text-primary"></i>
-                        <i className="fas fa-trash text-danger"></i>
-                      </td>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Contact Number</th>
+                      <th>Gender</th>
+                      <th>Role</th>
+                      <th>Actions</th>
                     </tr>
-                  ))}
-                </tbody>
-              </Table>
-            </div>
-            }
+                  </thead>
+                  <tbody>
+                    {data.staffProfiles.map((data) => (
+                      <tr>
+                        <td>
+                          <Link to={"/monitoring/viewStaff/overview?id=1"}>
+                            <a href="#">{data.UserName}</a>
+                          </Link>
+                          <Link to={"/monitoring/viewStaff/overview?id=1"}>
+                            <a href="#">{data.Name}</a>
+                          </Link>
+                        </td>
+                        <td>{data.Email}</td>
+                        <td>{data.PhoneNumber}</td>
+                        <td>{data.Gender}</td>
+                        <td>{data.RoleName}</td>
+                        <td>
+                          <i className="fas fa-edit mr-3 text-primary"></i>
+                          <i className="fas fa-trash text-danger"></i>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </Table>
+              </div>
+            )}
           </MyCardBody>
         </MyCard>
       </Col>
