@@ -3,7 +3,9 @@ import {
   GET_CHILD_LIST_URL, GET_STAFF_LIST_URL, GET_SOCIAL_WORKER_LIST_URL, GET_PARENT_LIST_URL,
   VIEW_CHILD_PROFILE_URL,
   CREATE_CHILD_PROFILE_URL,
-  DELETE_CHILD_PROFILE_URL
+  DELETE_CHILD_PROFILE_URL,
+  GET_SOCIAL_WORKER_NAME_LIST,
+  GET_CHILD_PROFILE_NAME_LIST
 } from "../config";
 
 export const profileApiSlice = apiSlice.injectEndpoints({
@@ -92,8 +94,29 @@ export const profileApiSlice = apiSlice.injectEndpoints({
   }),
 });
 
-export const { useGetChildProfileListQuery, useGetStaffProfileListQuery, useGetSocialWorkerProfileListQuery, useGetParentProfileListQuery,
+export const profileApiSlice = apiSlice.injectEndpoints({
+  endpoints: (builder) => ({
+    getChildProfileNameList: builder.query({
+      query: (data) => ({
+        url: GET_CHILD_PROFILE_NAME_LIST,
+        method: "GET",
+      }),
+    }),
+    getSocialWorkerNameList: builder.query({
+      query: (data) => ({
+        url: GET_SOCIAL_WORKER_NAME_LIST,
+        method: "GET",
+      }),
+    }),
+  }),
+});
+
+export const {
+  useGetChildProfileListQuery, useGetStaffProfileListQuery, useGetSocialWorkerProfileListQuery, useGetParentProfileListQuery,
   useViewChildProfilesQuery,
   useCreateChildProfileMutation,
-  useDeleteChildProfileMutation
+  useDeleteChildProfileMutation,
+  useGetChildProfileNameListQuery,
+  useGetSocialWorkerNameListQuery,
+
 } = profileApiSlice;

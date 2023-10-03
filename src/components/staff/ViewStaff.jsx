@@ -95,6 +95,9 @@ const ViewStaff = () => {
                           to={'/monitoring/viewStaff/overview?id=1'}
                         >
                           <a href="#">{data.UserName}</a>
+                        <Link to={"/monitoring/viewStaff/overview?id=1"}>
+                          <a href="#">{data.Name}</a>
+
                         </Link>
                       </td>
                       <td>{data.Email}</td>
