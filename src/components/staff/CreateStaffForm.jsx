@@ -84,7 +84,7 @@ const CreateStaffForm = () => {
       <Form.Group controlId="formFileLegalDoc" className="mb-3">
       <Form.Label>Birth Certificate</Form.Label>
         <Form.Text className="text-muted">
-        *birth certificate of the child's father.
+        *birth certificate of the employee.
         </Form.Text>
         <Form.Control type="file" multiple size="sm" style={{ padding: '0.05rem 0.3rem 0.2rem 0.3rem' }}/>
       </Form.Group>
@@ -131,6 +131,15 @@ const CreateStaffForm = () => {
         </Form.Text>
         <Form.Control type="password" placeholder="***********" />
       </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicStaffName">
+        <Form.Label> Orphanage Name</Form.Label>
+        <Form.Text className="text-muted">
+        *name of the orphanage that the employee work
+        </Form.Text>
+        <Form.Control type="text" placeholder="e.g. Little dreams Orphanage" />
+      </Form.Group>
+
 
       
 
