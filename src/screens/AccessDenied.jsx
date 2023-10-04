@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
+import {useLogoutMutation} from '../slices/userApiSlice'
 
 const AccessDenied = () => {
   const navigate = useNavigate()
+  const [logout, {isLoading, isError}] = useLogoutMutation();
   useEffect(() => {
-    setTimeout(() => {
-      navigate(-1)
+    setTimeout(async () => {
+      const response = await logout();
+      navigate("/auth/login")
     }, 3000);
   })
   return (
