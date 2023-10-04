@@ -20,9 +20,9 @@ const CreateSocialWorkerForm = () => {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicID">
-        <Form.Label>ID number</Form.Label>
+        <Form.Label>NIC number</Form.Label>
         <Form.Text className="text-muted">
-        *identify card number of the social worker
+        *national identity card number of the social worker
         </Form.Text>
         <Form.Control type="text" placeholder="e.g. 20024502333" />
       </Form.Group>
@@ -48,6 +48,14 @@ const CreateSocialWorkerForm = () => {
         <Form.Control type="text" placeholder="e.g. 071 1234567" />
       </Form.Group>
 
+      <Form.Group className="mb-3" controlId="formBasicBirthday">
+        <Form.Label>Date of Birth</Form.Label>
+        <Form.Text className="text-muted">
+        *date of birth
+        </Form.Text>
+        <Form.Control type="text" placeholder="e.g. 1980/04/14" />
+      </Form.Group>
+
       <Form.Group className="mb-3" controlId="formBasicAddress">
         <Form.Label>Address</Form.Label>
         <Form.Text className="text-muted">
@@ -59,7 +67,7 @@ const CreateSocialWorkerForm = () => {
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email Address</Form.Label>
         <Form.Text className="text-muted">
-        *email address of the employee
+        *email address of the Social worker
         </Form.Text>
         <Form.Control type="email" placeholder="e.g. example@email.com" />
       </Form.Group>
@@ -76,6 +84,14 @@ const CreateSocialWorkerForm = () => {
         </Row>
       </Form.Group>
 
+      {/* <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Category</Form.Label>
+        <Form.Text className="text-muted">
+        *category of which the social worker belongs.
+        </Form.Text>
+        <Form.Control type="email" placeholder="e.g. Counseling or Mental Health Services" />
+      </Form.Group> */}
+
       
       <Form.Group className="mb-3" controlId="formBasicType">
         <Form.Label>Purpose of Interaction</Form.Label>
@@ -87,10 +103,10 @@ const CreateSocialWorkerForm = () => {
         <Form.Check type="checkbox" id="autoSizingCheck3" label="Educational Programs"/>
         <Form.Check type="checkbox" id="autoSizingCheck4" label="Counseling or Mental Health Services"/>
         <Form.Control type="text" placeholder=" Other (please specify):" />
-      </Form.Group>
+      </Form.Group> 
 
       <br/>
-      <Form.Label className="form-subtitle"> Background Check and Documentation</Form.Label>
+      
       <Form.Group className="mb-3" controlId="medicalHistory">
         <Form.Label>Past experiences</Form.Label>
         <Form.Text className="text-muted">
@@ -99,10 +115,29 @@ const CreateSocialWorkerForm = () => {
         <Form.Control size="sm" as="textarea" rows={8} />
       </Form.Group>
 
-      <Form.Group controlId="formFileMultiple" className="mb-3">
-      <Form.Label>Identification Documents</Form.Label>
+      <Form.Label className="form-subtitle">Documents</Form.Label>
+
+
+      <Form.Group controlId="formFileLegalDoc" className="mb-3">
+      <Form.Label>Birth Certificate</Form.Label>
         <Form.Text className="text-muted">
-        *documents related to the Social woeker
+        *birth certificate of the social worker.
+        </Form.Text>
+        <Form.Control type="file" multiple size="sm" style={{ padding: '0.05rem 0.3rem 0.2rem 0.3rem' }}/>
+      </Form.Group>
+
+      <Form.Group controlId="formFileLegalDoc" className="mb-3">
+      <Form.Label>Soft copy of NIC</Form.Label>
+        <Form.Text className="text-muted">
+        *soft copy of the social worker national identity card
+        </Form.Text>
+        <Form.Control type="file" multiple size="sm" style={{ padding: '0.05rem 0.3rem 0.2rem 0.3rem' }}/>
+      </Form.Group>
+
+      <Form.Group controlId="formFileLegalDoc" className="mb-3">
+      <Form.Label>Occupation Certificate</Form.Label>
+        <Form.Text className="text-muted">
+        *occupation Certificate of the social worker
         </Form.Text>
         <Form.Control type="file" multiple size="sm" style={{ padding: '0.05rem 0.3rem 0.2rem 0.3rem' }}/>
       </Form.Group>
@@ -112,20 +147,30 @@ const CreateSocialWorkerForm = () => {
 
 
 
+      <Form.Label className="form-subtitle">Create Account</Form.Label>
+
+      <Form.Group className="mb-3" controlId="formBasicName">
+        <Form.Label>User Name</Form.Label>
+        <Form.Text className="text-muted">
+        *username of the social worker account
+        </Form.Text>
+        <Form.Control type="text" placeholder="e.g. full name" />
+      </Form.Group>
+
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
         <Form.Text className="text-muted">
-        *set password for the employee
+        *set temporary password for the social worker account
         </Form.Text>
         <Form.Control type="password" placeholder="***********" />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicConfirmPassword">
-        <Form.Label>Confirm Password</Form.Label>
+      <Form.Group className="mb-3" controlId="formBasicStaffName">
+        <Form.Label> Orphanage Name</Form.Label>
         <Form.Text className="text-muted">
-        *confirm the passowrd for the employee
+        *name of the orphanage by which the social worker got registered
         </Form.Text>
-        <Form.Control type="password" placeholder="***********" />
+        <Form.Control type="text" placeholder="e.g. Little dreams Orphanage" />
       </Form.Group>
 
       

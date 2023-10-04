@@ -67,7 +67,7 @@ const CreateParentForm = () => {
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email Address</Form.Label>
         <Form.Text className="text-muted">
-        *email address of the employee
+        *email address of the parent
         </Form.Text>
         <Form.Control type="email" placeholder="e.g. example@email.com" />
       </Form.Group>
@@ -116,7 +116,7 @@ const CreateParentForm = () => {
 <Form.Group controlId="formFileLegalDoc" className="mb-3">
 <Form.Label>Soft copy of NIC of Father</Form.Label>
   <Form.Text className="text-muted">
-  *soft copy of the Father national identity card
+  *soft copy of the foster father national identity card
   </Form.Text>
   <Form.Control type="file" multiple size="sm" style={{ padding: '0.05rem 0.3rem 0.2rem 0.3rem' }}/>
 </Form.Group>
@@ -124,7 +124,7 @@ const CreateParentForm = () => {
 <Form.Group controlId="formFileLegalDoc" className="mb-3">
 <Form.Label>Residence Certificate</Form.Label>
   <Form.Text className="text-muted">
-  *residence Certificate of the employee
+  *residence Certificate of parents
   </Form.Text>
   <Form.Control type="file" multiple size="sm" style={{ padding: '0.05rem 0.3rem 0.2rem 0.3rem' }}/>
 </Form.Group>
@@ -173,7 +173,7 @@ const CreateParentForm = () => {
       <Form.Group className="mb-3" controlId="formBasicAddress">
         <Form.Label>Age Range of Child Preferred</Form.Label>
         <Form.Text className="text-muted">
-        *Give the age range
+        *Give the preferred age range of the child
         </Form.Text>
         <Form.Control type="text" placeholder="e.g. 9-15" />
       </Form.Group>
@@ -181,7 +181,7 @@ const CreateParentForm = () => {
       <Form.Group className="mb-3" controlId="formBasicGender">
         <Form.Label>Gender Preference</Form.Label>
         <Form.Text className="text-muted">
-        *gender
+        *gender of the child
         </Form.Text>
         <Form.Select size="sm" >
         <option ></option>
@@ -194,15 +194,15 @@ const CreateParentForm = () => {
       <Form.Group className="mb-3" controlId="formBasicAddress">
         <Form.Label>Nationality Preference</Form.Label>
         <Form.Text className="text-muted">
-        *Give the age range
+        *Give nationality preference 
         </Form.Text>
-        <Form.Control type="text" placeholder="e.g. SRi lankan" />
+        <Form.Control type="text" placeholder="e.g. Sri lankan" />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicAddress">
         <Form.Label>Language Preference</Form.Label>
         <Form.Text className="text-muted">
-        *Give the age range
+        *Give language preference
         </Form.Text>
         <Form.Control type="text" placeholder="e.g. Sinhala" />
       </Form.Group>
