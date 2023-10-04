@@ -13,6 +13,7 @@ export const GET_CASE_LOGS_LIST_URL = "/api/case/getCaseLogsByCaseId";
 export const CREATE_CASE_LOG_URL = "/api/case/createCaseLog";
 export const GET_CASE_LIST_BY_USERID_URL = "/api/case/getCaseListByUserId";
 export const UPDATE_CASE_STATE_URL = "/api/case/updateCaseState";
+export const UPDATE_CASE_LOG_URL = "/api/case/updateCaseLog";
 export const ORPHANAGE_REGISTER_URL = "/api/users/registerOrphanage";
 export const GET_ROLES_LIST_URL = "/api/users/roles";
 export const GET_CHILD_PROFILE_NAME_LIST =

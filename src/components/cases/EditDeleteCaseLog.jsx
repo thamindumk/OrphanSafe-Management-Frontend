@@ -10,6 +10,7 @@ import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { LinkContainer } from "react-router-bootstrap";
 
 const EditDeleteCaseLog = () => {
   const location = useLocation();
@@ -24,18 +25,13 @@ const EditDeleteCaseLog = () => {
 
   const deleteHandler = async () => {
     try {
-      console.log(data);
       const state = {
-        caseId: data.caseLogs[index].CaseId,
+        logId: data.caseLogs[index].Id,
       };
-      console.log(state);
       const res = await deleteCaseLog(state).unwrap();
       toast.success("Case Log Deleted");
       refetch();
-      if (isSuccess) {
-        downIndex();
-      }
-      console.log(data);
+      setIsDelete(false);
     } catch (error) {
       toast.error(error.message);
     }
@@ -47,7 +43,7 @@ const EditDeleteCaseLog = () => {
   function downIndex(data) {
     setIndex(index - 1);
   }
-  if (!isLoading) {
+  if (isLoading) {
     return <div>Loading...</div>;
   } else if (isSuccess && data.caseLogs.length > 0) {
     return (
@@ -116,9 +112,13 @@ const EditDeleteCaseLog = () => {
                     </tbody>
                   </Table>
                   <div className="mt-1"></div>
-                  {userInfo.roleName == "socialWorker" && index == 0 ? (
+                  {userInfo.roleName == "socialWorker" &&
+                  index == 0 &&
+                  isDelete ? (
                     <div className="d-flex justify-content-end mt-4">
-                      <button className="my-btn mr-2">Edit</button>
+                      <LinkContainer to="/external/EditCaseLog">
+                        <button className="my-btn mr-2">Edit</button>
+                      </LinkContainer>
                       <Link
                         to={`/external/EditDeleteCaseLog?caseId=${paramValue}`}
                       >

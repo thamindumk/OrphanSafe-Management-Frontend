@@ -54,6 +54,7 @@ import RequestCaseInfo from "./screens/external-party/RequestCaseInfoScreen";
 import ParentsViewCasesScreen from "./screens/external-party/ParentsViewCasesScreen";
 import InquiriesBulkResponseScreen from "./screens/others/InquiriesBulkResponseScreen";
 import CreateCaseLogsScreen from "./screens/cases/CreateCaseLogsScreen";
+import EditCaseLogsScreen from "./screens/cases/EditCaseLogsScreen";
 import CaseRequestScreen from "./screens/cases/CaseRequestScreen";
 import EditDeleteCaseLogScreen from "./screens/cases/EditDeleteCaseLogScreen";
 import CaseOverViewScreen from "./screens/cases/CaseOverViewScreen";
@@ -232,6 +233,7 @@ const router = createBrowserRouter(
           path="/external/CreateCaseLog"
           element={<CreateCaseLogsScreen />}
         />
+        <Route path="/external/EditCaseLog" element={<EditCaseLogsScreen />} />
         <Route path="/external/CaseRequest" element={<CaseRequestScreen />} />
 
         <Route
