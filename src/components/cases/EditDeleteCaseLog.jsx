@@ -116,9 +116,11 @@ const EditDeleteCaseLog = () => {
                   index == 0 &&
                   isDelete ? (
                     <div className="d-flex justify-content-end mt-4">
-                      <LinkContainer to="/external/EditCaseLog">
+                      <Link
+                        to={`/external/EditCaseLog?logId=${data.caseLogs[index].Id}`}
+                      >
                         <button className="my-btn mr-2">Edit</button>
-                      </LinkContainer>
+                      </Link>
                       <Link
                         to={`/external/EditDeleteCaseLog?caseId=${paramValue}`}
                       >
