@@ -7,87 +7,75 @@ import $ from "jquery"; // Import jQuery
 import "datatables.net-dt/css/jquery.dataTables.css"; // Import DataTables CSS
 import "datatables.net"; // Import DataTables JavaScript
 import { LinkContainer } from "react-router-bootstrap";
+import { Link } from "react-router-dom";
+import { useGetCaseListByUserIdQuery } from "../../slices/caseApiSlice";
 
 const OngoingCaseViewExternal = () => {
   const tableRef = useRef(null);
 
-  const tableDetails = [
-    {
-      Case_ID: 1,
-      Description: "medical check for eye condition",
-      Child_ID: 5,
-      Child_Name: "Eranga Malshan",
-      Last_Update: "2021/03/08",
-      
-    },
-    {
-        Case_ID: 2,
-        Description: "property case in Kalutara court",
-        Child_ID: 8,
-        Child_Name: "Lasindu Withanage",
-        Last_Update: "2023/01/15",
-       
-      },
-      {
-        Case_ID: 3,
-        Description: "Mental checkup",
-        Child_ID: 13,
-        Child_Name: "Supun Kumara",
-        Last_Update: "2023/04/08",
-        
-      },
-    
-  ];
+  const { data, isError, isLoading, isSuccess } = useGetCaseListByUserIdQuery();
 
   useEffect(() => {
     // Initialize DataTable
     $(tableRef.current).DataTable();
-  }, []);
+  }, [data]);
+  console.log(data);
   return (
     <Row>
       <Col sm={12}>
         <MyCard>
           <MyCardHeader>View Cases</MyCardHeader>
           <MyCardBody>
-            <div>
-              <Table
-                responsive
-                ref={tableRef}
-                id="example"
-                className="row-border"
-                style={{ width: "100%" }}
-              >
-                <thead>
-                  <tr>
-                    <th>Case ID</th>
-                    <th>Description</th>
-                    <th>Child ID</th>
-                    <th>Child Name</th>
-                    <th>Last Update</th>
-                    
-                  </tr>
-                </thead>
-                <tbody>
-                  {tableDetails.map((data) => (
+            {isError && (
+              <Col className="text-center">
+                <strong>Unexpected Error occured Sorry! :(</strong>
+              </Col>
+            )}
+            {isLoading && <Col className="text-center">Loading Data!</Col>}
+            {isSuccess && (
+              <div>
+                <Table
+                  responsive
+                  ref={tableRef}
+                  id="example"
+                  className="row-border"
+                  style={{ width: "100%" }}
+                >
+                  <thead>
                     <tr>
-                      <td>{data.Case_ID}</td>
-                      <td>
-                        <LinkContainer to="/external/EditDeleteCaseLog">
-                          <a href="#">{data.Description}</a>
-                        </LinkContainer>
-                      </td>
-                      <td>{data.Child_ID}</td>
-                      <td>
-                      <LinkContainer to="/parent/viewProfile/overview">
-                          <a href="#">{data.Child_Name}</a>
-                        </LinkContainer>
-                      </td>
-                      <td>{data.Last_Update}</td>
+                      <th>Case ID</th>
+                      <th>Case Name</th>
+                      <th>Assigned By</th>
+                      <th>Child Name</th>
+                      <th>Last Update</th>
                     </tr>
-                  ))}
-                </tbody>
-              </Table>
-            </div>
+                  </thead>
+                  <tbody>
+                    {data.caseList.map((data) => (
+                      <tr>
+                        <td>{data.CaseId}</td>
+                        <td>
+                          <Link
+                            to={`/cases/viewCases/overview?caseId=${data.CaseId}`}
+                          >
+                            <a href="#">{data.CaseName}</a>
+                          </Link>
+                        </td>
+                        <td>{data.AssignedBy}</td>
+                        <td>
+                          <LinkContainer to="/parent/viewProfile/overview">
+                            <a href="#">{data.ChildName}</a>
+                          </LinkContainer>
+                        </td>
+                        <td>
+                          {data.LastUpdate ? data.LastUpdate : "Not stated"}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </Table>
+              </div>
+            )}
           </MyCardBody>
         </MyCard>
       </Col>

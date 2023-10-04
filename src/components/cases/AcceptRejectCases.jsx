@@ -1,65 +1,79 @@
 import { Button, Col, Form, Row, Table } from "react-bootstrap";
 import { MyCard, MyCardBody, MyCardHeader } from "../MyCard";
 import "../../index.css";
-import { useGetCaseInvitationByUserIdQuery } from "../../slices/caseApiSlice";
+import {
+  useGetCaseInvitationByUserIdQuery,
+  useUpdateCaseStateMutation,
+} from "../../slices/caseApiSlice";
+import { toast } from "react-toastify";
+
 import { useState } from "react";
 
 const AcceptRejectCases = () => {
   const [index, setIndex] = useState(0);
 
-  const { data, isError, isSuccess, isLoading } =
+  const { data, isError, isSuccess, isLoading, refetch } =
     useGetCaseInvitationByUserIdQuery();
 
-  if (isSuccess) {
+  const [updateState, { err, success, loading }] = useUpdateCaseStateMutation();
+
+  const submitHandler = async (result) => {
+    try {
+      const state = {
+        response: result,
+        caseId: data.caseInvitations[index].CaseId,
+      };
+      const res = await updateState(state).unwrap();
+      toast.success("Approvation complete");
+      refetch();
+      if (isSuccess) {
+        downIndex();
+      }
+      console.log(data);
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
+
+  function upIndex() {
+    setIndex(index + 1);
+  }
+  function downIndex(data) {
+    setIndex(index - 1);
+  }
+  if (isLoading) {
+    return <div>Still Loading the page Please wait a moment</div>;
+  } else if (isError) {
+    return <div>Something went wrong in the server</div>;
+  } else if (isSuccess && data.caseInvitations.length > 0) {
     return (
       <div>
-        {data.caseInvitations.length > 1 &&
-        0 < index &&
-        index < data.caseInvitations.length ? (
-          <Row style={{ marginBottom: "10px" }}>
-            <Col md={8} sm={12} lg={8}>
-              <div className="d-flex justify-content-start">
-                <button className="my-btn" onClick={setIndex(index - 1)}>
+        <Row style={{ marginBottom: "10px" }}>
+          <Col sm={5}>
+            <div className="d-flex">
+              {0 < index ? (
+                <button className="my-btn" onClick={downIndex}>
                   Previous Case
                 </button>
-              </div>
-            </Col>
-          </Row>
-        ) : data.caseInvitations.length > 1 &&
-          0 < index &&
-          index < data.caseInvitations.length-1 ? (
-          <Row style={{ marginBottom: "10px" }}>
-            <Col md={8} sm={12} lg={8}>
-              <div className="d-flex justify-content-start">
-                <button className="my-btn" onClick={setIndex(index - 1)}>
-                  Previous Case
-                </button>
-              </div>
-            </Col>
-            <Col md={2} sm={12} lg={2}>
-              <div className="d-flex justify-content-start">
-                <button className="my-btn" onClick={setIndex(index + 1)}>
+              ) : (
+                <div></div>
+              )}
+            </div>
+          </Col>
+          <Col sm={5}>
+            <div class="d-flex justify-content-end">
+              {index < data.caseInvitations.length &&
+              index < data.caseInvitations.length - 1 ? (
+                <button className="my-btn" onClick={upIndex}>
                   Next Case
                 </button>
-              </div>
-            </Col>
-            <Col md={2} sm={0} lg={2}></Col>
-          </Row>
-        ) : data.caseInvitations.length > 1 &&
-          index < data.caseInvitations.length ? (
-          <Row style={{ marginBottom: "10px" }}>
-            <Col md={2} sm={10} lg={10}>
-              <div className="d-flex justify-content-end">
-                <button className="my-btn" onClick={setIndex(index + 1)}>
-                  Next Case
-                </button>
-              </div>
-            </Col>
-          </Row>
-        ) : (
-          <div></div>
-        )}
-
+              ) : (
+                <div></div>
+              )}
+            </div>
+          </Col>
+          <Col md={2} sm={0} lg={2}></Col>
+        </Row>
         <Row>
           <Col sm={10}>
             <MyCard>
@@ -74,30 +88,38 @@ const AcceptRejectCases = () => {
                       </tr>
                       <tr>
                         <td>Case Name</td>
-                        <td>{data.caseInvitations.length}</td>
+                        <td>
+                          <b>{data.caseInvitations[index].CaseName}</b>
+                        </td>
                       </tr>
                       <tr>
                         <td>Case Description</td>
-                        <td>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</td>
+                        <td>{data.caseInvitations[index].Description}</td>
                       </tr>
                       <tr>
                         <td>Child name</td>
-                        <td>Piyal Kodithuwakku</td>
+                        <td>{data.caseInvitations[index].ChildName}</td>
                       </tr>
                       <tr>
-                        <td>Case Documents</td>
-                        <td>
-                          <a href="#" className="blue-button">
-                            View
-                          </a>
-                        </td>
+                        <td>Assigned By</td>
+                        <td>{data.caseInvitations[index].AssignedBy}</td>
                       </tr>
                     </tbody>
                   </Table>
                   <div className="mt-1"></div>
                   <div className="d-flex justify-content-end mt-4">
-                    <button className="my-btn mr-2">Accept approval</button>
-                    <button className="my-btn-danger">Reject approval</button>
+                    <button
+                      className="my-btn mr-2"
+                      onClick={() => submitHandler("ONGOING")}
+                    >
+                      Accept approval
+                    </button>
+                    <button
+                      className="my-btn-danger"
+                      onClick={() => submitHandler("REJECTED")}
+                    >
+                      Reject approval
+                    </button>
                   </div>
                 </Form>
               </MyCardBody>
@@ -106,6 +128,8 @@ const AcceptRejectCases = () => {
         </Row>
       </div>
     );
+  } else {
+    return <div>No invitations</div>;
   }
 };
 export default AcceptRejectCases;
