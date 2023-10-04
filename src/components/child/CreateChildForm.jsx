@@ -11,7 +11,7 @@ const CreateStaffForm = () => {
           <Form>
           <Form.Label className="form-subtitle">Child Information</Form.Label>
       <Form.Group className="mb-3" controlId="formBasicName">
-        <Form.Label>Name</Form.Label>
+        <Form.Label>Full Name</Form.Label>
         <Form.Text className="text-muted">
         *identifier for the child
         </Form.Text>
@@ -19,12 +19,14 @@ const CreateStaffForm = () => {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicBirthday">
-        <Form.Label>Birthday</Form.Label>
+        <Form.Label>Date Of Birth</Form.Label>
         <Form.Text className="text-muted">
         *date of birth
         </Form.Text>
-        <Form.Control type="text" placeholder="e.g. 1980/04/14" />
+        <Form.Control type="text" placeholder="e.g. 2023-09-25" />
       </Form.Group>
+
+      
 
       <Form.Group className="mb-3" controlId="formBasicGender">
         <Form.Label>Gender</Form.Label>
@@ -39,6 +41,8 @@ const CreateStaffForm = () => {
         </Form.Select>
       </Form.Group>
 
+      
+
       <Form.Group className="mb-3" controlId="formBasicBirthPlace">
         <Form.Label>Place of birth</Form.Label>
         <Form.Text className="text-muted">
@@ -48,8 +52,8 @@ const CreateStaffForm = () => {
         <Col xs={6}>
             <Form.Label>City</Form.Label>
           <Form.Control placeholder="e.g. Panadura"/></Col>
-        <Col xs={6}><Form.Label>District</Form.Label>
-          <Form.Control placeholder="e.g. Kaluthara"/></Col>
+        <Col xs={6}><Form.Label>Country</Form.Label>
+          <Form.Control placeholder="e.g. Sri Lanka"/></Col>
         </Row>
       </Form.Group>
 
@@ -61,39 +65,12 @@ const CreateStaffForm = () => {
         <Form.Control type="text" placeholder="e.g. Sri Lankan" />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicReligion">
-        <Form.Label>Religion</Form.Label>
+      <Form.Group className="mb-3" controlId="formBasicLanguage">
+        <Form.Label>Preferred Language</Form.Label>
         <Form.Text className="text-muted">
-        *religion of the child
+        *Language the child is most comfortable with
         </Form.Text>
-        <Form.Control type="text" placeholder="e.g. Buddhist" />
-      </Form.Group>
-
-
-
-      <Form.Label className="form-subtitle">Contact Information</Form.Label>
-      <Form.Group className="mb-3" controlId="formBasicAddress">
-        <Form.Label>Current Address</Form.Label>
-        <Form.Text className="text-muted">
-        *Current address of the employee
-        </Form.Text>
-        <Form.Control type="text" placeholder="e.g. Panadura,Kaluthara" />
-      </Form.Group>
-
-      <Form.Group className="mb-3" controlId="formBasicPhoneNumber">
-        <Form.Label>Contact Phone Number</Form.Label>
-        <Form.Text className="text-muted">
-        *Contact phone number of the child
-        </Form.Text>
-        <Form.Control type="text" placeholder="e.g. 034 22 333456" />
-      </Form.Group>
-
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email Address</Form.Label>
-        <Form.Text className="text-muted">
-        *email address of the employee
-        </Form.Text>
-        <Form.Control type="email" placeholder="e.g. example@email.com" />
+        <Form.Control type="text" placeholder="e.g. Sinhala" />
       </Form.Group>
 
 
@@ -117,24 +94,9 @@ const CreateStaffForm = () => {
 
 
 
-      <Form.Label className="form-subtitle">Education</Form.Label>
+      
 
-      <Form.Group className="mb-3" controlId="formBasicSchool">
-        <Form.Label>School</Form.Label>
-        <Form.Text className="text-muted">
-        *school name the child is currently studying
-        </Form.Text>
-        <Form.Control type="text" placeholder="e.g. Panadura College" />
-      </Form.Group>
-
-      <Form.Group className="mb-3" controlId="formBasicGrade">
-        <Form.Label>Grade/class</Form.Label>
-        <Form.Text className="text-muted">
-        *current grade the child is studying
-        </Form.Text>
-        <Form.Control type="text" placeholder="e.g. Grade 3" />
-      </Form.Group>
-
+    
 
       <Form.Label className="form-subtitle">Family Background</Form.Label>
       <Form.Group className="mb-3" controlId="formBasicBirthPlace">
@@ -169,63 +131,74 @@ const CreateStaffForm = () => {
         <Form.Control type="file" multiple size="sm" style={{ padding: '0.05rem 0.3rem 0.2rem 0.3rem' }}/>
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicLanguage">
-        <Form.Label>Preferred Language</Form.Label>
-        <Form.Text className="text-muted">
-        *Language the child is most comfortable with
-        </Form.Text>
-        <Form.Control type="text" placeholder="e.g. Sinhala" />
-      </Form.Group>
-
-      <Form.Group controlId="formFileLegalDoc" className="mb-3">
-      <Form.Label>Legal Documents</Form.Label>
-        <Form.Text className="text-muted">
-        *legal documents related to the child are uploaded here.
-        </Form.Text>
-        <Form.Control type="file" multiple size="sm" style={{ padding: '0.05rem 0.3rem 0.2rem 0.3rem' }}/>
-      </Form.Group>
+     
 
       <Form.Group className="mb-3" controlId="formBasicGrade">
-        <Form.Label>Case Notes</Form.Label>
+        <Form.Label>Remarks</Form.Label>
         <Form.Text className="text-muted">
-        *brief explanation of any cases that are related to the child
+        *if there is any special remarks include here.
         </Form.Text>
         <Form.Control size="sm" as="textarea" rows={8} />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicStaffName">
-        <Form.Label> Notes or Comments</Form.Label>
+      <Form.Label className="form-subtitle">Documents</Form.Label>
+
+      <Form.Group controlId="formFileLegalDoc" className="mb-3">
+      <Form.Label>Child Protection Authority Certificate</Form.Label>
         <Form.Text className="text-muted">
-        *Any additional comments or observations related to the child
+        *child Protection Authority Certificate related to the child.
         </Form.Text>
-        <Form.Control size="sm" as="textarea" rows={8} style={{ height: "100px" }} />
+        <Form.Control type="file" multiple size="sm" style={{ padding: '0.05rem 0.3rem 0.2rem 0.3rem' }}/>
       </Form.Group>
 
-      <Form.Label className="form-subtitle">Guardian/Staff Information</Form.Label>
+      <Form.Group controlId="formFileLegalDoc" className="mb-3">
+      <Form.Label>Birth Certificate</Form.Label>
+        <Form.Text className="text-muted">
+        *birth certificate of the child's father.
+        </Form.Text>
+        <Form.Control type="file" multiple size="sm" style={{ padding: '0.05rem 0.3rem 0.2rem 0.3rem' }}/>
+      </Form.Group>
+
+      <Form.Group controlId="formFileLegalDoc" className="mb-3">
+      <Form.Label>Mother's Birth Certificate</Form.Label>
+        <Form.Text className="text-muted">
+        *birth certificate of the child's mother.
+        </Form.Text>
+        <Form.Control type="file" multiple size="sm" style={{ padding: '0.05rem 0.3rem 0.2rem 0.3rem' }}/>
+      </Form.Group>
+
+
+      <Form.Group controlId="formFileLegalDoc" className="mb-3">
+      <Form.Label>Father's Birth Certificate</Form.Label>
+        <Form.Text className="text-muted">
+        *birth certificate of the child's father.
+        </Form.Text>
+        <Form.Control type="file" multiple size="sm" style={{ padding: '0.05rem 0.3rem 0.2rem 0.3rem' }}/>
+      </Form.Group>
+
+
+
+
+      
+
+      <Form.Label className="form-subtitle">Registration Information</Form.Label>
 
       <Form.Group className="mb-3" controlId="formBasicStaffName">
-        <Form.Label> Guardian/Staff Name</Form.Label>
+        <Form.Label>Registered by</Form.Label>
         <Form.Text className="text-muted">
-        *name of the staff member or guardian 
+        *name of the staff member who registered the child 
         </Form.Text>
         <Form.Control type="text" placeholder="e.g. Kalum Gamage" />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicStaffName">
-        <Form.Label> Guardian/Staff Contact Number</Form.Label>
+      <Form.Group className="mb-3" controlId="formBasicLanguage">
+        <Form.Label>Date Of Admission</Form.Label>
         <Form.Text className="text-muted">
-        *contact number of the staff member or guardian 
+        *the date that the child got registered
         </Form.Text>
-        <Form.Control type="text" placeholder="e.g. 071 345678" />
+        <Form.Control type="text" placeholder="e.g. 2023-09-25" />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicStaffName">
-        <Form.Label> Relationship to Child</Form.Label>
-        <Form.Text className="text-muted">
-        *The guardian's relationship to the child
-        </Form.Text>
-        <Form.Control type="text" placeholder="e.g., staff member, legal guardian" />
-      </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicStaffName">
         <Form.Label> Orphanage Name</Form.Label>

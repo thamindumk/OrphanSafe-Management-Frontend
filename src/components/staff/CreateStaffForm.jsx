@@ -20,7 +20,7 @@ const CreateStaffForm = () => {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicBirthday">
-        <Form.Label>Birthday</Form.Label>
+        <Form.Label>Date of Birth</Form.Label>
         <Form.Text className="text-muted">
         *date of birth
         </Form.Text>
@@ -56,17 +56,16 @@ const CreateStaffForm = () => {
         
         <Form.Select >
         <option placeholder="e.g. Normal Form"></option>
-        <option value="1">Normal staff</option>
-        <option value="2">Orphanege Manager</option>
-        <option value="3">Orphanege assistant Manger</option>
+        <option value="1">Orphanage staff</option>
+        <option value="2">Orphanage Manager</option>
         </Form.Select>
 
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicID">
-        <Form.Label>ID number</Form.Label>
+        <Form.Label>NIC number</Form.Label>
         <Form.Text className="text-muted">
-        *identify card number of the employee
+        *national identity card number of the employee
         </Form.Text>
         <Form.Control type="text" placeholder="e.g. 20024502333" />
       </Form.Group>
@@ -79,23 +78,63 @@ const CreateStaffForm = () => {
         <Form.Control type="email" placeholder="e.g. example@email.com" />
       </Form.Group>
 
+      <Form.Label className="form-subtitle">Documents</Form.Label>
 
+
+      <Form.Group controlId="formFileLegalDoc" className="mb-3">
+      <Form.Label>Birth Certificate</Form.Label>
+        <Form.Text className="text-muted">
+        *birth certificate of the child's father.
+        </Form.Text>
+        <Form.Control type="file" multiple size="sm" style={{ padding: '0.05rem 0.3rem 0.2rem 0.3rem' }}/>
+      </Form.Group>
+
+      <Form.Group controlId="formFileLegalDoc" className="mb-3">
+      <Form.Label>Soft copy of NIC</Form.Label>
+        <Form.Text className="text-muted">
+        *soft copy of the employee national identity card
+        </Form.Text>
+        <Form.Control type="file" multiple size="sm" style={{ padding: '0.05rem 0.3rem 0.2rem 0.3rem' }}/>
+      </Form.Group>
+
+      <Form.Group controlId="formFileLegalDoc" className="mb-3">
+      <Form.Label>Residence Certificate</Form.Label>
+        <Form.Text className="text-muted">
+        *residence Certificate of the employee
+        </Form.Text>
+        <Form.Control type="file" multiple size="sm" style={{ padding: '0.05rem 0.3rem 0.2rem 0.3rem' }}/>
+      </Form.Group>
+
+      <Form.Group controlId="formFileLegalDoc" className="mb-3">
+      <Form.Label>Character Certificate</Form.Label>
+        <Form.Text className="text-muted">
+        *character Certificate of the employee
+        </Form.Text>
+        <Form.Control type="file" multiple size="sm" style={{ padding: '0.05rem 0.3rem 0.2rem 0.3rem' }}/>
+      </Form.Group>
+
+
+      <Form.Label className="form-subtitle">Create Account</Form.Label>
+
+      <Form.Group className="mb-3" controlId="formBasicName">
+        <Form.Label>User Name</Form.Label>
+        <Form.Text className="text-muted">
+        *username of the employee account
+        </Form.Text>
+        <Form.Control type="text" placeholder="e.g. full name" />
+      </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
         <Form.Text className="text-muted">
-        *set password for the employee
+        *set temporary password for the employee account
         </Form.Text>
         <Form.Control type="password" placeholder="***********" />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicConfirmPassword">
-        <Form.Label>Confirm Password</Form.Label>
-        <Form.Text className="text-muted">
-        *confirm the passowrd for the employee
-        </Form.Text>
-        <Form.Control type="password" placeholder="***********" />
-      </Form.Group>
+      
+
+      
 
       
       <Button variant="primary" type="submit">
