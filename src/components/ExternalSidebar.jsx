@@ -59,7 +59,9 @@ const ExternalSidebar = () => {
             </div>
             <div className="sidebar-submenu">
               <LinkContainer to="/dashboard/External">
-                <a className="sidebar-submenu-item" onClick={closeSidebar}>View Dashboard</a>
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>
+                  View Dashboard
+                </a>
               </LinkContainer>
             </div>
           </div>
@@ -69,22 +71,28 @@ const ExternalSidebar = () => {
               <ion-icon name="caret-down"></ion-icon>
               <div>Social Workers</div>
             </div>
-            
+
             <div className="sidebar-submenu">
               <LinkContainer to="/external/OngoingCases">
-                <a className="sidebar-submenu-item" onClick={closeSidebar}>View case logs</a>
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>
+                  View Cases
+                </a>
               </LinkContainer>
             </div>
             <div className="sidebar-submenu">
               <LinkContainer to="/external/CreateCaseLog">
-                <a className="sidebar-submenu-item" onClick={closeSidebar}>Create case log</a>
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>
+                  Create case log
+                </a>
               </LinkContainer>
             </div>
             <div className="sidebar-submenu">
-                <LinkContainer to="/cases/AcceptOrRejectCases">
-                  <a className="sidebar-submenu-item" onClick={closeSidebar}>Case invitations</a>
-                </LinkContainer>
-              </div>
+              <LinkContainer to="/cases/AcceptOrRejectCases">
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>
+                  Case invitations
+                </a>
+              </LinkContainer>
+            </div>
           </div>
           <div className="sidebar-menu-item">
             <div className="sidebar-menu-item-heading">
@@ -93,7 +101,9 @@ const ExternalSidebar = () => {
             </div>
             <div className="sidebar-submenu">
               <LinkContainer to="/external/StaffChat">
-                <a className="sidebar-submenu-item" onClick={closeSidebar}>Staff chat</a>
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>
+                  Staff chat
+                </a>
               </LinkContainer>
             </div>
           </div>
@@ -104,22 +114,30 @@ const ExternalSidebar = () => {
             </div>
             <div className="sidebar-submenu">
               <LinkContainer to="/parent/RequestChildProfile">
-                <a className="sidebar-submenu-item" onClick={closeSidebar}>Request child profile</a>
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>
+                  Request child profile
+                </a>
               </LinkContainer>
             </div>
             <div className="sidebar-submenu">
               <LinkContainer to="/parent/viewChildProfileList">
-                <a className="sidebar-submenu-item" onClick={closeSidebar}>View child profile</a>
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>
+                  View child profile
+                </a>
               </LinkContainer>
             </div>
             <div className="sidebar-submenu">
               <LinkContainer to="/parent/RequestCaseInfo">
-                <a className="sidebar-submenu-item" onClick={closeSidebar}>Request case information</a>
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>
+                  Request case information
+                </a>
               </LinkContainer>
             </div>
             <div className="sidebar-submenu">
               <LinkContainer to="/parent/ParentsViewCases">
-                <a className="sidebar-submenu-item" onClick={closeSidebar}>View cases</a>
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>
+                  View cases
+                </a>
               </LinkContainer>
             </div>
           </div>

@@ -4,7 +4,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
-  RouterProvider
+  RouterProvider,
 } from "react-router-dom";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -85,6 +85,7 @@ const router = createBrowserRouter(
           path="/monitoring/viewSocialWorker"
           element={<ViewSocialWorkerScreen />}
         />
+        <Route path="/cases/caseLogs" element={<EditDeleteCaseLogScreen />} />
         <Route
           path="/monitoring/viewSocialWorker/overview"
           element={<SocialWorkerOverviewScreen />}
@@ -94,6 +95,7 @@ const router = createBrowserRouter(
           path="/monitoring/viewParent/overview"
           element={<ParentOverviewScreen />}
         />
+
         <Route
           path="/profile/createProfile"
           element={<CreateChildProfileScreen />}
@@ -216,6 +218,10 @@ const router = createBrowserRouter(
         <Route
           path="/dashboard/External"
           element={<ExternalDashboardScreen />}
+        />
+        <Route
+          path="/cases/viewCases/overview"
+          element={<CaseOverViewScreen />}
         />
         <Route
           path="/cases/AcceptOrRejectCases"
