@@ -35,14 +35,17 @@ const AcceptRejectCases = () => {
     }
   };
 
-  console.log(data);
   function upIndex() {
     setIndex(index + 1);
   }
   function downIndex(data) {
     setIndex(index - 1);
   }
-  if (isSuccess && data.caseInvitations.length > 0) {
+  if (isLoading) {
+    return <div>Still Loading the page Please wait a moment</div>;
+  } else if (isError) {
+    return <div>Something went wrong in the server</div>;
+  } else if (isSuccess && data.caseInvitations.length > 0) {
     return (
       <div>
         <Row style={{ marginBottom: "10px" }}>

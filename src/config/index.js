@@ -5,9 +5,12 @@ export const LOGOUT_URL = "/api/users/logout";
 export const PATCH_FCM_TOKEN_URL = "/api/notifications/patchToken";
 export const GET_CASE_LIST_URL = "/api/case/getCaseList";
 export const GET_CASE_BY_CASEID_URL = "/api/case/getCaseInfoByCaseId";
+export const DELETE_CASE_LOG_URL = "/api/case/deleteCaseLog";
 export const GET_CASE_INVITATION_BY_USER_ID_URL =
   "/api/case/getCaseInvitationByUserId";
 export const CREATE_CASE_URL = "/api/case/createCase";
+export const GET_CASE_LOGS_LIST_URL = "/api/case/getCaseLogsByCaseId";
+export const CREATE_CASE_LOG_URL = "/api/case/createCaseLog";
 export const GET_CASE_LIST_BY_USERID_URL = "/api/case/getCaseListByUserId";
 export const UPDATE_CASE_STATE_URL = "/api/case/updateCaseState";
 export const ORPHANAGE_REGISTER_URL = "/api/users/registerOrphanage";
