@@ -4,7 +4,7 @@ import { useCreateChildProfileMutation } from "../../slices/profileApiSlice";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
-const CreateStaffForm = () => {
+const CreateChildForm = () => {
   const [FullName, setFullName] = useState("");
   const [DOB,setDOB]= useState("");
   const [Gender,setGender]= useState("");
@@ -315,4 +315,4 @@ const CreateStaffForm = () => {
       </Row>
     );
   };
-  export default CreateStaffForm;
+  export default CreateChildForm;
