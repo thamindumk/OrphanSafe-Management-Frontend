@@ -68,6 +68,10 @@ import BulkResponseFormScreen from "./screens/others/BulkResponseFormScreen";
 import AdminDashboardScreen from "./screens/others/AdminDashboardScreen";
 import ExternalDashboardScreen from "./screens/others/ExternalDashboardScreen";
 import AccessDenied from "./screens/AccessDenied";
+import EditChildProfileScreen from "./screens/child-profile/EditChildProfileScreen";
+import EditStaffProfileScreen from "./screens/staff/EditStaffProfileScreen";
+import EditParentProfileScreen from "./screens/external-party/EditParentScreen";
+import EditSocialWorkerScreen from "./screens/external-party/EditSocialWorkerScreen";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -167,6 +171,10 @@ const router = createBrowserRouter(
         />
 
         <Route path="/editProfile" element={<EditProfile />} />
+        <Route path="/edit/editChildProfile" element={<EditChildProfileScreen />} />
+        <Route path="/edit/editStaffProfile" element={<EditStaffProfileScreen />} />
+        <Route path="/edit/editParentProfile" element={<EditParentProfileScreen />} />
+        <Route path="/edit/editSocialWorkerProfile" element={<EditSocialWorkerScreen />} />
 
         <Route
           path="/inquiry/CreateInquiry"

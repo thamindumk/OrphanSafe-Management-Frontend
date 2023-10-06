@@ -10,7 +10,7 @@ const CreateParentForm = () => {
 
   const [email,setEmail]= useState("");
   const [password,setPassword]= useState("");
-  const [OrphanageName,setOrphanageName]= useState("");
+  const [orphanageName,setOrphanageName]= useState("");
   const [address,setAddress]= useState("");
 
   const [NameOfFather,setNameOfFather]= useState("");
@@ -59,7 +59,7 @@ const CreateParentForm = () => {
         phoneNumber:MobileOfFather,
         email: email,
         password: password,
-        OrphanageName: OrphanageName,
+        orphanageName: orphanageName,
         address: address,
         nic: NICOfFather,
         gender: "MALE",
@@ -134,10 +134,10 @@ const CreateParentForm = () => {
                 <Row>
                   <Col xs={6}>
                     <Form.Label>Date of Birth</Form.Label>
-                    <Form.Control placeholder="e.g. 1984/06/27" type="date"
+                    <Form.Control placeholder="e.g. 1984/06/27" 
                     onChange={(e) => setDOBOfFather(e.target.value)}/></Col>
                   <Col xs={6}><Form.Label>Date of Birth</Form.Label>
-                    <Form.Control placeholder="e.g. 1984/06/27" type="date"
+                    <Form.Control placeholder="e.g. 1984/06/27" 
                     onChange={(e) => setDOBOfMother(e.target.value)}/></Col>
                 </Row>
 
@@ -273,8 +273,8 @@ const CreateParentForm = () => {
                 <Form.Select size="sm" 
                 onChange={(e) => setAdoptionPreference(e.target.value)}>
                   <option ></option>
-                  <option value="ADOPTION" >Adoption</option>
-                  <option value="FOSTERCARE">Foster Care</option>
+                  <option value="1" >Adoption</option>
+                  <option value="2">Foster Care</option>
                 </Form.Select>
               </Form.Group>
 
@@ -283,7 +283,7 @@ const CreateParentForm = () => {
                 <Form.Text className="text-muted">
                   *Give the preferred age range of the child
                 </Form.Text>
-                <Form.Control type="text" placeholder="e.g. [9-15]"
+                <Form.Control type="text" placeholder="e.g. 9-15"
                 onChange={(e) => setAgePreference(e.target.value)} />
               </Form.Group>
 

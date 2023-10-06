@@ -4,13 +4,13 @@ import { Button, Col, Form, Row } from "react-bootstrap";
 import { MyCard, MyCardBody, MyCardHeader } from "../MyCard";
 import { useState } from "react";
 
-const CreateStaffForm = () => {
+const EditStaffForm = () => {
   const [username, setUsername] = useState("");
   const [name,setName]= useState("");
   const [phoneNumber,setPhoneNumber]= useState("");
   const [email,setEmail]= useState("");
   const [password,setPassword]= useState("");
-  const [OrphanageName,setOrphanageName]= useState("");
+  const [orphanageName,setOrphanageName]= useState("");
   const [address,setAddress]= useState("");
   const [nic,setNic]= useState("");
   const [gender,setGender]= useState("");
@@ -40,7 +40,7 @@ const CreateStaffForm = () => {
         phoneNumber: phoneNumber,
         email: email,
         password: password,
-        OrphanageName: OrphanageName,
+        orphanageName: orphanageName,
         address: address,
         nic: nic,
         gender: gender,
@@ -234,4 +234,4 @@ const CreateStaffForm = () => {
       </Row>
     );
   };
-  export default CreateStaffForm;
+  export default EditStaffForm;
