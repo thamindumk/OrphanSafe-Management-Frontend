@@ -9,6 +9,7 @@ import {
   CREATE_CASE_LOG_URL,
   GET_CASE_LOGS_LIST_URL,
   DELETE_CASE_LOG_URL,
+  UPDATE_CASE_LOG_URL,
 } from "../config";
 
 export const caseApiSlice = apiSlice.injectEndpoints({
@@ -74,6 +75,14 @@ export const caseApiSlice = apiSlice.injectEndpoints({
         body: data,
       }),
     }),
+
+    editCaseLog: builder.mutation({
+      query: (data) => ({
+        url: UPDATE_CASE_LOG_URL,
+        method: "PUT",
+        body: data,
+      }),
+    }),
   }),
 });
 
@@ -86,5 +95,6 @@ export const {
   useGetCaseListByUserIdQuery,
   useCreateCaseLogMutation,
   useGetCaseLogsQuery,
-  useDeleteCaseLogMutation
+  useDeleteCaseLogMutation,
+  useUpdateCaseLogMutation,
 } = caseApiSlice;
