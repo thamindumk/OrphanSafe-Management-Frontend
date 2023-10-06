@@ -11,7 +11,7 @@ const CreateSocialWorkerForm = () => {
   const [phoneNumber,setPhoneNumber]= useState("");
   const [email,setEmail]= useState("");
   const [password,setPassword]= useState("");
-  const [OrphanageName,setOrphanageName]= useState("");
+  const [orphanageName,setOrphanageName]= useState("");
   const [address,setAddress]= useState("");
   const [nic,setNic]= useState("");
   const [gender,setGender]= useState("");
@@ -43,7 +43,7 @@ const CreateSocialWorkerForm = () => {
         phoneNumber: phoneNumber,
         email: email,
         password: password,
-        OrphanageName: OrphanageName,
+        orphanageName: orphanageName,
         address: address,
         nic: nic,
         gender: gender,
@@ -110,17 +110,14 @@ const CreateSocialWorkerForm = () => {
         onChange={(e) => setPhoneNumber(e.target.value)}/>
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicDob">
-        <Form.Label>Date Of Birth</Form.Label>
+      <Form.Group className="mb-3" controlId="formBasicBirthday">
+        <Form.Label>Date of Birth</Form.Label>
         <Form.Text className="text-muted">
-        *Date of birth of the child
+        *date of birth
         </Form.Text>
-        <Form.Control
-        type="date"
-        placeholder="Date of birth"
-        onChange={(e) => setDOB(e.target.value)}
-        />
-        </Form.Group>
+        <Form.Control type="text" placeholder="e.g. 1980/04/14" 
+        onChange={(e) => setDOB(e.target.value)}/>
+      </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicAddress">
         <Form.Label>Address</Form.Label>
