@@ -26,7 +26,7 @@ const CreateChildForm = () => {
   const [ChildProtectionCertificate,setChildProtectionCertificate]= useState(null);
   const [BirthCertificate,setBirthCertificate]= useState(null);
   const [MothersBirthCertificate,setMothersBirthCertificate]= useState(null);
-  const [FathersCertificate,setFathersCertificate]= useState(null);
+  const [FathersBirthCertificate,setFathersBirthCertificate]= useState(null);
 
   const [registerChild, { isLoading, isError, isSuccess }] =
   useCreateChildProfileMutation();
@@ -40,7 +40,7 @@ const CreateChildForm = () => {
       formData.append("ChildProtectionCertificate", ChildProtectionCertificate);
       formData.append("BirthCertificate", BirthCertificate);
       formData.append("MothersBirthCertificate", MothersBirthCertificate);
-      formData.append("FathersCertificate", FathersCertificate);
+      formData.append("FathersBirthCertificate", FathersBirthCertificate);
       formData.append("otherInfo", JSON.stringify({
         FullName: FullName,
         DOB: DOB,
@@ -260,7 +260,7 @@ const CreateChildForm = () => {
         *birth certificate of the child's father.
         </Form.Text>
         <Form.Control type="file" multiple size="sm" style={{ padding: '0.05rem 0.3rem 0.2rem 0.3rem' }}
-        onChange={(e) => setFathersCertificate(e.target.files[0])}/>
+        onChange={(e) => setFathersBirthCertificate(e.target.files[0])}/>
       </Form.Group>
 
 
