@@ -1,5 +1,5 @@
 import React from "react";
-import EditCaseLogs from "../../components/cases/EditDeleteCaseLog";
+import EditCaseLogs from "../../components/cases/EditCaseLogForm";
 
 const EditCaseLogsScreen = () => {
   return <EditCaseLogs />;
