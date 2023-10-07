@@ -51,7 +51,11 @@ const ViewParent = () => {
                 <tbody>
                 {data.parentsProfiles.map((parent) => (
                     <tr>
-                      <td>{parent.NameOfFather}</td>
+                      <td>
+                          <Link  to={`/monitoring/viewParent/overview?parentId=${parent.UserId}`}>
+                            <a href="#">{parent.NameOfFather}</a>
+                          </Link>
+                        </td>
                       <td>{parent.NameOfMother}</td>
                       <td>{parent.Email}</td>
                       <td>{parent.MobileOfFather}</td>

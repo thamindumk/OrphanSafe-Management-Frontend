@@ -1,11 +1,11 @@
 import React from "react";
-import ProfileIntro from "../../components/ProfileIntro";
+import ParentIntro from "../../components/external-party/ParentIntro";
 import ParentProfileContent from "../../components/external-party/ParentProfileContent";
 
 const ParentOverviewScreen = () => {
   return (
     <div>
-      <ProfileIntro />
+      <ParentIntro />
       <ParentProfileContent />
     </div>
   );

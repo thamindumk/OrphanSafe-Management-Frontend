@@ -74,7 +74,8 @@ const App = () => {
     "/edit/editStaffProfile": "Edit Staff profiles",
     "/edit/editParentProfile": "Edit Parent Profiles",
     "/edit/editSocialWorkerProfile":"Edit Social worker Profiles",
-    "/registration/OrphanageRegistration": "Orphanage Registration"
+    "/registration/OrphanageRegistration": "Orphanage Registration",
+    "/delete/deleteChildProfile":"Delete Child Profile Form"
     
   };
   // Check if the path exists in the mapping, and if so, set the pageTitle accordingly

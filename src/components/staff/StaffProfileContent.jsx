@@ -1,8 +1,14 @@
 import React from "react";
 import { Form, Table, Row, Col } from "react-bootstrap";
 import { MyCard, MyCardBody, MyCardHeader } from "../../components/MyCard";
+import { useViewStaffProfilesQuery} from "../../slices/profileApiSlice";
 
 const StaffProfileContent = () => {
+  const queryParams = new URLSearchParams(location.search);
+  const paramValue = queryParams.get("staffId");
+  const {data, isLoading,isError,isSuccess}=
+  useViewStaffProfilesQuery(paramValue);
+
   return (
     <div>
       <Row>
@@ -16,34 +22,38 @@ const StaffProfileContent = () => {
                   <tbody>
                     <tr>
                       <td className="td">Name with initials</td>
-                      <td className="td">K.D Kariyawasam</td>
+                      <td className="td">{data.staffProfile.UserName}</td>
                     </tr>
                     <tr>
-                      <td className="td">Birth Day</td>
-                      <td className="td">1980/10/13</td>
+                      <td className="td">Date of Birth</td>
+                      <td className="td">{data.staffProfile.DOB}</td>
                     </tr>
                     <tr>
                       <td className="td">Gender</td>
-                      <td className="td">Male</td>
+                      <td className="td">{data.staffProfile.Gender}</td>
                     </tr>
                     <tr>
-                      <td className="td">Type of Employee</td>
-                      <td className="td">Orphanage manager</td>
+                      <td className="td">NIC Number</td>
+                      <td className="td">{data.staffProfile.NIC}</td>
                     </tr>
                     <tr>
                       <td className="td">Address</td>
                       <td className="td">
-                        7A/3 , Kahatawatta, Panadura, Kalutara
+                      {data.staffProfile.Address}
                       </td>
                     </tr>
 
                     <tr>
-                      <td className="td">NIC number</td>
-                      <td className="td">8025102799</td>
+                      <td className="td">Phone number</td>
+                      <td className="td">{data.staffProfile.PhoneNumber}</td>
                     </tr>
                     <tr>
                       <td className="td">Email</td>
-                      <td className="td">kariyawasamkd@gmail.com</td>
+                      <td className="td">{data.staffProfile.Email}</td>
+                    </tr>
+                    <tr>
+                      <td className="td">Assigned orphanage</td>
+                      <td className="td">{data.staffProfile.OrphanageName}</td>
                     </tr>
                   </tbody>
                 </Table>

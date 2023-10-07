@@ -97,7 +97,7 @@ const EditChildForm = () => {
         type="text" 
         placeholder="e.g. full name" 
         onChange={(e) => setFullName(e.target.value)}
-        value={data.childProfile.FullName}/>
+        defaultValue={data.childProfile.FullName}/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicdob">
