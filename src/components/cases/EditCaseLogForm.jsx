@@ -19,11 +19,12 @@ const EditCaseLogs = () => {
   const [logDescription, setLogDescription] = useState();
   const [updateCaseLog, { error, loading, success }] =
     useUpdateCaseLogMutation();
-  const { data, isLoading, isError, isSuccess } =
+  const { data, isLoading, isError, isSuccess, refetch } =
     useGetCaseLogBylogIdQuery(paramValue);
   // Array of all options
 
   const submitHandler = async (e) => {
+    const form = document.getElementById("form");
     e.preventDefault();
     try {
       const caseLogData = {
@@ -34,6 +35,10 @@ const EditCaseLogs = () => {
       console.log(caseLogData);
       const res = await updateCaseLog(caseLogData).unwrap();
       toast.success("Update completed");
+      form.reset();
+      if (success) {
+        refetch();
+      }
     } catch (error) {
       toast.error(error.message);
     }
@@ -47,7 +52,7 @@ const EditCaseLogs = () => {
           <MyCard>
             <MyCardHeader>Create Case Log Form</MyCardHeader>
             <MyCardBody>
-              <Form onSubmit={submitHandler}>
+              <Form onSubmit={submitHandler} id="form">
                 <Form.Group className="mb-3" controlId="formBasicCaseName">
                   <Form.Label>Case log name</Form.Label>
                   <Form.Text className="text-muted">

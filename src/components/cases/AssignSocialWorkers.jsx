@@ -40,6 +40,7 @@ const AssignSocialWorkers = () => {
     );
 
     const submitHandler = async (e) => {
+      const form = document.getElementById("form");
       e.preventDefault();
       try {
         const caseData = {
@@ -50,6 +51,7 @@ const AssignSocialWorkers = () => {
         };
         const res = await createCase(caseData).unwrap();
         toast.success("creation completed");
+        form.reset();
       } catch (error) {
         toast.error(error.message);
       }
@@ -68,7 +70,7 @@ const AssignSocialWorkers = () => {
           <MyCard>
             <MyCardHeader>Assign social workers form</MyCardHeader>
             <MyCardBody>
-              <Form onSubmit={submitHandler}>
+              <Form onSubmit={submitHandler} id="form">
                 <Form.Group className="mb-3" controlId="formBasicCaseName">
                   <Form.Label>Case name</Form.Label>
                   <Form.Text className="text-muted">
