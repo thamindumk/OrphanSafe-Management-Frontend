@@ -95,11 +95,9 @@ const ViewStaff = () => {
                     {data.staffProfiles.map((data) => (
                       <tr>
                         <td>
-                          <Link to={"/monitoring/viewStaff/overview?id=1"}>
+                          
+                          <Link to={`/monitoring/viewStaff/overview?staffId=${data.UserId}`}>
                             <a href="#">{data.UserName}</a>
-                          </Link>
-                          <Link to={"/monitoring/viewStaff/overview?id=1"}>
-                            <a href="#">{data.Name}</a>
                           </Link>
                         </td>
                         <td>{data.Email}</td>
@@ -107,9 +105,15 @@ const ViewStaff = () => {
                         <td>{data.Gender}</td>
                         <td>{data.RoleName}</td>
                         <td>
-                          <i className="fas fa-edit mr-3 text-primary"></i>
-                          <i className="fas fa-trash text-danger"></i>
-                        </td>
+                      <Link className="blue-button" to={`/edit/editStaffProfile?staffId=${data.UserId}`}>
+                          Edit
+                        </Link>
+                        <Link class="red-button">
+                          Delete
+                        </Link>
+                      {/* <i className="fas fa-edit mr-3 text-primary"></i> */}
+                      {/* <i className="fas fa-trash text-danger"></i> */}
+                    </td>
                       </tr>
                     ))}
                   </tbody>

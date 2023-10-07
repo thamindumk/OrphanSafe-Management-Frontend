@@ -17,6 +17,10 @@ import {
   DELETE_CHILD_PROFILE_URL,
   GET_SOCIAL_WORKER_NAME_LIST,
   GET_CHILD_PROFILE_NAME_LIST,
+  EDIT_CHILD_PROFILE_URL,
+  EDIT_STAFF_PROFILE_URL,
+  EDIT_SOCIAL_WORKER_PROFILE_URL,
+  EDIT_PARENT_PROFILE_URL,
 } from "../config";
 
 export const profileApiSlice = apiSlice.injectEndpoints({
@@ -61,32 +65,32 @@ export const profileApiSlice = apiSlice.injectEndpoints({
      */
 
     viewChildProfiles: builder.query({
-      query: () => ({
-        url: VIEW_CHILD_PROFILE_URL,
+      query: (data) => ({
+        url: VIEW_CHILD_PROFILE_URL+`?childId=${data}`,
         method: "GET",
         // body: data,
       }),
     }),
 
     viewStaffProfiles: builder.query({
-      query: () => ({
-        url: VIEW_STAFF_PROFILE_URL,
+      query: (data) => ({
+        url: VIEW_STAFF_PROFILE_URL+`?staffId=${data}`,
         method: "GET",
         // body: data,
       }),
     }),
 
     viewSocialWorkerProfiles: builder.query({
-      query: () => ({
-        url: VIEW_SOCIAL_WORKER_PROFILE_URL,
+      query: (data) => ({
+        url: VIEW_SOCIAL_WORKER_PROFILE_URL+`?workerId=${data}`,
         method: "GET",
         // body: data,
       }),
     }),
 
     viewParentProfiles: builder.query({
-      query: () => ({
-        url: VIEW_PARENT_PROFILE_URL,
+      query: (data) => ({
+        url: VIEW_PARENT_PROFILE_URL+`?parentId=${data}`,
         method: "GET",
         // body: data,
       }),
@@ -139,6 +143,44 @@ export const profileApiSlice = apiSlice.injectEndpoints({
         body: data,
       }),
     }),
+    /**
+     * PUT-Edit profiles
+     */
+
+    editChildProfile: builder.mutation({
+      query: (data) => ({
+        url: EDIT_CHILD_PROFILE_URL,
+        method: "PUT",
+        body: data,
+      }),
+    }),
+
+    editStaffProfile: builder.mutation({
+      query: (data) => ({
+        url: EDIT_STAFF_PROFILE_URL,
+        method: "PUT",
+        body: data,
+      }),
+    }),
+
+    editSocialWorkerProfile: builder.mutation({
+      query: (data) => ({
+        url: EDIT_SOCIAL_WORKER_PROFILE_URL,
+        method: "PUT",
+        body: data,
+      }),
+    }),
+
+    editParentProfile: builder.mutation({
+      query: (data) => ({
+        url: EDIT_PARENT_PROFILE_URL,
+        method: "PUT",
+        body: data,
+      }),
+    }),
+
+
+
 
     getChildProfileNameList: builder.query({
       query: (data) => ({
@@ -169,6 +211,10 @@ export const {
   useCreateParentProfileMutation,
   useCreateChildProfileMutation,
   useDeleteChildProfileMutation,
+  useEditChildProfileMutation,
+  useEditStaffProfileMutation,
+  useEditSocialWorkerProfileMutation,
+  useEditParentProfileMutation,
   useGetChildProfileNameListQuery,
   useGetSocialWorkerNameListQuery,
 } = profileApiSlice;

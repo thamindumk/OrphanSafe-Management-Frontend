@@ -7,7 +7,7 @@ import $ from "jquery"; // Import jQuery
 import "datatables.net-dt/css/jquery.dataTables.css"; // Import DataTables CSS
 import "datatables.net"; // Import DataTables JavaScript
 import { useGetParentProfileListQuery } from "../../slices/profileApiSlice";
-import { LinkContainer } from "react-router-bootstrap";
+import { Link } from "react-router-dom";
 
 
 const ViewParent = () => {
@@ -58,8 +58,14 @@ const ViewParent = () => {
                       <td>{parent.MobileOfMother}</td>
                       <td>{parent.Address}</td>
                       <td>
-                      <i className="fas fa-edit mr-3 text-primary"></i>
-                      <i className="fas fa-trash text-danger"></i>
+                      <Link className="blue-button" to={`/edit/editParentProfile?parentId=${parent.UserId}`}>
+                          Edit
+                        </Link>
+                        <Link className="red-button">
+                          Delete
+                        </Link>
+                      {/* <i className="fas fa-edit mr-3 text-primary"></i> */}
+                      {/* <i className="fas fa-trash text-danger"></i> */}
                     </td>
                     </tr>
                   ))} 
