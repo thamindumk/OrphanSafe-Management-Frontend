@@ -70,7 +70,10 @@ const App = () => {
     "/report/viewChildReport": "View Child Report",
     "/approval/OverallApproval": "Overall Approvals",
     "/chat/StaffChat": "Staff Chat",
-    
+    "/edit/editChildProfile":"Edit Child Profiles",
+    "/edit/editStaffProfile": "Edit Staff profiles",
+    "/edit/editParentProfile": "Edit Parent Profiles",
+    "/edit/editSocialWorkerProfile":"Edit Social worker Profiles",
     "/registration/OrphanageRegistration": "Orphanage Registration"
     
   };
