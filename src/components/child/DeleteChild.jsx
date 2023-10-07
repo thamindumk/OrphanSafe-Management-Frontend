@@ -1,5 +1,4 @@
 import { toast } from "react-toastify";
-import { useCreateStaffProfileMutation } from "../../slices/profileApiSlice";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { MyCard, MyCardBody, MyCardHeader } from "../MyCard";
 import { useState } from "react";
@@ -46,8 +45,8 @@ const DeleteChild = () => {
         <MyCard>
         <MyCardHeader>Delete child profile</MyCardHeader>
         <MyCardBody>
-          <Form onSubmit={submitHandler}>
-      <Form.Label className="form-subtitle">Create Account</Form.Label>
+          <Form >
+      <Form.Label className="form-subtitle">Delete child profile</Form.Label>
 
       <Form.Group className="mb-3" controlId="formBasicName">
         <Form.Label>Commit Message</Form.Label>

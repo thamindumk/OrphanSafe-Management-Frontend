@@ -4,6 +4,7 @@ import { MyCard, MyCardBody, MyCardHeader } from "../../components/MyCard";
 import {
   useViewChildProfilesQuery,
 } from "../../slices/profileApiSlice";
+import "../../assets/css/profileIntro.css"
 
 const ChildProfileContent = () => {
   
@@ -14,6 +15,24 @@ const ChildProfileContent = () => {
 
   return isSuccess && (
     <div>
+
+<div className="card">
+      <div className="background">
+        <Row className="profile">
+          <Col xs={12} sm={12} md={4} lg={6} xl={4}>
+            <div className="profileImage"></div>
+          </Col>
+          <Col xs={12} sm={12} md={8} lg={6} xl={8}>
+            <h1 className="name-header">{data.childProfile.FullName}</h1>
+            <p className="name-sub">Orphanage Name:</p>
+            <p className="name-sub">{data.childProfile.OrphanageName}</p>
+            <p className="name-sub">{data.childProfile.Gender}</p>
+          </Col>
+        </Row>
+      </div>
+    </div>
+
+
       <Row>
         <Col sm={0} md={1} lg={1}></Col>
         <Col sm={12} md={10} lg={10}>

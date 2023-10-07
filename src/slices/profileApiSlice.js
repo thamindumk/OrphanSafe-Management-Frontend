@@ -15,6 +15,9 @@ import {
   CREATE_PARENT_PROFILE_URL,
   CREATE_MANAGER_PROFILE_URL,
   DELETE_CHILD_PROFILE_URL,
+  DELETE_STAFF_PROFILE_URL,
+  DELETE_SOCIAL_WORKER_PROFILE_URL,
+  DELETE_PARENT_PROFILE_URL,
   GET_SOCIAL_WORKER_NAME_LIST,
   GET_CHILD_PROFILE_NAME_LIST,
   EDIT_CHILD_PROFILE_URL,
@@ -143,6 +146,27 @@ export const profileApiSlice = apiSlice.injectEndpoints({
         body: data,
       }),
     }),
+    deleteStaffProfile: builder.mutation({
+      query: (data) => ({
+        url: DELETE_STAFF_PROFILE_URL,
+        method: "DELETE",
+        body: data,
+      }),
+    }),
+    deleteSocialWorkerProfile: builder.mutation({
+      query: (data) => ({
+        url:  DELETE_SOCIAL_WORKER_PROFILE_URL,
+        method: "DELETE",
+        body: data,
+      }),
+    }),
+    deleteParentProfile: builder.mutation({
+      query: (data) => ({
+        url: DELETE_PARENT_PROFILE_URL,
+        method: "DELETE",
+        body: data,
+      }),
+    }),
     /**
      * PUT-Edit profiles
      */
@@ -211,6 +235,9 @@ export const {
   useCreateParentProfileMutation,
   useCreateChildProfileMutation,
   useDeleteChildProfileMutation,
+  useDeleteStaffProfileMutation,
+  useDeleteSocialWorkerProfileMutation,
+  useDeleteParentProfileMutation,
   useEditChildProfileMutation,
   useEditStaffProfileMutation,
   useEditSocialWorkerProfileMutation,

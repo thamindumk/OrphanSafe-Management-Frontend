@@ -2,6 +2,7 @@ import React from "react";
 import { Form, Table, Row, Col } from "react-bootstrap";
 import { MyCard, MyCardBody, MyCardHeader } from "../../components/MyCard";
 import { useViewParentProfilesQuery} from "../../slices/profileApiSlice";
+import "../../assets/css/profileIntro.css"
 
 const ParentProfileContent = () => {
 
@@ -13,6 +14,22 @@ const ParentProfileContent = () => {
 
   return isSuccess && (
     <div>
+      <div className="card">
+      <div className="background">
+        <Row className="profile">
+          <Col xs={12} sm={12} md={4} lg={6} xl={4}>
+            <div className="profileImage"></div>
+          </Col>
+          <Col xs={12} sm={12} md={8} lg={6} xl={8}>
+            <h1 className="name-header">{data.parentProfile.NameOfFather}</h1>
+            <p className="name-sub">{data.parentProfile.NameOfMother}</p>
+            <p className="name-sub">{data.parentProfile.AdoptionPreference}</p>
+          </Col>
+        </Row>
+      </div>
+    </div>
+
+
       <Row>
         <Col sm={0} md={1} lg={1}></Col>
         <Col sm={12} md={10} lg={10}>

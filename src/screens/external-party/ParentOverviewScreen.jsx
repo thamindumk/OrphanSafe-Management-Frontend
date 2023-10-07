@@ -5,7 +5,7 @@ import ParentProfileContent from "../../components/external-party/ParentProfileC
 const ParentOverviewScreen = () => {
   return (
     <div>
-      <ParentIntro />
+      {/* <ParentIntro /> */}
       <ParentProfileContent />
     </div>
   );

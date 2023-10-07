@@ -6,7 +6,7 @@ import ChildProfileContent from "../../components/child/ChildProfileContent";
 const ChildOverviewScreen = () => {
   return (
     <div>
-      <ChildInto />
+      {/* <ChildInto /> */}
       <ChildProfileContent />
     </div>
   );

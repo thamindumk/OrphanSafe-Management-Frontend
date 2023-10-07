@@ -22,7 +22,7 @@ const ViewChild = () => {
   // };
   
 
-  const { data, isError, isSuccess, isLoading } = useGetChildProfileListQuery();
+  const { data, isError, isSuccess, isLoading,refetch } = useGetChildProfileListQuery();
 
   useEffect(() => {
     // Initialize DataTable
@@ -72,7 +72,7 @@ const ViewChild = () => {
                       <Link className="blue-button" to={`/edit/editChildProfile?childId=${child.ChildId}`}>
                           Edit
                         </Link>
-                        <Link class="red-button">
+                        <Link class="red-button"to={`/delete/deleteChildProfile?childId=${child.ChildId}`}>
                           Delete
                         </Link>
                       {/* <i className="fas fa-edit mr-3 text-primary"></i> */}

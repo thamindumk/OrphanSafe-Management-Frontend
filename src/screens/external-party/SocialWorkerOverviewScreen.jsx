@@ -6,7 +6,7 @@ import SocialWorkerProfileContent from "../../components/external-party/SocialWo
 const SocialWorkerOverviewScreen = () => {
   return (
     <div>
-      <SocialWorkerIntro />
+      {/* <SocialWorkerIntro /> */}
       <SocialWorkerProfileContent />
     </div>
   );

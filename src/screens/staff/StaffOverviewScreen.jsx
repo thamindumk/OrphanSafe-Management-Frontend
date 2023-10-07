@@ -15,7 +15,7 @@ const StaffOverviewScreen = () => {
   // Get the value of a specific query parameter by its name
   return (
     <div>
-      <StaffIntro />
+      {/* <StaffIntro /> */}
       <StaffProfileContent />
     </div>
   );
