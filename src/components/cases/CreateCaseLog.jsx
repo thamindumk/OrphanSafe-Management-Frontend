@@ -24,6 +24,7 @@ const CreateCaseLogs = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    const form = document.getElementById("form");
     try {
       const caseLogData = {
         caseId: selectedOption.value,
@@ -32,6 +33,7 @@ const CreateCaseLogs = () => {
       };
       const res = await createCaseLog(caseLogData).unwrap();
       toast.success("creation completed");
+      form.reset();
     } catch (error) {
       toast.error(error.message);
     }
@@ -50,7 +52,7 @@ const CreateCaseLogs = () => {
           <MyCard>
             <MyCardHeader>Create Case Log Form</MyCardHeader>
             <MyCardBody>
-              <Form onSubmit={submitHandler}>
+              <Form onSubmit={submitHandler} id="form">
                 <Form.Group className="mb-3" controlId="formBasicGender">
                   <Form.Label>Case Name</Form.Label>
                   <Form.Text className="text-muted">
