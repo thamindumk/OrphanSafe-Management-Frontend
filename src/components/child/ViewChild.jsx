@@ -7,13 +7,22 @@ import $ from "jquery"; // Import jQuery
 import "datatables.net-dt/css/jquery.dataTables.css"; // Import DataTables CSS
 import "datatables.net"; // Import DataTables JavaScript
 import { useGetChildProfileListQuery } from "../../slices/profileApiSlice";
-import { LinkContainer } from "react-router-bootstrap";
+import { Link } from "react-router-dom";
 
 
 const ViewChild = () => {
   const tableRef = useRef(null);
 
-  const { data, isError, isSuccess, isLoading } = useGetChildProfileListQuery();
+  // const [deleteChildProfile] = useDeleteChildProfileMutation();
+
+  // const handleDelete = async (childId) => {
+  //   const resp = await deleteChildProfile({ id: childId });
+  //   if (isError) toast.error(resp.data.message);
+  //   if (isSuccess) refetch();
+  // };
+  
+
+  const { data, isError, isSuccess, isLoading,refetch } = useGetChildProfileListQuery();
 
   useEffect(() => {
     // Initialize DataTable
@@ -51,17 +60,23 @@ const ViewChild = () => {
                 {data.childProfiles.map((child) => (
                     <tr>
                       <td>
-                        <LinkContainer to="/profile/viewProfile/overview">
+                        <Link  to={`/profile/viewProfile/overview?childId=${child.ChildId}`}>
                           <a href="#">{child.FullName}</a>
-                        </LinkContainer>
+                        </Link>
                       </td>
                       <td>{child.DOB}</td>
                       <td>{child.Gender}</td>
                       <td>{child.DateOfAdmission}</td>
                       <td>{child.OrphanageName}</td>
                       <td>
-                      <i className="fas fa-edit mr-3 text-primary"></i>
-                      <i className="fas fa-trash text-danger"></i>
+                      <Link className="blue-button" to={`/edit/editChildProfile?childId=${child.ChildId}`}>
+                          Edit
+                        </Link>
+                        <Link class="red-button"to={`/delete/deleteChildProfile?childId=${child.ChildId}`}>
+                          Delete
+                        </Link>
+                      {/* <i className="fas fa-edit mr-3 text-primary"></i> */}
+                      {/* <i className="fas fa-trash text-danger"></i> */}
                     </td>
                     </tr>
                   ))}

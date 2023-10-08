@@ -2,15 +2,19 @@ import React from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { MyCard, MyCardBody, MyCardHeader } from "../MyCard";
 import { toast } from "react-toastify";
-import { useCreateParentProfileMutation } from "../../slices/profileApiSlice";
+import { useViewParentProfilesQuery,useEditParentProfileMutation } from "../../slices/profileApiSlice";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const CreateParentForm = () => {
-  const [username, setUsername] = useState("");
+  //const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const paramValue = queryParams.get("parentId");
+
+
 
   const [email,setEmail]= useState("");
-  const [password,setPassword]= useState("");
-  const [orphanageName,setOrphanageName]= useState("");
+  const [OrphanageName,setOrphanageName]= useState("");
   const [address,setAddress]= useState("");
 
   const [NameOfFather,setNameOfFather]= useState("");
@@ -38,8 +42,10 @@ const CreateParentForm = () => {
   const [ResidenceCertificate,setResidenceCertificate]= useState(null);
   const [SalaryPaySheet,setSalaryPaySheet]= useState(null);
 
-  const [registerParent, { isLoading, isError, isSuccess }] =
-  useCreateParentProfileMutation();
+  const {data, isLoading,isError,isSuccess}=
+  useViewParentProfilesQuery(paramValue);
+
+  const [editParent]=useEditParentProfileMutation();
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -54,12 +60,10 @@ const CreateParentForm = () => {
       formData.append("SalaryPaySheet", SalaryPaySheet);
 
       formData.append("otherInfo", JSON.stringify({
-        username: username,
         name: NameOfFather,
         phoneNumber:MobileOfFather,
         email: email,
-        password: password,
-        orphanageName: orphanageName,
+        OrphanageName: OrphanageName,
         address: address,
         nic: NICOfFather,
         gender: "MALE",
@@ -84,7 +88,7 @@ const CreateParentForm = () => {
         LanguagePreference: LanguagePreference,
         
       }));
-      const res = await registerParent(formData).unwrap();
+      const res = await editParent(formData).unwrap();
 
       toast.success(" Parent profile Registration completed");
     } catch (error) {
@@ -92,11 +96,11 @@ const CreateParentForm = () => {
     }
   };
 
-  return (
+  return isSuccess && (
     <Row>
       <Col sm={7}>
         <MyCard>
-          <MyCardHeader>Create Parent profile</MyCardHeader>
+          <MyCardHeader>Edit Parent profile</MyCardHeader>
           <MyCardBody>
             <Form onSubmit={submitHandler}>
               <Form.Group className="mb-3" controlId="formBasicBirthPlace">
@@ -108,47 +112,57 @@ const CreateParentForm = () => {
                   <Col xs={6}>
                     <Form.Label>Foster father's name</Form.Label>
                     <Form.Control placeholder="e.g. Sunil Perera" 
-                    onChange={(e) => setNameOfFather(e.target.value)}/></Col>
+                    onChange={(e) => setNameOfFather(e.target.value)}
+                    defaultValue={data.parentProfile.NameOfFather}/></Col>
                   <Col xs={6}><Form.Label>Foster mother's name</Form.Label>
                     <Form.Control placeholder="e.g. Kumudi Perera" 
-                    onChange={(e) => setNameOfMother(e.target.value)}/></Col>
+                    onChange={(e) => setNameOfMother(e.target.value)}
+                    defaultValue={data.parentProfile.NameOfMother}/></Col>
                 </Row>
                 <Row >
                   <Col xs={6}>
                     <Form.Label>NIC number</Form.Label>
                     <Form.Control placeholder="e.g. 0023345453" 
-                    onChange={(e) => setNICOfFather(e.target.value)}/></Col>
+                    onChange={(e) => setNICOfFather(e.target.value)}
+                    defaultValue={data.parentProfile.NICOfFather}/></Col>
                   <Col xs={6}><Form.Label>NIC number</Form.Label>
                     <Form.Control placeholder="e.g. 0023345453"
-                    onChange={(e) => setNICOfMother(e.target.value)} /></Col>
+                    onChange={(e) => setNICOfMother(e.target.value)}
+                    defaultValue={data.parentProfile.NICOfMother} /></Col>
                 </Row>
                 <Row>
                   <Col xs={6}>
                     <Form.Label>Mobile Number</Form.Label>
                     <Form.Control placeholder="e.g. 071 2345678" 
-                    onChange={(e) => setMobileOfFather(e.target.value)}/></Col>
+                    onChange={(e) => setMobileOfFather(e.target.value)}
+                    defaultValue={data.parentProfile.MobileOfFather}/></Col>
                   <Col xs={6}><Form.Label>Mobile Number</Form.Label>
                     <Form.Control placeholder="e.g. 071 2345678" 
-                    onChange={(e) => setMobileOfMother(e.target.value)}/></Col>
+                    onChange={(e) => setMobileOfMother(e.target.value)}
+                    defaultValue={data.parentProfile.MobileOfMother}/></Col>
                 </Row>
                 <Row>
                   <Col xs={6}>
                     <Form.Label>Date of Birth</Form.Label>
-                    <Form.Control placeholder="e.g. 1984/06/27" 
-                    onChange={(e) => setDOBOfFather(e.target.value)}/></Col>
+                    <Form.Control placeholder="e.g. 1984/06/27"  type="date" 
+                    onChange={(e) => setDOBOfFather(e.target.value)}
+                    defaultValue={data.parentProfile.DOBOfFather}/></Col>
                   <Col xs={6}><Form.Label>Date of Birth</Form.Label>
-                    <Form.Control placeholder="e.g. 1984/06/27" 
-                    onChange={(e) => setDOBOfMother(e.target.value)}/></Col>
+                    <Form.Control placeholder="e.g. 1984/06/27"  type="date"
+                    onChange={(e) => setDOBOfMother(e.target.value)}
+                    defaultValue={data.parentProfile.setDOBOfMother}/></Col>
                 </Row>
 
                 <Row>
                   <Col xs={6}>
                     <Form.Label>Occupation</Form.Label>
                     <Form.Control placeholder="e.g. Manager" 
-                    onChange={(e) => setOccupationOfFather(e.target.value)}/></Col>
+                    onChange={(e) => setOccupationOfFather(e.target.value)}
+                    defaultValue={data.parentProfile.OccupationOfFather}/></Col>
                   <Col xs={6}><Form.Label>Occupation</Form.Label>
                     <Form.Control placeholder="e.g. Teacher" 
-                    onChange={(e) => setOccupationOfMother(e.target.value)}/></Col>
+                    onChange={(e) => setOccupationOfMother(e.target.value)}
+                    defaultValue={data.parentProfile.OccupationOfMother}/></Col>
                 </Row>
 
               </Form.Group>
@@ -160,7 +174,8 @@ const CreateParentForm = () => {
                   *address of the parents
                 </Form.Text>
                 <Form.Control type="text" placeholder="e.g. Panadura,Kaluthara" 
-                onChange={(e) => setAddress(e.target.value)}/>
+                onChange={(e) => setAddress(e.target.value)}
+                defaultValue={data.parentProfile.Address}/>
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -169,7 +184,8 @@ const CreateParentForm = () => {
                   *email address of the parent
                 </Form.Text>
                 <Form.Control type="email" placeholder="e.g. example@email.com"
-                onChange={(e) => setEmail(e.target.value)} />
+                onChange={(e) => setEmail(e.target.value)} 
+                defaultValue={data.parentProfile.Email}/>
               </Form.Group>
 
               {/* <Form.Group className="mb-3" controlId="formBasicGender">
@@ -271,10 +287,11 @@ const CreateParentForm = () => {
                   *select the types of placement preferred
                 </Form.Text>
                 <Form.Select size="sm" 
-                onChange={(e) => setAdoptionPreference(e.target.value)}>
-                  <option ></option>
-                  <option value="1" >Adoption</option>
-                  <option value="2">Foster Care</option>
+                onChange={(e) => setAdoptionPreference(e.target.value)}
+                defaultValue={data.parentProfile.AdoptionPreference}>
+                 <option ></option>
+                  <option value="ADOPTION" >Adoption</option>
+                  <option value="FOSTERCARE">Foster Care</option>
                 </Form.Select>
               </Form.Group>
 
@@ -284,7 +301,8 @@ const CreateParentForm = () => {
                   *Give the preferred age range of the child
                 </Form.Text>
                 <Form.Control type="text" placeholder="e.g. 9-15"
-                onChange={(e) => setAgePreference(e.target.value)} />
+                onChange={(e) => setAgePreference(e.target.value)}
+                defaultValue={data.parentProfile.AgePreference} />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicGender">
@@ -293,7 +311,8 @@ const CreateParentForm = () => {
                   *gender of the child
                 </Form.Text>
                 <Form.Select size="sm"
-                onChange={(e) => setGenderPreference(e.target.value)} >
+                onChange={(e) => setGenderPreference(e.target.value)} 
+                defaultValue={data.parentProfile.GenderPreference}>
                   <option ></option>
                   <option value="MALE">Male</option>
                   <option value="FEMALE">Female</option>
@@ -306,7 +325,8 @@ const CreateParentForm = () => {
                   *Give nationality preference
                 </Form.Text>
                 <Form.Control type="text" placeholder="e.g. Sri lankan" 
-                onChange={(e) => setNationalityPreference(e.target.value)}/>
+                onChange={(e) => setNationalityPreference(e.target.value)}
+                defaultValue={data.parentProfile.NationalityPreference}/>
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicAddress">
@@ -315,35 +335,8 @@ const CreateParentForm = () => {
                   *Give language preference
                 </Form.Text>
                 <Form.Control type="text" placeholder="e.g. Sinhala"
-                onChange={(e) => setLanguagePreference(e.target.value)} />
-              </Form.Group>
-
-
-
-
-
-
-
-
-
-              <Form.Label className="form-subtitle">Create Account</Form.Label>
-
-              <Form.Group className="mb-3" controlId="formBasicName">
-                <Form.Label>User Name</Form.Label>
-                <Form.Text className="text-muted">
-                  *username of the parent account
-                </Form.Text>
-                <Form.Control type="text" placeholder="e.g. full name"
-                onChange={(e) => setUsername(e.target.value)} />
-              </Form.Group>
-
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Text className="text-muted">
-                  *set temporary password for the parent account
-                </Form.Text>
-                <Form.Control type="password" placeholder="***********"
-                onChange={(e) => setPassword(e.target.value)} />
+                onChange={(e) => setLanguagePreference(e.target.value)} 
+                defaultValue={data.parentProfile.LanguagePreference}/>
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicStaffName">
@@ -352,9 +345,9 @@ const CreateParentForm = () => {
                   *name of the orphanage by which the parent got registered
                 </Form.Text>
                 <Form.Control type="text" placeholder="e.g. Little dreams Orphanage" 
-                onChange={(e) => setOrphanageName(e.target.value)}/>
+                onChange={(e) => setOrphanageName(e.target.value)}
+                defaultValue={data.parentProfile.OrphanageName}/>
               </Form.Group>
-
 
 
 

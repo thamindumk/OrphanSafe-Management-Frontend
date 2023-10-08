@@ -6,12 +6,21 @@ import React, { useEffect, useRef } from "react";
 import $ from "jquery"; // Import jQuery
 import "datatables.net-dt/css/jquery.dataTables.css"; // Import DataTables CSS
 import "datatables.net"; // Import DataTables JavaScript
-import { LinkContainer } from "react-router-bootstrap";
-import { useGetSocialWorkerProfileListQuery } from "../../slices/profileApiSlice";
+import { useGetSocialWorkerProfileListQuery,useDeleteSocialWorkerProfileMutation } from "../../slices/profileApiSlice";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const ViewSocialWorkers = () => {
   const tableRef = useRef(null);
-  const { data, isError, isSuccess, isLoading } = useGetSocialWorkerProfileListQuery();
+  const { data, isError, isSuccess, isLoading,refetch } = useGetSocialWorkerProfileListQuery();
+
+  const [deleteRole] = useDeleteSocialWorkerProfileMutation();
+
+  const handleDelete = async (roleId) => {
+    const resp = await deleteRole({ userIdToDelete: roleId });
+    if (isError) toast.error(resp.data.message);
+    if (isSuccess) refetch();
+  };
 
   useEffect(() => {
     // Initialize DataTable
@@ -47,16 +56,24 @@ const ViewSocialWorkers = () => {
                 <tbody>
                 {data.socialWorkerProfiles.map((worker) => (
                     <tr>
-                       <LinkContainer to="/monitoring/viewSocialWorker/overview">
-                      <td>{worker.Name}</td>
-                      </LinkContainer>
+                      <td>
+                          <Link to={`/monitoring/viewSocialWorker/overview?workerId=${worker.workerId}`}>
+                            <a href="#">{worker.Name}</a>
+                          </Link>
+                        </td>
                       <td>{worker.Email}</td>
                       <td>{worker.PhoneNumber}</td>
                       <td>{worker.Gender}</td>
                       <td>{worker.Organization}</td>
                       <td>
-                      <i className="fas fa-edit mr-3 text-primary"></i>
-                      <i className="fas fa-trash text-danger"></i>
+                      <Link className="blue-button" to={`/edit/editSocialWorkerProfile?workerId=${worker.workerId}`}>
+                          Edit
+                        </Link>
+                        <Link className="red-button" onClick={() => handleDelete(worker.workerId)}>
+                          Delete
+                        </Link>
+                      {/* <i className="fas fa-edit mr-3 text-primary"></i> */}
+                      {/* <i className="fas fa-trash text-danger"></i> */}
                     </td>
                     </tr>
                   ))}

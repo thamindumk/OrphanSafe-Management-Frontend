@@ -6,14 +6,21 @@ import React, { useEffect, useRef } from "react";
 import $ from "jquery"; // Import jQuery
 import "datatables.net-dt/css/jquery.dataTables.css"; // Import DataTables CSS
 import "datatables.net"; // Import DataTables JavaScript
-import { useGetParentProfileListQuery } from "../../slices/profileApiSlice";
-import { LinkContainer } from "react-router-bootstrap";
-
+import { useGetParentProfileListQuery,useDeleteParentProfileMutation } from "../../slices/profileApiSlice";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const ViewParent = () => {
   const tableRef = useRef(null);
 
-  const { data, isError, isSuccess, isLoading } = useGetParentProfileListQuery();
+  const { data, isError, isSuccess, isLoading,refetch } = useGetParentProfileListQuery();
+  const [deleteRole] = useDeleteParentProfileMutation();
+
+  const handleDelete = async (roleId) => {
+    const resp = await deleteRole({ userIdToDelete: roleId });
+    if (isError) toast.error(resp.data.message);
+    if (isSuccess) refetch();
+  };
 
 
   useEffect(() => {
@@ -51,15 +58,25 @@ const ViewParent = () => {
                 <tbody>
                 {data.parentsProfiles.map((parent) => (
                     <tr>
-                      <td>{parent.NameOfFather}</td>
+                      <td>
+                          <Link  to={`/monitoring/viewParent/overview?parentId=${parent.UserId}`}>
+                            <a href="#">{parent.NameOfFather}</a>
+                          </Link>
+                        </td>
                       <td>{parent.NameOfMother}</td>
                       <td>{parent.Email}</td>
                       <td>{parent.MobileOfFather}</td>
                       <td>{parent.MobileOfMother}</td>
                       <td>{parent.Address}</td>
                       <td>
-                      <i className="fas fa-edit mr-3 text-primary"></i>
-                      <i className="fas fa-trash text-danger"></i>
+                      <Link className="blue-button" to={`/edit/editParentProfile?parentId=${parent.UserId}`}>
+                          Edit
+                        </Link>
+                        <Link className="red-button" onClick={() => handleDelete(parent.UserId)}>
+                          Delete
+                        </Link>
+                      {/* <i className="fas fa-edit mr-3 text-primary"></i> */}
+                      {/* <i className="fas fa-trash text-danger"></i> */}
                     </td>
                     </tr>
                   ))} 

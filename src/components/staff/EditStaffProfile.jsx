@@ -1,21 +1,22 @@
 import { toast } from "react-toastify";
-import { useCreateStaffProfileMutation } from "../../slices/profileApiSlice";
+import { useEditStaffProfileMutation ,useViewStaffProfilesQuery} from "../../slices/profileApiSlice";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { MyCard, MyCardBody, MyCardHeader } from "../MyCard";
 import { useState } from "react";
 
 const EditStaffForm = () => {
-  const [username, setUsername] = useState("");
+  const queryParams = new URLSearchParams(location.search);
+  const paramValue = queryParams.get("staffId");
+
   const [name,setName]= useState("");
   const [phoneNumber,setPhoneNumber]= useState("");
   const [email,setEmail]= useState("");
-  const [password,setPassword]= useState("");
   const [orphanageName,setOrphanageName]= useState("");
   const [address,setAddress]= useState("");
   const [nic,setNic]= useState("");
   const [gender,setGender]= useState("");
   const [dob,setDOB]= useState("");
-  const [employeeType,setEmployeeType]= useState("");
+
   
 
   const [NICDoc,setNICDoc]= useState(null);
@@ -23,8 +24,10 @@ const EditStaffForm = () => {
   const [ResidenceCertificate,setResidenceCertificate]= useState(null);
   const [CharacterCertificate,setCharacterCertificate]= useState(null);
 
-  const [registerStaff, { isLoading, isError, isSuccess }] =
-  useCreateStaffProfileMutation();
+  const {data, isLoading,isError,isSuccess}=
+  useViewStaffProfilesQuery(paramValue);
+
+  const [editStaff]=useEditStaffProfileMutation();
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -35,20 +38,17 @@ const EditStaffForm = () => {
       formData.append("ResidenceCertificate", ResidenceCertificate);
       formData.append("CharacterCertificate", CharacterCertificate);
       formData.append("otherInfo", JSON.stringify({
-        username: username,
         name: name,
         phoneNumber: phoneNumber,
         email: email,
-        password: password,
         orphanageName: orphanageName,
         address: address,
         nic: nic,
         gender: gender,
         dob: dob,
-        employeeType:employeeType,
         
       }));
-      const res = await registerStaff(formData).unwrap();
+      const res = await editStaff(formData).unwrap();
 
       toast.success(" Staff profile Registration completed");
     } catch (error) {
@@ -57,11 +57,11 @@ const EditStaffForm = () => {
   };
 
 
-    return (
+    return isSuccess &&(
       <Row>
         <Col sm={7}>
         <MyCard>
-        <MyCardHeader>Create staff profile</MyCardHeader>
+        <MyCardHeader>Edit staff profile</MyCardHeader>
         <MyCardBody>
           <Form onSubmit={submitHandler}>
       <Form.Group className="mb-3" controlId="formBasicName">
@@ -70,7 +70,9 @@ const EditStaffForm = () => {
         *identifier for the employee
         </Form.Text>
         <Form.Control type="text" placeholder="e.g. full name"
-         onChange={(e) => setName(e.target.value)} />
+         onChange={(e) => setName(e.target.value)} 
+         defaultValue={data.staffProfile.UserName}
+         />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicDob">
@@ -82,6 +84,7 @@ const EditStaffForm = () => {
         type="date"
         placeholder="Date of birth"
         onChange={(e) => setDOB(e.target.value)}
+        defaultValue={data.staffProfile.DOB}
         />
         </Form.Group>
 
@@ -91,7 +94,8 @@ const EditStaffForm = () => {
         *gender
         </Form.Text>
         <Form.Select size="sm"
-        onChange={(e) => setGender(e.target.value)} >
+        onChange={(e) => setGender(e.target.value)} 
+        defaultValue={data.staffProfile.Gender}>
         <option value="">Choose</option>
         <option value="MALE">Male</option>
         <option value="FEMALE">Female</option>
@@ -104,23 +108,11 @@ const EditStaffForm = () => {
         *address of the employee
         </Form.Text>
         <Form.Control type="text" placeholder="e.g. Panadura,Kaluthara"
-        onChange={(e) => setAddress(e.target.value)} />
+        onChange={(e) => setAddress(e.target.value)} 
+        defaultValue={data.staffProfile.Address}/>
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicType">
-        <Form.Label>Type of the employee</Form.Label>
-        <Form.Text className="text-muted">
-        *select the type of the employee
-        </Form.Text>
-        
-        <Form.Select 
-        onChange={(e) => setEmployeeType(e.target.value)}>
-        <option value="">Choose</option>
-        <option value="orphanageStaff">Orphanage staff</option>
-        <option value="orphanageManager">Orphanage Manager</option>
-        </Form.Select>
-
-      </Form.Group>
+      
 
       <Form.Group className="mb-3" controlId="formBasicID">
         <Form.Label>NIC number</Form.Label>
@@ -128,7 +120,8 @@ const EditStaffForm = () => {
         *national identity card number of the employee
         </Form.Text>
         <Form.Control type="text" placeholder="e.g. 20024502333" 
-        onChange={(e) => setNic(e.target.value)}/>
+        onChange={(e) => setNic(e.target.value)}
+        defaultValue={data.staffProfile.NIC}/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicID">
@@ -137,7 +130,8 @@ const EditStaffForm = () => {
         *phone number of the employee
         </Form.Text>
         <Form.Control type="text" placeholder="e.g. 0777684567" 
-        onChange={(e) => setPhoneNumber(e.target.value)}/>
+        onChange={(e) => setPhoneNumber(e.target.value)}
+        defaultValue={data.staffProfile.PhoneNumber}/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -146,7 +140,8 @@ const EditStaffForm = () => {
         *email address of the employee
         </Form.Text>
         <Form.Control type="email" placeholder="e.g. example@email.com" 
-        onChange={(e) => setEmail(e.target.value)}/>
+        onChange={(e) => setEmail(e.target.value)}
+        defaultValue={data.staffProfile.Email}/>
       </Form.Group>
 
       <Form.Label className="form-subtitle">Documents</Form.Label>
@@ -188,41 +183,15 @@ const EditStaffForm = () => {
         onChange={(e) => setCharacterCertificate(e.target.files[0])}/>
       </Form.Group>
 
-
-      <Form.Label className="form-subtitle">Create Account</Form.Label>
-
-      <Form.Group className="mb-3" controlId="formBasicName">
-        <Form.Label>User Name</Form.Label>
-        <Form.Text className="text-muted">
-        *username of the employee account
-        </Form.Text>
-        <Form.Control type="text" placeholder="e.g. full name" 
-        onChange={(e) => setUsername(e.target.value)}/>
-      </Form.Group>
-
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Text className="text-muted">
-        *set temporary password for the employee account
-        </Form.Text>
-        <Form.Control type="password" placeholder="***********" 
-        onChange={(e) => setPassword(e.target.value)}/>
-      </Form.Group>
-
       <Form.Group className="mb-3" controlId="formBasicStaffName">
         <Form.Label> Orphanage Name</Form.Label>
         <Form.Text className="text-muted">
         *name of the orphanage that the employee work
         </Form.Text>
         <Form.Control type="text" placeholder="e.g. Little dreams Orphanage" 
-        onChange={(e) => setOrphanageName(e.target.value)}/>
+        onChange={(e) => setOrphanageName(e.target.value)}
+        defaultValue={data.staffProfile.OrphanageName}/>
       </Form.Group>
-
-
-      
-
-      
-
       
       <Button variant="primary" type="submit">
         Submit
