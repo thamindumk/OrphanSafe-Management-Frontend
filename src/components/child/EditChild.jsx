@@ -109,7 +109,7 @@ const EditChildForm = () => {
         type="date"
         placeholder="Date of birth"
         onChange={(e) => setDOB(e.target.value)}
-        value={data.childProfile.DOB}
+        defaultValue={data.childProfile.DOB}
         />
         </Form.Group>
       
@@ -122,7 +122,7 @@ const EditChildForm = () => {
         <Form.Select 
         size="sm" 
         onChange={(e) => setGender(e.target.value)}
-        value={data.childProfile.Gender}>
+        defaultValue={data.childProfile.Gender}>
         <option value="">Choose</option>
         <option value="MALE">Male</option>
         <option value="FEMALE">Female</option>
@@ -142,11 +142,11 @@ const EditChildForm = () => {
           <Form.Control 
           placeholder="e.g. Panadura"
           onChange={(e) => setCity(e.target.value)}
-          value={data.childProfile.City}/></Col>
+          defaultValue={data.childProfile.City}/></Col>
         <Col xs={6}><Form.Label>Country</Form.Label>
           <Form.Control placeholder="e.g. Sri Lanka"
           onChange={(e) => setCountry(e.target.value)}
-          value={data.childProfile.Country}/></Col>
+          defaultValue={data.childProfile.Country}/></Col>
         </Row>
       </Form.Group>
 
@@ -157,7 +157,7 @@ const EditChildForm = () => {
         </Form.Text>
         <Form.Control type="text" placeholder="e.g. Sri Lankan" 
         onChange={(e) => setNationality(e.target.value)}
-        value={data.childProfile.Nationality}/>
+        defaultValue={data.childProfile.Nationality}/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicLanguage">
@@ -167,7 +167,7 @@ const EditChildForm = () => {
         </Form.Text>
         <Form.Control type="text" placeholder="e.g. Sinhala" 
         onChange={(e) => setLanguage(e.target.value)}
-        value={data.childProfile.Language}/>
+        defaultValue={data.childProfile.Language}/>
       </Form.Group>
 
 
@@ -180,7 +180,7 @@ const EditChildForm = () => {
         </Form.Text>
         <Form.Control size="sm" as="textarea" rows={8} 
         onChange={(e) => setMedicalDesc(e.target.value)}
-        value={data.childProfile.MedicalDesc}/>
+        defaultValue={data.childProfile.MedicalDesc}/>
       </Form.Group>
 
       <Form.Group controlId="formFileMultiple" className="mb-3">
@@ -209,11 +209,11 @@ const EditChildForm = () => {
             <Form.Label>Father's Name</Form.Label>
           <Form.Control placeholder="e.g. Sunil Perera"
           onChange={(e) => setBirthFather(e.target.value)}
-          value={data.childProfile.BirthFather}/></Col>
+          defaultValue={data.childProfile.BirthFather}/></Col>
         <Col xs={6}><Form.Label>Mother's Name</Form.Label>
           <Form.Control placeholder="e.g. Kumudi Perera"
           onChange={(e) => setBirthMother(e.target.value)}
-          value={data.childProfile.BirthMother}/></Col>
+          defaultValue={data.childProfile.BirthMother}/></Col>
         </Row>
       </Form.Group>
 
@@ -224,7 +224,7 @@ const EditChildForm = () => {
         </Form.Text>
         <Form.Control size="sm" as="textarea" rows={8}
         onChange={(e) => setReasonForPlacement(e.target.value)} 
-        value={data.childProfile.ReasonForPlacement}/>
+        defaultValue={data.childProfile.ReasonForPlacement}/>
       </Form.Group>
 
       <Form.Label className="form-subtitle">Additional Information</Form.Label>
@@ -247,7 +247,7 @@ const EditChildForm = () => {
         </Form.Text>
         <Form.Control size="sm" as="textarea" rows={8} 
         onChange={(e) => setRemark(e.target.value)}
-        value={data.childProfile.Remark}/>
+        defaultValue={data.childProfile.Remark}/>
       </Form.Group>
 
       <Form.Label className="form-subtitle">Documents</Form.Label>
@@ -306,7 +306,7 @@ const EditChildForm = () => {
          type="date"
          placeholder="Date of birth"
          onChange={(e) => setDateOfAdmission(e.target.value)}
-         value={data.childProfile.DateOfAdmission}
+         defaultValue={data.childProfile.DateOfAdmission}
          />
          </Form.Group>
 
@@ -318,7 +318,7 @@ const EditChildForm = () => {
         </Form.Text>
         <Form.Control type="text" placeholder="e.g. Little dreams" 
         onChange={(e) => setOrphanageName(e.target.value)}
-        value={data.childProfile.OrphanageName}/>
+        defaultValue={data.childProfile.OrphanageName}/>
       </Form.Group>
 
 

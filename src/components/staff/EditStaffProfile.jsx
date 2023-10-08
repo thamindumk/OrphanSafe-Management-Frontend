@@ -71,7 +71,7 @@ const EditStaffForm = () => {
         </Form.Text>
         <Form.Control type="text" placeholder="e.g. full name"
          onChange={(e) => setName(e.target.value)} 
-         value={data.staffProfile.UserName}
+         defaultValue={data.staffProfile.UserName}
          />
       </Form.Group>
 
@@ -84,7 +84,7 @@ const EditStaffForm = () => {
         type="date"
         placeholder="Date of birth"
         onChange={(e) => setDOB(e.target.value)}
-        value={data.staffProfile.DOB}
+        defaultValue={data.staffProfile.DOB}
         />
         </Form.Group>
 
@@ -95,7 +95,7 @@ const EditStaffForm = () => {
         </Form.Text>
         <Form.Select size="sm"
         onChange={(e) => setGender(e.target.value)} 
-        value={data.staffProfile.Gender}>
+        defaultValue={data.staffProfile.Gender}>
         <option value="">Choose</option>
         <option value="MALE">Male</option>
         <option value="FEMALE">Female</option>
@@ -109,7 +109,7 @@ const EditStaffForm = () => {
         </Form.Text>
         <Form.Control type="text" placeholder="e.g. Panadura,Kaluthara"
         onChange={(e) => setAddress(e.target.value)} 
-        value={data.staffProfile.Address}/>
+        defaultValue={data.staffProfile.Address}/>
       </Form.Group>
 
       
@@ -121,7 +121,7 @@ const EditStaffForm = () => {
         </Form.Text>
         <Form.Control type="text" placeholder="e.g. 20024502333" 
         onChange={(e) => setNic(e.target.value)}
-        value={data.staffProfile.NIC}/>
+        defaultValue={data.staffProfile.NIC}/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicID">
@@ -131,7 +131,7 @@ const EditStaffForm = () => {
         </Form.Text>
         <Form.Control type="text" placeholder="e.g. 0777684567" 
         onChange={(e) => setPhoneNumber(e.target.value)}
-        value={data.staffProfile.PhoneNumber}/>
+        defaultValue={data.staffProfile.PhoneNumber}/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -141,7 +141,7 @@ const EditStaffForm = () => {
         </Form.Text>
         <Form.Control type="email" placeholder="e.g. example@email.com" 
         onChange={(e) => setEmail(e.target.value)}
-        value={data.staffProfile.Email}/>
+        defaultValue={data.staffProfile.Email}/>
       </Form.Group>
 
       <Form.Label className="form-subtitle">Documents</Form.Label>
@@ -190,7 +190,7 @@ const EditStaffForm = () => {
         </Form.Text>
         <Form.Control type="text" placeholder="e.g. Little dreams Orphanage" 
         onChange={(e) => setOrphanageName(e.target.value)}
-        value={data.staffProfile.OrphanageName}/>
+        defaultValue={data.staffProfile.OrphanageName}/>
       </Form.Group>
       
       <Button variant="primary" type="submit">

@@ -78,7 +78,7 @@ const CreateSocialWorkerForm = () => {
         </Form.Text>
         <Form.Control type="text" placeholder="e.g. full name" 
         onChange={(e) => setName(e.target.value)}
-        value={data.socialWorkerProfile.Name}/>
+        defaultValue={data.socialWorkerProfile.Name}/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicID">
@@ -88,7 +88,7 @@ const CreateSocialWorkerForm = () => {
         </Form.Text>
         <Form.Control type="text" placeholder="e.g. 20024502333" 
         onChange={(e) => setNic(e.target.value)}
-        value={data.socialWorkerProfile.NIC}/>
+        defaultValue={data.socialWorkerProfile.NIC}/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicGender">
@@ -98,7 +98,7 @@ const CreateSocialWorkerForm = () => {
         </Form.Text>
         <Form.Select size="sm" 
         onChange={(e) => setGender(e.target.value)}
-        value={data.socialWorkerProfile.Gender}>
+        defaultValue={data.socialWorkerProfile.Gender}>
         <option ></option>
         <option value="MALE">Male</option>
         <option value="FEMALE">Female</option>
@@ -112,7 +112,7 @@ const CreateSocialWorkerForm = () => {
         </Form.Text>
         <Form.Control type="text" placeholder="e.g. 071 1234567" 
         onChange={(e) => setPhoneNumber(e.target.value)}
-        value={data.socialWorkerProfile.PhoneNumber}/>
+        defaultValue={data.socialWorkerProfile.PhoneNumber}/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicdob">
@@ -124,7 +124,7 @@ const CreateSocialWorkerForm = () => {
         type="date"
         placeholder="Date of birth"
         onChange={(e) => setDOB(e.target.value)}
-        value={data.socialWorkerProfile.DOB}
+        defaultValue={data.socialWorkerProfile.DOB}
         />
         </Form.Group>
 
@@ -135,7 +135,7 @@ const CreateSocialWorkerForm = () => {
         </Form.Text>
         <Form.Control type="text" placeholder="e.g. Panadura,Kaluthara"
         onChange={(e) => setAddress(e.target.value)} 
-        value={data.socialWorkerProfile.Address}/>
+        defaultValue={data.socialWorkerProfile.Address}/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -145,7 +145,7 @@ const CreateSocialWorkerForm = () => {
         </Form.Text>
         <Form.Control type="email" placeholder="e.g. example@email.com" 
         onChange={(e) => setEmail(e.target.value)}
-        value={data.socialWorkerProfile.Email}/>
+        defaultValue={data.socialWorkerProfile.Email}/>
       </Form.Group>
 
 
@@ -156,11 +156,11 @@ const CreateSocialWorkerForm = () => {
             <Form.Label>Organization name</Form.Label>
           <Form.Control type="text" placeholder="e.g. Loins club"
           onChange={(e) => setOrganization(e.target.value)}
-          value={data.socialWorkerProfile.Organization}/></Col>
+          defaultValue={data.socialWorkerProfile.Organization}/></Col>
         <Col xs={6}><Form.Label>Role/position</Form.Label>
           <Form.Control placeholder="e.g. secretary"
           onChange={(e) => setRole(e.target.value)}
-          value={data.socialWorkerProfile.Role}/></Col>
+          defaultValue={data.socialWorkerProfile.Role}/></Col>
         </Row>
       </Form.Group>
 
@@ -186,7 +186,7 @@ const CreateSocialWorkerForm = () => {
         onChange={(e) => setName(e.target.value)}/> */}
         <Form.Control type="text" placeholder=" Counseling or Mental Health Services" 
         onChange={(e) => setCategory(e.target.value)}
-        value={data.socialWorkerProfile.Category}/>
+        defaultValue={data.socialWorkerProfile.Category}/>
       </Form.Group> 
 
       <br/>
@@ -198,7 +198,7 @@ const CreateSocialWorkerForm = () => {
         </Form.Text>
         <Form.Control size="sm" as="textarea" rows={8} 
         onChange={(e) => setExperience(e.target.value)}
-        value={data.socialWorkerProfile.Experience}/>
+        defaultValue={data.socialWorkerProfile.Experience}/>
       </Form.Group>
 
       <Form.Label className="form-subtitle">Documents</Form.Label>
@@ -239,7 +239,7 @@ const CreateSocialWorkerForm = () => {
         </Form.Text>
         <Form.Control type="text" placeholder="e.g. Little dreams Orphanage" 
         onChange={(e) => setOrphanageName(e.target.value)}
-        value={data.socialWorkerProfile.OrphanageName}/>
+        defaultValue={data.socialWorkerProfile.OrphanageName}/>
       </Form.Group>
 
       

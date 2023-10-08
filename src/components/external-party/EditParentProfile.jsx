@@ -113,44 +113,44 @@ const CreateParentForm = () => {
                     <Form.Label>Foster father's name</Form.Label>
                     <Form.Control placeholder="e.g. Sunil Perera" 
                     onChange={(e) => setNameOfFather(e.target.value)}
-                    value={data.parentProfile.NameOfFather}/></Col>
+                    defaultValue={data.parentProfile.NameOfFather}/></Col>
                   <Col xs={6}><Form.Label>Foster mother's name</Form.Label>
                     <Form.Control placeholder="e.g. Kumudi Perera" 
                     onChange={(e) => setNameOfMother(e.target.value)}
-                    value={data.parentProfile.NameOfMother}/></Col>
+                    defaultValue={data.parentProfile.NameOfMother}/></Col>
                 </Row>
                 <Row >
                   <Col xs={6}>
                     <Form.Label>NIC number</Form.Label>
                     <Form.Control placeholder="e.g. 0023345453" 
                     onChange={(e) => setNICOfFather(e.target.value)}
-                    value={data.parentProfile.NICOfFather}/></Col>
+                    defaultValue={data.parentProfile.NICOfFather}/></Col>
                   <Col xs={6}><Form.Label>NIC number</Form.Label>
                     <Form.Control placeholder="e.g. 0023345453"
                     onChange={(e) => setNICOfMother(e.target.value)}
-                    value={data.parentProfile.NICOfMother} /></Col>
+                    defaultValue={data.parentProfile.NICOfMother} /></Col>
                 </Row>
                 <Row>
                   <Col xs={6}>
                     <Form.Label>Mobile Number</Form.Label>
                     <Form.Control placeholder="e.g. 071 2345678" 
                     onChange={(e) => setMobileOfFather(e.target.value)}
-                    value={data.parentProfile.MobileOfFather}/></Col>
+                    defaultValue={data.parentProfile.MobileOfFather}/></Col>
                   <Col xs={6}><Form.Label>Mobile Number</Form.Label>
                     <Form.Control placeholder="e.g. 071 2345678" 
                     onChange={(e) => setMobileOfMother(e.target.value)}
-                    value={data.parentProfile.MobileOfMother}/></Col>
+                    defaultValue={data.parentProfile.MobileOfMother}/></Col>
                 </Row>
                 <Row>
                   <Col xs={6}>
                     <Form.Label>Date of Birth</Form.Label>
                     <Form.Control placeholder="e.g. 1984/06/27"  type="date" 
                     onChange={(e) => setDOBOfFather(e.target.value)}
-                    value={data.parentProfile.DOBOfFather}/></Col>
+                    defaultValue={data.parentProfile.DOBOfFather}/></Col>
                   <Col xs={6}><Form.Label>Date of Birth</Form.Label>
                     <Form.Control placeholder="e.g. 1984/06/27"  type="date"
                     onChange={(e) => setDOBOfMother(e.target.value)}
-                    value={data.parentProfile.setDOBOfMother}/></Col>
+                    defaultValue={data.parentProfile.setDOBOfMother}/></Col>
                 </Row>
 
                 <Row>
@@ -158,11 +158,11 @@ const CreateParentForm = () => {
                     <Form.Label>Occupation</Form.Label>
                     <Form.Control placeholder="e.g. Manager" 
                     onChange={(e) => setOccupationOfFather(e.target.value)}
-                    value={data.parentProfile.OccupationOfFather}/></Col>
+                    defaultValue={data.parentProfile.OccupationOfFather}/></Col>
                   <Col xs={6}><Form.Label>Occupation</Form.Label>
                     <Form.Control placeholder="e.g. Teacher" 
                     onChange={(e) => setOccupationOfMother(e.target.value)}
-                    value={data.parentProfile.OccupationOfMother}/></Col>
+                    defaultValue={data.parentProfile.OccupationOfMother}/></Col>
                 </Row>
 
               </Form.Group>
@@ -175,7 +175,7 @@ const CreateParentForm = () => {
                 </Form.Text>
                 <Form.Control type="text" placeholder="e.g. Panadura,Kaluthara" 
                 onChange={(e) => setAddress(e.target.value)}
-                value={data.parentProfile.Address}/>
+                defaultValue={data.parentProfile.Address}/>
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -185,7 +185,7 @@ const CreateParentForm = () => {
                 </Form.Text>
                 <Form.Control type="email" placeholder="e.g. example@email.com"
                 onChange={(e) => setEmail(e.target.value)} 
-                value={data.parentProfile.Email}/>
+                defaultValue={data.parentProfile.Email}/>
               </Form.Group>
 
               {/* <Form.Group className="mb-3" controlId="formBasicGender">
@@ -288,7 +288,7 @@ const CreateParentForm = () => {
                 </Form.Text>
                 <Form.Select size="sm" 
                 onChange={(e) => setAdoptionPreference(e.target.value)}
-                value={data.parentProfile.AdoptionPreference}>
+                defaultValue={data.parentProfile.AdoptionPreference}>
                  <option ></option>
                   <option value="ADOPTION" >Adoption</option>
                   <option value="FOSTERCARE">Foster Care</option>
@@ -302,7 +302,7 @@ const CreateParentForm = () => {
                 </Form.Text>
                 <Form.Control type="text" placeholder="e.g. 9-15"
                 onChange={(e) => setAgePreference(e.target.value)}
-                value={data.parentProfile.AgePreference} />
+                defaultValue={data.parentProfile.AgePreference} />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicGender">
@@ -312,7 +312,7 @@ const CreateParentForm = () => {
                 </Form.Text>
                 <Form.Select size="sm"
                 onChange={(e) => setGenderPreference(e.target.value)} 
-                value={data.parentProfile.GenderPreference}>
+                defaultValue={data.parentProfile.GenderPreference}>
                   <option ></option>
                   <option value="MALE">Male</option>
                   <option value="FEMALE">Female</option>
@@ -326,7 +326,7 @@ const CreateParentForm = () => {
                 </Form.Text>
                 <Form.Control type="text" placeholder="e.g. Sri lankan" 
                 onChange={(e) => setNationalityPreference(e.target.value)}
-                value={data.parentProfile.NationalityPreference}/>
+                defaultValue={data.parentProfile.NationalityPreference}/>
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicAddress">
@@ -336,7 +336,7 @@ const CreateParentForm = () => {
                 </Form.Text>
                 <Form.Control type="text" placeholder="e.g. Sinhala"
                 onChange={(e) => setLanguagePreference(e.target.value)} 
-                value={data.parentProfile.LanguagePreference}/>
+                defaultValue={data.parentProfile.LanguagePreference}/>
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicStaffName">
@@ -346,7 +346,7 @@ const CreateParentForm = () => {
                 </Form.Text>
                 <Form.Control type="text" placeholder="e.g. Little dreams Orphanage" 
                 onChange={(e) => setOrphanageName(e.target.value)}
-                value={data.parentProfile.OrphanageName}/>
+                defaultValue={data.parentProfile.OrphanageName}/>
               </Form.Group>
 
 
