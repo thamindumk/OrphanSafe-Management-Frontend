@@ -64,7 +64,11 @@ const OngoinCaseView = () => {
                         <td>{data.ChildName}</td>
                         <td>{data.State}</td>
                         <td>
-                          {data.LastUpdate ? data.LastUpdate : "not started"}
+                          {data.LastUpdate ? (
+                            <b>{data.LastUpdate.substring(0, 10)}</b>
+                          ) : (
+                            "not started"
+                          )}
                         </td>
                         <td>{data.SocialWorkerName}</td>
                         <td>{data.CreatedBy}</td>

@@ -26,21 +26,68 @@ const EditCaseLogs = () => {
   const submitHandler = async (e) => {
     const form = document.getElementById("form");
     e.preventDefault();
-    try {
-      const caseLogData = {
-        id: paramValue,
-        name: logName,
-        description: logDescription,
-      };
-      console.log(caseLogData);
-      const res = await updateCaseLog(caseLogData).unwrap();
-      toast.success("Update completed");
-      form.reset();
-      if (success) {
-        refetch();
+    if (logName && logDescription) {
+      if (logName.trim().length != 0 && logDescription.trim().length != 0) {
+        try {
+          const caseLogData = {
+            id: paramValue,
+            name: logName,
+            description: logDescription,
+          };
+          const res = await updateCaseLog(caseLogData).unwrap();
+          toast.success("Update completed");
+          form.reset();
+          if (success) {
+            refetch();
+          }
+        } catch (error) {
+          toast.error(error.message);
+        }
+      } else {
+        toast.error("Log name and description cannot be empty");
       }
-    } catch (error) {
-      toast.error(error.message);
+    } else if (logName) {
+      if (logName.trim().length != 0) {
+        try {
+          const caseLogData = {
+            id: paramValue,
+            name: logName,
+            description: data.caseLog.Description,
+          };
+          const res = await updateCaseLog(caseLogData).unwrap();
+          toast.success("Update completed");
+          form.reset();
+          if (success) {
+            refetch();
+          }
+        } catch (error) {
+          toast.error(error.message);
+        }
+      } else {
+        toast.error("Log name cannot be empty");
+      }
+    } else if (logDescription) {
+      if (logDescription.trim().length != 0) {
+        try {
+          const caseLogData = {
+            id: paramValue,
+            name: data.caseLog.LogName,
+            description: logDescription,
+          };
+          const res = await updateCaseLog(caseLogData).unwrap();
+          toast.success("Update completed");
+          form.reset();
+          if (success) {
+            refetch();
+          }
+        } catch (error) {
+          toast.error(error.message);
+        }
+      } else {
+        toast.error("description cannot be empty");
+      }
+    } else {
+      toast.error("didn't change anyting");
     }
   };
 
