@@ -41,19 +41,29 @@ const AssignSocialWorkers = () => {
 
     const submitHandler = async (e) => {
       const form = document.getElementById("form");
+
       e.preventDefault();
-      try {
-        const caseData = {
-          caseName: caseName,
-          description: caseDescription,
-          childProfileId: selectedChildOption.value,
-          caseOwnerId: selectedSocialWorkerOption.value,
-        };
-        const res = await createCase(caseData).unwrap();
-        toast.success("creation completed");
-        form.reset();
-      } catch (error) {
-        toast.error(error.message);
+      if (selectedChildOption && selectedSocialWorkerOption) {
+        console.log(caseName, caseDescription);
+        if (caseName.trim().length != 0 || caseDescription.trim().length != 0) {
+          try {
+            const caseData = {
+              caseName: caseName,
+              description: caseDescription,
+              childProfileId: selectedChildOption.value,
+              caseOwnerId: selectedSocialWorkerOption.value,
+            };
+            const res = await createCase(caseData).unwrap();
+            toast.success("creation completed");
+            form.reset();
+          } catch (error) {
+            toast.error(error.message);
+          }
+        } else {
+          toast.error("There should be a name and a description, Please fill");
+        }
+      } else {
+        toast.error("Please select the options");
       }
     };
 

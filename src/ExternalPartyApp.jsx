@@ -45,6 +45,7 @@ const ExternalPartyApp = () => {
     "/parent/viewChildProfileList": "Requested Child list",
     "/parent/viewProfile/overview": "Child Profile",
     "/external/StaffChat": "Forum",
+    "/external/EditDeleteCaseLog": "Case Log Slider",
     "/external/EditCaseLog": "Edit Case Log",
 
     // Add more path-title mappings as needed

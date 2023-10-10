@@ -11,7 +11,7 @@ const SocialWorkerProfileContent = () => {
   const {data, isLoading,isError,isSuccess}=
   useViewSocialWorkerProfilesQuery(paramValue);
 
-  return (
+  return  isSuccess && (
     <div>
 
 <div className="card">
@@ -37,6 +37,7 @@ const SocialWorkerProfileContent = () => {
           <MyCard>
             <MyCardHeader>Personal Information</MyCardHeader>
             <MyCardBody>
+            {isSuccess  && (
               <Form>
                 <Table responsive bordered style={{ width: "100%" }}>
                   <tbody>
@@ -89,7 +90,7 @@ const SocialWorkerProfileContent = () => {
                     </tr>
                   </tbody>
                 </Table>
-              </Form>
+              </Form>)}
             </MyCardBody>
           </MyCard>
         </Col>

@@ -2,7 +2,7 @@
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { MyCard, MyCardBody, MyCardHeader } from "../MyCard";
 import { useEditSocialWorkerProfileMutation,useViewSocialWorkerProfilesQuery } from "../../slices/profileApiSlice";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { toast } from "react-toastify";
 
 const CreateSocialWorkerForm = () => {
@@ -31,6 +31,23 @@ const CreateSocialWorkerForm = () => {
   const {data, isLoading,isError,isSuccess}=
   useViewSocialWorkerProfilesQuery(paramValue);
 
+  useEffect(() => {
+    if (isSuccess) {
+      setName(data.socialWorkerProfile.Name || "");
+      setPhoneNumber(data.socialWorkerProfile.PhoneNumber || "");
+      setEmail(data.socialWorkerProfile.Email || "");
+      setOrphanageName(data.socialWorkerProfile.OrphanageName || "");
+      setAddress(data.socialWorkerProfile.Address || "");
+      setNic(data.socialWorkerProfile.NIC || "");
+      setGender(data.socialWorkerProfile.Gender || "");
+      setDOB(data.socialWorkerProfile.DOB || "");
+      setCategory(data.socialWorkerProfile.Category || ""); // Set Category with default
+      setOrganization(data.socialWorkerProfile.Organization || ""); // Set Organization with default
+      setRole(data.socialWorkerProfile.Role || ""); // Set Role with default
+      setExperience(data.socialWorkerProfile.Experience || ""); // Set Experience with default
+    }
+  }, [isSuccess, data]);
+
   const [editSocialWorker]=useEditSocialWorkerProfileMutation();
 
   const submitHandler = async (e) => {
@@ -53,7 +70,7 @@ const CreateSocialWorkerForm = () => {
         Organization: Organization,
         Role: Role,
         Experience: Experience,
-        
+        id:paramValue,
       }));
       const res = await editSocialWorker(formData).unwrap();
 

@@ -11,8 +11,8 @@ const App = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (userInfo && userInfo.roleName !== 'orphanageManager') {
-      navigate('/auth/denied')
+    if (userInfo && userInfo.roleName !== "orphanageManager") {
+      navigate("/auth/denied");
     }
 
     if (!userInfo) {
@@ -57,11 +57,13 @@ const App = () => {
       "Request case information of children for parents",
     "/parent/ParentsViewCases": "Parents View Case Information",
     "/inquiry/InquiriesBulkResponse": "Bulk response for inquiries",
-    "/socialWorker/EditDeleteCaseLog":"Edit and delete case logs for social workers",
+    "/socialWorker/EditDeleteCaseLog":
+      "Edit and delete case logs for social workers",
     "/cases/viewOngoingCases": "Ongoing cases",
+    "/cases/viewCases/overview": "Overview of case",
     "/cases/viewOngoingCases/overview": "Case Overview",
     "/editProfile": "your profile",
-    
+
     "/funds/ReceiveFunds": "Receive Funds",
     "/profile/viewProfile": "View child profiles",
     "/report/viewExternalPartyReport": "External Party Reports",
@@ -70,20 +72,21 @@ const App = () => {
     "/report/viewChildReport": "View Child Report",
     "/approval/OverallApproval": "Overall Approvals",
     "/chat/StaffChat": "Staff Chat",
+    "/registration/OrphanageRegistration": "Orphanage Registration",
     "/edit/editChildProfile":"Edit Child Profiles",
     "/edit/editStaffProfile": "Edit Staff profiles",
     "/edit/editParentProfile": "Edit Parent Profiles",
     "/edit/editSocialWorkerProfile":"Edit Social worker Profiles",
     "/registration/OrphanageRegistration": "Orphanage Registration",
     "/delete/deleteChildProfile":"Delete Child Profile Form"
-    
+
   };
   // Check if the path exists in the mapping, and if so, set the pageTitle accordingly
   if (path in pathToTitleMap) {
     pageTitle = pathToTitleMap[path];
   }
 
-  return userInfo && userInfo && userInfo.roleName === 'orphanageManager' ? (
+  return userInfo && userInfo && userInfo.roleName === "orphanageManager" ? (
     <>
       <Header />
       <Sidebar />

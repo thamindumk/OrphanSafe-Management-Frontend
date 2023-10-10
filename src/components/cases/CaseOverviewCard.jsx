@@ -62,13 +62,13 @@ const CaseOverviewCard = () => {
                         <td>Last Update</td>
                         <td>
                           {data.caseInfo.LastUpdate
-                            ? data.caseInfo.LastUpdate
+                            ? data.caseInfo.LastUpdate.substring(0, 10)
                             : "Not started"}
                         </td>
                       </tr>
                       <tr>
                         <td>Started date</td>
-                        <td>{data.caseInfo.CreatedAt}</td>
+                        <td>{data.caseInfo.CreatedAt.substring(0, 10)}</td>
                       </tr>
                       <tr>
                         <td>Assigned Worker</td>

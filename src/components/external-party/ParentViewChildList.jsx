@@ -7,20 +7,37 @@ import $ from "jquery"; // Import jQuery
 import "datatables.net-dt/css/jquery.dataTables.css"; // Import DataTables CSS
 import "datatables.net"; // Import DataTables JavaScript
 import { LinkContainer } from "react-router-bootstrap";
+import { useGetChildProfileListQuery } from "../../slices/profileApiSlice";
+import { Link } from "react-router-dom";
+
 
 const ParentViewChildList = () => {
   const tableRef = useRef(null);
 
+  // const [deleteChildProfile] = useDeleteChildProfileMutation();
+
+  // const handleDelete = async (childId) => {
+  //   const resp = await deleteChildProfile({ id: childId });
+  //   if (isError) toast.error(resp.data.message);
+  //   if (isSuccess) refetch();
+  // };
+  
+
+  const { data, isError, isSuccess, isLoading,refetch } = useGetChildProfileListQuery();
+
   useEffect(() => {
     // Initialize DataTable
     $(tableRef.current).DataTable();
-  }, []);
+  }, [data]);
   return (
     <Row>
       <Col sm={12}>
         <MyCard>
           <MyCardHeader>Child Details</MyCardHeader>
           <MyCardBody>
+            {isError && <Col className="text-center"><strong>Unexpected Error occurred Sorry! :(</strong></Col>}
+            {isLoading && <Col className="text-center">Loading Data!</Col>}
+            {isSuccess && 
             <div>
               <Table
                 responsive
@@ -31,21 +48,36 @@ const ParentViewChildList = () => {
               >
                 <thead>
                   <tr>
-                    <th>Child ID</th>
-                    <th>Name</th>
+                    <th>Full Name</th>
+                    <th>Date Of Birth</th>
                     <th>Gender</th>
-                    <th>Birthday</th>
+                    <th>Date of Admission</th>
                     <th>Assigned Orphanage</th>
-                    <th>Guardian name</th>
                    
                   </tr>
                   
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
+                {data.childProfiles.map((child) => (
+                    <tr>
+                      <td>
+                        <Link  to={`/parent/RequestChildProfile?childId=${child.ChildId}`}>
+                          <a href="#">{child.FullName}</a>
+                        </Link>
+                      </td>
+                      <td>{child.DOB}</td>
+                      <td>{child.Gender}</td>
+                      <td>{child.DateOfAdmission}</td>
+                      <td>{child.OrphanageName}</td>
+                      
+                    </tr>
+                  ))}
+
+
+                {/* <tr>
+                    <td>3</td>
                     <td>
-                      <LinkContainer to="/parent/viewProfile/overview">
+                      <LinkContainer to="/profile/viewProfile/overview">
                         <a href="#">Piyal Gamage</a>
                       </LinkContainer>
                     </td>
@@ -53,37 +85,16 @@ const ParentViewChildList = () => {
                     <td>2012/10/11</td>
                     <td>Little Dreams</td>
                     <td>Nupun pilapitiya</td>
-                    
-                  </tr>
-                  <tr>
-                    <td>1</td>
                     <td>
-                      <LinkContainer to="/parent/viewProfile/overview">
-                        <a href="#">Piyal Gamage</a>
-                      </LinkContainer>
+                      <i className="fas fa-edit mr-3 text-primary"></i>
+                      <i className="fas fa-trash text-danger"></i>
                     </td>
-                    <td>Male</td>
-                    <td>2012/10/11</td>
-                    <td>Little Dreams</td>
-                    <td>Nupun pilapitiya</td>
-                    
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>
-                      <LinkContainer to="/parent/viewProfile/overview">
-                        <a href="#">Piyal Gamage</a>
-                      </LinkContainer>
-                    </td>
-                    <td>Male</td>
-                    <td>2012/10/11</td>
-                    <td>Little Dreams</td>
-                    <td>Nupun pilapitiya</td>
-                    
-                  </tr>
+                  </tr> */}
+                 
                 </tbody>
               </Table>
             </div>
+            }
           </MyCardBody>
         </MyCard>
       </Col>
