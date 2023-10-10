@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Col, Form, Row, Table, Card } from "react-bootstrap";
+import { Button, Col, Form, Table,Row, Card } from "react-bootstrap";
 import { MyCard, MyCardBody, MyCardHeader } from "../MyCard";
 import "../../index.css";
 import "../../assets/css/dashbord/dashboard.css";
@@ -59,7 +59,9 @@ const AdminDashboard = () => {
                 </Row>
 
                 <div className="CardNumber">106</div>
-                <div className="CardItalic">Registered social workers profiles</div>
+                <div className="CardItalic">
+                  Registered social workers profiles
+                </div>
               </Card>
             </Col>
             <Col md={3} sm={6} xs={12} style={{ marginBottom: "10px" }}>
