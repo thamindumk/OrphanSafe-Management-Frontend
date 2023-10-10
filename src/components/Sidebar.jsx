@@ -172,11 +172,7 @@ const Sidebar = () => {
                   <a className="sidebar-submenu-item" onClick={closeSidebar}>External party reports</a>
                 </LinkContainer>
               </div>
-              <div className="sidebar-submenu">
-                <LinkContainer to="/report/viewOverallSystemReport">
-                  <a className="sidebar-submenu-item" onClick={closeSidebar}>Overall system reports</a>
-                </LinkContainer>
-              </div>
+             
             </div>
             <div className="sidebar-menu-item">
               <div className="sidebar-menu-item-heading">
@@ -196,11 +192,6 @@ const Sidebar = () => {
               <div className="sidebar-submenu">
                 <LinkContainer to="/userRole/createSocialWorker">
                   <a className="sidebar-submenu-item" onClick={closeSidebar}>Create social worker</a>
-                </LinkContainer>
-              </div>
-              <div className="sidebar-submenu">
-                <LinkContainer to="/userRole/viewUserRole">
-                  <a className="sidebar-submenu-item" onClick={closeSidebar}>Edit and delete roles</a>
                 </LinkContainer>
               </div>
             </div>

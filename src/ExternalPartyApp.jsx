@@ -10,6 +10,13 @@ const ExternalPartyApp = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    if (
+      userInfo &&
+      userInfo.roleName !== "parent" &&
+      userInfo.roleName !== "socialWorker"
+    ) {
+      navigate("/auth/denied");
+    }
     if (!userInfo) {
       setTimeout(() => {
         navigate("/auth/login");
@@ -27,17 +34,19 @@ const ExternalPartyApp = () => {
     "/": "Home",
     "/home": "Home Page",
     "/dashboard/External": "Dashboard",
-    "/external/CreateCaseLog":"Create Case Log",
-    "/external/CaseRequest" : "New Case Request",
-    "/external/EditDeleteCaseLog" : "View Edit And Delete Case Logs",
-    "/parent/RequestChildProfile" : "Request Child Profiles",
-    "/parent/RequestCaseInfo" : "Request Case Information",
-    "/parent/ParentsViewCases" : "View Cases",
+    "/external/CreateCaseLog": "Create Case Log",
+    "/external/CaseRequest": "New Case Request",
+    "/external/EditDeleteCaseLog": "View Edit And Delete Case Logs",
+    "/parent/RequestChildProfile": "Request Child Profiles",
+    "/parent/RequestCaseInfo": "Request Case Information",
+    "/parent/ParentsViewCases": "View Cases",
     "/external/OngoingCases": "View Case Logs",
     "/cases/AcceptOrRejectCases": "Accept Or Reject Assigned Cases",
     "/parent/viewChildProfileList": "Requested Child list",
     "/parent/viewProfile/overview": "Child Profile",
-    "/external/StaffChat": "Forum"
+    "/external/StaffChat": "Forum",
+    "/external/EditDeleteCaseLog": "Case Log Slider",
+    "/external/EditCaseLog": "Edit Case Log",
 
     // Add more path-title mappings as needed
   };
@@ -46,7 +55,9 @@ const ExternalPartyApp = () => {
     pageTitle = pathToTitleMap[path];
   }
 
-  return userInfo ? (
+  return userInfo &&
+    userInfo &&
+    (userInfo.roleName === "parent" || userInfo.roleName === "socialWorker") ? (
     <>
       <Header />
       <ExternalSidebar />

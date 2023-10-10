@@ -11,6 +11,11 @@ const AdminApp = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+
+    if (userInfo && userInfo.roleName !== 'systemAdministrator') {
+      navigate('/auth/denied')
+    }
+
     if (!userInfo) {
       setTimeout(() => {
         navigate("/auth/login");
@@ -78,7 +83,7 @@ const AdminApp = () => {
     pageTitle = pathToTitleMap[path];
   }
 
-  return userInfo ? (
+  return userInfo && userInfo && userInfo.roleName === 'systemAdministrator'? (
     <>
       <Header />
       <AdminSideBar />

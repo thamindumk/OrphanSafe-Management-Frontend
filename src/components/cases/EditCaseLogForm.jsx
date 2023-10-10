@@ -4,90 +4,102 @@ import { MyCard, MyCardBody, MyCardHeader } from "../MyCard";
 import Select from "react-select";
 import "../../assets/css/dropdown.css";
 import {
-  useGetCaseListByUserIdQuery,
-  useCreateCaseLogMutation,
+  useUpdateCaseLogMutation,
+  useGetCaseLogBylogIdQuery,
 } from "../../slices/caseApiSlice";
 import { toast } from "react-toastify";
+import { useLocation } from "react-router-dom";
 
-const CreateCaseLogs = () => {
-  const [createCaseLog, { isError, isLoading, isSuccess }] =
-    useCreateCaseLogMutation();
+const EditCaseLogs = () => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const paramValue = queryParams.get("logId");
   // React state to manage selected options
-  const [selectedOption, setSelectedOption] = useState();
   const [logName, setLogName] = useState();
   const [logDescription, setLogDescription] = useState();
-  const [caseLogDoc, setCaseLogDoc] = useState(null);
-  const response = useGetCaseListByUserIdQuery();
+  const [updateCaseLog, { error, loading, success }] =
+    useUpdateCaseLogMutation();
+  const { data, isLoading, isError, isSuccess, refetch } =
+    useGetCaseLogBylogIdQuery(paramValue);
   // Array of all options
 
-  function handleSelect(data) {
-    setSelectedOption(data);
-  }
-
   const submitHandler = async (e) => {
-    e.preventDefault();
     const form = document.getElementById("form");
-    if (selectedOption) {
-      if (logDescription && logName) {
-        if (logDescription.trim().length != 0 && logName.trim().length != 0) {
-          try {
-            const formData = new FormData();
-            formData.append("caseLogDoc", caseLogDoc);
-            formData.append("otherInfo", JSON.stringify({
-              caseId: selectedOption.value,
-              name: logName,
-              description: logDescription,
-            }));
-            console.log(isError);
-            const res = await createCaseLog(formData).unwrap();
-            if (isError) {
-              toast.error(res.message);
-            }
-            toast.success("creation completed");
-            form.reset();
-          } catch (error) {
-            toast.error(error.data.message);
+    e.preventDefault();
+    if (logName && logDescription) {
+      if (logName.trim().length != 0 && logDescription.trim().length != 0) {
+        try {
+          const caseLogData = {
+            id: paramValue,
+            name: logName,
+            description: logDescription,
+          };
+          const res = await updateCaseLog(caseLogData).unwrap();
+          toast.success("Update completed");
+          form.reset();
+          if (success) {
+            refetch();
           }
-        } else {
-          toast.error("name and description cannot be empty");
+        } catch (error) {
+          toast.error(error.message);
         }
       } else {
-        toast.error("there shoud be a name and a description for a case log");
+        toast.error("Log name and description cannot be empty");
+      }
+    } else if (logName) {
+      if (logName.trim().length != 0) {
+        try {
+          const caseLogData = {
+            id: paramValue,
+            name: logName,
+            description: data.caseLog.Description,
+          };
+          const res = await updateCaseLog(caseLogData).unwrap();
+          toast.success("Update completed");
+          form.reset();
+          if (success) {
+            refetch();
+          }
+        } catch (error) {
+          toast.error(error.message);
+        }
+      } else {
+        toast.error("Log name cannot be empty");
+      }
+    } else if (logDescription) {
+      if (logDescription.trim().length != 0) {
+        try {
+          const caseLogData = {
+            id: paramValue,
+            name: data.caseLog.LogName,
+            description: logDescription,
+          };
+          const res = await updateCaseLog(caseLogData).unwrap();
+          toast.success("Update completed");
+          form.reset();
+          if (success) {
+            refetch();
+          }
+        } catch (error) {
+          toast.error(error.message);
+        }
+      } else {
+        toast.error("description cannot be empty");
       }
     } else {
-      toast.error("please select the Case");
+      toast.error("didn't change anyting");
     }
   };
-  if (response.isSuccess) {
-    const optionList = response.data.caseList.map(function (caseInfo) {
-      const list = { value: caseInfo.CaseId, label: caseInfo.CaseName };
-      return list;
-    });
 
-    // Function triggered on selection
-    return (
+  // Function triggered on selection
+  return (
+    isSuccess && (
       <Row>
         <Col sm={7}>
           <MyCard>
             <MyCardHeader>Create Case Log Form</MyCardHeader>
             <MyCardBody>
               <Form onSubmit={submitHandler} id="form">
-                <Form.Group className="mb-3" controlId="formBasicGender">
-                  <Form.Label>Case Name</Form.Label>
-                  <Form.Text className="text-muted">
-                    *Select the Case Name
-                  </Form.Text>
-                  <div className="dropdown-container">
-                    <Select
-                      options={optionList}
-                      placeholder="Select the case"
-                      value={selectedOption}
-                      onChange={handleSelect}
-                      isSearchable={true}
-                    />
-                  </div>
-                </Form.Group>
-
                 <Form.Group className="mb-3" controlId="formBasicCaseName">
                   <Form.Label>Case log name</Form.Label>
                   <Form.Text className="text-muted">
@@ -97,6 +109,7 @@ const CreateCaseLogs = () => {
                     type="text"
                     placeholder="eg. 1st meeting "
                     onChange={(e) => setLogName(e.target.value)}
+                    defaultValue={data.caseLog.LogName}
                   />
                 </Form.Group>
 
@@ -111,6 +124,7 @@ const CreateCaseLogs = () => {
                     rows={8}
                     placeholder="eg. can we get a first meeting to talk about this case briefly"
                     onChange={(e) => setLogDescription(e.target.value)}
+                    defaultValue={data.caseLog.Description}
                   />
                 </Form.Group>
 
@@ -121,9 +135,9 @@ const CreateCaseLogs = () => {
                   </Form.Text>
                   <Form.Control
                     type="file"
+                    multiple
                     size="sm"
                     style={{ padding: "0.05rem 0.3rem 0.2rem 0.3rem" }}
-                    onChange={(e) => setCaseLogDoc(e.target.files[0])}
                   />
                 </Form.Group>
 
@@ -135,7 +149,7 @@ const CreateCaseLogs = () => {
           </MyCard>
         </Col>
       </Row>
-    );
-  }
+    )
+  );
 };
-export default CreateCaseLogs;
+export default EditCaseLogs;

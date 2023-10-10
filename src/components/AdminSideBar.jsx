@@ -59,7 +59,9 @@ const AdminSideBar = () => {
             </div>
             <div className="sidebar-submenu">
               <LinkContainer to="/dashboard/Admin">
-                <a className="sidebar-submenu-item" onClick={closeSidebar}>View Dashboard</a>
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>
+                  View Dashboard
+                </a>
               </LinkContainer>
             </div>
           </div>
@@ -71,7 +73,9 @@ const AdminSideBar = () => {
             </div>
             <div className="sidebar-submenu">
               <LinkContainer to="/approval/OverallApproval">
-                <a className="sidebar-submenu-item" onClick={closeSidebar}>Overall approvals</a>
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>
+                  Overall approvals
+                </a>
               </LinkContainer>
             </div>
           </div>
@@ -80,10 +84,12 @@ const AdminSideBar = () => {
               <ion-icon name="caret-down"></ion-icon>
               <div>Inquiries</div>
             </div>
-           
+
             <div className="sidebar-submenu">
               <LinkContainer to="/inquiry/InquiriesBulkResponse">
-                <a className="sidebar-submenu-item" onClick={closeSidebar}>Bulk response</a>
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>
+                  Bulk response
+                </a>
               </LinkContainer>
             </div>
           </div>
@@ -94,11 +100,36 @@ const AdminSideBar = () => {
             </div>
             <div className="sidebar-submenu">
               <LinkContainer to="/admin/StaffChat">
-                <a className="sidebar-submenu-item" onClick={closeSidebar}>Staff chat</a>
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>
+                  Staff chat
+                </a>
               </LinkContainer>
             </div>
           </div>
-          
+          <div className="sidebar-menu-item">
+            <div className="sidebar-menu-item-heading">
+              <ion-icon name="caret-down"></ion-icon>
+              <div>Reports</div>
+            </div>
+            <div className="sidebar-submenu">
+              <LinkContainer to="/report/viewOverallSystemReport">
+                <a className="sidebar-submenu-item" onClick={closeSidebar}>
+                  Overall system reports
+                </a>
+              </LinkContainer>
+            </div>
+          </div>
+          <div className="sidebar-menu-item">
+            <div className="sidebar-menu-item-heading">
+              <ion-icon name="caret-down"></ion-icon>
+              <div>IAM Roles</div>
+            </div>
+            <div className="sidebar-submenu">
+                <LinkContainer to="/userRole/viewUserRole">
+                  <a className="sidebar-submenu-item" onClick={closeSidebar}>Edit and delete roles</a>
+                </LinkContainer>
+              </div>
+          </div>
         </div>
       </div>
     </section>

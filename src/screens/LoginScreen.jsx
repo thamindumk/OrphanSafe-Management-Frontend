@@ -26,10 +26,10 @@ const LoginScreen = () => {
       if (userInfo.roleName === "orphanageManager") {
         console.log("in");
         navigate("/");
-      } else if (userInfo.roleName === "systemManager") {
+      } else if (userInfo.roleName === "systemManager" || userInfo.roleName === 'systemAdministrator') {
         console.log("in");
         navigate("/dashboard/Admin");
-      } else if (userInfo.roleName === "externalParty") {
+      } else if (userInfo.roleName === "parent" || userInfo.roleName === "socialWorker") {
         console.log("in");
         navigate("/dashboard/External");
       }

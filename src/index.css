@@ -435,6 +435,15 @@ ion-icon {
   text-decoration: underline;
   font-size: 18px;
 }
+.red-button {
+  display: inline-block;
+  padding: 10px 10px;
+  color: #ff0000; /* Text color */
+  cursor: pointer;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 18px;
+}
 
 /* table data*/
 td {

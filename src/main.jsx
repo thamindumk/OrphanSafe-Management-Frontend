@@ -54,6 +54,7 @@ import RequestCaseInfo from "./screens/external-party/RequestCaseInfoScreen";
 import ParentsViewCasesScreen from "./screens/external-party/ParentsViewCasesScreen";
 import InquiriesBulkResponseScreen from "./screens/others/InquiriesBulkResponseScreen";
 import CreateCaseLogsScreen from "./screens/cases/CreateCaseLogsScreen";
+import EditCaseLogsScreen from "./screens/cases/EditCaseLogsScreen";
 import CaseRequestScreen from "./screens/cases/CaseRequestScreen";
 import EditDeleteCaseLogScreen from "./screens/cases/EditDeleteCaseLogScreen";
 import CaseOverViewScreen from "./screens/cases/CaseOverViewScreen";
@@ -67,6 +68,12 @@ import AdminStaffProfileScreen from "./screens/staff/AdminStaffProfileScreen";
 import BulkResponseFormScreen from "./screens/others/BulkResponseFormScreen";
 import AdminDashboardScreen from "./screens/others/AdminDashboardScreen";
 import ExternalDashboardScreen from "./screens/others/ExternalDashboardScreen";
+import AccessDenied from "./screens/AccessDenied";
+import EditChildProfileScreen from "./screens/child-profile/EditChildProfileScreen";
+import EditStaffProfileScreen from "./screens/staff/EditStaffProfileScreen";
+import EditParentProfileScreen from "./screens/external-party/EditParentScreen";
+import EditSocialWorkerScreen from "./screens/external-party/EditSocialWorkerScreen";
+import DeleteChildScreen from "./screens/child-profile/DeleteChildScreen";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -84,6 +91,7 @@ const router = createBrowserRouter(
           path="/monitoring/viewSocialWorker"
           element={<ViewSocialWorkerScreen />}
         />
+        <Route path="/cases/caseLogs" element={<EditDeleteCaseLogScreen />} />
         <Route
           path="/monitoring/viewSocialWorker/overview"
           element={<SocialWorkerOverviewScreen />}
@@ -93,6 +101,7 @@ const router = createBrowserRouter(
           path="/monitoring/viewParent/overview"
           element={<ParentOverviewScreen />}
         />
+
         <Route
           path="/profile/createProfile"
           element={<CreateChildProfileScreen />}
@@ -149,21 +158,13 @@ const router = createBrowserRouter(
           path="/report/viewExternalPartyReport"
           element={<ViewExternalPartyReportScreen />}
         />
-        <Route
-          path="/report/viewOverallSystemReport"
-          element={<ViewOverallSystemScreen />}
-        />
+
         <Route path="/userRole/createStaff" element={<CreateStaffScreen />} />
         <Route path="/userRole/createParent" element={<CreateParentScreen />} />
         <Route
           path="/userRole/createSocialWorker"
           element={<CreateSocialWorkerScreen />}
         />
-        <Route
-          path="/userRole/viewUserRole"
-          element={<ViewUserRolesScreen />}
-        />
-
         <Route path="/funds/ReceiveFunds" element={<ReceiveFundScreen />} />
 
         <Route
@@ -172,11 +173,16 @@ const router = createBrowserRouter(
         />
 
         <Route path="/editProfile" element={<EditProfile />} />
+        <Route path="/edit/editChildProfile" element={<EditChildProfileScreen />} />
+        <Route path="/edit/editStaffProfile" element={<EditStaffProfileScreen />} />
+        <Route path="/edit/editParentProfile" element={<EditParentProfileScreen />} />
+        <Route path="/edit/editSocialWorkerProfile" element={<EditSocialWorkerScreen />} />
 
         <Route
           path="/inquiry/CreateInquiry"
           element={<CreateInquiryScreen />}
         />
+        <Route path="/delete/deleteChildProfile" element={<DeleteChildScreen />} />
 
         <Route path="/chat/StaffChat" element={<StaffChatScreen />} />
       </Route>
@@ -187,6 +193,7 @@ const router = createBrowserRouter(
           path="/registration/OrphanageRegistration"
           element={<RegistrationScreen />}
         />
+        <Route path="/auth/denied" element={<AccessDenied />} />
       </Route>
       <Route element={<AdminApp />}>
         <Route path="/dashboard/Admin" element={<AdminDashboardScreen />} />
@@ -209,11 +216,23 @@ const router = createBrowserRouter(
           element={<BulkResponseFormScreen />}
         />
         <Route path="/admin/StaffChat" element={<StaffChatScreen />} />
+        <Route
+          path="/report/viewOverallSystemReport"
+          element={<ViewOverallSystemScreen />}
+        />
+        <Route
+          path="/userRole/viewUserRole"
+          element={<ViewUserRolesScreen />}
+        />
       </Route>
       <Route element={<ExternalPartyApp />}>
         <Route
           path="/dashboard/External"
           element={<ExternalDashboardScreen />}
+        />
+        <Route
+          path="/cases/viewCases/overview"
+          element={<CaseOverViewScreen />}
         />
         <Route
           path="/cases/AcceptOrRejectCases"
@@ -224,6 +243,7 @@ const router = createBrowserRouter(
           path="/external/CreateCaseLog"
           element={<CreateCaseLogsScreen />}
         />
+        <Route path="/external/EditCaseLog" element={<EditCaseLogsScreen />} />
         <Route path="/external/CaseRequest" element={<CaseRequestScreen />} />
 
         <Route
