@@ -2,7 +2,7 @@ import { toast } from "react-toastify";
 import { useEditStaffProfileMutation ,useViewStaffProfilesQuery} from "../../slices/profileApiSlice";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { MyCard, MyCardBody, MyCardHeader } from "../MyCard";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 const EditStaffForm = () => {
   const queryParams = new URLSearchParams(location.search);
@@ -11,11 +11,42 @@ const EditStaffForm = () => {
   const [name,setName]= useState("");
   const [phoneNumber,setPhoneNumber]= useState("");
   const [email,setEmail]= useState("");
-  const [orphanageName,setOrphanageName]= useState("");
+  const [OrphanageName,setOrphanageName]= useState("");
   const [address,setAddress]= useState("");
   const [nic,setNic]= useState("");
   const [gender,setGender]= useState("");
   const [dob,setDOB]= useState("");
+
+  const {data, isLoading,isError,isSuccess}=
+  useViewStaffProfilesQuery(paramValue);
+
+  useEffect(() => {
+    if (isSuccess) {
+      setFullName(data.childProfile.FullName || "");
+      setDOB(data.childProfile.DOB || "");
+      setGender(data.childProfile.Gender || "");
+      setDateOfAdmission(data.childProfile.DateOfAdmission || "");
+      setCountry(data.childProfile.Country || "");
+      setCity(data.childProfile.City || "");
+      setNationality(data.childProfile.Nationality || "");
+      setLanguage(data.childProfile.Language || "");
+      setRemark(data.childProfile.Remark || "");
+      setMedicalDesc(data.childProfile.MedicalDesc || "");
+      setBirthFather(data.childProfile.BirthFather || "");
+      setBirthMother(data.childProfile.BirthMother || "");
+      setReasonForPlacement(data.childProfile.ReasonForPlacement || "");
+      setOrphanageName(data.childProfile.OrphanageName || "");
+    }
+  }, [isSuccess, data]);
+
+  // const [name, setName] = useState(data.staffProfile.UserName || ""); 
+  // const [phoneNumber, setPhoneNumber] = useState(data.staffProfile.PhoneNumber || "");
+  // const [email, setEmail] = useState(data.staffProfile.Email || "");
+  // const [OrphanageName, setOrphanageName] = useState(data.staffProfile.OrphanageName || "");
+  // const [address, setAddress] = useState(data.staffProfile.Address || "");
+  // const [nic, setNic] = useState(data.staffProfile.NIC || "");
+  // const [gender, setGender] = useState(data.staffProfile.Gender || "");
+  // const [dob, setDOB] = useState(data.staffProfile.DOB || "");
 
   
 
@@ -24,8 +55,6 @@ const EditStaffForm = () => {
   const [ResidenceCertificate,setResidenceCertificate]= useState(null);
   const [CharacterCertificate,setCharacterCertificate]= useState(null);
 
-  const {data, isLoading,isError,isSuccess}=
-  useViewStaffProfilesQuery(paramValue);
 
   const [editStaff]=useEditStaffProfileMutation();
 
@@ -41,12 +70,12 @@ const EditStaffForm = () => {
         name: name,
         phoneNumber: phoneNumber,
         email: email,
-        orphanageName: orphanageName,
+        OrphanageName: OrphanageName,
         address: address,
         nic: nic,
         gender: gender,
         dob: dob,
-        
+        id:paramValue,
       }));
       const res = await editStaff(formData).unwrap();
 
