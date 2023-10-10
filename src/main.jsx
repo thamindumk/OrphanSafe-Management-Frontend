@@ -73,6 +73,7 @@ import EditChildProfileScreen from "./screens/child-profile/EditChildProfileScre
 import EditStaffProfileScreen from "./screens/staff/EditStaffProfileScreen";
 import EditParentProfileScreen from "./screens/external-party/EditParentScreen";
 import EditSocialWorkerScreen from "./screens/external-party/EditSocialWorkerScreen";
+import DeleteChildScreen from "./screens/child-profile/DeleteChildScreen";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -181,6 +182,7 @@ const router = createBrowserRouter(
           path="/inquiry/CreateInquiry"
           element={<CreateInquiryScreen />}
         />
+        <Route path="/delete/deleteChildProfile" element={<DeleteChildScreen />} />
 
         <Route path="/chat/StaffChat" element={<StaffChatScreen />} />
       </Route>

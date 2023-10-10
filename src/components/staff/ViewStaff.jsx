@@ -7,11 +7,19 @@ import $ from "jquery"; // Import jQuery
 import "datatables.net-dt/css/jquery.dataTables.css"; // Import DataTables CSS
 import "datatables.net"; // Import DataTables JavaScript
 import { Link } from "react-router-dom";
-import { useGetStaffProfileListQuery } from "../../slices/profileApiSlice";
+import { useGetStaffProfileListQuery,useDeleteStaffProfileMutation } from "../../slices/profileApiSlice";
+import { toast } from "react-toastify";
 
 const ViewStaff = () => {
   const tableRef = useRef(null);
-  const { data, isError, isSuccess, isLoading } = useGetStaffProfileListQuery();
+  const { data, isError, isSuccess, isLoading,refetch } = useGetStaffProfileListQuery();
+  const [deleteRole] = useDeleteStaffProfileMutation();
+
+  const handleDelete = async (roleId) => {
+    const resp = await deleteRole({ userIdToDelete: roleId });
+    if (isError) toast.error(resp.data.message);
+    if (isSuccess) refetch();
+  };
 
   // const tableDetails = [
   //   {
@@ -95,11 +103,9 @@ const ViewStaff = () => {
                     {data.staffProfiles.map((data) => (
                       <tr>
                         <td>
-                          <Link to={"/monitoring/viewStaff/overview?id=1"}>
+                          
+                          <Link to={`/monitoring/viewStaff/overview?staffId=${data.UserId}`}>
                             <a href="#">{data.UserName}</a>
-                          </Link>
-                          <Link to={"/monitoring/viewStaff/overview?id=1"}>
-                            <a href="#">{data.Name}</a>
                           </Link>
                         </td>
                         <td>{data.Email}</td>
@@ -107,9 +113,15 @@ const ViewStaff = () => {
                         <td>{data.Gender}</td>
                         <td>{data.RoleName}</td>
                         <td>
-                          <i className="fas fa-edit mr-3 text-primary"></i>
-                          <i className="fas fa-trash text-danger"></i>
-                        </td>
+                      <Link className="blue-button" to={`/edit/editStaffProfile?staffId=${data.UserId}`}>
+                          Edit
+                        </Link>
+                        <Link class="red-button" onClick={() => handleDelete(data.UserId)}>
+                          Delete
+                        </Link>
+                      {/* <i className="fas fa-edit mr-3 text-primary"></i> */}
+                      {/* <i className="fas fa-trash text-danger"></i> */}
+                    </td>
                       </tr>
                     ))}
                   </tbody>

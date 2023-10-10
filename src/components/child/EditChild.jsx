@@ -1,10 +1,20 @@
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { MyCard, MyCardBody, MyCardHeader } from "../MyCard";
-import { useCreateChildProfileMutation } from "../../slices/profileApiSlice";
+import { useSelector } from "react-redux";
+import {
+  useViewChildProfilesQuery,
+  useEditChildProfileMutation,
+} from "../../slices/profileApiSlice";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
 const EditChildForm = () => {
+
+  const queryParams = new URLSearchParams(location.search);
+  const paramValue = queryParams.get("childId");
+
+
+
   const [FullName, setFullName] = useState("");
   const [DOB,setDOB]= useState("");
   const [Gender,setGender]= useState("");
@@ -18,7 +28,6 @@ const EditChildForm = () => {
   const [BirthFather,setBirthFather]= useState("");
   const [BirthMother,setBirthMother]= useState("");
   const [ReasonForPlacement,setReasonForPlacement]= useState("");
-  const [RegisteredBy,setRegisteredBy]= useState("");
   const [OrphanageName,setOrphanageName]= useState("");
 
   const [MedicalDoc,setMedicalDoc]= useState(null);
@@ -28,8 +37,10 @@ const EditChildForm = () => {
   const [MothersBirthCertificate,setMothersBirthCertificate]= useState(null);
   const [FathersBirthCertificate,setFathersBirthCertificate]= useState(null);
 
-  const [registerChild, { isLoading, isError, isSuccess }] =
-  useCreateChildProfileMutation();
+  const {data, isLoading,isError,isSuccess}=
+  useViewChildProfilesQuery(paramValue);
+
+  const [editChild]=useEditChildProfileMutation();
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -42,6 +53,7 @@ const EditChildForm = () => {
       formData.append("MothersBirthCertificate", MothersBirthCertificate);
       formData.append("FathersBirthCertificate", FathersBirthCertificate);
       formData.append("otherInfo", JSON.stringify({
+        Id:paramValue,
         FullName: FullName,
         DOB: DOB,
         Gender: Gender,
@@ -55,10 +67,12 @@ const EditChildForm = () => {
         BirthFather: BirthFather,
         BirthMother: BirthMother,
         ReasonForPlacement: ReasonForPlacement,
-        RegisteredBy: RegisteredBy,
         OrphanageName : OrphanageName, 
+        
       }));
-      const res = await registerChild(formData).unwrap();
+      const res = await editChild(
+        formData
+      ).unwrap();
 
       toast.success(" Child profile Registration completed");
     } catch (error) {
@@ -66,11 +80,11 @@ const EditChildForm = () => {
     }
   };
 
-    return (
+    return isSuccess && ( 
       <Row>
         <Col sm={7}>
         <MyCard>
-        <MyCardHeader>Create Child profile</MyCardHeader>
+        <MyCardHeader>Edit Child profile</MyCardHeader>
         <MyCardBody>
           <Form onSubmit={submitHandler}>
           <Form.Label className="form-subtitle">Child Information</Form.Label>
@@ -82,7 +96,8 @@ const EditChildForm = () => {
         <Form.Control 
         type="text" 
         placeholder="e.g. full name" 
-        onChange={(e) => setFullName(e.target.value)}/>
+        onChange={(e) => setFullName(e.target.value)}
+        defaultValue={data.childProfile.FullName}/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicdob">
@@ -94,6 +109,7 @@ const EditChildForm = () => {
         type="date"
         placeholder="Date of birth"
         onChange={(e) => setDOB(e.target.value)}
+        defaultValue={data.childProfile.DOB}
         />
         </Form.Group>
       
@@ -105,7 +121,8 @@ const EditChildForm = () => {
         </Form.Text>
         <Form.Select 
         size="sm" 
-        onChange={(e) => setGender(e.target.value)}>
+        onChange={(e) => setGender(e.target.value)}
+        defaultValue={data.childProfile.Gender}>
         <option value="">Choose</option>
         <option value="MALE">Male</option>
         <option value="FEMALE">Female</option>
@@ -124,10 +141,12 @@ const EditChildForm = () => {
             <Form.Label>City</Form.Label>
           <Form.Control 
           placeholder="e.g. Panadura"
-          onChange={(e) => setCity(e.target.value)}/></Col>
+          onChange={(e) => setCity(e.target.value)}
+          defaultValue={data.childProfile.City}/></Col>
         <Col xs={6}><Form.Label>Country</Form.Label>
           <Form.Control placeholder="e.g. Sri Lanka"
-          onChange={(e) => setCountry(e.target.value)}/></Col>
+          onChange={(e) => setCountry(e.target.value)}
+          defaultValue={data.childProfile.Country}/></Col>
         </Row>
       </Form.Group>
 
@@ -137,7 +156,8 @@ const EditChildForm = () => {
         *nationality of the child
         </Form.Text>
         <Form.Control type="text" placeholder="e.g. Sri Lankan" 
-        onChange={(e) => setNationality(e.target.value)}/>
+        onChange={(e) => setNationality(e.target.value)}
+        defaultValue={data.childProfile.Nationality}/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicLanguage">
@@ -146,7 +166,8 @@ const EditChildForm = () => {
         *Language the child is most comfortable with
         </Form.Text>
         <Form.Control type="text" placeholder="e.g. Sinhala" 
-        onChange={(e) => setLanguage(e.target.value)}/>
+        onChange={(e) => setLanguage(e.target.value)}
+        defaultValue={data.childProfile.Language}/>
       </Form.Group>
 
 
@@ -158,7 +179,8 @@ const EditChildForm = () => {
         *brief description of any medical conditions or allergies
         </Form.Text>
         <Form.Control size="sm" as="textarea" rows={8} 
-        onChange={(e) => setMedicalDesc(e.target.value)}/>
+        onChange={(e) => setMedicalDesc(e.target.value)}
+        defaultValue={data.childProfile.MedicalDesc}/>
       </Form.Group>
 
       <Form.Group controlId="formFileMultiple" className="mb-3">
@@ -186,10 +208,12 @@ const EditChildForm = () => {
         <Col xs={6}>
             <Form.Label>Father's Name</Form.Label>
           <Form.Control placeholder="e.g. Sunil Perera"
-          onChange={(e) => setBirthFather(e.target.value)}/></Col>
+          onChange={(e) => setBirthFather(e.target.value)}
+          defaultValue={data.childProfile.BirthFather}/></Col>
         <Col xs={6}><Form.Label>Mother's Name</Form.Label>
           <Form.Control placeholder="e.g. Kumudi Perera"
-          onChange={(e) => setBirthMother(e.target.value)}/></Col>
+          onChange={(e) => setBirthMother(e.target.value)}
+          defaultValue={data.childProfile.BirthMother}/></Col>
         </Row>
       </Form.Group>
 
@@ -199,7 +223,8 @@ const EditChildForm = () => {
         *brief explanation of why the child is under the care of the orphanage
         </Form.Text>
         <Form.Control size="sm" as="textarea" rows={8}
-        onChange={(e) => setReasonForPlacement(e.target.value)} />
+        onChange={(e) => setReasonForPlacement(e.target.value)} 
+        defaultValue={data.childProfile.ReasonForPlacement}/>
       </Form.Group>
 
       <Form.Label className="form-subtitle">Additional Information</Form.Label>
@@ -221,7 +246,8 @@ const EditChildForm = () => {
         *if there is any special remarks include here.
         </Form.Text>
         <Form.Control size="sm" as="textarea" rows={8} 
-        onChange={(e) => setRemark(e.target.value)}/>
+        onChange={(e) => setRemark(e.target.value)}
+        defaultValue={data.childProfile.Remark}/>
       </Form.Group>
 
       <Form.Label className="form-subtitle">Documents</Form.Label>
@@ -270,16 +296,6 @@ const EditChildForm = () => {
 
       <Form.Label className="form-subtitle">Registration Information</Form.Label>
 
-      <Form.Group className="mb-3" controlId="formBasicStaffName">
-        <Form.Label>Registered by</Form.Label>
-        <Form.Text className="text-muted">
-        *name of the staff member who registered the child 
-        </Form.Text>
-        <Form.Control type="text" placeholder="e.g. Kalum Gamage" 
-        onChange={(e) => setRegisteredBy(e.target.value)}/>
-      </Form.Group>
-
-      
 
       <Form.Group className="mb-3" controlId="formBasicdob">
         <Form.Label>Date Of Admission</Form.Label>
@@ -290,6 +306,7 @@ const EditChildForm = () => {
          type="date"
          placeholder="Date of birth"
          onChange={(e) => setDateOfAdmission(e.target.value)}
+         defaultValue={data.childProfile.DateOfAdmission}
          />
          </Form.Group>
 
@@ -300,7 +317,8 @@ const EditChildForm = () => {
         *name of the orphanage that the child is assigned
         </Form.Text>
         <Form.Control type="text" placeholder="e.g. Little dreams" 
-        onChange={(e) => setOrphanageName(e.target.value)}/>
+        onChange={(e) => setOrphanageName(e.target.value)}
+        defaultValue={data.childProfile.OrphanageName}/>
       </Form.Group>
 
 
