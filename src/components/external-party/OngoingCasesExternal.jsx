@@ -68,7 +68,9 @@ const OngoingCaseViewExternal = () => {
                           </LinkContainer>
                         </td>
                         <td>
-                          {data.LastUpdate ? data.LastUpdate : "Not stated"}
+                          {data.LastUpdate
+                            ? data.LastUpdate.substring(0, 10)
+                            : "Not stated"}
                         </td>
                       </tr>
                     ))}

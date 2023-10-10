@@ -99,7 +99,9 @@ const EditDeleteCaseLog = () => {
                       </tr>
                       <tr>
                         <td>Creted Time</td>
-                        <td>{data.caseLogs[index].LoggedDateTime}</td>
+                        <td>
+                          {data.caseLogs[index].LoggedDateTime.substring(0, 10)}
+                        </td>
                       </tr>
                       <tr>
                         <td>Case Documents</td>

@@ -10,12 +10,14 @@ import {
 import { toast } from "react-toastify";
 
 const CreateCaseLogs = () => {
-  const [createCaseLog, { err, loading, success }] = useCreateCaseLogMutation();
+  const [createCaseLog, { isError, isLoading, isSuccess }] =
+    useCreateCaseLogMutation();
   // React state to manage selected options
   const [selectedOption, setSelectedOption] = useState();
   const [logName, setLogName] = useState();
   const [logDescription, setLogDescription] = useState();
-  const { data, isError, isLoading, isSuccess } = useGetCaseListByUserIdQuery();
+  const [caseLogDoc, setCaseLogDoc] = useState(null);
+  const response = useGetCaseListByUserIdQuery();
   // Array of all options
 
   function handleSelect(data) {
@@ -25,22 +27,39 @@ const CreateCaseLogs = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     const form = document.getElementById("form");
-    try {
-      const caseLogData = {
-        caseId: selectedOption.value,
-        name: logName,
-        description: logDescription,
-      };
-      const res = await createCaseLog(caseLogData).unwrap();
-      toast.success("creation completed");
-      form.reset();
-    } catch (error) {
-      toast.error(error.message);
+    if (selectedOption) {
+      if (logDescription && logName) {
+        if (logDescription.trim().length != 0 && logName.trim().length != 0) {
+          try {
+            const formData = new FormData();
+            formData.append("caseLogDoc", caseLogDoc);
+            formData.append("otherInfo", JSON.stringify({
+              caseId: selectedOption.value,
+              name: logName,
+              description: logDescription,
+            }));
+            console.log(isError);
+            const res = await createCaseLog(formData).unwrap();
+            if (isError) {
+              toast.error(res.message);
+            }
+            toast.success("creation completed");
+            form.reset();
+          } catch (error) {
+            toast.error(error.data.message);
+          }
+        } else {
+          toast.error("name and description cannot be empty");
+        }
+      } else {
+        toast.error("there shoud be a name and a description for a case log");
+      }
+    } else {
+      toast.error("please select the Case");
     }
   };
-  if (isSuccess) {
-    console.log(data);
-    const optionList = data.caseList.map(function (caseInfo) {
+  if (response.isSuccess) {
+    const optionList = response.data.caseList.map(function (caseInfo) {
       const list = { value: caseInfo.CaseId, label: caseInfo.CaseName };
       return list;
     });
@@ -61,7 +80,7 @@ const CreateCaseLogs = () => {
                   <div className="dropdown-container">
                     <Select
                       options={optionList}
-                      placeholder="Select child"
+                      placeholder="Select the case"
                       value={selectedOption}
                       onChange={handleSelect}
                       isSearchable={true}
@@ -102,9 +121,9 @@ const CreateCaseLogs = () => {
                   </Form.Text>
                   <Form.Control
                     type="file"
-                    multiple
                     size="sm"
                     style={{ padding: "0.05rem 0.3rem 0.2rem 0.3rem" }}
+                    onChange={(e) => setCaseLogDoc(e.target.files[0])}
                   />
                 </Form.Group>
 
