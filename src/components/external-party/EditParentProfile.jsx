@@ -3,7 +3,7 @@ import { Button, Col, Form, Row } from "react-bootstrap";
 import { MyCard, MyCardBody, MyCardHeader } from "../MyCard";
 import { toast } from "react-toastify";
 import { useViewParentProfilesQuery,useEditParentProfileMutation } from "../../slices/profileApiSlice";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const CreateParentForm = () => {
@@ -45,6 +45,29 @@ const CreateParentForm = () => {
   const {data, isLoading,isError,isSuccess}=
   useViewParentProfilesQuery(paramValue);
 
+  useEffect(() => {
+    if (isSuccess && data) {
+      setEmail(data.parentProfile.Email || "");
+      setOrphanageName(data.parentProfile.OrphanageName || "");
+      setAddress(data.parentProfile.Address || "");
+      setNameOfFather(data.parentProfile.NameOfFather || "");
+      setNICOfFather(data.parentProfile.NICOfFather || "");
+      setMobileOfFather(data.parentProfile.MobileOfFather || "");
+      setDOBOfFather(data.parentProfile.DOBOfFather || "");
+      setOccupationOfFather(data.parentProfile.OccupationOfFather || "");
+      setNameOfMother(data.parentProfile.NameOfMother || "");
+      setNICOfMother(data.parentProfile.NICOfMother || "");
+      setMobileOfMother(data.parentProfile.MobileOfMother || "");
+      setDOBOfMother(data.parentProfile.DOBOfMother || "");
+      setOccupationOfMother(data.parentProfile.OccupationOfMother || "");
+      setAdoptionPreference(data.parentProfile.AdoptionPreference || "");
+      setAgePreference(data.parentProfile.AgePreference || "");
+      setGenderPreference(data.parentProfile.GenderPreference || "");
+      setNationalityPreference(data.parentProfile.NationalityPreference || "");
+      setLanguagePreference(data.parentProfile.LanguagePreference || "");
+    }
+  }, [isSuccess, data]);
+
   const [editParent]=useEditParentProfileMutation();
 
   const submitHandler = async (e) => {
@@ -68,7 +91,7 @@ const CreateParentForm = () => {
         nic: NICOfFather,
         gender: "MALE",
         dob: DOBOfFather,
-
+        id:paramValue,
         NameOfFather: NameOfFather,
         NICOfFather: NICOfFather,
         MobileOfFather: MobileOfFather,

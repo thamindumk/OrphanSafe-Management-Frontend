@@ -10,15 +10,30 @@ const StaffProfileContent = () => {
   const {data, isLoading,isError,isSuccess}=
   useViewStaffProfilesQuery(paramValue);
 
-  return (
+  return  isSuccess && (
     <div>
+      <div className="card">
+      <div className="background">
+        <Row className="profile">
+          <Col xs={12} sm={12} md={4} lg={6} xl={4}>
+            <div className="profileImage"></div>
+          </Col>
+          <Col xs={12} sm={12} md={8} lg={6} xl={8}>
+            <h1 className="name-header">{data.staffProfile.UserName}</h1>
+            <p className="name-sub">Orphanage Name:</p>
+            <p className="name-sub">{data.staffProfile.OrphanageName}</p>
+            <p className="name-sub">{data.staffProfile.Gender}</p>
+          </Col>
+        </Row>
+      </div>
+    </div>
       <Row>
         <Col sm={0} md={1} lg={1}></Col>
         <Col sm={12} md={10} lg={10}>
           <MyCard>
             <MyCardHeader>Employee Information</MyCardHeader>
             <MyCardBody>
-              <Form>
+              {isSuccess  && (<Form>
                 <Table responsive bordered style={{ width: "100%" }}>
                   <tbody>
                     <tr>
@@ -58,7 +73,7 @@ const StaffProfileContent = () => {
                     </tr>
                   </tbody>
                 </Table>
-              </Form>
+              </Form>)}
             </MyCardBody>
           </MyCard>
         </Col>
