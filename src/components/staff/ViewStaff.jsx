@@ -29,13 +29,12 @@ const ViewStaff = () => {
     // Initialize DataTable
     $(tableRef.current).DataTable();
   }, [data]);
-
   return (
     <Row>
       <Col sm={12}>
         <MyCard>
           <MyCardHeader>
-            Staff Details<Button onClick={() => handleExport()}>Export</Button>
+            Staff Details
           </MyCardHeader>
           <MyCardBody>
             {isError && (
@@ -70,6 +69,7 @@ const ViewStaff = () => {
                           <Link
                             to={`/monitoring/viewStaff/overview?staffId=${data.UserId}`}
                           >
+
                             <a href="#">{data.UserName}</a>
                           </Link>
                         </td>
