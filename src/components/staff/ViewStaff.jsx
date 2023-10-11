@@ -7,6 +7,10 @@ import $ from "jquery"; // Import jQuery
 import "datatables.net-dt/css/jquery.dataTables.css"; // Import DataTables CSS
 import "datatables.net"; // Import DataTables JavaScript
 import { Link } from "react-router-dom";
+import {
+  useGetStaffProfileListQuery,
+  useDeleteStaffProfileMutation,
+} from "../../slices/profileApiSlice";
 import { useGetStaffProfileListQuery,useDeleteStaffProfileMutation } from "../../slices/profileApiSlice";
 import { toast } from "react-toastify";
 
@@ -21,48 +25,6 @@ const ViewStaff = () => {
     if (isSuccess) refetch();
   };
 
-  // const tableDetails = [
-  //   {
-  //     Staff_ID: 1,
-  //     Name: "Piyal Gamage",
-  //     Role: "Manager",
-  //     Email: "piyalgamage@gmail.com",
-  //     Contact_Number: "0764534789",
-  //     NIC: "20025102700",
-  //   },
-  //   {
-  //     Staff_ID: 2,
-  //     Name: "Piyal Gamage",
-  //     Role: "Manager",
-  //     Email: "piyalgamage@gmail.com",
-  //     Contact_Number: "0764534789",
-  //     NIC: "20025102700",
-  //   },
-  //   {
-  //     Staff_ID: 3,
-  //     Name: "Kasun Rajitha",
-  //     Role: "Manager",
-  //     Email: "kasunr@gmail.com",
-  //     Contact_Number: "0764534789",
-  //     NIC: "20025102700",
-  //   },
-  //   {
-  //     Staff_ID: 4,
-  //     Name: "Piyal Gamage",
-  //     Role: "Manager",
-  //     Email: "piyalgamage@gmail.com",
-  //     Contact_Number: "0764534789",
-  //     NIC: "20025102700",
-  //   },
-  //   {
-  //     Staff_ID: 5,
-  //     Name: "Piyal Gamage",
-  //     Role: "Manager",
-  //     Email: "piyalgamage@gmail.com",
-  //     Contact_Number: "0764534789",
-  //     NIC: "20025102700",
-  //   },
-  // ];
 
   useEffect(() => {
     // Initialize DataTable
@@ -72,7 +34,9 @@ const ViewStaff = () => {
     <Row>
       <Col sm={12}>
         <MyCard>
-          <MyCardHeader>Staff Details</MyCardHeader>
+          <MyCardHeader>
+            Staff Details
+          </MyCardHeader>
           <MyCardBody>
             {isError && (
               <Col className="text-center">
@@ -103,7 +67,6 @@ const ViewStaff = () => {
                     {data.staffProfiles.map((data) => (
                       <tr>
                         <td>
-                          
                           <Link to={`/monitoring/viewStaff/overview?staffId=${data.UserId}`}>
                             <a href="#">{data.UserName}</a>
                           </Link>
@@ -113,6 +76,7 @@ const ViewStaff = () => {
                         <td>{data.Gender}</td>
                         <td>{data.RoleName}</td>
                         <td>
+
                       <Link className="blue-button" to={`/edit/editStaffProfile?staffId=${data.UserId}`}>
                           Edit
                         </Link>
@@ -122,6 +86,7 @@ const ViewStaff = () => {
                       {/* <i className="fas fa-edit mr-3 text-primary"></i> */}
                       {/* <i className="fas fa-trash text-danger"></i> */}
                     </td>
+
                       </tr>
                     ))}
                   </tbody>

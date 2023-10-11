@@ -54,6 +54,11 @@ export const EDIT_STAFF_PROFILE_URL = "/api/profile/editStaffProfile";
 export const EDIT_SOCIAL_WORKER_PROFILE_URL =
   "/api/profile/editSocialWorkerProfile";
 export const EDIT_PARENT_PROFILE_URL = "/api/profile/editParentProfile";
+export const OVERALL_APPROVAL_URL = "/api/admin/approvalList";
+export const APPROVE_URL = "/api/admin/approve"
+export const REJECT_URL = "/api/admin/reject"
+export const CHAT_URL = "/api/admin/chat"
+export const REPORT_URL = '/api/admin/report'
 
 export const determineAppServerKey = () => {
   const vapidPublicKey =
