@@ -11,12 +11,12 @@ import {
   useGetStaffProfileListQuery,
   useDeleteStaffProfileMutation,
 } from "../../slices/profileApiSlice";
+import { useGetStaffProfileListQuery,useDeleteStaffProfileMutation } from "../../slices/profileApiSlice";
 import { toast } from "react-toastify";
 
 const ViewStaff = () => {
   const tableRef = useRef(null);
-  const { data, isError, isSuccess, isLoading, refetch } =
-    useGetStaffProfileListQuery();
+  const { data, isError, isSuccess, isLoading,refetch } = useGetStaffProfileListQuery();
   const [deleteRole] = useDeleteStaffProfileMutation();
 
   const handleDelete = async (roleId) => {
@@ -25,11 +25,11 @@ const ViewStaff = () => {
     if (isSuccess) refetch();
   };
 
+
   useEffect(() => {
     // Initialize DataTable
     $(tableRef.current).DataTable();
   }, [data]);
-
   return (
     <Row>
       <Col sm={12}>
@@ -67,9 +67,7 @@ const ViewStaff = () => {
                     {data.staffProfiles.map((data) => (
                       <tr>
                         <td>
-                          <Link
-                            to={`/monitoring/viewStaff/overview?staffId=${data.UserId}`}
-                          >
+                          <Link to={`/monitoring/viewStaff/overview?staffId=${data.UserId}`}>
                             <a href="#">{data.UserName}</a>
                           </Link>
                         </td>
@@ -78,21 +76,17 @@ const ViewStaff = () => {
                         <td>{data.Gender}</td>
                         <td>{data.RoleName}</td>
                         <td>
-                          <Link
-                            className="blue-button"
-                            to={`/edit/editStaffProfile?staffId=${data.UserId}`}
-                          >
-                            Edit
-                          </Link>
-                          <Link
-                            class="red-button"
-                            onClick={() => handleDelete(data.UserId)}
-                          >
-                            Delete
-                          </Link>
-                          {/* <i className="fas fa-edit mr-3 text-primary"></i> */}
-                          {/* <i className="fas fa-trash text-danger"></i> */}
-                        </td>
+
+                      <Link className="blue-button" to={`/edit/editStaffProfile?staffId=${data.UserId}`}>
+                          Edit
+                        </Link>
+                        <Link class="red-button" onClick={() => handleDelete(data.UserId)}>
+                          Delete
+                        </Link>
+                      {/* <i className="fas fa-edit mr-3 text-primary"></i> */}
+                      {/* <i className="fas fa-trash text-danger"></i> */}
+                    </td>
+
                       </tr>
                     ))}
                   </tbody>
