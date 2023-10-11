@@ -33,7 +33,9 @@ const ViewStaff = () => {
     <Row>
       <Col sm={12}>
         <MyCard>
-          <MyCardHeader>Staff Details</MyCardHeader>
+          <MyCardHeader>
+            Staff Details
+          </MyCardHeader>
           <MyCardBody>
             {isError && (
               <Col className="text-center">
@@ -67,6 +69,7 @@ const ViewStaff = () => {
                           <Link
                             to={`/monitoring/viewStaff/overview?staffId=${data.UserId}`}
                           >
+
                             <a href="#">{data.UserName}</a>
                           </Link>
                         </td>
