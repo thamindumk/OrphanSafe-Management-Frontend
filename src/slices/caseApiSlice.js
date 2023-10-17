@@ -11,6 +11,7 @@ import {
   DELETE_CASE_LOG_URL,
   UPDATE_CASE_LOG_URL,
   GET_CASE_LOG_BY_LOGID_URL,
+  GET_ONGOING_CASE_URL,
 } from "../config";
 
 export const caseApiSlice = apiSlice.injectEndpoints({
@@ -77,6 +78,13 @@ export const caseApiSlice = apiSlice.injectEndpoints({
       }),
     }),
 
+    getOngoingCase: builder.query({
+      query: (data) => ({
+        url: GET_ONGOING_CASE_URL,
+        method: "GET",
+      }),
+    }),
+
     updateCaseState: builder.mutation({
       query: (data) => ({
         url: UPDATE_CASE_STATE_URL,
@@ -107,4 +115,5 @@ export const {
   useDeleteCaseLogMutation,
   useUpdateCaseLogMutation,
   useGetCaseLogBylogIdQuery,
+  useGetOngoingCaseQuery,
 } = caseApiSlice;

@@ -44,7 +44,7 @@ const AssignSocialWorkers = () => {
 
       e.preventDefault();
       if (selectedChildOption && selectedSocialWorkerOption) {
-        if (caseName.trim().length != 0 || caseDescription.trim().length != 0) {
+        if (caseName.trim().length != 0 && caseDescription.trim().length != 0) {
           try {
             const caseData = {
               caseName: caseName,
@@ -52,13 +52,12 @@ const AssignSocialWorkers = () => {
               childProfileId: selectedChildOption.value,
               caseOwnerId: selectedSocialWorkerOption.value,
             };
+            console.log(caseData);
             const res = await createCase(caseData).unwrap();
-            if (isError && isLoading) {
-              toast.error(res.message);
-            } else if (isSuccess) {
-              toast.success("creation completed");
-              form.reset();
-            }
+            toast.success("creation completed");
+            form.reset();
+            setCaseName("");
+            setCaseDescription("");
           } catch (error) {
             toast.error(error.data.message);
           }
