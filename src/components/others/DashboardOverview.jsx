@@ -105,8 +105,8 @@ const DashboardOverview = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {isSuccess && data.cases ? (
-                    data.cases.map((data) => (
+                  {pendingRes.isSuccess && pendingRes.data.cases ? (
+                    pendingRes.data.cases.map((data) => (
                       <tr>
                         <td>{data.Id}</td>
                         <td>{data.CaseName}</td>
