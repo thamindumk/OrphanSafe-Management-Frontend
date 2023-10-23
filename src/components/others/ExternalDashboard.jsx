@@ -59,11 +59,12 @@ const ExternalDashboard = () => {
                 </Row>
 
                 <div className="CardNumber">
-                  {EDpendingCaseResponse.isLoading ? (
+                  {EDcaseAssignResponse.isLoading && (
                     <div>Loading</div>
-                  ) : (
+                  )}
+                  {EDcaseAssignResponse.isSuccess && (
                     <div className="CardNumber">
-                      {EDpendingCaseResponse.data.count}
+                      {EDcaseAssignResponse.data.count}
                     </div>
                   )}
                 </div>
@@ -83,9 +84,10 @@ const ExternalDashboard = () => {
                 </Row>
 
                 <div className="CardNumber">
-                  {EDcaseAssignResponse.isLoading ? (
+                  {EDcaseAssignResponse.isLoading && (
                     <div>Loading</div>
-                  ) : (
+                  )}
+                  {EDcaseAssignResponse.isSuccess && (
                     <div className="CardNumber">
                       {EDcaseAssignResponse.data.count}
                     </div>

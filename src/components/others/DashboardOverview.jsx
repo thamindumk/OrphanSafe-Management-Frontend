@@ -3,11 +3,18 @@ import { Button, Col, Form, Row, Table, Card } from "react-bootstrap";
 import { MyCard, MyCardBody, MyCardHeader } from "../MyCard";
 import "../../index.css";
 import "../../assets/css/dashbord/dashboard.css";
-import { useGetOngoingCaseQuery } from "../../slices/caseApiSlice";
+import {
+  useGetPendingCaseQuery,
+  useGetOngoingCaseQuery,
+} from "../../slices/caseApiSlice";
 
 const DashboardOverview = () => {
-  const { data, isError, isSuccess, isLoading } = useGetOngoingCaseQuery();
+  const pendingRes = useGetPendingCaseQuery();
+  const ongoingRes = useGetOngoingCaseQuery();
 
+  if (pendingRes.isSuccess) {
+    console.log(pendingRes.data);
+  }
   return (
     <div className="responsive">
       <div className="cards">
@@ -99,12 +106,12 @@ const DashboardOverview = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {isSuccess && data.cases ? (
-                    data.cases.map((data) => (
+                  {pendingRes.isSuccess && pendingRes.data.cases ? (
+                    pendingRes.data.cases.map((data) => (
                       <tr>
                         <td>{data.Id}</td>
                         <td>{data.CaseName}</td>
-                        <td>{data.CreatedAt}</td>
+                        <td>{data.CreatedAt.substring(0, 10)}</td>
                       </tr>
                     ))
                   ) : (
@@ -122,31 +129,22 @@ const DashboardOverview = () => {
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Case Description</th>
+                    <th>Case Name</th>
                     <th>State Date</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>234</td>
-                    <td>Adoption case-3445- child Id 22332</td>
-                    <td>2023-12-12</td>
-                  </tr>
-                  <tr>
-                    <td>234</td>
-                    <td>Adoption case-3445- child Id 22332</td>
-                    <td>2023-12-12</td>
-                  </tr>
-                  <tr>
-                    <td>234</td>
-                    <td>Adoption case-3445- child Id 22332</td>
-                    <td>2023-12-12</td>
-                  </tr>
-                  <tr>
-                    <td>234</td>
-                    <td>Adoption case-3445- child Id 22332</td>
-                    <td>2023-12-12</td>
-                  </tr>
+                  {ongoingRes.isSuccess && ongoingRes.data.cases ? (
+                    ongoingRes.data.cases.map((data) => (
+                      <tr>
+                        <td>{data.Id}</td>
+                        <td>{data.CaseName}</td>
+                        <td>{data.CreatedAt.substring(0, 10)}</td>
+                      </tr>
+                    ))
+                  ) : (
+                    <div>Loading</div>
+                  )}
                 </tbody>
               </Table>
             </MyCard>
