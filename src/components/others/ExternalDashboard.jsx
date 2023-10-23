@@ -12,6 +12,7 @@ const ExternalDashboard = () => {
   const EDcaseAssignResponse = useGetExternalDashboardCaseAssignQuery();
   const EDchildProfileResponse = useGetExternalDashboardChildProfilesQuery();
   const EDpendingCaseResponse = useGetExternalDashboardPendingCaseQuery();
+  console.log(EDcaseAssignResponse.data);
 
   return (
     <div className="responsive">
@@ -55,7 +56,7 @@ const ExternalDashboard = () => {
                 </Row>
 
                 <div className="CardNumber">
-                  {EDpendingCaseResponse.isLoading && <div>Loading</div>}{" "}
+                  {EDpendingCaseResponse.isLoading && (<div>Loading</div>)}
                   {EDchildProfileResponse.isSuccess && (
                     <div className="CardNumber">
                       {EDpendingCaseResponse.data.count}
@@ -78,7 +79,7 @@ const ExternalDashboard = () => {
                 </Row>
 
                 <div className="CardNumber">
-                  {EDcaseAssignResponse.isLoading && <div>Loading</div>} ({" "}
+                  {EDcaseAssignResponse.isLoading && (<div>Loading</div>)}
                   {EDchildProfileResponse.isSuccess && (
                     <div className="CardNumber">
                       {EDcaseAssignResponse.data.count}
