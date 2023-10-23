@@ -23,13 +23,19 @@ const LoginScreen = () => {
 
   useEffect(() => {
     if (userInfo) {
-      if (userInfo.roleName === "orphanageManager") {
+      if (userInfo.roleName === "orphanageManager" || "orphanageStaff") {
         console.log("in");
         navigate("/");
-      } else if (userInfo.roleName === "systemManager" || userInfo.roleName === 'systemAdministrator') {
+      } else if (
+        userInfo.roleName === "systemManager" ||
+        userInfo.roleName === "systemAdministrator"
+      ) {
         console.log("in");
         navigate("/dashboard/Admin");
-      } else if (userInfo.roleName === "parent" || userInfo.roleName === "socialWorker") {
+      } else if (
+        userInfo.roleName === "parent" ||
+        userInfo.roleName === "socialWorker"
+      ) {
         console.log("in");
         navigate("/dashboard/External");
       }

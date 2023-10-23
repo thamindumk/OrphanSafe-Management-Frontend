@@ -16,6 +16,7 @@ import {
   GET_EXTERNAL_DASHBOARD_PENDING_CASE,
   GET_EXTERNAL_DASHBOARD_CASE_ASSIGN,
   GET_ONGOING_CASE_URL,
+  GET_CASES_FOR_ORPHANAGE_URL,
 } from "../config";
 
 export const caseApiSlice = apiSlice.injectEndpoints({
@@ -113,6 +114,12 @@ export const caseApiSlice = apiSlice.injectEndpoints({
         method: "GET",
       }),
     }),
+    getCasesForOrphanage: builder.query({
+      query: (data) => ({
+        url: GET_CASES_FOR_ORPHANAGE_URL,
+        method: "GET",
+      }),
+    }),
 
     updateCaseState: builder.mutation({
       query: (data) => ({
@@ -149,4 +156,5 @@ export const {
   useGetExternalDashboardCaseAssignQuery,
   useGetExternalDashboardChildProfilesQuery,
   useGetExternalDashboardPendingCaseQuery,
+  useGetCasesForOrphanageQuery,
 } = caseApiSlice;

@@ -5,14 +5,23 @@ import "../../assets/css/dashbord/dashboard.css";
 import {
   useGetPendingCaseQuery,
   useGetOngoingCaseQuery,
+  useGetCasesForOrphanageQuery,
 } from "../../slices/caseApiSlice";
+import {
+  useGetStaffCountForOrphanageQuery,
+  useGetProfileCountForOrphanageQuery,
+  useGetParentCountForOrphanageQuery,
+} from "../../slices/profileApiSlice";
 
 const DashboardOverview = () => {
   const pendingRes = useGetPendingCaseQuery();
   const ongoingRes = useGetOngoingCaseQuery();
-
-  if (pendingRes.isSuccess) {
-    console.log(pendingRes.data);
+  const profileCount = useGetProfileCountForOrphanageQuery();
+  const staffCount = useGetStaffCountForOrphanageQuery();
+  const parentCount = useGetParentCountForOrphanageQuery();
+  const caseCount = useGetCasesForOrphanageQuery();
+  if (profileCount.isSuccess) {
+    console.log(profileCount.data);
   }
   return (
     <div className="responsive">
@@ -35,7 +44,13 @@ const DashboardOverview = () => {
                   </Col>
                 </Row>
 
-                <div className="CardNumber">56</div>
+                <div className="CardNumber">
+                  {profileCount.isLoading
+                    ? "Loading"
+                    : profileCount.isSuccess
+                    ? profileCount.data.count
+                    : "Error"}
+                </div>
                 <div className="CardItalic">Registered child profiles</div>
               </Card>
             </Col>
@@ -51,7 +66,13 @@ const DashboardOverview = () => {
                   </Col>
                 </Row>
 
-                <div className="CardNumber">12</div>
+                <div className="CardNumber">
+                  {staffCount.isLoading
+                    ? "Loading"
+                    : staffCount.isSuccess
+                    ? staffCount.data.count
+                    : "Error"}
+                </div>
                 <div className="CardItalic">Registered staff profiles</div>
               </Card>
             </Col>
@@ -63,12 +84,18 @@ const DashboardOverview = () => {
                       className="fa fa-heart"
                       style={{ fontSize: "30px", marginRight: "10px" }}
                     ></i>
-                    Ongoing Adoptions
+                    Parent Involves
                   </Col>
                 </Row>
 
-                <div className="CardNumber">56</div>
-                <div className="CardItalic">Registered child profiles</div>
+                <div className="CardNumber">
+                  {parentCount.isLoading
+                    ? "Loading"
+                    : parentCount.isSuccess
+                    ? parentCount.data.count
+                    : "Error"}
+                </div>
+                <div className="CardItalic">Adoption and Foster care</div>
               </Card>
             </Col>
             <Col md={3} sm={6} xs={12} style={{ marginBottom: "10px" }}>
@@ -83,7 +110,13 @@ const DashboardOverview = () => {
                   </Col>
                 </Row>
 
-                <div className="CardNumber">22</div>
+                <div className="CardNumber">
+                  {caseCount.isLoading
+                    ? "Loading"
+                    : caseCount.isSuccess
+                    ? caseCount.data.count
+                    : "Error"}
+                </div>
                 <div className="CardItalic">Registered child profiles</div>
               </Card>
             </Col>
