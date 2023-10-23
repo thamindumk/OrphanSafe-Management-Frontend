@@ -1,8 +1,8 @@
-import React from "react";
-import { Button, Col, Form, Row, Table, Card } from "react-bootstrap";
-import { MyCard, MyCardBody, MyCardHeader } from "../MyCard";
+import { Col, Row, Table, Card } from "react-bootstrap";
+import { MyCard, MyCardHeader } from "../MyCard";
 import "../../index.css";
 import "../../assets/css/dashbord/dashboard.css";
+<<<<<<< HEAD
 import {
   useGetPendingCaseQuery,
   useGetOngoingCaseQuery,
@@ -15,6 +15,13 @@ const DashboardOverview = () => {
   if (pendingRes.isSuccess) {
     console.log(pendingRes.data);
   }
+=======
+import { useGetOngoingCaseQuery } from "../../slices/caseApiSlice";
+
+const DashboardOverview = () => {
+  const { data, isSuccess } = useGetOngoingCaseQuery();
+
+>>>>>>> ec77ed3c45ce8eccd9d95b1533a99a26c4645672
   return (
     <div className="responsive">
       <div className="cards">
@@ -106,12 +113,21 @@ const DashboardOverview = () => {
                   </tr>
                 </thead>
                 <tbody>
+<<<<<<< HEAD
                   {pendingRes.isSuccess && pendingRes.data.cases ? (
                     pendingRes.data.cases.map((data) => (
                       <tr>
                         <td>{data.Id}</td>
                         <td>{data.CaseName}</td>
                         <td>{data.CreatedAt.substring(0, 10)}</td>
+=======
+                  {isSuccess && data.cases ? (
+                    data.cases.map((data) => (
+                      <tr>
+                        <td>{data.Id}</td>
+                        <td>{data.CaseName}</td>
+                        <td>{data.CreatedAt}</td>
+>>>>>>> ec77ed3c45ce8eccd9d95b1533a99a26c4645672
                       </tr>
                     ))
                   ) : (

@@ -14,7 +14,10 @@ export const GET_CASE_LOG_BY_LOGID_URL = "/api/case/getCaseLogBycaseLogId";
 export const GET_EXTERNAL_DASHBOARD_CHILD_PROFILES = "/api/case/ExternalDashboardChildProfiles";
 export const GET_EXTERNAL_DASHBOARD_PENDING_CASE = "/api/case/ExternalDashboardPendingCase";
 export const GET_EXTERNAL_DASHBOARD_CASE_ASSIGN = "/api/case/ExternalDashboardCaseAssign";
+<<<<<<< HEAD
 export const GET_PENDING_CASE_URL = "/api/case/getPendingCaseForDashBoard";
+=======
+>>>>>>> ec77ed3c45ce8eccd9d95b1533a99a26c4645672
 export const GET_ONGOING_CASE_URL = "/api/case/getOngoingCaseForDashBoard";
 export const CREATE_CASE_LOG_URL = "/api/case/createCaseLog";
 export const GET_CASE_LIST_BY_USERID_URL = "/api/case/getCaseListByUserId";
