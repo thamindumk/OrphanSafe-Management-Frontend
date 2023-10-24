@@ -20,6 +20,7 @@ export const GET_EXTERNAL_DASHBOARD_CASE_ASSIGN =
 export const GET_CASES_FOR_ORPHANAGE_URL = "/api/case/getCasesForOrphanage";
 export const GET_PENDING_CASE_URL = "/api/case/getPendingCaseForDashBoard";
 export const GET_ONGOING_CASE_URL = "/api/case/getOngoingCaseForDashBoard";
+export const GET_ADOPTION_CASE_URL = "/api/case/getAdoptionRequest";
 export const CREATE_CASE_LOG_URL = "/api/case/createCaseLog";
 export const GET_CASE_LIST_BY_USERID_URL = "/api/case/getCaseListByUserId";
 export const UPDATE_CASE_STATE_URL = "/api/case/updateCaseState";
