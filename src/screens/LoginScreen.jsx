@@ -17,16 +17,20 @@ const LoginScreen = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const [login, { isLoading }] = useLoginMutation();
+  const [login] = useLoginMutation();
 
   const { userInfo } = useSelector((state) => state.auth);
 
   useEffect(() => {
     if (userInfo) {
+<<<<<<< HEAD
       if (
         userInfo.roleName === "orphanageManager" ||
         userInfo.roleName === "orphanageStaff"
       ) {
+=======
+      if (userInfo.roleName === "orphanageManager" ||userInfo.roleName === "orphanageStaff") {
+>>>>>>> 5c64c43b18e7eee22d42e6c26335932704c4f035
         console.log("in");
         navigate("/");
       } else if (
@@ -57,7 +61,7 @@ const LoginScreen = () => {
         const res = await login({ email: email, password: password }).unwrap();
         dispatch(setCredentials(res.userInfo));
       } catch (error) {
-        toast.error("login error. Please try again!");
+        toast.error(error.data.message);
       }
     }
   };
@@ -75,7 +79,7 @@ const LoginScreen = () => {
           <p className="login-header mb-4 mt-3">Login to OrphanSafe Platform</p>
 
           <div className="col">
-            <div asp-validation-summary="All" className="text-danger"></div>
+            <div className="text-danger"></div>
             <div className="my-input-label mb-1">IAM User email address</div>
             <div className="my-input-footer-label mb-2">
               Choose a name for your account. You can change this name in your
