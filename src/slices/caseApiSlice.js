@@ -19,6 +19,8 @@ import {
   GET_CASES_FOR_ORPHANAGE_URL,
   GET_ADOPTION_CASE_URL,
   GET_FUNDING_FOR_ORPHANAGE_URL,
+  CREATE_PROFILE_REQUEST_URL,
+  CREATE_CASE_REQUEST_URL,
 } from "../config";
 
 export const caseApiSlice = apiSlice.injectEndpoints({
@@ -46,6 +48,20 @@ export const caseApiSlice = apiSlice.injectEndpoints({
     createCase: builder.mutation({
       query: (data) => ({
         url: CREATE_CASE_URL,
+        method: "POST",
+        body: data,
+      }),
+    }),
+    createProfileRequest: builder.mutation({
+      query: (data) => ({
+        url: CREATE_PROFILE_REQUEST_URL,
+        method: "POST",
+        body: data,
+      }),
+    }),
+    createCaseRequest: builder.mutation({
+      query: (data) => ({
+        url: CREATE_CASE_REQUEST_URL,
         method: "POST",
         body: data,
       }),
@@ -174,5 +190,7 @@ export const {
   useGetExternalDashboardPendingCaseQuery,
   useGetCasesForOrphanageQuery,
   useGetAdoptionForOrphanageQuery,
-  useGetFundingForOrphanageQuery
+  useGetFundingForOrphanageQuery,
+  useCreateProfileRequestMutation,
+  useCreateCaseRequestMutation
 } = caseApiSlice;

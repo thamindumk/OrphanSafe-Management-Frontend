@@ -61,7 +61,17 @@ const ParentViewChildList = () => {
                   <tbody>
                     {data.profile.map((child) => (
                       <tr>
-                        <td>{child.FullName}</td>
+                        {child.State === "ACCEPT" ? (
+                          <td>
+                            <Link
+                              to={`/parent/viewChildProfileList/overview?childId=${child.Id}`}
+                            >
+                              <a href="#">{child.FullName}</a>
+                            </Link>
+                          </td>
+                        ) : (
+                          <td>{child.FullName}</td>
+                        )}
                         <td>{child.DOB.substring(0, 10)}</td>
                         <td>{child.Gender}</td>
                         <td>{child.DateOfAdmission.substring(0, 10)}</td>

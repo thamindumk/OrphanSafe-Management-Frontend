@@ -9,6 +9,8 @@ export const DELETE_CASE_LOG_URL = "/api/case/deleteCaseLog";
 export const GET_CASE_INVITATION_BY_USER_ID_URL =
   "/api/case/getCaseInvitationByUserId";
 export const CREATE_CASE_URL = "/api/case/createCase";
+export const CREATE_PROFILE_REQUEST_URL = "/api/case/createProfileRequest";
+export const CREATE_CASE_REQUEST_URL = "/api/case/createCaseRequest";
 export const GET_CASE_LOGS_LIST_URL = "/api/case/getCaseLogsByCaseId";
 export const GET_CASE_LOG_BY_LOGID_URL = "/api/case/getCaseLogBycaseLogId";
 export const GET_EXTERNAL_DASHBOARD_CHILD_PROFILES =
