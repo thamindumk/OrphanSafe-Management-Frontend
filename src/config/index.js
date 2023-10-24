@@ -21,6 +21,7 @@ export const GET_CASES_FOR_ORPHANAGE_URL = "/api/case/getCasesForOrphanage";
 export const GET_PENDING_CASE_URL = "/api/case/getPendingCaseForDashBoard";
 export const GET_ONGOING_CASE_URL = "/api/case/getOngoingCaseForDashBoard";
 export const GET_ADOPTION_CASE_URL = "/api/case/getAdoptionRequest";
+export const GET_FUNDING_FOR_ORPHANAGE_URL = "/api/case/getFundForOrphanage";
 export const CREATE_CASE_LOG_URL = "/api/case/createCaseLog";
 export const GET_CASE_LIST_BY_USERID_URL = "/api/case/getCaseListByUserId";
 export const UPDATE_CASE_STATE_URL = "/api/case/updateCaseState";
@@ -75,6 +76,7 @@ export const APPROVE_URL = "/api/admin/approve";
 export const REJECT_URL = "/api/admin/reject";
 export const CHAT_URL = "/api/admin/chat";
 export const REPORT_URL = "/api/admin/report";
+export const ADMIN_DASHBOARD_URL = "/api/admin//adminDashboard";
 
 export const determineAppServerKey = () => {
   const vapidPublicKey =

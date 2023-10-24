@@ -18,6 +18,7 @@ import {
   GET_ONGOING_CASE_URL,
   GET_CASES_FOR_ORPHANAGE_URL,
   GET_ADOPTION_CASE_URL,
+  GET_FUNDING_FOR_ORPHANAGE_URL,
 } from "../config";
 
 export const caseApiSlice = apiSlice.injectEndpoints({
@@ -129,6 +130,13 @@ export const caseApiSlice = apiSlice.injectEndpoints({
       }),
     }),
 
+    getFundingForOrphanage: builder.query({
+      query: (data) => ({
+        url: GET_FUNDING_FOR_ORPHANAGE_URL,
+        method: "GET",
+      }),
+    }),
+
     updateCaseState: builder.mutation({
       query: (data) => ({
         url: UPDATE_CASE_STATE_URL,
@@ -166,4 +174,5 @@ export const {
   useGetExternalDashboardPendingCaseQuery,
   useGetCasesForOrphanageQuery,
   useGetAdoptionForOrphanageQuery,
+  useGetFundingForOrphanageQuery
 } = caseApiSlice;

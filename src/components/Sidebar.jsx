@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { LinkContainer } from "react-router-bootstrap";
+import { useSelector } from "react-redux";
+
 
 const Sidebar = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
+  const { userInfo } = useSelector((state) => state.auth);
 
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);

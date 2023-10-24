@@ -7,7 +7,7 @@ import {
   useGetOngoingCaseQuery,
   useGetCasesForOrphanageQuery,
   useGetAdoptionForOrphanageQuery,
-
+  useGetFundingForOrphanageQuery,
 } from "../../slices/caseApiSlice";
 import {
   useGetStaffCountForOrphanageQuery,
@@ -16,7 +16,7 @@ import {
 } from "../../slices/profileApiSlice";
 
 const DashboardOverview = () => {
-
+  const fundRes = useGetFundingForOrphanageQuery();
   const adoptionRes = useGetAdoptionForOrphanageQuery();
   const pendingRes = useGetPendingCaseQuery();
   const ongoingRes = useGetOngoingCaseQuery();
@@ -194,32 +194,25 @@ const DashboardOverview = () => {
               <Table responsive bordered style={{ width: "100%" }}>
                 <thead>
                   <tr>
-                    <th>ID</th>
-                    <th>Case Description</th>
-                    <th>State Date</th>
+                    <th>Fund ID</th>
+                    <th>Donor</th>
+                    <th>Amount</th>
+                    <th>Fund Date</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>234</td>
-                    <td>Adoption case-3445- child Id 22332</td>
-                    <td>2023-12-12</td>
-                  </tr>
-                  <tr>
-                    <td>234</td>
-                    <td>Adoption case-3445- child Id 22332</td>
-                    <td>2023-12-12</td>
-                  </tr>
-                  <tr>
-                    <td>234</td>
-                    <td>Adoption case-3445- child Id 22332</td>
-                    <td>2023-12-12</td>
-                  </tr>
-                  <tr>
-                    <td>234</td>
-                    <td>Adoption case-3445- child Id 22332</td>
-                    <td>2023-12-12</td>
-                  </tr>
+                  {fundRes.isSuccess && fundRes.data.fund ? (
+                    fundRes.data.fund.map((data) => (
+                      <tr>
+                        <td>{data.Id}</td>
+                        <td>{data.Name}</td>
+                        <td>{data.Amount}</td>
+                        <td>{data.Date.substring(0, 10)}</td>
+                      </tr>
+                    ))
+                  ) : (
+                    <div>Loading</div>
+                  )}
                 </tbody>
               </Table>
             </MyCard>
