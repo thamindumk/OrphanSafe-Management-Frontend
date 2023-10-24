@@ -17,10 +17,7 @@ import {
   GET_EXTERNAL_DASHBOARD_CASE_ASSIGN,
   GET_ONGOING_CASE_URL,
   GET_CASES_FOR_ORPHANAGE_URL,
-<<<<<<< HEAD
   GET_ADOPTION_CASE_URL,
-=======
->>>>>>> 5c64c43b18e7eee22d42e6c26335932704c4f035
 } from "../config";
 
 export const caseApiSlice = apiSlice.injectEndpoints({
@@ -124,7 +121,6 @@ export const caseApiSlice = apiSlice.injectEndpoints({
         method: "GET",
       }),
     }),
-<<<<<<< HEAD
 
     getAdoptionForOrphanage: builder.query({
       query: (data) => ({
@@ -132,8 +128,6 @@ export const caseApiSlice = apiSlice.injectEndpoints({
         method: "GET",
       }),
     }),
-=======
->>>>>>> 5c64c43b18e7eee22d42e6c26335932704c4f035
 
     updateCaseState: builder.mutation({
       query: (data) => ({
@@ -171,8 +165,5 @@ export const {
   useGetExternalDashboardChildProfilesQuery,
   useGetExternalDashboardPendingCaseQuery,
   useGetCasesForOrphanageQuery,
-<<<<<<< HEAD
-  useGetAdoptionForOrphanageQuery
-=======
->>>>>>> 5c64c43b18e7eee22d42e6c26335932704c4f035
+  useGetAdoptionForOrphanageQuery,
 } = caseApiSlice;

@@ -6,10 +6,8 @@ import {
   useGetPendingCaseQuery,
   useGetOngoingCaseQuery,
   useGetCasesForOrphanageQuery,
-<<<<<<< HEAD
   useGetAdoptionForOrphanageQuery,
-=======
->>>>>>> 5c64c43b18e7eee22d42e6c26335932704c4f035
+
 } from "../../slices/caseApiSlice";
 import {
   useGetStaffCountForOrphanageQuery,
@@ -18,10 +16,8 @@ import {
 } from "../../slices/profileApiSlice";
 
 const DashboardOverview = () => {
-<<<<<<< HEAD
+
   const adoptionRes = useGetAdoptionForOrphanageQuery();
-=======
->>>>>>> 5c64c43b18e7eee22d42e6c26335932704c4f035
   const pendingRes = useGetPendingCaseQuery();
   const ongoingRes = useGetOngoingCaseQuery();
   const profileCount = useGetProfileCountForOrphanageQuery();
