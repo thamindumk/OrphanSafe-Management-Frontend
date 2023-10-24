@@ -34,6 +34,7 @@ export const GET_SOCIAL_WORKER_NAME_LIST =
   "/api/profile/getSocialWorkerNameListByOrphanageId";
 
 export const GET_CHILD_LIST_URL = "/api/profile/getChildProfileList";
+export const GET_CHILD_LIST_FOR_PARENT_URL = "/api/profile/viewChildProfilesForParents";
 export const GET_STAFF_LIST_URL = "/api/profile/getStaffProfileList";
 export const GET_STAFF_COUNT_FOR_ORPHANAGE_URL =
   "/api/profile/getStaffCountForOrphanage";
