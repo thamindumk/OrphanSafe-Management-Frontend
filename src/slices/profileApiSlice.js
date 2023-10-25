@@ -30,7 +30,9 @@ import {
   GET_CHILD_DOC_URL,
   CREATE_FUND_URL,
   CREATE_INQUIRY_URL,
-  GET_CHILD_LIST_FOR_PARENT_URL
+
+  GET_CHILD_LIST_FOR_PARENT_URL,
+  GET_INQUIRY_LIST_URL
 
 } from "../config";
 
@@ -284,6 +286,7 @@ export const {
   useGetStaffProfileListQuery,
   useGetSocialWorkerProfileListQuery,
   useGetParentProfileListQuery,
+  useGetInquiryListQuery,
   useViewChildProfilesQuery,
   useViewStaffProfilesQuery,
   useViewSocialWorkerProfilesQuery,
