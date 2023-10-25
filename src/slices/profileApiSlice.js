@@ -27,6 +27,7 @@ import {
   GET_PROFILE_COUNT_FOR_ORPHANAGE_URL,
   GET_STAFF_COUNT_FOR_ORPHANAGE_URL,
   GET_PARENT_COUNT_FOR_ORPHANAGE_URL,
+  GET_CHILD_DOC_URL,
 } from "../config";
 
 export const profileApiSlice = apiSlice.injectEndpoints({
@@ -234,6 +235,12 @@ export const profileApiSlice = apiSlice.injectEndpoints({
         method: "GET",
       }),
     }),
+    getChildDocUrl: builder.mutation({
+      query: (data) => ({
+        url: GET_CHILD_DOC_URL + "?path=" + data,
+        method: "GET",
+      }),
+    }),
   }),
 });
 
@@ -262,5 +269,6 @@ export const {
   useGetSocialWorkerNameListQuery,
   useGetProfileCountForOrphanageQuery,
   useGetStaffCountForOrphanageQuery,
-  useGetParentCountForOrphanageQuery
+  useGetParentCountForOrphanageQuery,
+  useGetChildDocUrlMutation
 } = profileApiSlice;
