@@ -27,7 +27,9 @@ import {
   GET_PROFILE_COUNT_FOR_ORPHANAGE_URL,
   GET_STAFF_COUNT_FOR_ORPHANAGE_URL,
   GET_PARENT_COUNT_FOR_ORPHANAGE_URL,
-  GET_CHILD_LIST_FOR_PARENT_URL,
+  CREATE_FUND_URL,
+  CREATE_INQUIRY_URL,
+  GET_CHILD_LIST_FOR_PARENT_URL
 } from "../config";
 
 export const profileApiSlice = apiSlice.injectEndpoints({
@@ -146,6 +148,21 @@ export const profileApiSlice = apiSlice.injectEndpoints({
       }),
     }),
 
+    createInquiry: builder.mutation({
+      query: (data) => ({
+        url: CREATE_INQUIRY_URL,
+        method: "POST",
+        body: data,
+      }),
+    }),
+    createFund: builder.mutation({
+      query: (data) => ({
+        url: CREATE_FUND_URL,
+        method: "POST",
+        body: data,
+      }),
+    }),
+
     /**
      * DELETE- Delete child profile
      */
@@ -259,6 +276,8 @@ export const {
   useCreateSocialWorkerProfileMutation,
   useCreateParentProfileMutation,
   useCreateChildProfileMutation,
+  useCreateInquiryMutation,
+  useCreateFundMutation,
   useDeleteChildProfileMutation,
   useDeleteStaffProfileMutation,
   useDeleteSocialWorkerProfileMutation,
