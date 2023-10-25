@@ -49,6 +49,7 @@ export const GET_SOCIAL_WORKER_LIST_URL =
   "/api/profile/getSocialWorkerProfileList";
 export const GET_PARENT_LIST_URL = "/api/profile/getParentProfileList";
 
+
 export const VIEW_CHILD_PROFILE_URL = "/api/profile/viewChildProfiles";
 export const VIEW_STAFF_PROFILE_URL = "/api/profile/viewStaffProfile";
 export const VIEW_PARENT_PROFILE_URL = "/api/profile/viewParentProfile";
@@ -84,7 +85,7 @@ export const CHAT_URL = "/api/admin/chat";
 export const REPORT_URL = "/api/admin/report";
 export const GET_CHILD_DOC_URL = "/api/profile/getChildDocs";
 export const ADMIN_DASHBOARD_URL = "/api/admin//adminDashboard";
-
+export const GET_INQUIRY_LIST_URL = "/api/profile/getInquiryList";
 export const determineAppServerKey = () => {
   const vapidPublicKey =
     "BBRtHqulpPja3_U6GUSDwiVjBqVCgHUQiEl0WpiBpIdTtQ7rlLbRnmKoQnrA2Anh-eV5rLHp11_rb8bGgQQNM3U";

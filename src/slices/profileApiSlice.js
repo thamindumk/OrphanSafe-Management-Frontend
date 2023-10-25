@@ -78,6 +78,14 @@ export const profileApiSlice = apiSlice.injectEndpoints({
       }),
     }),
 
+    getInquiryList: builder.query({
+      query: () => ({
+        url: GET_INQUIRY_LIST_URL,
+        method: "GET",
+        // body: data,
+      }),
+    }),
+
     /**
      * GET profile list by Id
      */
