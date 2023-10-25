@@ -80,5 +80,6 @@ export const {
   useChatMutation,
   useGetChatQuery,
   useReportMutation,
-  useAdminDashboardQuery,
+  useAdminDashboardQuery
+
 } = userApiSlice;
