@@ -21,6 +21,7 @@ import {
   GET_FUNDING_FOR_ORPHANAGE_URL,
   CREATE_PROFILE_REQUEST_URL,
   CREATE_CASE_REQUEST_URL,
+  GET_CASE_LIST_BY_PARENT_ID_URL,
 } from "../config";
 
 export const caseApiSlice = apiSlice.injectEndpoints({
@@ -35,6 +36,14 @@ export const caseApiSlice = apiSlice.injectEndpoints({
     getCaseListByUserId: builder.query({
       query: (data) => ({
         url: GET_CASE_LIST_BY_USERID_URL,
+        method: "GET",
+        // body: data,
+      }),
+    }),
+
+    getCaseListByParentId: builder.query({
+      query: (data) => ({
+        url: GET_CASE_LIST_BY_PARENT_ID_URL,
         method: "GET",
         // body: data,
       }),
@@ -192,5 +201,6 @@ export const {
   useGetAdoptionForOrphanageQuery,
   useGetFundingForOrphanageQuery,
   useCreateProfileRequestMutation,
-  useCreateCaseRequestMutation
+  useCreateCaseRequestMutation,
+  useGetCaseListByParentIdQuery
 } = caseApiSlice;

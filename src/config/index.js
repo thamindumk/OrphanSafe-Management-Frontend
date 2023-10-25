@@ -26,6 +26,7 @@ export const GET_ADOPTION_CASE_URL = "/api/case/getAdoptionRequest";
 export const GET_FUNDING_FOR_ORPHANAGE_URL = "/api/case/getFundForOrphanage";
 export const CREATE_CASE_LOG_URL = "/api/case/createCaseLog";
 export const GET_CASE_LIST_BY_USERID_URL = "/api/case/getCaseListByUserId";
+export const GET_CASE_LIST_BY_PARENT_ID_URL = "/api/case/getCaseListByParentId";
 export const UPDATE_CASE_STATE_URL = "/api/case/updateCaseState";
 export const UPDATE_CASE_LOG_URL = "/api/case/updateCaseLog";
 export const ORPHANAGE_REGISTER_URL = "/api/users/registerOrphanage";
