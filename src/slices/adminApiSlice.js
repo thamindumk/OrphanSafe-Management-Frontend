@@ -6,8 +6,9 @@ import {
   CHAT_URL,
   REPORT_URL,
   ADMIN_DASHBOARD_URL,
-} from "../config";
 
+  GET_INQUIRY_LIST_URL
+} from "../config";
 export const userApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getApprovalList: builder.query({
@@ -48,7 +49,21 @@ export const userApiSlice = apiSlice.injectEndpoints({
         url: ADMIN_DASHBOARD_URL,
         method: "GET",
       }),
+
     }),
+
+    getInquiryList: builder.query({
+      query: () => ({
+        url: GET_INQUIRY_LIST_URL,
+        method: "GET",
+        // body: data,
+      }),
+
+    }),
+
+
+
+
     report: builder.mutation({
       query: (data) => ({
         url: REPORT_URL + `?report=${data}`,

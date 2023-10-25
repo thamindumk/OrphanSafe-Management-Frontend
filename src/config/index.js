@@ -37,7 +37,9 @@ export const GET_SOCIAL_WORKER_NAME_LIST =
   "/api/profile/getSocialWorkerNameListByOrphanageId";
 
 export const GET_CHILD_LIST_URL = "/api/profile/getChildProfileList";
+
 export const GET_CHILD_LIST_FOR_PARENT_URL = "/api/profile/viewChildProfilesForParents";
+
 export const GET_STAFF_LIST_URL = "/api/profile/getStaffProfileList";
 export const GET_STAFF_COUNT_FOR_ORPHANAGE_URL =
   "/api/profile/getStaffCountForOrphanage";
@@ -48,6 +50,7 @@ export const GET_PARENT_COUNT_FOR_ORPHANAGE_URL =
 export const GET_SOCIAL_WORKER_LIST_URL =
   "/api/profile/getSocialWorkerProfileList";
 export const GET_PARENT_LIST_URL = "/api/profile/getParentProfileList";
+
 
 export const VIEW_CHILD_PROFILE_URL = "/api/profile/viewChildProfiles";
 export const VIEW_STAFF_PROFILE_URL = "/api/profile/viewStaffProfile";
@@ -75,12 +78,17 @@ export const EDIT_STAFF_PROFILE_URL = "/api/profile/editStaffProfile";
 export const EDIT_SOCIAL_WORKER_PROFILE_URL =
   "/api/profile/editSocialWorkerProfile";
 export const EDIT_PARENT_PROFILE_URL = "/api/profile/editParentProfile";
+export const CREATE_INQUIRY_URL = "/api/profile/createInquiry";
+export const CREATE_FUND_URL = "/api/profile/createFund";
 export const OVERALL_APPROVAL_URL = "/api/admin/approvalList";
 export const APPROVE_URL = "/api/admin/approve";
 export const REJECT_URL = "/api/admin/reject";
 export const CHAT_URL = "/api/admin/chat";
 export const REPORT_URL = "/api/admin/report";
+
+export const GET_CHILD_DOC_URL = "/api/profile/getChildDocs";
 export const ADMIN_DASHBOARD_URL = "/api/admin//adminDashboard";
+export const GET_INQUIRY_LIST_URL = "/api/profile/getInquiryList";
 
 export const determineAppServerKey = () => {
   const vapidPublicKey =

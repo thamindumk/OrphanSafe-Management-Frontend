@@ -27,7 +27,11 @@ import {
   GET_PROFILE_COUNT_FOR_ORPHANAGE_URL,
   GET_STAFF_COUNT_FOR_ORPHANAGE_URL,
   GET_PARENT_COUNT_FOR_ORPHANAGE_URL,
-  GET_CHILD_LIST_FOR_PARENT_URL,
+  GET_CHILD_DOC_URL,
+  CREATE_FUND_URL,
+  CREATE_INQUIRY_URL,
+  GET_CHILD_LIST_FOR_PARENT_URL
+
 } from "../config";
 
 export const profileApiSlice = apiSlice.injectEndpoints({
@@ -70,6 +74,14 @@ export const profileApiSlice = apiSlice.injectEndpoints({
     getParentProfileList: builder.query({
       query: () => ({
         url: GET_PARENT_LIST_URL,
+        method: "GET",
+        // body: data,
+      }),
+    }),
+
+    getInquiryList: builder.query({
+      query: () => ({
+        url: GET_INQUIRY_LIST_URL,
         method: "GET",
         // body: data,
       }),
@@ -141,6 +153,21 @@ export const profileApiSlice = apiSlice.injectEndpoints({
     createParentProfile: builder.mutation({
       query: (data) => ({
         url: CREATE_PARENT_PROFILE_URL,
+        method: "POST",
+        body: data,
+      }),
+    }),
+
+    createInquiry: builder.mutation({
+      query: (data) => ({
+        url: CREATE_INQUIRY_URL,
+        method: "POST",
+        body: data,
+      }),
+    }),
+    createFund: builder.mutation({
+      query: (data) => ({
+        url: CREATE_FUND_URL,
         method: "POST",
         body: data,
       }),
@@ -243,6 +270,12 @@ export const profileApiSlice = apiSlice.injectEndpoints({
         method: "GET",
       }),
     }),
+    getChildDocUrl: builder.mutation({
+      query: (data) => ({
+        url: GET_CHILD_DOC_URL + "?path=" + data,
+        method: "GET",
+      }),
+    }),
   }),
 });
 
@@ -259,6 +292,8 @@ export const {
   useCreateSocialWorkerProfileMutation,
   useCreateParentProfileMutation,
   useCreateChildProfileMutation,
+  useCreateInquiryMutation,
+  useCreateFundMutation,
   useDeleteChildProfileMutation,
   useDeleteStaffProfileMutation,
   useDeleteSocialWorkerProfileMutation,
@@ -272,5 +307,6 @@ export const {
   useGetProfileCountForOrphanageQuery,
   useGetStaffCountForOrphanageQuery,
   useGetParentCountForOrphanageQuery,
+  useGetChildDocUrlMutation,
   useGetChildProfileForParentListQuery
 } = profileApiSlice;

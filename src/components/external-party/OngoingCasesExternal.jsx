@@ -7,10 +7,12 @@ import $ from "jquery"; // Import jQuery
 import "datatables.net-dt/css/jquery.dataTables.css"; // Import DataTables CSS
 import "datatables.net"; // Import DataTables JavaScript
 import { Link } from "react-router-dom";
+
 import {
   useGetCaseListByUserIdQuery,
   useGetCaseListByParentIdQuery,
 } from "../../slices/caseApiSlice";
+
 import { useSelector } from "react-redux";
 
 const OngoingCaseViewExternal = () => {
@@ -26,6 +28,7 @@ const OngoingCaseViewExternal = () => {
   if (userInfo.roleName === "parent" && parentRes.isSuccess) {
     data = parentRes.data;
   }
+
   useEffect(() => {
     // Initialize DataTable
     $(tableRef.current).DataTable();
